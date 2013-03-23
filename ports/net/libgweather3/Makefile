@@ -1,0 +1,37 @@
+# New ports collection makefile for:	libgweather
+# Date created:				14th Jan 2008
+# Whom:					Koop Mast <kwm@FreeBSD.org>
+#
+# $FreeBSD$
+#   $MCom: ports/net/libgweather3/Makefile,v 1.9 2012/05/31 12:19:30 kwm Exp $
+#
+
+PORTNAME=	libgweather
+PORTVERSION=	3.4.1
+CATEGORIES=	net gnome
+MASTER_SITES=	GNOME
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Library to accessing online weather informations
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
+LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
+
+CONFLICTS=	libgweather-2.[0-9]*
+
+LATEST_LINK=	libgweather3
+USE_GETTEXT=	yes
+USE_XZ=		yes
+USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
+INSTALLS_ICONS=	yes
+USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 ltverhack gtk30
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+GCONF_SCHEMAS=	gweather.schemas
+
+.include <bsd.port.mk>

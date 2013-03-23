@@ -1,0 +1,35 @@
+# New ports collection makefile for:	folks
+# Date created:				23 July 2010
+# Whom:					Koop Mast <kwm@FreeBSD.org>
+#
+# $FreeBSD$
+#   $MCom: ports/net-im/folks04/Makefile,v 1.3 2013/03/13 22:24:42 kwm Exp $
+#
+
+PORTNAME=	folks
+PORTVERSION=	0.4.3
+CATEGORIES=	net-im
+MASTER_SITES=	GNOME
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	library to aggregates people from multiple sources
+
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
+		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee06 \
+		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
+
+CONFLICTS=	folks-0.[6-9].[0-9]*
+
+USE_BZIP2=	yes
+USE_LDCONFIG=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack intlhack gnomehier
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+PLIST_SUB=	VERSION=22
+
+.include <bsd.port.mk>

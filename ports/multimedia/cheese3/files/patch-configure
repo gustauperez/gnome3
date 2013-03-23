@@ -1,0 +1,186 @@
+--- configure	2012-06-13 10:35:21.000000000 +0200
++++ configure	2012-06-13 10:31:28.000000000 +0200
+@@ -12661,6 +12661,10 @@
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: Linux" >&5
+ $as_echo "Linux" >&6; }
+     UDEV_REQUIRED="gudev-1.0" ;; #(
++  *freebsd*) :
++    { $as_echo "$as_me:${as_lineno-$LINENO}: result: FreeBSD" >&5
++$as_echo "FreeBSD" >&6; }
++    HAL_REQUIRED="hal" ;; #(
+   *) :
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: unsupported operating system" >&5
+ $as_echo "unsupported operating system" >&6; } ;;
+@@ -12688,6 +12692,28 @@
+ $as_echo "not needed" >&6; }
+ fi
+ 
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for hal" >&5
++$as_echo_n "checking for hal... " >&6; }
++if test -n "$HAL_REQUIRED"; then :
++  if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$HAL_REQUIRED\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "$HAL_REQUIRED") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: found" >&5
++$as_echo "found" >&6; }
++
++$as_echo "#define HAVE_HAL /**/" >>confdefs.h
++
++else
++  as_fn_error $? "$HAL_REQUIRED not found" "$LINENO" 5
++fi
++else
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: not needed" >&5
++$as_echo "not needed" >&6; }
++fi
++
+ for ac_header in sys/videoio.h
+ do :
+   ac_fn_c_check_header_mongrel "$LINENO" "sys/videoio.h" "ac_cv_header_sys_videoio_h" "$ac_includes_default"
+@@ -12776,6 +12802,7 @@
+   \$CLUTTER_REQUIRED
+   \$CLUTTERGST_REQUIRED
+   \$MX_REQUIRED
++  \$HAL_REQUIRED
+   \$UDEV_REQUIRED\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "$GLIB_REQUIRED
+   $GIO_REQUIRED
+@@ -12788,6 +12815,7 @@
+   $CLUTTER_REQUIRED
+   $CLUTTERGST_REQUIRED
+   $MX_REQUIRED
++  $HAL_REQUIRED
+   $UDEV_REQUIRED") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -12803,6 +12831,7 @@
+   $CLUTTER_REQUIRED
+   $CLUTTERGST_REQUIRED
+   $MX_REQUIRED
++  $HAL_REQUIRED
+   $UDEV_REQUIRED" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -12826,6 +12855,7 @@
+   \$CLUTTER_REQUIRED
+   \$CLUTTERGST_REQUIRED
+   \$MX_REQUIRED
++  \$HAL_REQUIRED
+   \$UDEV_REQUIRED\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "$GLIB_REQUIRED
+   $GIO_REQUIRED
+@@ -12838,6 +12868,7 @@
+   $CLUTTER_REQUIRED
+   $CLUTTERGST_REQUIRED
+   $MX_REQUIRED
++  $HAL_REQUIRED
+   $UDEV_REQUIRED") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -12853,6 +12884,7 @@
+   $CLUTTER_REQUIRED
+   $CLUTTERGST_REQUIRED
+   $MX_REQUIRED
++  $HAL_REQUIRED
+   $UDEV_REQUIRED" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -12885,6 +12917,7 @@
+   $CLUTTER_REQUIRED
+   $CLUTTERGST_REQUIRED
+   $MX_REQUIRED
++  $HAL_REQUIRED
+   $UDEV_REQUIRED" 2>&1`
+         else
+ 	        CHEESE_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$GLIB_REQUIRED
+@@ -12898,6 +12931,7 @@
+   $CLUTTER_REQUIRED
+   $CLUTTERGST_REQUIRED
+   $MX_REQUIRED
++  $HAL_REQUIRED
+   $UDEV_REQUIRED" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+@@ -12914,6 +12948,7 @@
+   $CLUTTER_REQUIRED
+   $CLUTTERGST_REQUIRED
+   $MX_REQUIRED
++  $HAL_REQUIRED
+   $UDEV_REQUIRED) were not met:
+ 
+ $CHEESE_PKG_ERRORS
+@@ -12966,6 +13001,7 @@
+    \$GEE_REQUIRED
+    \$LIBCANBERRA_REQUIRED
+    \$UDEV_REQUIRED
++   \$HAL_REQUIRED
+    \$GNOME_VIDEO_EFFECTS_REQUIRED\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "$GIO_REQUIRED
+    $GTK_REQUIRED
+@@ -12976,6 +13012,7 @@
+    $GEE_REQUIRED
+    $LIBCANBERRA_REQUIRED
+    $UDEV_REQUIRED
++   $HAL_REQUIRED
+    $GNOME_VIDEO_EFFECTS_REQUIRED") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -12989,6 +13026,7 @@
+    $GEE_REQUIRED
+    $LIBCANBERRA_REQUIRED
+    $UDEV_REQUIRED
++   $HAL_REQUIRED
+    $GNOME_VIDEO_EFFECTS_REQUIRED" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -13010,6 +13048,7 @@
+    \$GEE_REQUIRED
+    \$LIBCANBERRA_REQUIRED
+    \$UDEV_REQUIRED
++   \$HAL_REQUIRED
+    \$GNOME_VIDEO_EFFECTS_REQUIRED\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "$GIO_REQUIRED
+    $GTK_REQUIRED
+@@ -13020,6 +13059,7 @@
+    $GEE_REQUIRED
+    $LIBCANBERRA_REQUIRED
+    $UDEV_REQUIRED
++   $HAL_REQUIRED
+    $GNOME_VIDEO_EFFECTS_REQUIRED") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -13033,6 +13073,7 @@
+    $GEE_REQUIRED
+    $LIBCANBERRA_REQUIRED
+    $UDEV_REQUIRED
++   $HAL_REQUIRED
+    $GNOME_VIDEO_EFFECTS_REQUIRED" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -13063,6 +13104,7 @@
+    $GEE_REQUIRED
+    $LIBCANBERRA_REQUIRED
+    $UDEV_REQUIRED
++   $HAL_REQUIRED
+    $GNOME_VIDEO_EFFECTS_REQUIRED" 2>&1`
+         else
+ 	        CHEESE_GTK_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$GIO_REQUIRED
+@@ -13074,6 +13116,7 @@
+    $GEE_REQUIRED
+    $LIBCANBERRA_REQUIRED
+    $UDEV_REQUIRED
++   $HAL_REQUIRED
+    $GNOME_VIDEO_EFFECTS_REQUIRED" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+@@ -13088,6 +13131,7 @@
+    $GEE_REQUIRED
+    $LIBCANBERRA_REQUIRED
+    $UDEV_REQUIRED
++   $HAL_REQUIRED
+    $GNOME_VIDEO_EFFECTS_REQUIRED) were not met:
+ 
+ $CHEESE_GTK_PKG_ERRORS

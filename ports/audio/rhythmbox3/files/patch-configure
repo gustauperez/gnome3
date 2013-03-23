@@ -1,0 +1,11 @@
+--- configure.orig	2011-04-23 19:57:24.000000000 +0200
++++ configure	2011-04-23 20:27:33.000000000 +0200
+@@ -20194,7 +20194,7 @@
+ fi
+ 
+ 
+-MOZILLA_PLUGINDIR="${MOZILLA_PLUGINDIR:="\${libdir}/mozilla/plugins"}"
++MOZILLA_PLUGINDIR="${MOZILLA_PLUGINDIR}"
+ 
+ 
+  if test x$enable_browser_plugin = xyes; then

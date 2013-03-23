@@ -1,0 +1,11 @@
+--- cogl/Makefile.in.orig	2012-05-20 14:15:08.000000000 +0200
++++ cogl/Makefile.in	2012-05-20 14:15:53.000000000 +0200
+@@ -153,7 +153,7 @@
+ @SUPPORT_SDL_TRUE@       $(srcdir)/winsys/cogl-winsys-sdl-private.h \
+ @SUPPORT_SDL_TRUE@       $(srcdir)/winsys/cogl-winsys-sdl.c
+ 
+-@SUPPORT_GLX_TRUE@am__append_22 = -ldl
++@SUPPORT_GLX_TRUE@am__append_22 = 
+ @HAVE_INTROSPECTION_TRUE@am__append_23 = Cogl-1.0.gir
+ @HAVE_INTROSPECTION_TRUE@am__append_24 = $(gir_DATA) $(typelib_DATA)
+ subdir = cogl
