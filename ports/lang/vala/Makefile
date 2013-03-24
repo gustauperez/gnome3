@@ -3,7 +3,7 @@
 #   $MCom: ports/lang/vala/Makefile,v 1.66 2013/03/09 09:12:38 kwm Exp $
 
 PORTNAME=	vala
-PORTVERSION=	0.16.1
+PORTVERSION=	0.18.1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
@@ -60,7 +60,7 @@ post-install:
 		 ${PREFIX}/man/man1/
 .else
 post-install:
-	${LN} -fs ${PREFIX}/libdata/pkgconfig/libvala-0.16.pc \
+	${LN} -fs ${PREFIX}/libdata/pkgconfig/libvala-0.18.pc \
 		${PREFIX}/libdata/pkgconfig/vala-1.0.pc
 .endif
 
