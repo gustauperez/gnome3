@@ -6,7 +6,7 @@
 #    $MCom: ports/sysutils/brasero3/Makefile,v 1.16 2012/06/12 20:24:12 kwm Exp $
 
 PORTNAME=	brasero
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.1
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,6 +14,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD/DVD mastering tool for the GNOME desktop
 
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser \
 		canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3
@@ -32,6 +33,7 @@ USE_GNOME=	intlhack gnomeprefix gnomehack gnomedocutils gtk30 gconf2 \
 		libxml2 desktopfileutils
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	gconf core
+USE_GSTREAMER1=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-inotify --enable-search=no --enable-playlist=no \
