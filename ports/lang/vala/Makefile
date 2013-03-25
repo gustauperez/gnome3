@@ -23,12 +23,12 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-MAN1?=		valac.1 valac-0.16.1
+MAN1?=		valac.1 valac-0.18.1
 
-PLIST_SUB=	VERSION=0.16
+PLIST_SUB=	VERSION=0.18
 
 .if defined(VALA_SLAVE)
-LIB_DEPENDS+=	vala-0.16.0:${PORTSDIR}/lang/vala
+LIB_DEPENDS+=	vala-0.18.0:${PORTSDIR}/lang/vala
 CONFIGURE_ARGS+=--enable-vapigen
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
@@ -41,11 +41,11 @@ post-patch:
 # We cheat here, because vala records vapigen related stuff in its .pc file
 # This makes vapigen work again, although it might get weird when
 # vala-vapigen isn't installed.
-	@${REINPLACE_CMD} -e 's|@vapigen_decl@|vapigen=$${bindir}/vapigen-0.16|g' \
-		-e 's|@gen_introspect_decl@|gen_introspect=$${libdir}/vala-0.16/gen-introspect-0.16|g' \
-		-e 's|@vala_gen_introspect_decl@|vala_gen_introspect=$${bindir}/vala-gen-introspect-0.16|g' \
+	@${REINPLACE_CMD} -e 's|@vapigen_decl@|vapigen=$${bindir}/vapigen-0.18|g' \
+		-e 's|@gen_introspect_decl@|gen_introspect=$${libdir}/vala-0.18/gen-introspect-0.18|g' \
+		-e 's|@vala_gen_introspect_decl@|vala_gen_introspect=$${bindir}/vala-gen-introspect-0.18|g' \
 		${WRKSRC}/libvala.pc.in
-	@${REINPLACE_CMD} -e 's|cp $$< $$@|cp libvala.pc libvala-0.16.pc|g' \
+	@${REINPLACE_CMD} -e 's|cp $$< $$@|cp libvala.pc libvala-0.18.pc|g' \
 		${WRKSRC}/Makefile.in
 
 .if defined(VALA_SLAVE)
