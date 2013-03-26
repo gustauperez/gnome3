@@ -3,7 +3,7 @@
 #    $MCom: ports/graphics/clutter-gtk3/Makefile,v 1.11 2012/12/10 10:51:04 kwm Exp $
 
 PORTNAME=	clutter-gtk
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
