@@ -6,7 +6,7 @@
 #   $MCom: ports/multimedia/clutter-gst/Makefile,v 1.16 2012/06/26 08:02:35 kwm Exp $
 
 PORTNAME=	clutter-gst
-PORTVERSION=	1.6.0
+PORTVERSION=	1.9.92
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack ltverhack gnomeprefix
-USE_GSTREAMER=	yes
+USE_GSTREAMER1=	yes
 USE_XORG=	xp x11
 USE_LDCONFIG=	yes
 
