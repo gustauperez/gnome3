@@ -3,7 +3,7 @@
 #  $MCom: ports/graphics/clutter/Makefile,v 1.60 2013/02/24 10:49:42 kwm Exp $
 
 PORTNAME=	clutter
-PORTVERSION=	1.10.8
+PORTVERSION=	1.12.2
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
