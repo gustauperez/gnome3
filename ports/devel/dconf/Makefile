@@ -13,7 +13,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A configuration database system for GNOME
 
-BUILD_DEPENDS=	vala>=0.15.1:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	vala>=0.18.1:${PORTSDIR}/lang/vala \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 
 USE_XZ=		yes
@@ -24,6 +26,9 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		dconf.1
+MAN7=		dconf.7
 
 DCONF_SLAVE?=	no
 
