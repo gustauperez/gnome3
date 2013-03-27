@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	evince
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,6 +17,7 @@ COMMENT=	GNOME 3 multi-format document viewer
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
+		itstool:${PORTSDIR}/textproc/itstool \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
 		spectre.1:${PORTSDIR}/print/libspectre

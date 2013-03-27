@@ -26,7 +26,7 @@ LIB_DEPENDS=	canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
 		gee.2:${PORTSDIR}/devel/libgee06 \
 		mx-1.0:${PORTSDIR}/x11-toolkits/mx \
 		clutter-gtk-1.0:${PORTSDIR}/graphics/clutter-gtk3 \
-		clutter-gst-1.0:${PORTSDIR}/multimedia/clutter-gst
+		clutter-gst-2.0:${PORTSDIR}/multimedia/clutter-gst
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-video-effects.pc:${PORTSDIR}/graphics/gnome-video-effects
 
 CONFLICTS=	cheese-2.[0-9]*

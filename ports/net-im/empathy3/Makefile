@@ -6,7 +6,7 @@
 #    $MCom: ports/net-im/empathy3/Makefile,v 1.32 2012/07/02 14:47:52 kwm Exp $
 
 PORTNAME=	empathy
-PORTVERSION=	3.4.2.1
+PORTVERSION=	3.6.2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
