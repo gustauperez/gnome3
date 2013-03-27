@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	eog
-PORTVERSION=	3.4.3
+PORTVERSION=	3.6.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,6 +18,7 @@ COMMENT=	The Eye Of Gnome image viewer
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		itstool:${PORTSDIR}/textproc/itstool \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 LIB_DEPENDS=	peas-gtk-1.0.0:${PORTSDIR}/devel/libpeas \
 		lcms.1:${PORTSDIR}/graphics/lcms

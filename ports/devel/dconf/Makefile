@@ -27,9 +27,6 @@ MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		dconf.1
-MAN7=		dconf.7
-
 DCONF_SLAVE?=	no
 
 .if ${DCONF_SLAVE} == "editor"
@@ -39,6 +36,11 @@ GLIB_SCHEMAS=	ca.desrt.dconf-editor.gschema.xml
 LIB_DEPENDS+=	dconf:${PORTSDIR}/devel/dconf
 .else
 CONFIGURE_ARGS+=--disable-editor
+.endif
+
+.if ${DCONF_SLAVE} == "no"
+MAN1=		dconf.1
+MAN7=		dconf.7
 .endif
 
 post-patch:
