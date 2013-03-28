@@ -3,7 +3,7 @@
 #   $MCom: ports/net-im/folks/Makefile,v 1.30 2013/03/12 19:52:18 kwm Exp $
 
 PORTNAME=	folks
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 

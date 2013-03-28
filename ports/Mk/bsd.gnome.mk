@@ -624,7 +624,7 @@ evolutiondataserver_DETECT=		${LOCALBASE}/libdata/pkgconfig/evolution-data-serve
 evolutiondataserver_USE_GNOME_IMPL=gconf2 libxml2
 evolutiondataserver_GNOME_DESKTOP_VERSION=2
 
-evolutiondataserver3_LIB_DEPENDS=	edataserverui-3.0.1:${PORTSDIR}/databases/evolution-data-server3
+evolutiondataserver3_LIB_DEPENDS=	edataserverui-3.0.4:${PORTSDIR}/databases/evolution-data-server3
 evolutiondataserver3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libedataserverui-3.0.pc
 evolutiondataserver3_USE_GNOME_IMPL=	gconf2 libxml2 gtk30
 evolutiondataserver3_GNOME_DESKTOP_VERSION=3
