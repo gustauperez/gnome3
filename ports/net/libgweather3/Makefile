@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libgweather
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -26,12 +26,12 @@ USE_XZ=		yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 ltverhack gtk30
+USE_GNOME=	gnomehier gnomeprefix gnomehack intlhack gconf2 ltverhack gtk30
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	gweather.schemas
+#GCONF_SCHEMAS=	Gweather.schemas
 
 .include <bsd.port.mk>

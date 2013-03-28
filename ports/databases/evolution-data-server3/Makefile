@@ -3,7 +3,7 @@
 #   $MCom: ports/databases/evolution-data-server3/Makefile,v 1.32 2013/03/13 15:26:55 marcus Exp $
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	3.4.4
+PORTVERSION=	3.6.1
 PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
@@ -15,7 +15,8 @@ COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
+		gcr>=3.4.1:${PORTSDIR}/security/gcr
 LIB_DEPENDS=	soup-gnome-2.4:${PORTSDIR}/devel/libsoup-gnome \
 		oauth:${PORTSDIR}/net/liboauth \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
