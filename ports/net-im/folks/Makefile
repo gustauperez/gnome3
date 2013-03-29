@@ -11,8 +11,11 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	library to aggregates people from multiple sources
 
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
+		${LOCALBASE}/libdata/pkgconfig/zeitgeist-1.0.pc:${PORTSDIR}/sysutils/libzeitgeist \
+		gcr-3:${PORTSDIR}/security/gcr \
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee06 \
+		zeitgeist-1.0:${PORTSDIR}/sysutils/libzeitgeist \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 
 CONFLICTS=	folks-0.4.[0-9]*
@@ -27,7 +30,9 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB=	LIBVER=25 VERSION=33
+GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
+
+PLIST_SUB=	LIBVER=25 VERSION=37
 
 #OPTIONS=	SOCIALWEB "Enable social web backend" on
 
