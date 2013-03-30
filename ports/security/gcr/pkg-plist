@@ -139,6 +139,7 @@ share/gtk-doc/html/gcr-3/gcr-3.devhelp2
 share/gtk-doc/html/gcr-3/gcr-GcrCertificateRequest.html
 share/gtk-doc/html/gcr-3/gcr-GcrColumn.html
 share/gtk-doc/html/gcr-3/gcr-GcrComparable.html
+share/gtk-doc/html/gcr-3/gcr-GcrImportInteraction.html
 share/gtk-doc/html/gcr-3/gcr-Key-Fingerprints.html
 share/gtk-doc/html/gcr-3/gcr-Library-Settings.html
 share/gtk-doc/html/gcr-3/gcr-Non-pageable-Memory.html
@@ -280,7 +281,14 @@ share/mime/application/x-pem-file.xml
 share/mime/application/x-pem-key.xml
 share/mime/application/x-spkac+base64.xml
 share/mime/application/x-spkac.xml
+share/mime/globs
+share/mime/globs2
+share/mime/magic
+share/mime/mime.cache
 share/mime/packages/gcr-crypto-types.xml
+share/mime/subclasses
+share/mime/types
+@dirrm share/gtk-doc/html/gcr-3
 @dirrm share/gtk-doc/html/gcr-3
 @dirrm share/gtk-doc/html/gck
 @dirrmtry share/gtk-doc/html

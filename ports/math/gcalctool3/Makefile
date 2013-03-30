@@ -3,7 +3,7 @@
 #   $MCom: ports/math/gcalctool3/Makefile,v 1.19 2013/03/09 09:12:38 kwm Exp $
 
 PORTNAME=	gcalctool
-PORTVERSION=	6.4.2.1
+PORTVERSION=	6.6.2
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
