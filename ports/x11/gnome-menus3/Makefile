@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-menus
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -46,6 +46,7 @@ post-patch:
 	    	${WRKSRC}/util/Makefile.in
 
 post-install:
+	@${MKDIR} -p ${PREFIX}/etc/xdg/menus/ 
 	@${INSTALL_DATA} ${WRKSRC}/layout/applications.menu \
 		${PREFIX}/etc/xdg/menus/gnome-applications.menu
 	@${INSTALL_DATA} ${WRKSRC}/KDE.directory \
