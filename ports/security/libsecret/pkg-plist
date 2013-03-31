@@ -180,7 +180,6 @@ share/locale/pl/LC_MESSAGES/libsecret.mo
 @dirrm lib/matecomponent-2.0
 @dirrm lib/matecomponent
 @dirrm lib/mate-vfs-2.0/modules
-@dirrm lib/mate-vfs-2.0
 @dirrm include/gnome-1.0
 @dirrm include/gdkcardimage
 @dirrm include/gconf
