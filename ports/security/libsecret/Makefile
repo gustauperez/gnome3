@@ -13,12 +13,13 @@ BUILD_DEPENDS=	gobject-introspection>=0.9.0:${PORTSDIR}/devel/gobject-introspect
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
+USES=		pathfix
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
 USE_GMAKE=	yes
 USE_XZ=		yes
-USE_GNOME=	glib20 gnomehier gnomehack intltool
+USE_GNOME=	glib20 gnomehier intltool libxslt:build
 USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
