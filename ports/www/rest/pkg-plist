@@ -10,6 +10,7 @@ include/rest-0.7/rest/oauth2-proxy.h
 include/rest-0.7/rest/rest-enum-types.h
 include/rest-0.7/rest/rest-param.h
 include/rest-0.7/rest/rest-params.h
+include/rest-0.7/rest/rest-proxy-auth.h
 include/rest-0.7/rest/rest-proxy-call.h
 include/rest-0.7/rest/rest-proxy.h
 include/rest-0.7/rest/rest-xml-node.h
@@ -45,7 +46,6 @@ share/gtk-doc/html/rest-0.7/home.png
 share/gtk-doc/html/rest-0.7/index.html
 share/gtk-doc/html/rest-0.7/index.sgml
 share/gtk-doc/html/rest-0.7/left.png
-share/gtk-doc/html/rest-0.7/rest-0.7.devhelp
 share/gtk-doc/html/rest-0.7/rest-0.7.devhelp2
 share/gtk-doc/html/rest-0.7/rest-RestParam.html
 share/gtk-doc/html/rest-0.7/rest-RestParams.html
@@ -58,3 +58,5 @@ share/gtk-doc/html/rest-0.7/up.png
 @dirrm include/rest-0.7/rest
 @dirrm include/rest-0.7/rest-extras
 @dirrm include/rest-0.7
+@dirrm share/gir-1.0
+@dirrm lib/girepository-1.0
