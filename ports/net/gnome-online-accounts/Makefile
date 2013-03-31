@@ -6,7 +6,7 @@
 #    $MCom: ports/net/gnome-online-accounts/Makefile,v 1.7 2012/06/01 09:24:12 kwm Exp $
 
 PORTNAME=	gnome-online-accounts
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 

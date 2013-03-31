@@ -1,0 +1,216 @@
+bin/secret-tool
+include/libsecret-1/libsecret/secret.h
+include/libsecret-1/libsecret/secret-attributes.h
+include/libsecret-1/libsecret/secret-collection.h
+include/libsecret-1/libsecret/secret-enum-types.h
+include/libsecret-1/libsecret/secret-item.h
+include/libsecret-1/libsecret/secret-password.h
+include/libsecret-1/libsecret/secret-paths.h
+include/libsecret-1/libsecret/secret-prompt.h
+include/libsecret-1/libsecret/secret-schema.h
+include/libsecret-1/libsecret/secret-schemas.h
+include/libsecret-1/libsecret/secret-service.h
+include/libsecret-1/libsecret/secret-types.h
+include/libsecret-1/libsecret/secret-value.h
+lib/girepository-1.0/Secret-1.typelib
+lib/girepository-1.0/SecretUnstable-0.typelib
+lib/libsecret-1.a
+lib/libsecret-1.la
+lib/libsecret-1.so
+lib/libsecret-1.so.0
+libdata/pkgconfig/libsecret-1.pc
+libdata/pkgconfig/libsecret-unstable.pc
+share/gir-1.0/Secret-1.gir
+share/gir-1.0/SecretUnstable-0.gir
+share/gtk-doc/html/libsecret-1/home.png
+share/gtk-doc/html/libsecret-1/index.html
+share/gtk-doc/html/libsecret-1/js-examples.html
+share/gtk-doc/html/libsecret-1/js-lookup-example.html
+share/gtk-doc/html/libsecret-1/simple.html
+share/gtk-doc/html/libsecret-1/style.css
+share/gtk-doc/html/libsecret-1/up.png
+share/gtk-doc/html/libsecret-1/using-c.html
+share/gtk-doc/html/libsecret-1/using-js.html
+share/gtk-doc/html/libsecret-1/using-python.html
+share/gtk-doc/html/libsecret-1/using-vala.html
+share/gtk-doc/html/libsecret-1/using.html
+share/gtk-doc/html/libsecret-1/vala-examples.html
+share/gtk-doc/html/libsecret-1/vala-lookup-example.html
+share/gtk-doc/html/libsecret-1/vala-remove-example.html
+share/gtk-doc/html/libsecret-1/vala-store-example.html
+share/gtk-doc/html/libsecret-1/SecretCollection.html
+share/gtk-doc/html/libsecret-1/SecretError.html
+share/gtk-doc/html/libsecret-1/SecretItem.html
+share/gtk-doc/html/libsecret-1/SecretPrompt.html
+share/gtk-doc/html/libsecret-1/SecretService.html
+share/gtk-doc/html/libsecret-1/SecretValue.html
+share/gtk-doc/html/libsecret-1/annotation-glossary.html
+share/gtk-doc/html/libsecret-1/c-examples.html
+share/gtk-doc/html/libsecret-1/c-lookup-example.html
+share/gtk-doc/html/libsecret-1/c-remove-example.html
+share/gtk-doc/html/libsecret-1/c-store-example.html
+share/gtk-doc/html/libsecret-1/complete.html
+share/gtk-doc/html/libsecret-1/examples.html
+share/gtk-doc/html/libsecret-1/index.sgml
+share/gtk-doc/html/libsecret-1/js-remove-example.html
+share/gtk-doc/html/libsecret-1/js-store-example.html
+share/gtk-doc/html/libsecret-1/left.png
+share/gtk-doc/html/libsecret-1/libsecret-1.devhelp2
+share/gtk-doc/html/libsecret-1/libsecret-DBus-Path-Related-Functions.html
+share/gtk-doc/html/libsecret-1/libsecret-Password-storage.html
+share/gtk-doc/html/libsecret-1/libsecret-Secret-Attributes.html
+share/gtk-doc/html/libsecret-1/libsecret-SecretSchema.html
+share/gtk-doc/html/libsecret-1/migrating-api.html
+share/gtk-doc/html/libsecret-1/migrating-introduction.html
+share/gtk-doc/html/libsecret-1/migrating-items.html
+share/gtk-doc/html/libsecret-1/migrating-keyrings.html
+share/gtk-doc/html/libsecret-1/migrating-locking.html
+share/gtk-doc/html/libsecret-1/migrating-memory.html
+share/gtk-doc/html/libsecret-1/migrating-misc.html
+share/gtk-doc/html/libsecret-1/migrating-removing.html
+share/gtk-doc/html/libsecret-1/migrating-schemas.html
+share/gtk-doc/html/libsecret-1/migrating-searching.html
+share/gtk-doc/html/libsecret-1/migrating-storing.html
+share/gtk-doc/html/libsecret-1/migrating.html
+share/gtk-doc/html/libsecret-1/py-examples.html
+share/gtk-doc/html/libsecret-1/py-lookup-example.html
+share/gtk-doc/html/libsecret-1/py-remove-example.html
+share/gtk-doc/html/libsecret-1/py-store-example.html
+share/gtk-doc/html/libsecret-1/right.png
+share/locale/ja/LC_MESSAGES/libsecret.mo
+share/locale/pl/LC_MESSAGES/libsecret.mo
+@dirrm share/gtk-doc/html/libsecret-1
+@dirrm share/gtk-doc/html
+@dirrm share/gtk-doc
+@dirrm lib/mate-vfs-2.0
+@dirrm lib/gnome-vfs-2.0/modules
+@dirrm lib/gnome-vfs-2.0
+@dirrm lib/girepository-1.0
+@dirrm lib/bonobo/plugin
+@dirrm lib/bonobo/monikers
+@dirrm lib/bonobo
+@dirrm lib/GConf
+@dirrm include/libsecret-1/libsecret
+@dirrm include/libsecret-1
+@dirrm share/xmodmap
+@dirrm share/vfolders
+@dirrm share/vala/vapi
+@dirrm share/vala
+@dirrm share/sounds
+@dirrm share/sgml/docbook/gnome-customization-0.1
+@dirrm share/sgml/docbook
+@dirrm share/pixmaps/splash
+@dirrm share/pixmaps/document-icons
+@dirrm share/omf
+@dirrm share/oaf
+@dirrm share/mime-info
+@dirrm share/mc/templates
+@dirrm share/mc
+@dirrm share/mate/help
+@dirrm share/mate-control-center/keybindings
+@dirrm share/mate-control-center
+@dirrm share/mate-2.0/ui
+@dirrm share/mate-2.0
+@dirrm share/mate
+@dirrm share/images
+@dirrm share/gnome/wm-properties
+@dirrm share/gnome/ui
+@dirrm share/gnome/panel
+@dirrm share/gnome/help/lgpl/C
+@dirrm share/gnome/help/lgpl
+@dirrm share/gnome/help/gpl/C
+@dirrm share/gnome/help/gpl
+@dirrm share/gnome/help/fdl/C
+@dirrm share/gnome/help/fdl
+@dirrm share/gnome/help
+@dirrm share/gnome/autostart
+@dirrm share/gnome/apps/Utilities
+@dirrm share/gnome/apps/System
+@dirrm share/gnome/apps/Settings/Session
+@dirrm share/gnome/apps/Settings/Peripherals
+@dirrm share/gnome/apps/Settings/Documents
+@dirrm share/gnome/apps/Settings/Desktop
+@dirrm share/gnome/apps/Settings
+@dirrm share/gnome/apps/Multimedia
+@dirrm share/gnome/apps/Internet
+@dirrm share/gnome/apps/Graphics
+@dirrm share/gnome/apps/Games
+@dirrm share/gnome/apps/Development
+@dirrm share/gnome/apps/Audio
+@dirrm share/gnome/apps/Applications
+@dirrm share/gnome/apps
+@dirrm share/gnome-settings-daemon-3.0
+@dirrm share/gnome-control-center/keybindings
+@dirrm share/gnome-control-center
+@dirrm share/gnome-about
+@dirrm share/gnome-2.0/ui
+@dirrm share/gnome-2.0
+@dirrm share/gnome
+@dirrm share/gir-1.0
+@dirrm share/doc/libgda
+@dirrm share/control-center/keybindings/gtk-modules
+@dirrm share/control-center/keybindings
+@dirrm share/control-center/capplets
+@dirrm share/control-center/Session
+@dirrm share/control-center/Peripherals
+@dirrm share/control-center/Documents
+@dirrm share/control-center/Desktop
+@dirrm share/control-center-2.0/capplets
+@dirrm share/control-center-2.0
+@dirrm share/control-center
+@dirrm share/capplets
+@dirrm share/application-registry
+@dirrm share/applets/Utility
+@dirrm share/applets/Network
+@dirrm share/applets/Multimedia
+@dirrm share/applets/Monitors
+@dirrm share/applets/Clocks
+@dirrm share/applets/Amusements
+@dirrm share/applets
+@dirrm share/MateConf/gsettings
+@dirrm share/MateConf
+@dirrm libdata/matecomponent/servers
+@dirrm libdata/matecomponent
+@dirrm libdata/bonobo/servers
+@dirrm libdata/bonobo
+@dirrm lib/vfs/modules
+@dirrm lib/vfs
+@dirrm lib/matecomponent/monikers
+@dirrm lib/matecomponent-2.0/samples
+@dirrm lib/matecomponent-2.0
+@dirrm lib/matecomponent
+@dirrm lib/mate-vfs-2.0/modules
+@dirrm lib/mate-vfs-2.0
+@dirrm include/gnome-1.0
+@dirrm include/gdkcardimage
+@dirrm include/gconf
+@dirrm etc/xdg/autostart
+@dirrm etc/xdg
+@dirrm etc/vfs/modules
+@dirrm etc/vfs
+@dirrm etc/sound/events
+@dirrm etc/sound
+@dirrm etc/mateconf/schemas
+@dirrm etc/mateconf/mateconf.xml.system
+@dirrm etc/mateconf/mateconf.xml.mandatory
+@dirrm etc/mateconf/mateconf.xml.defaults
+@dirrm etc/mateconf
+@dirrm etc/gnome/config
+@dirrm etc/gnome-vfs-2.0/modules
+@dirrm etc/gnome-vfs-2.0
+@dirrm etc/gnome
+@dirrm etc/gconf/schemas
+@dirrm etc/gconf/gconf.xml.system
+@dirrm etc/gconf/gconf.xml.mandatory
+@dirrm etc/gconf/gconf.xml.defaults
+@dirrm etc/gconf
+@dirrm etc/dconf/profile
+@dirrm etc/dconf/db
+@dirrm etc/dconf
+@dirrm etc/X11/sysconfig
+@dirrm etc/X11/starthere
+@dirrm etc/X11/serverconfig
+@dirrm etc/X11
+@dirrm etc/CORBA/servers
+@dirrm etc/CORBA
+
