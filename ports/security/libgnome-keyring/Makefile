@@ -3,7 +3,7 @@
 #   $MCom: ports/security/libgnome-keyring/Makefile,v 1.25 2013/02/15 16:35:39 kwm Exp $
 
 PORTNAME=	libgnome-keyring
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
