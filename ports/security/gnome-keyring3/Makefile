@@ -3,8 +3,7 @@
 #   $MCom: ports/security/gnome-keyring3/Makefile,v 1.24 2013/02/15 16:35:39 kwm Exp $
 
 PORTNAME=	gnome-keyring
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.6.2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -25,8 +24,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 CONFLICTS=	gnome-keyring-2.[0-9]*
 
 LATEST_LINK=	gnome-keyring3
+USES=		pathfix
 USE_XZ=		yes
-USE_GNOME=	gnomehack gnomeprefix gtk30 ltverhack intlhack
+USE_GNOME=	gnomeprefix gtk30 ltverhack intlhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
@@ -41,8 +41,6 @@ GLIB_SCHEMAS=	org.gnome.crypto.cache.gschema.xml
 post-patch:
 	@${REINPLACE_CMD} -e 's|make --version|${GMAKE} --version|g' \
 		${WRKSRC}/configure
-	@${MV} ${WRKSRC}/pkcs11/rpc-layer/gnome-keyring-module.in \
-		${WRKSRC}/pkcs11/rpc-layer/gnome-keyring.module.in
 	@${REINPLACE_CMD} -e 's|gnome-keyring-module|gnome-keyring.module|g' \
 		${WRKSRC}/pkcs11/rpc-layer/Makefile.in \
 		${WRKSRC}/configure
