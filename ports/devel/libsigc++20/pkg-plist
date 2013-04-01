@@ -629,6 +629,3 @@ libdata/pkgconfig/sigc++-%%API_VERSION%%.pc
 @dirrm include/sigc++-%%API_VERSION%%/sigc++/adaptors
 @dirrm include/sigc++-%%API_VERSION%%/sigc++
 @dirrm include/sigc++-%%API_VERSION%%
-@dirrm %%DOCSDIR%%-%%VERSION%%/reference/html
-@dirrm %%DOCSDIR%%-%%VERSION%%/reference
-@dirrm %%DOCSDIR%%-%%VERSION%%
