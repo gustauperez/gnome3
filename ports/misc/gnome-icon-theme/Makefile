@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-icon-theme
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
