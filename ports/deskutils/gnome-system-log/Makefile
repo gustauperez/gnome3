@@ -1,4 +1,4 @@
-# New ports collection makefile for:	gnomeutils2
+# New ports collection makefile for:	gnome-system-log
 # Date created:				06 May 2002
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	gnome-system-log
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 system log viewer
+
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
