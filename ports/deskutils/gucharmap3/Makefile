@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gucharmap
-PORTVERSION=	3.4.1.1
+PORTVERSION=	3.6.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,13 +15,16 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Unicode/ISO10646 character map and font viewer
 
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+
 CONFLICTS=	gucharmap-2.[0-9]*
 
+USES=		pathfix
 LATEST_LINK=	gucharmap3
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gtk30 gnomedocutils
+USE_GNOME=	gnomeprefix intlhack gtk30 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
