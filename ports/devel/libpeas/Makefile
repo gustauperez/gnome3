@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libpeas
-PORTVERSION=	1.4.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,13 +18,14 @@ COMMENT=	Next evolution of the Gedit plugins engine
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		valac:${PORTSDIR}/lang/vala
 
+USES=		pathfix
 USE_XZ=		yes
 USE_PYTHON=	2.5+
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack glib20 gtk30 ltverhack
+USE_GNOME=	glib20 gtk30 ltverhack
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
