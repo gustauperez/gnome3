@@ -1,5 +1,4 @@
 bin/vte2_90
-
 etc/profile.d/vte.sh
 include/vte-%%VERSION%%/vte/pty.h
 include/vte-%%VERSION%%/vte/reaper.h
