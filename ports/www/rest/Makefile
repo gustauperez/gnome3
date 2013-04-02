@@ -18,7 +18,8 @@ BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 LIB_DEPENDS=	soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
-USE_GNOME=	gnomehack glib20 intlhack libxml2
+USES=		pathfix
+USE_GNOME=	glib20 intlhack libxml2
 USE_XZ=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
