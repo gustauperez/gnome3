@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libgnomekbd
-PORTVERSION=	3.4.0.2
+PORTVERSION=	3.6.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,8 +22,9 @@ LATEST_LINK=	libgnomekbd3
 
 CONFLICTS=	libgnomekbd-2.[0-9]*
 
+USES=		pathfix
 USE_XZ=		yes
-USE_GNOME=	gnomeprefix gnomehack ltverhack intltool gtk30
+USE_GNOME=	gnomeprefix ltverhack intltool gtk30
 USE_AUTOTOOLS=	libtool
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
