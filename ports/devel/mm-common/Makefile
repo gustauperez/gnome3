@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mm-common
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -16,8 +16,8 @@ COMMENT=	Common build infrastructure for the GNOME C++ binding libraries
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
-USE_GNOME=	gnomehack
-USE_BZIP2=	yes
+USES=		pathfix
+USE_XZ=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
