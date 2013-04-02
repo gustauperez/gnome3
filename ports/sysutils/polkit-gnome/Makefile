@@ -3,7 +3,7 @@
 #   $MCom: ports/sysutils/polkit-gnome/Makefile,v 1.20 2012/12/18 13:05:11 kwm Exp $
 
 PORTNAME=	polkit-gnome
-PORTVERSION=	0.102
+PORTVERSION=	0.105
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -12,10 +12,11 @@ COMMENT=	GNOME frontend to the PolicyKit framework
 
 LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
+USES=		pathfix
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20 intlhack
+USE_GNOME=	gnomeprefix gtk30 gtk20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
