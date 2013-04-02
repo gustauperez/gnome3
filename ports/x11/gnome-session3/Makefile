@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-session
-PORTVERSION=	3.4.2.1
+PORTVERSION=	3.6.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -24,13 +24,14 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
+USES=		pathfix
 LATEST_LINK=	gnome-session3
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_XZ=		yes
 USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite
 USE_GL=		gl
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool gtk30 librsvg2
+USE_GNOME=	gnomeprefix intlhack gconf2 intltool gtk30 librsvg2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docbook-docs
