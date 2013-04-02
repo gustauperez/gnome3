@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	gnome-video-effects
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	A collection of Gstreamer effects
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack
+USES=		pathfix
+USE_XZ=		yes
+USE_GNOME=	intlhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
