@@ -688,7 +688,7 @@ libgnomekbd_USE_GNOME_IMPL=	gconf2
 libgnomekbd_GNOME_DESKTOP_VERSION=2
 
 libgnomekbd3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
-libgnomekbd3_LIB_DEPENDS=	gnomekbd.7:${PORTSDIR}/x11/libgnomekbd3
+libgnomekbd3_LIB_DEPENDS=	gnomekbd.8:${PORTSDIR}/x11/libgnomekbd3
 libgnomekbd3_USE_GNOME_IMPL=	gtk30
 libgnomekbd3_GNOME_DESKTOP_VERSION=3
 
