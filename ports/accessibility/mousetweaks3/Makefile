@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mousetweaks
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.0
 CATEGORIES=	accessibility
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,10 +20,11 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0.1.0:${PORTSDIR}/devel/gsettings-deskto
 
 CONFLICTS=	mousetweaks-2.[0-9]*
 
+USES=		pathfix
 LATEST_LINK=	mousetweaks3
 USE_XORG=	x11 xfixes xcursor xtst
 USE_XZ=		yes
-USE_GNOME=	gnomehack gnomeprefix intlhack gnomedocutils gtk30
+USE_GNOME=	gnomeprefix intlhack gnomedocutils gtk30
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
