@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-system-monitor
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +15,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 system monitor program
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
+		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop \
 		gtkmm-3.0:${PORTSDIR}/x11-toolkits/gtkmm30
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
