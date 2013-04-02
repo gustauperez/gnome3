@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-dictionary
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,17 +15,19 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 dictionary lookup application
 
-BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
+BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
+		itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
+USES=		pathfix
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedocutils gtk30
+USE_GNOME=	gnomeprefix intlhack gnomedocutils gtk30
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
