@@ -3,7 +3,7 @@
 #   $MCom: ports/devel/py-gobject3/Makefile,v 1.11 2012/12/30 18:15:16 mezz Exp $
 
 PORTNAME=	gobject
-PORTVERSION=	3.2.2
+PORTVERSION=	3.4.2
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,10 +22,11 @@ BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
+USES=		pathfix
 LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}3
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20
+USE_GNOME=	glib20
 USE_PYTHON=	2.5+
 USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
