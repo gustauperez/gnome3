@@ -3,7 +3,7 @@
 #   $MCom: ports/x11/gnome-desktop3/Makefile,v 1.24 2013/03/09 09:12:39 kwm Exp $
 
 PORTNAME=	gnome-desktop
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.2
 PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
@@ -17,6 +17,9 @@ USE_XZ=		yes
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:${PORTSDIR}/x11/xkeyboard-config \
+		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile \
+		itstool:${PORTSDIR}/textproc/itstool \
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
