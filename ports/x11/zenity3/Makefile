@@ -3,7 +3,7 @@
 #   $MCom: ports/x11/zenity3/Makefile,v 1.7 2013/01/09 18:51:14 kwm Exp $
 
 PORTNAME=	zenity
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,12 +11,15 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Display GNOME dialogs from the command line
 
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+
 LICENSE=	LGPL20
 
 LATEST_LINK=	zenity3
 
+USES=		pathfix
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk30 gnomedocutils intlhack
+USE_GNOME=	gnomeprefix gtk30 gnomedocutils intlhack
 USE_XORG=	x11
 USE_XZ=		yes
 USE_GETTEXT=	yes
