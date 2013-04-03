@@ -13,7 +13,7 @@ LIB_DEPENDS=	grilo-0.2:${PORTSDIR}/net/grilo
 RUN_DEPENDS=	grl-inspect-0.2:${PORTSDIR}/net/grilo
 
 USES=		pathfix
-USE_PKGCONFIG=	yes
+USE_PKGCONFIG=	build
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

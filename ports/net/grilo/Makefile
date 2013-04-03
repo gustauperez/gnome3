@@ -10,7 +10,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Grilo is a framework focused on making media discovery and browsing
 
 USES=		pathfix
-USE_PKGCONFIG=	yes
+USE_PKGCONFIG=	build
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
