@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-power-manager
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,12 +19,13 @@ LIB_DEPENDS=	upower-glib.1:${PORTSDIR}/sysutils/upower \
 
 CONFLICTS=	gnome-power-manager-2.[0-9]*
 
+USES=		pathfix
 LATEST_LINK=	gnome-power-manager3
 USE_GETTEXT=	yes
 USE_XZ=		yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk30 gnomedocutils
+USE_GNOME=	gnomeprefix intlhack gtk30 gnomedocutils
 MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-doc-dir=${PREFIX}/share/doc \
