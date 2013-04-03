@@ -1,0 +1,32 @@
+# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	grilo
+PORTVERSION=	0.2.3
+CATEGORIES=	net
+MASTER_SITES=	GNOME
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Grilo is a framework focused on making media discovery and browsing
+
+USES=		pathfix
+USE_XZ=		yes
+USE_AUTOTOOLS=	libtool
+USE_LDCONFIG=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehier intlhack glib20 ltverhack libxml2 pkgconfig
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		grl-inspect.1
+
+#GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
+
+
+post-patch:
+#	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|g' \
+#		${WRKDIR}/gnome-libtool
+
+.include <bsd.port.mk>

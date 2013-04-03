@@ -1,0 +1,438 @@
+NEW in 0.2.3
+============
+
+  * Added TMDb plugin in the Test UI program
+  * grl_source_resolve() can be invoked with sources that do not implement it
+  * grl_source_store_metadata() can be invoked with sources that do not
+    implement it
+  * Added support for mocking network answers, for testing purpose
+  * Added support for capturing network content, for testing purpose
+  * Improved (de)serialization: support all metadata key types and multi-valued
+    elements
+  * Added new keys: GRL_METADATA_KEY_FAVOURITE, GRL_METADATA_KEY_REGION,
+    GRL_METADATA_KEY_KEYWORD, GRL_METADATA_KEY_PERFORMER,
+    GRL_METADATA_KEY_PRODUCER, GRL_METADATA_KEY_DIRECTOR,
+    GRL_METADATA_KEY_ORIGINAL_TITLE
+  * Sources can expose the type of media they can handle
+  * Improved documentation
+  * Several fixes, including
+    * BGO#679686 - GRL_METADATA_KEY_CERTIFICATE doesn't consider regional
+      ratings
+    * BGO#685274 - Use GRL_METADATA_KEY_INVALID instead of NULL with
+      grl_metadata_key_list_new()
+    * BGO#685861 - Add GRL_METADATA_KEY_FAVOURITE
+    * BGO#685967 - Support mocking of network answers
+    * BGO#686032 - doc: Fix typo in _grl_log_init_core_domains()
+    * BGO#686033 - core: Don't crash with NULL options in _resolve()
+    * BGO#686206 - Move generic TMDB metadata keys to libgrilo.
+    * BGO#686271 - linking issue on ARM
+    * BGO#687104 - Searching all doesn't finalizes
+
+  * Contributors to this release:
+    * Antía Puentes <apuentes@igalia.com>
+    * Bastien Nocera <hadess@hadess.net>
+    * Dominique Leuenberger <dimstar@opensuse.org>
+    * Jens Georg <jensg@openismus.com>
+    * Juan A. Suarez Romero <jasuarez@igalia.com>
+    * Mathias Hasselmann <mathias@openismus.com>
+    * Murray Cumming <murrayc@murrayc.com>
+    * Murray Cumming <murrayc@openismus.com>
+
+
+NEW in 0.2.2
+============
+
+  * Rename macro from GRL_CAPS_TYPE to GRL_TYPE_CAPS
+  * Sort entries in documentation
+  * Several fixes, including:
+    * BGO#680436 - net: Add possibility to set custom HTTP headers on requests
+
+  * Contributors to this release:
+    * Jens Georg <jensg@openismus.com>
+    * Juan A. Suarez Romero <jasuarez@igalia.com>
+    * Mathias Hasselmann <mathias@openismus.com>
+
+
+NEW in 0.2.1
+============
+
+  * Use G_MODULE_BIND_LOCAL to load modules
+  * Less disturbances using warnings instead of errors
+  * Add option to disable Test UI
+  * Several fixes, including:
+    * BGO#681757 - grilo-tests / pointer from int
+    * BGO#681983 - Pointer cast warning in grl-source.c
+    * BGO#681984 - sync source functions freeze on bad pre-conditions
+    * BGO#681992 - C++ guards missing in some header files
+    * BGO#682024 - Uninitialized data access in grl_source_get_media_from_uri()
+    * BGO#682791 - Fix display of non-ASCII strings in test-ui
+    * BGO#682793 - Clarify some documentations
+    * BGO#682855 - Memory leak in grl_source_test_media_from_uri_sync()
+    * BGO#685161 - grl_source_store() causes segfault if the plugin reports an error
+    * BGO#685169 - grl_source_store() doesn't obey GRL_WRITE_NORMAL
+
+  * Contributors to this release:
+    * Bastien Nocera <hadess@hadess.net>
+    * Jens Georg <jensg@openismus.com>
+    * Juan A. Suarez Romero <jasuarez@igalia.com>
+    * Mathias Hasselmann <mathias@openismus.com>
+
+
+NEW in 0.2.0
+============
+
+  * Merged GrlMediaSource and GrlMetadataSource in one GrlSource
+  * Improvements in the full resolution algorithm
+  * Added operation options and source capabilities
+  * Added filtering capabilities
+  * Added GRL_METADATA_KEY_START_TIME key
+  * Added GRL_METADATA_KEY_PUBLICATION_DATE key
+  * Added GRL_METADATA_KEY_MODIFICATION_DATE key
+  * Removed GRL_METADATA_KEY_DATE
+  * Changes in API names
+  * Added support for Vala 0.14 - 0.18
+  * Added support for Windows building
+  * Fixes in the Test UI
+  * Use GDateTime for date-based keys
+  * Use numbers to identify metadata keys
+  * Improvements in Grilo Net library
+  * Improvements in Vala bindings
+  * Improvements in documentation
+  * Improvements in the build system
+  * Several fixes, including:
+    * BGO#662748 - tracker plugin: support multiple resources in a larger fil
+    * BGO#662762 - critical when HTTP request fails
+    * BGO#662763 - Bad unref in grl-net
+    * BGO#665938 - Do not dist gir_DATA
+    * BGO#672923 - Make it possible to override the user-agent in GrlNetWc
+    * BGO#676822 - test-ui: Make the test window a decent size
+    * BGO#676823 - test-ui: We only really support GTK+ 3.x builds
+    * BGO#679674 - Remove trailing commas from enums
+
+  * Contributors to this release:
+    Alberto Garcia <agarcia@igalia.com>
+    Bastien Nocera <hadess@hadess.net>
+    César García Tapia <tapia@openshine.com>
+    Damien Lespiau <damien.lespiau@intel.com>
+    Guillaume Emont <guijemont@igalia.com>
+    Iago Toral Quiroga <itoral@igalia.com>
+    Jens Georg <mail@jensge.org>
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+    Mathias Hasselmann <mathias@openismus.com>
+    Murray Cumming <murrayc@murrayc.com>
+    Sam Thursfield <sam.thursfield@codethink.co.uk>
+    Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+    Yaakov Selkowitz <yselkowitz@users.sourceforge.net>
+
+
+NEW in 0.1.17
+=============
+
+  * Minor improvements in documentation
+  * Well-manage end of search/browse in splitted sources
+  * Minor fixes in build system
+  * Install XML files in the same place as libraries
+  * Restrict loading of a subset of plugins
+  * Added support for Vala 0.14
+  * Fixed some bugs, including:
+    * BGO#657549 - add GRL_METADATA_KEY_TRACK_NUMBER
+    * BGO#657920 - Add Grilo documentation
+
+  * Contributors to this release:
+    Guillaume Emont <guijemont@igalia.com>
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+
+
+NEW in 0.1.16
+=============
+
+  * Several fixes
+  * Minor improvements in build system
+  * Make Test UI compliant with Gtk+ 3.0
+  * Test UI no more long needs GConf
+  * Lots of updates in documentation
+  * Added manpage for grl-inspect tool
+  * Added new API to handle operation cancellation
+
+  * Contributors to this release:
+    Alberto Garcia <agarcia@igalia.com>
+    Guillaume Emont <guijemont@igalia.com>
+    Iago Toral Quiroga <itoral@igalia.com>
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+    Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+
+
+NEW in 0.1.15
+=============
+
+  * Several fixes
+  * Updated documentation
+  * Updated grl-inspect tool
+
+  * Contributors to this release:
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+
+
+NEW in 0.1.14
+=============
+
+  * Several fixes, including:
+    * BGO#628898 - Grilo could do with a function to load a plugin by ID
+    * BGO#644383 - [feature-request] Metadata request are not cancellable
+  * Re-worked "content-changed" signal: several elements can be sent in just one
+    signal
+  * Operations in GrlMetadataSource are now cancellable too.
+
+  * Contributors to this release:
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+
+
+NEW in 0.1.13
+=============
+
+  * Do not store keys without values in GrlData
+  * Deprecated grl_data_key_is_known()
+  * Deprecated GrlData "overwrite" property
+  * Renamed grl_data_get_single_related_keys()
+  * Some fixes, including:
+    * BGO#645525 - CPU load and grilo requests
+
+  * Contributors to this release:
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+
+
+NEW in 0.1.12
+=============
+
+  * Several fixes and improvements, including fixes for:
+    * BGO#645542 - grl_metadata_source_set_metadata() broken
+  * Added support for caching in GrlNet
+  * Added new metadata keys suited for camera pictures
+  * Improved GObject Introspection support
+
+  * Contributors to this release:
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+    Michael Wood <michael.g.wood@linux.intel.com>
+    Simon Pena <spena@igalia.com>
+
+
+NEW in 0.1.11
+=============
+
+  * Fixed a segmentation fault
+  * Added new keys
+
+  * Contributors to this release:
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+
+
+NEW in 0.1.10
+=============
+
+  * Several fixes
+  * Deprecated grl_metadata_source_key_depends() in benefit of grl_metadata_source_may_resolve()
+  * Rewritten full resolution mode to handle correctly metadata sources
+  * Added support for multi-valued keys.
+
+  * Contributors to this release:
+    Guillaume Emont <gemont@igalia.com>
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+
+
+NEW in 0.1.9
+============
+
+  * Several fixes
+  * Added support for content-changed notifications
+  * Added support for NULL-text search (aka search all)
+  * Added support for cancelled operations notification
+  * Added support for binary data in GrlConfig and GrlData
+  * Added new configuration key: api-key-blob
+  * Added new metadata key: thumbnail-binary
+
+  * Contributors to this release:
+    Fabien Lebaillif - Delamare <fabien@developers.arq-media.com>
+    Guillaume Emont <gemont@igalia.com>
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+    Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+
+
+NEW in 0.1.8
+============
+
+  * Several fixes
+  * Improved documentation
+  * Reworked GrlConfig
+  * Added new types and functions in GrlConfig
+  * Added padded for public structures
+  * Added sync version of grl_media_source_get_media_from_uri()
+  * Several fixes and improvements in test-ui
+
+  * Contributors to this release:
+    Fabien Lebaillif - Delamare <fabien@developers.arq-media.com>
+    Guillaume Emont <gemont@igalia.com>
+    Iago Toral Quiroga <itoral@igalia.com>
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Jussi Kukkonen <jku@linux.intel.com>
+    Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+
+
+NEW in 0.1.7
+============
+
+  * Several fixes, including fixes for:
+    * GB#627864 - log: Revamp the log system
+    * GB#628506 - rename the GRL_ERROR quark to GRL_CORE_ERROR
+    * GB#629369 - Make get_sources and get_sources_by_operations accessible from
+      JavaScript
+    * GB#630493 - Using full resolution during searches will cause an
+      uninitialised pointer access
+    * GB#635394 - Add ability to get video URL from page URL, or <embed> URL
+  * Added Grilo Net Web Client (GrlNetWc)
+  * Implemented grl_multiple_get_media_from_site(): build a GrlMedia from given
+    a site url
+  * Implemented grl_plugin_registry_add_config_from_file(): load plugin
+    configuration from a file
+  * Added a GError parameter to GrlPluginRegistry functions that can fail
+  * Added new GrlCoreError
+  * Log system revamp
+  * Improved documentation
+  * Improved gobject introspection annotations
+  * Improved Vala bindings
+  * Using functions instead of definitions in grl-media-plugin
+  * Updated tests infrastructure
+  * Added new python tests using gobject introspection
+
+  * Contributors to this release:
+    Chris Lord <chris@linux.intel.com>
+    Damien Lespiau <damien.lespiau@intel.com>
+    Fabien Lebaillif - Delamare <fabien@developers.arq-media.com>
+    Guillaume Emont <gemont@igalia.com>
+    Iago Toral Quiroga <itoral@igalia.com>
+    Juan A. Suarez Romero <jasuarez@igalia.com>
+    Simon Pena <spena@igalia.com>
+    Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+
+
+NEW in 0.1.6
+============
+
+  * Several fixes, including fixes for GB#620143, GB#62047 and GB#627207
+  * Use SILENCE mode when building
+  * Added (un)serialization API to GrlMedia
+  * New metadata key system based on GParamSpec
+  * Added API to get all available keys
+  * Added API to initialize Grilo
+  * Added API to search in several plugins at the same time
+  * Added API with utility functions
+  * Added command-line options
+  * Use XML to define plugins
+  * Added new keys: external-url, external-player, studio, certificate and license
+  * grl_media_source_metadata() is cancelable
+  * Handle flickr authorization in test-ui
+  * Added synchronous functions for the asynchronous partners
+  * Added grl-inspect utility
+  * Renamed grl_plugin_registry_get_instance() to grl_plugin_registry_get_default()
+  * Improved Vala bindings
+  * Improved GObject introspection support
+
+    * Contributors to this release:
+      Damien Lespiau <damien.lespiau@intel.com>
+      Eduardo Lima Mitev <elima@igalia.com>
+      Iago Toral Quiroga <itoral@igalia.com>
+      iain <iain@linux.intel.com>
+      Joaquim Rocha <jrocha@igalia.com>
+      Juan A. Suarez Romero <jasuarez@igalia.com>
+      Simón Pena <spenap@gmail.com>
+      Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+      Xabier Rodriguez Calvar <xrcalvar@igalia.com>
+
+
+NEW in 0.1.5
+============
+
+  * Several fixes
+  * Added initial support for tests
+  * Code moved to gnome.org
+  * Added new documentation: overview, quick start, examples, ...
+  * Updated Vala bindings
+  * Changed GrlConfig: now keys are strings instead of GrlKeyID
+  * Improved build system
+  * Added Vimeo plugin support to test-ui
+
+  * Contributors to this release:
+      Iago Toral Quiroga <itoral@igalia.com>
+      José Dapena Paz <jdapena@igalia.com>
+      Juan A. Suarez Romero <jasuarez@igalia.com>
+      Stefan Kost <ensonic@users.sf.net>
+      Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+      Xabier Rodriguez Calvar <xrcalvar@igalia.com>
+
+
+NEW in 0.1.4
+============
+
+  * Improved documentation
+  * General improvements in code
+  * Added configuration api for plugins
+  * Refactored content classes
+  * Added introspection support in build system, and a Javascript sample that
+    uses it
+  * Aded new api to modify content
+  * Added new keys: play-count, last-played and last-position
+  * Renamed grl_plugins_get_sources_by_capabilities() to
+    grl_plugins_get_sources_by_operations()
+
+  * Contributors to this release:
+      Eduardo Lima Mitev <elima@igalia.com>
+      Iago Toral Quiroga <itoral@igalia.com>
+      Juan A. Suarez Romero <jasuarez@igalia.com>
+      Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+      Xabier Rodriguez Calvar <xrcalvar@igalia.com>
+
+
+NEW in 0.1.3
+============
+
+  * Added ranks to plugins
+  * Added functions to search sources by capabilities
+  * Added a new metadata key: Bitrate
+  * Test-UI: some improvements
+  * Documentation: add gtk-doc for GrlMediaPlugin and GrlMetadataSource
+
+  * Contributors to this release:
+      Iago Toral Quiroga <itoral@igalia.com>
+      Juan A. Suarez Romero <jasuarez@igalia.com>
+      Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+
+
+NEW in 0.1.2
+============
+
+  * Improved Vala bindings
+  * Fixed some bugs
+  * Started initial support for gtk-doc
+
+  * Contributors to this release:
+      Juan A. Suarez Romero <jasuarez@igalia.com>
+      Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+
+
+NEW in 0.1.1
+============
+
+  * First release
+
+  * Contributors to this release:
+      Iago Toral <itoral@igalia.com>
+      Juan A. Suarez Romero <jasuarez@igalia.com>
+      Víctor Manuel Jáquez Leal <vjaquez@igalia.com>
+
