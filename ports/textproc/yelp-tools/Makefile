@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yelp-tools
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,10 +19,11 @@ BUILD_DEPENDS=	yelp-xsl>=3.1.5:${PORTSDIR}/textproc/yelp-xsl \
 		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
 
+USES=		pathfix
 USE_GETTEXT=	yes
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack pkgconfig libxml2
+USE_GNOME=	gnomeprefix intlhack pkgconfig libxml2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
