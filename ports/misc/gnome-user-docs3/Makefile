@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-user-docs
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,11 +17,12 @@ COMMENT=	GNOME 3 users guide
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
+USES=		pathfix
 LATEST_LINK=	gnome-user-docs3
 USE_XZ=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libxml2
+USE_GNOME=	gnomeprefix gnomehier libxml2
 
 .include <bsd.port.mk>
