@@ -26,5 +26,5 @@ lib/libgrilo-0.2.a
 lib/libgrilo-0.2.la
 lib/libgrilo-0.2.so
 lib/libgrilo-0.2.so.1
-lib/pkgconfig/grilo-0.2.pc
+libdata/pkgconfig/grilo-0.2.pc
 @dirrm include/grilo-0.2
