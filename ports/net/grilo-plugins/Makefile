@@ -13,11 +13,12 @@ LIB_DEPENDS=	grilo-0.2:${PORTSDIR}/net/grilo
 RUN_DEPENDS=	grl-inspect-0.2:${PORTSDIR}/net/grilo
 
 USES=		pathfix
+USE_PKGCONFIG=	yes
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier intlhack glib20 ltverhack libxml2 pkgconfig
+USE_GNOME=	gnomehier intlhack glib20 ltverhack libxml2
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
