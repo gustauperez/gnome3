@@ -124,6 +124,7 @@ lthack_PRE_PATCH=	${FIND} ${WRKSRC} -name "configure" -type f | ${XARGS} ${REINP
 
 GNOME_MTREE_FILE?=		${LOCALBASE}/etc/mtree/BSD.gnome.dist
 gnomehier_DETECT=	${GNOME_MTREE_FILE}
+gnomehier_BUILD_DEPENDS=        ${gnomehier_DETECT}:${PORTSDIR}/misc/gnomehier
 gnomehier_RUN_DEPENDS=	${gnomehier_DETECT}:${PORTSDIR}/misc/gnomehier
 
 GNOME_HTML_DIR?=	${PREFIX}/share/doc
