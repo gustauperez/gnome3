@@ -23,10 +23,4 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-#GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
-
-post-patch:
-#	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|g' \
-#		${WRKDIR}/gnome-libtool
-
 .include <bsd.port.mk>

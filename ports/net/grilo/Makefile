@@ -22,11 +22,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		grl-inspect.1
 
-#GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
-
-
-post-patch:
-#	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|g' \
-#		${WRKDIR}/gnome-libtool
-
 .include <bsd.port.mk>
