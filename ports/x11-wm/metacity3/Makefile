@@ -11,25 +11,25 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A window manager for the adult in you
 
-BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3 \
+BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity3 \
 		itstool:${PORTSDIR}/textproc/itstool \
-		xmllint:${PORTSDIR}/textproc/libxml2 \
 		gsettings-desktop-schemas>=3.3.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		gtop-2.0:${PORTSDIR}/devel/libgtop \
 		canberra-gtk:${PORTSDIR}/audio/libcanberra
-RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
+RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity3 \
 		gsettings-desktop-schemas>=3.3.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 CONFLICTS=	metacity-2.30.[0-9]*
 
+USES=		pathfix
 LATEST_LINK=	metacity3
 USE_XZ=		yes
 USE_XORG=	x11 xcomposite xdamage xrender xcursor xinerama xext xrandr
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix intlhack gnomehack ltverhack gtk20
+USE_GNOME=	gnomeprefix intlhack ltverhack gtk20 libxml2:build
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
