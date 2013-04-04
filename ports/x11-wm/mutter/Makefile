@@ -3,7 +3,7 @@
 #   $MCom: ports/x11-wm/mutter/Makefile,v 1.39 2013/03/21 21:34:32 kwm Exp $
 
 PORTNAME=	mutter
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,7 +19,6 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
-
 
 USE_XZ=		yes
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm xfixes \
@@ -41,6 +40,9 @@ MAN1=		mutter-message.1 mutter-theme-viewer.1 \
 		mutter-window-demo.1 mutter.1
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
+
+post-extract:
+	@${CHMOD} +x ${WRKSRC}/install-sh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wcast-align||g' \
