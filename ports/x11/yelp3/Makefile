@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yelp
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -25,12 +25,13 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/yelp-xsl.pc:${PORTSDIR}/textproc/yel
 
 CONFLICTS=	yelp-2.[0-9]*
 
+USES=		pathfix
 LATEST_LINK=	yelp3
 USE_GETTEXT=	yes
 USE_XZ=		yes
 USE_XORG=	x11 ice
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk30 libxslt libxml2
+USE_GNOME=	gnomeprefix intlhack gtk30 libxslt libxml2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
