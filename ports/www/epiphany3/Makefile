@@ -17,6 +17,7 @@ COMMENT?=	An extremely lightweight and simple web browser for GNOME 3
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		gcr-3:${PORTSDIR}/security/gcr \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	webkitgtk-3.0.0:${PORTSDIR}/www/webkit-gtk3 \
 		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
@@ -31,6 +32,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 CONFLICTS=	epiphany-2.[0-9]*
 
+USE_PKGCONFIG=	build
 LATEST_LINK=	epiphany3
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -39,7 +41,7 @@ USE_XZ=		yes
 USE_PYTHON=	yes
 USE_SQLITE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedocutils libxml2 \
-		desktopfileutils
+		desktopfileutils gnomedesktop3
 USE_XORG=	ice x11 sm
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

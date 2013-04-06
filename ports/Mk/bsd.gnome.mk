@@ -445,7 +445,7 @@ gnomedesktop_LIB_DEPENDS=	gnome-desktop-2.17:${PORTSDIR}/x11/gnome-desktop
 gnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-2.0.pc
 gnomedesktop_USE_GNOME_IMPL=	gconf2 gnomedocutils pygtk2
 
-gnomedesktop3_LIB_DEPENDS=	gnome-desktop-3.2:${PORTSDIR}/x11/gnome-desktop3
+gnomedesktop3_LIB_DEPENDS=	gnome-desktop-3.4:${PORTSDIR}/x11/gnome-desktop3
 gnomedesktop3_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-3.0.pc
 gnomedesktop3_USE_GNOME_IMPL=	gnomedocutils gtk30
 
