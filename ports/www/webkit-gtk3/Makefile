@@ -3,10 +3,11 @@
 #   $MCom: ports/www/webkit-gtk3/Makefile,v 1.32 2013/03/09 09:12:39 kwm Exp $
 
 PORTNAME=	webkit
-PORTVERSION=	1.8.3
+PORTVERSION=	1.9.6
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk3
+#DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An opensource browser engine
@@ -26,10 +27,12 @@ USE_GSTREAMER=	yes
 MAKE_JOBS_SAFE=	yes
 USE_XORG=	xt
 USES=		bison
+USE_GCC=	4.6
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk30 libxslt ltverhack
+USE_GNOME=	gtk30 libxslt gtk20 ltverhack
 USE_SQLITE=	yes
+USE_RUBY=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -38,9 +41,12 @@ CONFIGURE_ENV=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
 		ZLIB_LIBS="-L/usr/lib -lz" \
 		ac_cv_path_DOLT_BASH=""
 CPPFLAGS+=	-I${LOCALBASE}/include
+#CXXFLAGS+=	-std=gnu89
+# -libstd=libc++
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gtk=3.0 \
 		--enable-svg-fonts \
+		--enable-webkit2=no \
 		--disable-geolocation \
 		--enable-introspection
 MAKEFILE=	GNUmakefile
