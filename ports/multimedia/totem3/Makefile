@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	gdata.13:${PORTSDIR}/devel/libgdata \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		clutter-gst-1.0.0:${PORTSDIR}/multimedia/clutter-gst \
+		clutter-gst-2.0.0:${PORTSDIR}/multimedia/clutter-gst \
 		clutter-gtk-1.0.0:${PORTSDIR}/graphics/clutter-gtk3 \
 		mx-1.0.2:${PORTSDIR}/x11-toolkits/mx \
 		peas-1.0.0:${PORTSDIR}/devel/libpeas \
@@ -32,14 +32,16 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 CONFLICTS=	totem-2.[0-9]*
 
+USES=		pathfix
 LATEST_LINK=	totem3
 USE_PYTHON=	yes
 USE_XORG=	x11 xproto xtst ice sm
 USE_XZ=		yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils gtk30 libxml2 \
+USE_GNOME=	gnomeprefix intlhack desktopfileutils gtk30 libxml2 \
 		nautilus3 ltverhack pygobject3 gnomedocutils gnomehier
 USE_GSTREAMER=	core good mpeg2dec soup ugly gio resindvd
+USE_GSTREAMER1= good bad ugly
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
@@ -134,8 +136,8 @@ pre-everything::
 
 post-patch:
 	@${CP} -f ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
-	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
-		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
+#	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
+#		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 
 post-install:
 	@-update-desktop-database

@@ -52,17 +52,6 @@ lib/totem/plugins/im-status/libtotem-im-status.a
 lib/totem/plugins/im-status/libtotem-im-status.la
 lib/totem/plugins/im-status/libtotem-im-status.so
 lib/totem/plugins/im-status/totem-im-status.plugin
-lib/totem/plugins/iplayer/iplayer.plugin
-lib/totem/plugins/iplayer/iplayer.py
-lib/totem/plugins/iplayer/iplayer.pyc
-lib/totem/plugins/iplayer/iplayer.pyo
-lib/totem/plugins/iplayer/iplayer.ui
-lib/totem/plugins/iplayer/iplayer2.py
-lib/totem/plugins/iplayer/iplayer2.pyc
-lib/totem/plugins/iplayer/iplayer2.pyo
-lib/totem/plugins/iplayer/listparser.py
-lib/totem/plugins/iplayer/listparser.pyc
-lib/totem/plugins/iplayer/listparser.pyo
 %%LIRC%%lib/totem/plugins/lirc/lirc.plugin
 %%LIRC%%lib/totem/plugins/lirc/liblirc.a
 %%LIRC%%lib/totem/plugins/lirc/liblirc.la
@@ -98,7 +87,6 @@ lib/totem/plugins/screensaver/libscreensaver.la
 lib/totem/plugins/screensaver/libscreensaver.so
 lib/totem/plugins/screensaver/screensaver.plugin
 lib/totem/plugins/screenshot/gallery.ui
-lib/totem/plugins/screenshot/gnome-screenshot.ui
 lib/totem/plugins/screenshot/libscreenshot.a
 lib/totem/plugins/screenshot/libscreenshot.la
 lib/totem/plugins/screenshot/libscreenshot.so
@@ -452,6 +440,7 @@ share/locale/hu/LC_MESSAGES/totem.mo
 share/locale/id/LC_MESSAGES/totem.mo
 share/locale/is/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
+share/locale/km/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
 share/locale/ka/LC_MESSAGES/totem.mo
 share/locale/kk/LC_MESSAGES/totem.mo
@@ -536,6 +525,7 @@ share/thumbnailers/totem.thumbnailer
 %%DATADIR%%/mozilla-viewer.css
 %%DATADIR%%/mozilla-viewer.ui
 %%DATADIR%%/playlist.ui
+%%DATADIR%%/preferences.ui
 %%DATADIR%%/properties.ui
 %%DATADIR%%/totem.ui
 %%DATADIR%%/uri.ui
@@ -661,7 +651,6 @@ share/thumbnailers/totem.thumbnailer
 @dirrm lib/totem/plugins/ontop
 @dirrm lib/totem/plugins/media-player-keys
 %%LIRC%%@dirrm lib/totem/plugins/lirc
-@dirrm lib/totem/plugins/iplayer
 @dirrm lib/totem/plugins/im-status
 @dirrm lib/totem/plugins/gromit
 @dirrm lib/totem/plugins/dbus
@@ -674,3 +663,159 @@ share/thumbnailers/totem.thumbnailer
 @dirrm include/totem
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrm share/xmodmap
+@dirrm share/vfolders
+@dirrm share/vala/vapi
+@dirrm share/vala
+@dirrm share/sounds
+@dirrm share/sgml/docbook/gnome-customization-0.1
+@dirrm share/sgml/docbook
+@dirrm share/pixmaps/splash
+@dirrm share/pixmaps/document-icons
+@dirrm share/omf
+@dirrm share/oaf
+@dirrm share/mime-info
+@dirrm share/mc/templates
+@dirrm share/mc
+@dirrm share/mate/help
+@dirrm share/mate-control-center/keybindings
+@dirrm share/mate-control-center
+@dirrm share/mate-2.0/ui
+@dirrm share/mate-2.0
+@dirrm share/mate
+@dirrm share/locale/km/LC_MESSAGES
+@dirrm share/locale/km
+@dirrm share/images
+@dirrm share/icons/hicolor/scalable/devices
+@dirrm share/icons/hicolor/scalable/actions
+@dirrm share/icons/hicolor/scalable
+@dirrm share/icons/hicolor/48x48/devices
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/devices
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/256x256/apps
+@dirrm share/icons/hicolor/256x256
+@dirrm share/icons/hicolor/24x24/devices
+@dirrm share/icons/hicolor/24x24/apps
+@dirrm share/icons/hicolor/24x24
+@dirrm share/icons/hicolor/22x22/devices
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor/16x16/devices
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrm share/gnome/wm-properties
+@dirrm share/gnome/ui
+@dirrm share/gnome/panel
+@dirrm share/gnome/help/lgpl/C
+@dirrm share/gnome/help/lgpl
+@dirrm share/gnome/help/gpl/C
+@dirrm share/gnome/help/gpl
+@dirrm share/gnome/help/fdl/C
+@dirrm share/gnome/help/fdl
+@dirrm share/gnome/help
+@dirrm share/gnome/autostart
+@dirrm share/gnome/apps/Utilities
+@dirrm share/gnome/apps/System
+@dirrm share/gnome/apps/Settings/Session
+@dirrm share/gnome/apps/Settings/Peripherals
+@dirrm share/gnome/apps/Settings/Documents
+@dirrm share/gnome/apps/Settings/Desktop
+@dirrm share/gnome/apps/Settings
+@dirrm share/gnome/apps/Multimedia
+@dirrm share/gnome/apps/Internet
+@dirrm share/gnome/apps/Graphics
+@dirrm share/gnome/apps/Games
+@dirrm share/gnome/apps/Development
+@dirrm share/gnome/apps/Audio
+@dirrm share/gnome/apps/Applications
+@dirrm share/gnome/apps
+@dirrm share/gnome-settings-daemon-3.0
+@dirrm share/gnome-control-center/keybindings
+@dirrm share/gnome-control-center
+@dirrm share/gnome-about
+@dirrm share/gnome-2.0/ui
+@dirrm share/gnome-2.0
+@dirrm share/gnome
+@dirrm share/glib-2.0/schemas
+@dirrm share/glib-2.0
+@dirrm share/gir-1.0
+@dirrm share/doc/libgda
+@dirrm share/control-center/keybindings/gtk-modules
+@dirrm share/control-center/keybindings
+@dirrm share/control-center/capplets
+@dirrm share/control-center/Session
+@dirrm share/control-center/Peripherals
+@dirrm share/control-center/Documents
+@dirrm share/control-center/Desktop
+@dirrm share/control-center-2.0/capplets
+@dirrm share/control-center-2.0
+@dirrm share/control-center
+@dirrm share/capplets
+@dirrm share/application-registry
+@dirrm share/applets/Utility
+@dirrm share/applets/Network
+@dirrm share/applets/Multimedia
+@dirrm share/applets/Monitors
+@dirrm share/applets/Clocks
+@dirrm share/applets/Amusements
+@dirrm share/applets
+@dirrm share/MateConf/gsettings
+@dirrm share/MateConf
+@dirrm share/GConf/gsettings
+@dirrm share/GConf
+@dirrm libdata/matecomponent/servers
+@dirrm libdata/matecomponent
+@dirrm libdata/bonobo/servers
+@dirrm libdata/bonobo
+@dirrm lib/vfs/modules
+@dirrm lib/vfs
+@dirrm lib/matecomponent/monikers
+@dirrm lib/matecomponent-2.0/samples
+@dirrm lib/matecomponent-2.0
+@dirrm lib/matecomponent
+@dirrm lib/mate-vfs-2.0/modules
+@dirrm lib/mate-vfs-2.0
+@dirrm lib/gnome-vfs-2.0/modules
+@dirrm lib/gnome-vfs-2.0
+@dirrm lib/girepository-1.0
+@dirrm lib/bonobo/plugin
+@dirrm lib/bonobo/monikers
+@dirrm lib/bonobo
+@dirrm lib/GConf
+@dirrm include/gnome-1.0
+@dirrm include/gdkcardimage
+@dirrm include/gconf
+@dirrm etc/xdg/autostart
+@dirrm etc/xdg
+@dirrm etc/vfs/modules
+@dirrm etc/vfs
+@dirrm etc/sound/events
+@dirrm etc/sound
+@dirrm etc/mateconf/schemas
+@dirrm etc/mateconf/mateconf.xml.system
+@dirrm etc/mateconf/mateconf.xml.mandatory
+@dirrm etc/mateconf/mateconf.xml.defaults
+@dirrm etc/mateconf
+@dirrm etc/gnome/config
+@dirrm etc/gnome-vfs-2.0/modules
+@dirrm etc/gnome-vfs-2.0
+@dirrm etc/gnome
+@dirrm etc/gconf/schemas
+@dirrm etc/gconf/gconf.xml.system
+@dirrm etc/gconf/gconf.xml.mandatory
+@dirrm etc/gconf/gconf.xml.defaults
+@dirrm etc/gconf
+@dirrm etc/dconf/profile
+@dirrm etc/dconf/db
+@dirrm etc/dconf
+@dirrm etc/X11/sysconfig
+@dirrm etc/X11/starthere
+@dirrm etc/X11/serverconfig
+@dirrm etc/X11
+@dirrm etc/CORBA/servers
+@dirrm etc/CORBA
