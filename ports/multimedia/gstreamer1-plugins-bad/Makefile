@@ -17,7 +17,7 @@ BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${POR
 RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MININAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins
 
 DIST=		bad
-BAD_GST_DIRS=	gst-libs sys gst po
+BAD_GST_DIRS=	gst-libs sys gst po pkgconfig
 NO_GSTREAMER_COMMON=	yes
 PLIST=		${.CURDIR}/pkg-plist
 
