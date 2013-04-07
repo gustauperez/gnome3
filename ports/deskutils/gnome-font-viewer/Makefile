@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-font-viewer
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,12 +19,13 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
+USES=		pathfix
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk30
+USE_GNOME=	gnomeprefix intlhack gtk30 gnomedesktop3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
