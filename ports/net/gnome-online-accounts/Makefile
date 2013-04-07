@@ -19,6 +19,7 @@ LIB_DEPENDS=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
 		json-glib:${PORTSDIR}/devel/json-glib \
 		notify:${PORTSDIR}/devel/libnotify \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
+		secret-1:${PORTSDIR}/security/libsecret \
 		rest-0.7:${PORTSDIR}/www/rest
 
 USE_XZ=		yes
