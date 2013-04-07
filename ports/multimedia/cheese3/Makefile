@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cheese
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -39,11 +39,12 @@ USE_GNOME=	gnomehack gnomeprefix intlhack evolutiondataserver3 librsvg2 \
 		gnomedesktop3
 USE_GETTEXT=	yes
 USE_GSTREAMER=	bad gconf good jpeg ogg theora v4l2 vorbis 
+USE_GSTREAMER1=	good bad ugly
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README
