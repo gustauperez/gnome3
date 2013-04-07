@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.3
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,12 +26,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-i
 
 CONFLICTS=	nautilus-2.[0-9]*
 
+USES=		pathfix
 LATEST_LINK=	nautilus3
 INSTALLS_ICONS=	yes
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop3 libxml2 \
+USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 \
 		desktopfileutils ltverhack gvfs ltasneededhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
