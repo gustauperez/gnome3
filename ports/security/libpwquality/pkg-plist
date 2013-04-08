@@ -1,0 +1,15 @@
+%%PYTHON_LIBDIR%%/site-packages/pwquality.so
+bin/pwmake
+bin/pwscore
+etc/security/pwquality.conf
+include/pwquality.h
+lib/libpwquality.a
+lib/libpwquality.la
+lib/libpwquality.so
+lib/libpwquality.so.1
+libdata/pkgconfig/pwquality.pc
+man/man1/pwmake.1
+man/man1/pwscore.1
+man/man5/pwquality.conf.5
+@dirrmtry libdata/pkgconfig
+@dirrmtry etc/security
