@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,6 +15,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 settings daemon
 
+#		${LOCALBASE}/libdata/pkgconfig/ibus-1.0.pc:${PORTSDIR}/textproc/ibus
 BUILD_DEPENDS=	gnome-session>=2.91.0:${PORTSDIR}/x11/gnome-session3 \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
@@ -23,6 +24,7 @@ LIB_DEPENDS=	canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
 		pulse.0:${PORTSDIR}/audio/pulseaudio \
 		gdbm.4:${PORTSDIR}/databases/gdbm \
 		notify.4:${PORTSDIR}/devel/libnotify
+#		${LOCALBASE}/libdata/pkgconfig/ibus-1.0.pc:${PORTSDIR}/textproc/ibus 
 RUN_DEPENDS=	gnome-session>=2.91.0:${PORTSDIR}/x11/gnome-session3 \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
@@ -39,6 +41,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-gudev \
 		--disable-systemd \
+		--disable-ibus \
 		--disable-packagekit
 #--with-pnpids=${LOCALBASE}/share/libgnome-desktop-3.0/pnp.ids
 CPPFLAGS+=	-I${LOCALBASE}/include
