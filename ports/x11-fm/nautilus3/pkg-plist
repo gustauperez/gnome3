@@ -168,18 +168,7 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
 share/gnome-shell/search-providers/nautilus-search-provider.ini
 share/mime/XMLnamespaces
-share/mime/aliases
-share/mime/generic-icons
-share/mime/globs
-share/mime/globs2
-share/mime/icons
-share/mime/magic
-share/mime/mime.cache
 share/mime/packages/nautilus.xml
-share/mime/subclasses
-share/mime/treemagic
-share/mime/types
-share/mime/version
 %%DATADIR%%/nautilus-extras.placeholder
 %%DATADIR%%/nautilus-suggested.placeholder
 @dirrm %%DATADIR%%
