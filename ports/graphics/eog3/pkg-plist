@@ -1,6 +1,5 @@
 bin/eog
 share/help/sl/eog/license.page
-
 include/eog-%%VERSION%%/eog/eog-application-activatable.h
 include/eog-%%VERSION%%/eog/eog-application.h
 include/eog-%%VERSION%%/eog/eog-clipboard-handler.h
@@ -119,7 +118,6 @@ share/applications/eog.desktop
 %%DATADIR%%/icons/hicolor/scalable/actions/eog-plugin.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/slideshow-play.svg
 %%DATADIR%%/pixmaps/thumbnail-frame.png
-share/glib-2.0/schemas/gschemas.compiled
 share/help/C/eog/bug-filing.page
 share/help/C/eog/commandline.page
 share/help/C/eog/copy-paste.page
