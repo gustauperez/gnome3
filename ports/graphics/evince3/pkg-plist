@@ -151,6 +151,8 @@ lib/evince/4/backends/libtiffdocument.so
 lib/evince/4/backends/pdfdocument.evince-backend
 lib/evince/4/backends/psdocument.evince-backend
 lib/evince/4/backends/tiffdocument.evince-backend
+lib/girepository-1.0/EvinceDocument-%%VERSION%%.typelib
+lib/girepository-1.0/EvinceView-%%VERSION%%.typelib
 lib/libevdocument3.a
 lib/libevdocument3.la
 lib/libevdocument3.so
@@ -242,7 +244,8 @@ share/doc/libevview/right.png
 share/doc/libevview/style.css
 share/doc/libevview/up.png
 share/doc/libevview/view-view.html
-share/glib-2.0/schemas/gschemas.compiled
+share/gir-1.0/EvinceDocument-%%VERSION%%.gir
+share/gir-1.0/EvinceView-%%VERSION%%.gir
 share/help/C/evince/annotation-properties.page
 share/help/C/evince/annotations-delete.page
 share/help/C/evince/annotations-disabled.page
