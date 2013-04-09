@@ -39,7 +39,6 @@ share/aclocal/epiphany.m4
 share/applications/epiphany.desktop
 share/dbus-1/services/org.gnome.Epiphany.service
 share/gir-1.0/Epiphany-%%EPHY_VERSION%%.gir
-share/glib-2.0/schemas/gschemas.compiled
 share/epiphany/about.ini
 share/epiphany/default-bookmarks.rdf
 share/epiphany/epiphany-bookmarks-html.xsl
