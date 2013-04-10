@@ -3,7 +3,7 @@
 #   $MCom: ports/mail/evolution3/Makefile,v 1.28 2013/03/14 09:16:36 kwm Exp $
 
 PORTNAME=	evolution
-PORTVERSION=	3.4.4
+PORTVERSION=	3.6.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,7 +11,10 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
+		${LOCALBASE}libdata/pkgconfig/gck-1.pc:${PORTSDIR}/security/gcr
 LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss \
+		gcr-3:${PORTSDIR}/security/gcr \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
 		canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
 		notify:${PORTSDIR}/devel/libnotify
@@ -23,7 +26,7 @@ USE_XZ=		yes
 USE_GMAKE=	yes
 USES=		bison pathfix
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 gtkhtml4 \
+USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 gtkhtml4 dconf \
 		desktopfileutils gnomedocutils ltasneededhack gnomedesktop3
 USE_AUTOTOOLS=	libtool
 USE_GSTREAMER=	yes
@@ -40,18 +43,6 @@ CONFIGURE_ARGS+=--disable-image-inline
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	apps_evolution_addressbook.schemas \
-		apps-evolution-attachment-reminder.schemas \
-		apps_evolution_calendar.schemas \
-		apps_evolution_email_custom_header.schemas \
-		apps_evolution_eplugin_face.schemas \
-		apps-evolution-mail-notification.schemas \
-		apps-evolution-mail-prompts-checkdefault.schemas \
-		apps_evolution_shell.schemas \
-		apps-evolution-template-placeholders.schemas \
-		evolution-bogofilter.schemas \
-		evolution-mail.schemas \
-		evolution-spamassassin.schemas
 GLIB_SCHEMAS=	org.gnome.evolution.gschema.xml \
 		org.gnome.evolution.addressbook.gschema.xml \
 		org.gnome.evolution.calendar.gschema.xml \
@@ -70,7 +61,7 @@ GLIB_SCHEMAS=	org.gnome.evolution.gschema.xml \
 		org.gnome.evolution.plugin.prefer-plain.gschema.xml \
 		org.gnome.evolution.plugin.templates.gschema.xml
 
-EVO_VERSION=	3.4
+EVO_VERSION=	3.6
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
@@ -92,7 +83,7 @@ CONFIGURE_ARGS+=--with-openldap=no
 .endif
 
 .if defined(WITH_WEATHER)
-LIB_DEPENDS+=	gweather-3.0:${PORTSDIR}/net/libgweather3
+LIB_DEPENDS+=	gweather-3.1:${PORTSDIR}/net/libgweather3
 CONFIGURE_ARGS+=--enable-weather
 PLIST_SUB+=	WEATHER=""
 .else
