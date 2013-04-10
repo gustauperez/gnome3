@@ -3,7 +3,7 @@
 #   $MCom: ports/databases/evolution-data-server3/Makefile,v 1.32 2013/03/13 15:26:55 marcus Exp $
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.4
 PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
@@ -46,7 +46,10 @@ CONFIGURE_ARGS=	--enable-static \
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-GLIB_SCHEMAS=	org.gnome.evolution.eds-shell.gschema.xml \
+GLIB_SCHEMAS=	org.gnome.Evolution.DefaultSources.gschema.xml \
+		org.gnome.evolution.eds-shell.gschema.xml \
+		org.gnome.evolution-data-server.addressbook.gschema.xml \
+		org.gnome.evolution-data-server.calendar.gschema.xml \
 		org.gnome.evolution.shell.network-config.gschema.xml
 
 PLIST_SUB=	VERSION="3.6" EVO_VERSION="1.2"

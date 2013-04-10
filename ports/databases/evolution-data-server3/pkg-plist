@@ -400,6 +400,7 @@ share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Calendar.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Sources.service
 share/doc/camel/CamelIMAPXConnManager.html
+share/doc/camel/CamelIMAPXFolder.html
 share/doc/camel/CamelIMAPXServer.html
 share/doc/camel/CamelIMAPXSettings.html
 share/doc/camel/CamelIMAPXStore.html
@@ -413,7 +414,6 @@ share/doc/camel/IMAP.html
 share/doc/camel/Virtual-Folders.html
 share/doc/camel/api-index-%%VERSION%%.html
 share/doc/camel/camel-CamelIMAPXCommand.html
-share/doc/camel/camel-CamelIMAPXFolder.html
 share/doc/camel/camel-CamelIMAPXJob.html
 share/doc/camel/camel-camel-search-sql-sexp.html
 share/doc/camel/Addresses.html
@@ -980,7 +980,6 @@ share/pixmaps/evolution-data-server/category_strategies_16.png
 share/pixmaps/evolution-data-server/category_suppliers_16.png
 share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrm share/pixmaps/evolution-data-server
-@dirrm share/evolution-data-server-%%VERSION%%
 @dirrm share/doc/libedataserverui
 @dirrm share/doc/libedataserver
 @dirrm share/doc/libedata-cal
@@ -989,6 +988,7 @@ share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrm share/doc/libebook
 @dirrm share/doc/libebackend
 @dirrm share/doc/camel
+@dirrm lib/evolution-data-server/registry-modules
 @dirrm lib/evolution-data-server/camel-providers
 @dirrm lib/evolution-data-server/calendar-backends
 @dirrm lib/evolution-data-server/addressbook-backends
@@ -1036,18 +1036,8 @@ share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrm share/doc/libedataserver
-@dirrm share/doc/libedata-cal
-@dirrm share/doc/libedata-book
-@dirrm share/doc/libecal
-@dirrm share/doc/libebook
-@dirrm share/doc/libebackend
-@dirrm share/doc/camel
-@dirrm lib/evolution-data-server/registry-modules
-@dirrm lib/evolution-data-server
-@dirrm include/evolution-data-server-%%VERSION%%/libedata-cal
-@dirrm include/evolution-data-server-%%VERSION%%
 @dirrm %%DATADIR%%-%%VERSION%%/rw-sources
 @dirrm %%DATADIR%%-%%VERSION%%/ro-sources
 @dirrm %%DATADIR%%-%%VERSION%%
 @dirrm lib/evolution-data-server/registry-modules
+@dirrm lib/evolution-data-server
