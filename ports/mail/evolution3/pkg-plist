@@ -302,7 +302,7 @@ include/evolution-%%VERSION%%/misc/e-image-chooser.h
 include/evolution-%%VERSION%%/misc/e-import-assistant.h
 include/evolution-%%VERSION%%/misc/e-interval-chooser.h
 include/evolution-%%VERSION%%/misc/e-map.h
-include/evolution-%%VERSION%%/misc/e-mail-identity-combo-box.H
+include/evolution-%%VERSION%%/misc/e-mail-identity-combo-box.h
 include/evolution-%%VERSION%%/misc/e-mail-signature-combo-box.h
 include/evolution-%%VERSION%%/misc/e-mail-signature-editor.h
 include/evolution-%%VERSION%%/misc/e-mail-signature-manager.h

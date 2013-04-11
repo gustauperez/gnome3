@@ -12,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		${LOCALBASE}libdata/pkgconfig/gck-1.pc:${PORTSDIR}/security/gcr
+		${LOCALBASE}/libdata/pkgconfig/gck-1.pc:${PORTSDIR}/security/gcr
 LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss \
 		gcr-3:${PORTSDIR}/security/gcr \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
