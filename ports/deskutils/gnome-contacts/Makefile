@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	gnome-contacts
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Contacts manager for gnome
 
-BUILD_DEPENDS=	vala>=0.14.0:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	vala>=0.14.0:${PORTSDIR}/lang/vala \
+		${LOCALBASE}/libdata/pkgconfig/gcr-3.pc:${PORTSDIR}/security/gcr \
+		${LOCALBASE}/libdata/pkgconfig/cheese.pc:${PORTSDIR}/multimedia/cheese3 
 LIB_DEPENDS=	goa-1.0.0:${PORTSDIR}/net/gnome-online-accounts \
 		folks.25:${PORTSDIR}/net-im/folks \
+		cheese.7:${PORTSDIR}/multimedia/cheese3 \
 		notify.4:${PORTSDIR}/devel/libnotify
 
+USES=		pathfix
 USE_XZ=		yes
-USE_GNOME=	gnomehack intlhack gtk30 gnomedesktop3 evolutiondataserver3
+USE_GNOME=	intlhack gtk30 gnomedesktop3 evolutiondataserver3
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
