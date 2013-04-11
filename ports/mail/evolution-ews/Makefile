@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	evolution-ews
-PORTVERSION=	3.4.4
+PORTVERSION=	3.6.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,10 +17,10 @@ COMMENT=	Evolution 3 plugin to connect to Microsoft Exchange Web Services
 
 BUILD_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution3
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		ical.44:${PORTSDIR}/devel/libical
+		ical:${PORTSDIR}/devel/libical
 RUN_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution3
 
-EVO_VER=	3.4.1
+EVO_VER=	3.6.0
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
@@ -32,7 +32,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack ltasneededhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-VERSION=	3.4
+VERSION=	3.6
 PLIST_SUB=	VERSION=${VERSION}
 
 .include <bsd.port.mk>
