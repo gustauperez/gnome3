@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	evolution-kolab
-PORTVERSION=	3.4.4
+PORTVERSION=	3.6.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,7 +17,7 @@ COMMENT=	Kolab groupware connector for evolution 3
 
 BUILD_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution3 \
 		gperf>=3.0.3:${PORTSDIR}/devel/gperf
-LIB_DEPENDS=	gmime-2.4:${PORTSDIR}/mail/gmime24
+LIB_DEPENDS=	gmime-2.6:${PORTSDIR}/mail/gmime26
 RUN_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution3
 
 EVO_VER=	3.4.1
@@ -32,7 +32,7 @@ CONFIGURE_ENV=	ac_cv_path_GPERF=${LOCALBASE}/bin/gperf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-VERSION=	3.4
+VERSION=	3.6
 PLIST_SUB=	VERSION=${VERSION}
 
 .include <bsd.port.pre.mk>
