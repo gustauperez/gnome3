@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-shell
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -43,8 +43,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gtk30 gnomemenus3 \
 USE_GSTREAMER=	theora vp8 ogg
 USE_LDCONFIG=	yes
 
-GLIB_SCHEMAS=	org.gnome.shell.gschema.xml \
-		org.gnome.shell.evolution.calendar.gschema.xml
+GLIB_SCHEMAS=	org.gnome.shell.gschema.xml
 MAN1=		gnome-shell.1
 
 CONFIGURE_ARGS+=--enable-compile-warnings=no \
@@ -59,5 +58,6 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|UBDIRS = data js src browser-plugin|UBDIRS = data js src|g' \
 		${WRKSRC}/Makefile.in
+	@${CHMOD} a+x ${WRKSRC}/config/install-sh
 
 .include <bsd.port.mk>
