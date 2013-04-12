@@ -19,7 +19,8 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	gweather-3.0:${PORTSDIR}/net/libgweather3 \
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	gweather-3.1:${PORTSDIR}/net/libgweather3 \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
 		canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
 		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit
@@ -27,13 +28,14 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/noti
 
 CONFLICTS=	gnome-panel-2.[0-9]* mate-panel-*
 
+USES=		pathfix
 LATEST_LINK=	gnome-panel3
 USE_GETTEXT=	yes
 USE_XORG=	ice sm x11 xau xrandr
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop3 librsvg2 libwnck3 \
+USE_GNOME=	gnomeprefix intlhack gnomedesktop3 librsvg2 libwnck3 \
 		gnomemenus3 gnomedocutils ltverhack referencehack
 WANT_GNOME=	yes
 USE_GMAKE=	yes
@@ -43,8 +45,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gnome-panel.1
-GCONF_SCHEMAS=	clock.schemas
-GLIB_SCHEMAS=	org.gnome.gnome-panel.applet.fish.gschema.xml \
+GLIB_SCHEMAS=	org.gnome.gnome-panel.applet.clock.gschema.xml \
+		org.gnome.gnome-panel.applet.fish.gschema.xml \
 		org.gnome.gnome-panel.applet.window-list.gschema.xml \
 		org.gnome.gnome-panel.applet.workspace-switcher.gschema.xml \
 		org.gnome.gnome-panel.enums.xml \
