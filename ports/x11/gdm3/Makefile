@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gdm
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.6.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,11 +17,11 @@ COMMENT=	GNOME 3 version of xdm display manager
 
 BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		nss-config:${PORTSDIR}/security/nss \
+		itstool:${PORTSDIR}/textproc/itstool \
+#		${LOCALBASE}/libdata/pkgconfig/polkit-gtk-1.pc:${PORTSDIR}/sysutils/polkit-gnome \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit \
-		dconf.0:${PORTSDIR}/devel/dconf \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		polkit-gtk-1.0:${PORTSDIR}/sysutils/polkit-gnome \
     		execinfo:${PORTSDIR}/devel/libexecinfo \
 		upower-glib.1:${PORTSDIR}/sysutils/upower \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
@@ -34,6 +33,7 @@ RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 		nss-config:${PORTSDIR}/security/nss \
 		gnome-session>=2.91.0:${PORTSDIR}/x11/gnome-session3 \
 		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
+		${LOCALBASE}/libexec/polkit-gnome-authentication-agent-1:${PORTSDIR}/sysutils/polkit-gnome \
 		${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at-spi2-core \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
@@ -43,6 +43,7 @@ USERS=		gdm
 GROUPS=		gdm
 
 LATEST_LINK=	gdm3
+USES=		pathfix
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
@@ -52,7 +53,7 @@ INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomehier librsvg2 gnomeprefix gnomepanel3
+USE_GNOME=	dconf intlhack gnomehier librsvg2 gnomeprefix gnomepanel3
 GLIB_SCHEMAS=	org.gnome.login-screen.gschema.xml
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home \
@@ -100,8 +101,8 @@ post-patch:
 		${WRKSRC}/data/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    	-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	    	${WRKSRC}/daemon/gdm-session-worker.c \
-		${WRKSRC}/gui/simple-greeter/extensions/password/gdm-password.pam
+	    	${WRKSRC}/daemon/gdm-session-worker.c
+#		${WRKSRC}/gui/simple-greeter/extensions/password/gdm-password.pam
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		-e 's|/usr/bin/X|${LOCALBASE}/bin/X|g' \
 		-e 's|/usr/bin/Xorg|${LOCALBASE}/bin/Xorg|g' \
@@ -113,8 +114,8 @@ post-patch:
 		${WRKSRC}/data/applications/gdm-simple-greeter.desktop.in \
 		${WRKSRC}/data/applications/gnome-mag.desktop \
 		${WRKSRC}/data/applications/gnome-shell.desktop \
-		${WRKSRC}/data/applications/gok.desktop \
-		${WRKSRC}/data/applications/orca-screen-reader.desktop
+		${WRKSRC}/data/applications/gok.desktop
+#		${WRKSRC}/data/applications/orca-screen-reader.desktop
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
@@ -123,7 +124,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/gdm.conf-custom \
 		${PREFIX}/etc/gdm/custom.conf.default
 	${MKDIR} ${PREFIX}/share/xsessions
-	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm-welcome
+	#${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm-welcome
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 	@dconf update
