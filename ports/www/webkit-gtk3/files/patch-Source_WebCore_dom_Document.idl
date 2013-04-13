@@ -1,0 +1,11 @@
+--- Source/WebCore/dom/Document.idl.orig	2013-04-13 09:05:45.477706304 +0000
++++ Source/WebCore/dom/Document.idl	2013-04-13 09:06:14.518704958 +0000
+@@ -75,7 +75,7 @@
+         Node               adoptNode(in [Optional=DefaultIsUndefined] Node source)
+             raises (DOMException);
+ 
+-#if defined(LANGUAGE_OBJECTIVE_C) && LANGUAGE_OBJECTIVE_C
++#if defined(LANGUAGE_OBJECTIVE_C) && LANGUAGE_OBJECTIVE_C || defined(LANGUAGE_GOBJECT) && LANGUAGE_GOBJECT
+         // document.documentURI was writable in DOM3 Core, but is read-only in DOM4
+         // (see http://www.w3.org/TR/2011/WD-dom-20110915/#document). We need to keep
+         // the writable version around for Objective C clients, but are moving to
