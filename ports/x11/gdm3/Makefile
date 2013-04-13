@@ -124,7 +124,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/gdm.conf-custom \
 		${PREFIX}/etc/gdm/custom.conf.default
 	${MKDIR} ${PREFIX}/share/xsessions
-	#${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm-welcome
+	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm-welcome
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 	@dconf update

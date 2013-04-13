@@ -13,6 +13,7 @@ etc/gdm/Xsession
 @unexec if cmp -s %D/etc/gdm/custom.conf %D/etc/gdm/custom.conf.default; then rm -f %D/etc/gdm/custom.conf; fi
 etc/gdm/custom.conf.default
 @exec [ -f %B/custom.conf ] || cp %B/%f %B/custom.conf
+etc/pam.d/gdm-welcome
 include/gdm/gdm-client-glue.h
 include/gdm/gdm-client.h
 include/gdm/gdm-sessions.h
@@ -64,7 +65,7 @@ sbin/gdm-binary
 %%DATADIR%%/simple-greeter/extensions/password/page.ui
 %%DATADIR%%/simple-greeter/extensions/smartcard/page.ui
 %%DATADIR%%/simple-greeter/extensions/unified/page.ui
-libdata/pkgconfig/gdm.pc
+share/gir-1.0/Gdm-1.0.gir
 share/gnome-session/sessions/gdm-fallback.session
 share/gnome-session/sessions/gdm-shell.session
 share/help/C/gdm/index.docbook
@@ -224,6 +225,26 @@ share/pixmaps/nohost.png
 @dirrm /var/gdm
 @dirrm /var/cache/gdm
 @dirrmtry share/xsessions
+@dirrmtry share/help/zh_CN/gdm
+@dirrmtry share/help/uk/gdm
+@dirrmtry share/help/te/gdm
+@dirrmtry share/help/sv/gdm
+@dirrmtry share/help/sl/gdm
+@dirrmtry share/help/ru/gdm
+@dirrmtry share/help/oc/gdm
+@dirrmtry share/help/ko/gdm
+@dirrmtry share/help/it/gdm
+@dirrmtry share/help/id/gdm
+@dirrmtry share/help/gl/gdm
+@dirrmtry share/help/fr/gdm
+@dirrmtry share/help/es/gdm
+@dirrmtry share/help/en_GB/gdm
+@dirrmtry share/help/el/gdm
+@dirrmtry share/help/de/gdm
+@dirrmtry share/help/ca/gdm
+@dirrmtry share/help/C/gdm
+@dirrmtry share/gnome-session/sessions
+@dirrmtry share/gnome-session
 @dirrm %%DATADIR%%/simple-greeter/extensions/unified
 @dirrm %%DATADIR%%/simple-greeter/extensions/smartcard
 @dirrm %%DATADIR%%/simple-greeter/extensions/password
@@ -231,6 +252,7 @@ share/pixmaps/nohost.png
 @dirrm %%DATADIR%%/simple-greeter/extensions
 @dirrm %%DATADIR%%/simple-greeter
 @dirrm %%DATADIR%%/greeter/applications
+@dirrm %%DATADIR%%/greeter/autostart
 @dirrm %%DATADIR%%/greeter
 @dirrm %%DATADIR%%
 @dirrm lib/gdm/simple-greeter/extensions
@@ -318,30 +340,6 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtryshare/locale/as
-@dirrmtryshare/locale/an/LC_MESSAGES
-@dirrmtryshare/locale/an
-@dirrmtryshare/help/zh_CN/gdm
-@dirrmtryshare/help/uk/gdm
-@dirrmtryshare/help/te/gdm
-@dirrmtryshare/help/sv/gdm
-@dirrmtryshare/help/sl/gdm
-@dirrmtryshare/help/ru/gdm
-@dirrmtryshare/help/oc/gdm
-@dirrmtryshare/help/ko/gdm  
-@dirrmtryshare/help/it/gdm
-@dirrmtryshare/help/id/gdm
-@dirrmtryshare/help/gl/gdm
-@dirrmtryshare/help/fr/gdm
-@dirrmtryshare/help/es/gdm
-@dirrmtryshare/help/en_GB/gdm
-@dirrmtryshare/help/el/gdm
-@dirrmtryshare/help/de/gdm
-@dirrmtryshare/help/ca/gdm
-@dirrmtryshare/help/C/gdm
-@dirrmtryshare/gnome-session/sessions
-@dirrmtryshare/gnome-session 
-@dirrmtryinclude/gdm
-@dirrmtry%%DATADIR%%/greeter/autostart
-@dirrmtry%%DATADIR%%/greeter/applications
-@dirrmtry%%DATADIR%%/greeter   
+@dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
