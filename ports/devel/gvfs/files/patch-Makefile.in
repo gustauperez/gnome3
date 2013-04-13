@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2013-04-12 19:59:10.000000000 +0000
++++ Makefile.in	2013-04-12 19:59:34.000000000 +0000
+@@ -318,7 +318,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ NULL = 
+-SUBDIRS = common metadata client daemon monitor po programs test \
++SUBDIRS = common metadata client daemon monitor po programs \
+ 	$(NULL) $(am__append_1)
+ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS}
+ EXTRA_DIST = \

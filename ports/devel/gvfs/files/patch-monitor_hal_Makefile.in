@@ -1,0 +1,49 @@
+--- monitor/hal/Makefile.in.orig	2013-04-13 10:03:34.000000000 +0000
++++ monitor/hal/Makefile.in	2013-04-13 10:04:18.000000000 +0000
+@@ -61,7 +61,6 @@
+ 	gvfs_hal_volume_monitor-ghalvolume.$(OBJEXT) \
+ 	gvfs_hal_volume_monitor-ghalmount.$(OBJEXT) \
+ 	gvfs_hal_volume_monitor-ghalvolumemonitor.$(OBJEXT) \
+-	gvfs_hal_volume_monitor-gvfsdbusutils.$(OBJEXT) \
+ 	$(am__objects_1)
+ gvfs_hal_volume_monitor_OBJECTS =  \
+ 	$(am_gvfs_hal_volume_monitor_OBJECTS)
+@@ -355,7 +354,6 @@
+ 	ghalvolume.c		ghalvolume.h		\
+ 	ghalmount.c		ghalmount.h		\
+ 	ghalvolumemonitor.c	ghalvolumemonitor.h	\
+-	gvfsdbusutils.c		gvfsdbusutils.h		\
+ 	$(NULL)
+ 
+ gvfs_hal_volume_monitor_CFLAGS = \
+@@ -479,7 +477,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfs_hal_volume_monitor-ghalmount.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfs_hal_volume_monitor-ghalvolume.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfs_hal_volume_monitor-ghalvolumemonitor.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfs_hal_volume_monitor-gvfsdbusutils.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfs_hal_volume_monitor-hal-device.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfs_hal_volume_monitor-hal-marshal.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfs_hal_volume_monitor-hal-pool.Po@am__quote@
+@@ -654,22 +651,6 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gvfs_hal_volume_monitor_CFLAGS) $(CFLAGS) -c -o gvfs_hal_volume_monitor-ghalvolumemonitor.obj `if test -f 'ghalvolumemonitor.c'; then $(CYGPATH_W) 'ghalvolumemonitor.c'; else $(CYGPATH_W) '$(srcdir)/ghalvolumemonitor.c'; fi`
+ 
+-gvfs_hal_volume_monitor-gvfsdbusutils.o: gvfsdbusutils.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gvfs_hal_volume_monitor_CFLAGS) $(CFLAGS) -MT gvfs_hal_volume_monitor-gvfsdbusutils.o -MD -MP -MF $(DEPDIR)/gvfs_hal_volume_monitor-gvfsdbusutils.Tpo -c -o gvfs_hal_volume_monitor-gvfsdbusutils.o `test -f 'gvfsdbusutils.c' || echo '$(srcdir)/'`gvfsdbusutils.c
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gvfs_hal_volume_monitor-gvfsdbusutils.Tpo $(DEPDIR)/gvfs_hal_volume_monitor-gvfsdbusutils.Po
+-@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='gvfsdbusutils.c' object='gvfs_hal_volume_monitor-gvfsdbusutils.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gvfs_hal_volume_monitor_CFLAGS) $(CFLAGS) -c -o gvfs_hal_volume_monitor-gvfsdbusutils.o `test -f 'gvfsdbusutils.c' || echo '$(srcdir)/'`gvfsdbusutils.c
+-
+-gvfs_hal_volume_monitor-gvfsdbusutils.obj: gvfsdbusutils.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gvfs_hal_volume_monitor_CFLAGS) $(CFLAGS) -MT gvfs_hal_volume_monitor-gvfsdbusutils.obj -MD -MP -MF $(DEPDIR)/gvfs_hal_volume_monitor-gvfsdbusutils.Tpo -c -o gvfs_hal_volume_monitor-gvfsdbusutils.obj `if test -f 'gvfsdbusutils.c'; then $(CYGPATH_W) 'gvfsdbusutils.c'; else $(CYGPATH_W) '$(srcdir)/gvfsdbusutils.c'; fi`
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gvfs_hal_volume_monitor-gvfsdbusutils.Tpo $(DEPDIR)/gvfs_hal_volume_monitor-gvfsdbusutils.Po
+-@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='gvfsdbusutils.c' object='gvfs_hal_volume_monitor-gvfsdbusutils.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gvfs_hal_volume_monitor_CFLAGS) $(CFLAGS) -c -o gvfs_hal_volume_monitor-gvfsdbusutils.obj `if test -f 'gvfsdbusutils.c'; then $(CYGPATH_W) 'gvfsdbusutils.c'; else $(CYGPATH_W) '$(srcdir)/gvfsdbusutils.c'; fi`
+-
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+ 
