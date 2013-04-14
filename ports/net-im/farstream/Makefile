@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	farstream
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.2
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://freedesktop.org/software/farstream/releases/farstream/
 
@@ -19,12 +19,13 @@ LIB_DEPENDS=	nice.10:${PORTSDIR}/net-im/libnice
 CONFLICTS=	farsight2-[0-9]*
 
 FETCH_ARGS=	-Fpr
+USES=		pathfix
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack pkgconfig glib20 ltverhack
-USE_GSTREAMER=	core good bad python
+USE_GNOME=	pkgconfig glib20 ltverhack
+USE_GSTREAMER1=	good bad
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
