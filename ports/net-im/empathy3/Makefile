@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 		itstool:${PORTSDIR}/textproc/itstool \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
+		geocode-glib:${PORTSDIR}/net-im/geocode-glib \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
 		pulse.0:${PORTSDIR}/audio/pulseaudio \
 		telepathy.2:${PORTSDIR}/net-im/libtelepathy \
