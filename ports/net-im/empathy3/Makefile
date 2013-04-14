@@ -15,20 +15,22 @@ COMMENT=	GNOME IM client based around telepathy
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+		${LOCALBASE}/libdata/pkgconfig/clutter-gst-2.0.pc:${PORTSDIR}/multimedia/clutter-gst \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		itstool:${PORTSDIR}/textproc/itstool \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
+		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
 		pulse.0:${PORTSDIR}/audio/pulseaudio \
 		telepathy.2:${PORTSDIR}/net-im/libtelepathy \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		telepathy-farstream.2:${PORTSDIR}/net-im/telepathy-farstream \
+		telepathy-farstream.3:${PORTSDIR}/net-im/telepathy-farstream \
 		telepathy-logger.2:${PORTSDIR}/net-im/telepathy-logger \
 		folks-telepathy.25:${PORTSDIR}/net-im/folks \
 		notify.4:${PORTSDIR}/devel/libnotify \
 		gcr-3:${PORTSDIR}/security/gcr \
 		canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
-		clutter-gst-1.0:${PORTSDIR}/multimedia/clutter-gst \
+		clutter-gst-2.0:${PORTSDIR}/multimedia/clutter-gst \
 		webkitgtk-3.0.0:${PORTSDIR}/www/webkit-gtk3 \
 		soup-2.4:${PORTSDIR}/devel/libsoup
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
@@ -38,13 +40,14 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 CONFLICTS=	empathy-2.[0-9]*
 
+USES=		pathfix
 LATEST_LINK=	empathy3
 USE_GMAKE=	yes
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	evolutiondataserver3 gnomehack gnomeprefix ltverhack
-USE_GSTREAMER=	yes
+USE_GNOME=	evolutiondataserver3 gnomeprefix ltverhack
+USE_GSTREAMER1=	yes
 USE_AUTOTOOLS=	libtool
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -52,7 +55,8 @@ USE_PYTHON=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-Werror \
-		--disable-goa \
+		--enable-goa \
+		--enable-gst-1.0=yes \
 		--enable-location=no
 
 GLIB_SCHEMAS=	org.gnome.Empathy.gschema.xml
@@ -119,5 +123,9 @@ CONFIGURE_ARGS+=--with-cheese
 .else
 CONFIGURE_ARGS+=--without-cheese
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|clutter-gst-1.0|clutter-gst-2.0|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
