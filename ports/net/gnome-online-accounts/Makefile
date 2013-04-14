@@ -22,8 +22,9 @@ LIB_DEPENDS=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
 		secret-1:${PORTSDIR}/security/libsecret \
 		rest-0.7:${PORTSDIR}/www/rest
 
+USES=		pathfix
 USE_XZ=		yes
-USE_GNOME=	gnomehack gtk30 intlhack
+USE_GNOME=	gtk30 intlhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -32,6 +33,6 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN8=	goa-daemon.8
+MAN8=		goa-daemon.8
 
 .include <bsd.port.mk>
