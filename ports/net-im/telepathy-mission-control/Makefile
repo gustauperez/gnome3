@@ -6,7 +6,7 @@
 #    $MCom: ports/net-im/telepathy-mission-control/Makefile,v 1.23 2012/08/17 19:06:46 kwm Exp $
 
 PORTNAME=	telepathy-mission-control
-PORTVERSION=	5.12.0
+PORTVERSION=	5.14.0
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-control/
 
