@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -19,9 +19,10 @@ LIB_DEPENDS=	avahi-glib.1:${PORTSDIR}/net/avahi-app \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
+USES=		pathfix
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20
+USE_GNOME=	glib20
 USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
