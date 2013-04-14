@@ -6,7 +6,7 @@
 #    $MCom: ports/net-im/telepathy-gabble/Makefile,v 1.22 2012/08/08 16:56:40 kwm Exp $
 
 PORTNAME=	telepathy-gabble
-PORTVERSION=	0.16.1
+PORTVERSION=	0.17.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -24,10 +24,11 @@ LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
 		loudmouth-1:${PORTSDIR}/net-im/loudmouth
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
+USES=		pathfix
 GNU_CONFIGURE=	yes
 LDFLAGS+=	${PTHREAD_LIBS}
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig glib20
+USE_GNOME=	pkgconfig glib20
 USE_SQLITE=	yes
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
