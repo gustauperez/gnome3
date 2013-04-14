@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	telepathy-haze
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-haze/
 
@@ -19,9 +19,8 @@ LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple \
 		idn.17:${PORTSDIR}/dns/libidn \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-WRKSRC=		${WRKDIR}/telepathy-${PORTNAME}-${DISTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
