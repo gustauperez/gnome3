@@ -6,7 +6,7 @@
 #    $MCom: ports/net-im/telepathy-logger/Makefile,v 1.14 2012/08/17 19:06:45 kwm Exp $
 
 PORTNAME=	telepathy-logger
-PORTVERSION=	0.4.0
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -20,11 +20,12 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		pathfix
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack glib20 intltool gnomedocutils ltverhack libxml2 \
+USE_GNOME=	glib20 intltool gnomedocutils ltverhack libxml2 \
 		libxslt:build
 USE_PKGCONFIG=	build
 USE_SQLITE=	yes
