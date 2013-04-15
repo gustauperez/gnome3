@@ -38,12 +38,14 @@ USE_XORG=	x11 xfixes sm
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk30 gnomemenus3 \
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack gtk30 gnomemenus3 \
 		gnomedesktop3 evolutiondataserver3 ltverhack
 USE_GSTREAMER=	theora vp8 ogg
 USE_LDCONFIG=	yes
 
-GLIB_SCHEMAS=	org.gnome.shell.gschema.xml
+GLIB_SCHEMAS=	org.gnome.shell.gschema.xml \
+		org.gnome.shell.evolution.calendar.gschema.xml
 MAN1=		gnome-shell.1
 
 CONFIGURE_ARGS+=--enable-compile-warnings=no \
