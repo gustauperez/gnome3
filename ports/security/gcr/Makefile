@@ -26,7 +26,9 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 CONFLICTS=	gnome-keyring-3.[0-2].[0-9]* gnome-keyring-2.[0-9]*
 
 USE_XZ=		yes
-USE_GNOME=	gnomehack gtk30 pkgconfig intlhack
+USE_PKGCONFIG=	build
+USES=		pathfix
+USE_GNOME=	gtk30 intlhack
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
