@@ -20,7 +20,8 @@ CONFLICTS=	osalp-0.7.*
 
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack pkgconfig
+USE_PKGCONFIG=	build
+USES=		pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
