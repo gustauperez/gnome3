@@ -12,12 +12,11 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	D-Bus interface for user account query and manipulation
 
 BUILD_DEPEND=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	xslt:${PORTSDIR}/textproc/libxslt \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
 USE_XZ=		yes
-USE_GNOME=	gnomehack glib20 intlhack gnomehier
+USE_GNOME=	gnomehack glib20 intlhack gnomehier libxslt:build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

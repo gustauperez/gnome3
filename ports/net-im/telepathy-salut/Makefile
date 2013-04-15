@@ -14,7 +14,6 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	avahi-glib.1:${PORTSDIR}/net/avahi-app \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
@@ -22,7 +21,7 @@ LIB_DEPENDS=	avahi-glib.1:${PORTSDIR}/net/avahi-app \
 USES=		pathfix
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20
+USE_GNOME=	glib20 libxslt:build
 USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes

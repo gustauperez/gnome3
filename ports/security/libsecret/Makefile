@@ -10,7 +10,6 @@ MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	A library to access the secret service API
 
 BUILD_DEPENDS=	gobject-introspection>=0.9.0:${PORTSDIR}/devel/gobject-introspection \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 USES=		pathfix

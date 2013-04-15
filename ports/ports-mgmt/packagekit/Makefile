@@ -58,8 +58,8 @@ OPTIONS=PORTS "Use portupgrade for management, dummy if disabled" on \
 CONFIGURE_ARGS+=--disable-man-pages
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410 \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+USE_GNOME+=	libxslt:build
 MAN1=	pkcon.1 pkmon.1 pkgenpack.1 pk-debuginfo-install.1
 .endif
 .endif
