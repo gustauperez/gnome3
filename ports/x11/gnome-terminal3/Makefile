@@ -22,13 +22,13 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		pathfixUSES=		pathfix
 LATEST_LINK=	gnome-terminal3
 USE_GETTEXT=	yes
 USE_XZ=		yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_XORG=	sm ice
+USES=		pathfix
 USE_GNOME=	gnomeprefix intlhack gconf2 vte3 gnomedocutils
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
