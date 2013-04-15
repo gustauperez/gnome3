@@ -24,7 +24,9 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix glib20 libxslt:build pkgconfig ltverhack
+USE_PKGCONFIG=	build
+USES=		pathfix
+USE_GNOME=	glib20 libxslt:build ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
