@@ -19,12 +19,13 @@ LIB_DEPENDS=	nice.10:${PORTSDIR}/net-im/libnice
 CONFLICTS=	farsight2-[0-9]*
 
 FETCH_ARGS=	-Fpr
-USES=		pathfix
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_GNOME=	pkgconfig glib20 ltverhack
+USE_PKGCONFIG=	build
+USES=		pathfix
+USE_GNOME=	glib20 ltverhack
 USE_GSTREAMER1=	good bad
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
