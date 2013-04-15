@@ -363,3 +363,7 @@ share/vala/vapi/telepathy-glib.vapi
 @dirrm include/telepathy-1.0/telepathy-glib/_gen
 @dirrm include/telepathy-1.0/telepathy-glib
 @dirrm include/telepathy-1.0
+@dirrm share/gtk-doc/html/telepathy-glib
+@dirrm include/telepathy-1.0/telepathy-glib/_gen
+@dirrm include/telepathy-1.0/telepathy-glib
+@dirrm include/telepathy-1.0
