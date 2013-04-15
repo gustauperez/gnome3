@@ -18,8 +18,7 @@ LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
 		dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
 		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib
 
-BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g} \
-    		xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
@@ -27,7 +26,9 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig glib20
+USE_PKGCONFIG=	build
+USES=		pathfix
+USE_GNOME=	glib20 libxslt:build
 
 MAN8=		telepathy-idle.8
 
