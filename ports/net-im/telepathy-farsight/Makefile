@@ -18,8 +18,6 @@ LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
 		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib \
 		farsight2-0.10.pc:${PORTSDIR}/net-im/farsight2
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
@@ -28,7 +26,9 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack pkgconfig glib20 ltverhack
+USE_PKGCONFIG=	build
+USES=		pathfix
+USE_GNOME=	glib20 ltverhack libxslt:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
