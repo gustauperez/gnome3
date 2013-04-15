@@ -19,7 +19,9 @@ LIB_DEPENDS=	clutter-gtk-0.10.0:${PORTSDIR}/graphics/clutter-gtk \
 
 LATEST_LINK=	libchamplain08
 USE_BZIP2=	yes
-USE_GNOME=	pkgconfig gtk20 gnomehack ltverhack:1 gnomehier
+USE_PKGCONFIG=	build
+USES=		pathfix
+USE_GNOME=	gtk20 ltverhack:1 gnomehier
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_SQLITE=	yes
