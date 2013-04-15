@@ -16,14 +16,13 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	DocBook XSLT stylesheets for yelp
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-#		${LOCALBASE}/etc/CORBA:${PORTSDIR}/misc/gnomehier
-LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
 
 #USE_GETTEXT=	yes
-USES=		pathfix
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack pkgconfig libxml2
+USE_PKGCONFIG=	yes
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack libxml2 libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
