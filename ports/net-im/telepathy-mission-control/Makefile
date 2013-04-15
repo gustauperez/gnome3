@@ -16,7 +16,9 @@ COMMENT=	Telepathy component to apps to abstract details of connection managers
 LIB_DEPENDS=	telepathy.2:${PORTSDIR}/net-im/libtelepathy \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USE_GNOME=	gnomeprefix pkgconfig gconf2 libxslt gnomehack ltverhack
+USE_PKGCONFIG=	build
+USES=		pathfix
+USE_GNOME=	gconf2 libxslt gnomehack ltverhack
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
