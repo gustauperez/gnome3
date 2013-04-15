@@ -19,7 +19,9 @@ LIB_DEPENDS=	clutter-gtk-1.0.0:${PORTSDIR}/graphics/clutter-gtk3 \
 		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
 
 USE_XZ=		yes
-USE_GNOME=	pkgconfig gtk30 gnomehack ltverhack gnomehier
+USE_PKGCONFIG=	build
+USES=		pathfix
+USE_GNOME=	gtk30 ltverhack gnomehier
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_SQLITE=	yes
