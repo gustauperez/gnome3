@@ -17,10 +17,10 @@ COMMENT?=	An extremely lightweight and simple web browser for GNOME 3
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		gcr-3:${PORTSDIR}/security/gcr \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	webkitgtk-3.0.0:${PORTSDIR}/www/webkit-gtk3 \
 		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
+		gcr-3:${PORTSDIR}/security/gcr \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		notify.4:${PORTSDIR}/devel/libnotify \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
