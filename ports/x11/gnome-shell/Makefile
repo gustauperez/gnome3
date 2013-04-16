@@ -21,9 +21,9 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		caribou.0:${PORTSDIR}/accessibility/caribou \
 		mutter.0:${PORTSDIR}/x11-wm/mutter \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
-		gcr:${PORTSDIR}/security/gcr \
+		gcr-3:${PORTSDIR}/security/gcr \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		telepathy-logger.2:${PORTSDIR}/net-im/telepathy-logger \
+		telepathy-logger.3:${PORTSDIR}/net-im/telepathy-logger \
 		folks.25:${PORTSDIR}/net-im/folks \
 		pulse.0:${PORTSDIR}/audio/pulseaudio \
 		croco-0.6.3:${PORTSDIR}/textproc/libcroco \
@@ -44,12 +44,13 @@ USE_GNOME=	gnomeprefix intlhack gtk30 gnomemenus3 \
 USE_GSTREAMER=	theora vp8 ogg
 USE_LDCONFIG=	yes
 
-GLIB_SCHEMAS=	org.gnome.shell.gschema.xml \
-		org.gnome.shell.evolution.calendar.gschema.xml
+GLIB_SCHEMAS=	org.gnome.shell.gschema.xml 
+#		org.gnome.shell.evolution.calendar.gschema.xml
 MAN1=		gnome-shell.1
 
 CONFIGURE_ARGS+=--enable-compile-warnings=no \
 		--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
+CONFIGURE_ENV+=	BROWSER_PLUGIN_DIR=${PREFIX}/lib/browser_plugins
 CPPFLAGS+=	-I${LOCALASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -58,8 +59,6 @@ post-patch:
 		${WRKSRC}/src/shell-app-system.c
 	@${REINPLACE_CMD} -e 's|libnm-glib libnm-util ||g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|UBDIRS = data js src browser-plugin|UBDIRS = data js src|g' \
-		${WRKSRC}/Makefile.in
 	@${CHMOD} a+x ${WRKSRC}/config/install-sh
 
 .include <bsd.port.mk>

@@ -2,6 +2,9 @@ bin/gnome-shell
 bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
 bin/gnome-shell-perf-tool
+lib/browser_plugins/libgnome-shell-browser-plugin.a
+lib/browser_plugins/libgnome-shell-browser-plugin.la
+lib/browser_plugins/libgnome-shell-browser-plugin.so
 lib/gnome-shell/Gvc-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
 lib/gnome-shell/ShellJS-0.1.typelib
@@ -314,5 +317,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-shell.mo
 @dirrm share/gnome-shell/js
 @dirrm share/gnome-shell
 @dirrm lib/gnome-shell
+@dirrm lib/browser_plugins
 @dirrm share/doc/st
 @dirrm share/doc/shell
