@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vinagre
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,6 +20,7 @@ LIB_DEPENDS=	gtk-vnc-2.0:${PORTSDIR}/net/gtk-vnc3 \
     		avahi-core:${PORTSDIR}/net/avahi-app \
 		avahi-ui-gtk3:${PORTSDIR}/net/avahi-gtk3 \
 		gdbm:${PORTSDIR}/databases/gdbm \
+		secret-1:${PORTSDIR}/security/libsecret \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
@@ -28,13 +29,14 @@ CONFLICTS=	vinagre-2.[0-9]*
 LATEST_LINK=	vinagre3
 USE_XZ=		yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gtk30 libxml2 vte3
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack gtk30 libxml2 vte3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-spice --enable-ssh
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include  -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.Vinagre.gschema.xml
