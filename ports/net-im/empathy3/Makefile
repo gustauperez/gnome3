@@ -26,7 +26,7 @@ LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		telepathy.2:${PORTSDIR}/net-im/libtelepathy \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
 		telepathy-farstream.3:${PORTSDIR}/net-im/telepathy-farstream \
-		telepathy-logger.2:${PORTSDIR}/net-im/telepathy-logger \
+		telepathy-logger.3:${PORTSDIR}/net-im/telepathy-logger \
 		folks-telepathy.25:${PORTSDIR}/net-im/folks \
 		notify.4:${PORTSDIR}/devel/libnotify \
 		gcr-3:${PORTSDIR}/security/gcr \
