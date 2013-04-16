@@ -15,7 +15,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 graphical directory tree analyzer
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
+		vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 
 CONFLICTS=	gnome-utils-2.[0-9]*
@@ -23,7 +24,8 @@ CONFLICTS=	gnome-utils-2.[0-9]*
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libxml2 gtk30
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack libxml2 gtk30
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
