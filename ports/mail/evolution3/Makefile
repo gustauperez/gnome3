@@ -11,8 +11,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		${LOCALBASE}/libdata/pkgconfig/gck-3.pc:${PORTSDIR}/security/gcr
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss \
 		gcr-3:${PORTSDIR}/security/gcr \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
