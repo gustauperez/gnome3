@@ -3,7 +3,7 @@
 #   $MCom: ports/www/epiphany-extensions3/Makefile,v 1.9 2012/12/13 20:33:06 kwm Exp $
 
 PORTNAME=	epiphany-extensions
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.0
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
