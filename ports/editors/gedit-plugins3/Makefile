@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gedit-plugins
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -45,7 +45,6 @@ BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/bus.py:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/bus.py:${PORTSDIR}/devel/py-dbus
 # the charmap plugin doesn't work, missing py-gucharmap stuff
 CONFIGURE_ARGS+=--enable-python
-GLIB_SCHEMAS+=	org.gnome.gedit.plugins.terminal.gschema.xml
 PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--disable-python
