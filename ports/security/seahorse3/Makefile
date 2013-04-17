@@ -45,9 +45,9 @@ MAN1=		seahorse.1
 OPTIONS_DEFINE=	LDAP NOTIFY MDNS
 OPTIONS_DEFAULT=NOTIFY
 
-LDAP_DESC=	"Enable LDAP support" on
-NOTIFY_DESC=	NOTIFY "Enable libnotify support" on
-MDNS_DESC=	MDNS "Enable mDNS key sharing" on
+LDAP_DESC=	Enable LDAP support
+NOTIFY_DESC=	Enable libnotify support
+MDNS_DESC=	Enable mDNS key sharing
 
 .include <bsd.port.options.mk>
 
