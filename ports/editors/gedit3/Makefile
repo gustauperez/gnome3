@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gedit
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.2
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -34,10 +34,11 @@ USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix gnomehack intlhack gtksourceview3 libxml2 \
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack gtksourceview3 libxml2 \
 		desktopfileutils gnomedocutils pygobject3
 CONFIGURE_ARGS=	--disable-updater
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION="3.0"
 
