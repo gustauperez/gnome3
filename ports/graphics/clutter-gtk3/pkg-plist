@@ -17,7 +17,6 @@ share/locale/pl/LC_MESSAGES/cluttergtk-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/cluttergtk-1.0.mo
 @dirrm include/clutter-gtk-1.0/clutter-gtk
 @dirrm include/clutter-gtk-1.0
-
 @dirrm share/xmodmap
 @dirrm share/vfolders
 @dirrm share/vala/vapi
