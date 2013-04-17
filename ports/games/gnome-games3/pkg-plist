@@ -10,15 +10,9 @@ bin/gnotski
 bin/gtali
 bin/iagno
 bin/lightsoff
-bin/mahjongg
+bin/gnome-mahjongg
 bin/quadrapassel
 bin/swell-foop
-lib/gnome-games/GnomeGamesSupport-1.0.gir
-lib/gnome-games/GnomeGamesSupport-1.0.typelib
-lib/gnome-games/libgames-support-gi.a
-lib/gnome-games/libgames-support-gi.la
-lib/gnome-games/libgames-support-gi.so
-lib/gnome-games/libgames-support-gi.so.0
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.py
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.pyo
@@ -93,6 +87,7 @@ share/applications/glines.desktop
 share/applications/gnect.desktop
 share/applications/gnibbles.desktop
 share/applications/gnobots2.desktop
+share/applications/gnome-mahjongg.desktop
 share/applications/gnome-sudoku.desktop
 share/applications/gnomine.desktop
 share/applications/gnotravex.desktop
@@ -100,9 +95,17 @@ share/applications/gnotski.desktop
 share/applications/gtali.desktop
 share/applications/iagno.desktop
 share/applications/lightsoff.desktop
-share/applications/mahjongg.desktop
 share/applications/quadrapassel.desktop
 share/applications/swell-foop.desktop
+@unexec [ -s %D/share/games/gnome-mahjongg.bridges.scores ] || rm -f %D/share/games/gnome-mahjongg.bridges.scores
+@unexec [ -s %D/share/games/gnome-mahjongg.cloud.scores ] || rm -f %D/share/games/gnome-mahjongg.cloud.scores
+@unexec [ -s %D/share/games/gnome-mahjongg.confounding.scores ] || rm -f %D/share/games/gnome-mahjongg.confounding.scores
+@unexec [ -s %D/share/games/gnome-mahjongg.difficult.scores ] || rm -f %D/share/games/gnome-mahjongg.difficult.scores
+@unexec [ -s %D/share/games/gnome-mahjongg.dragon.scores ] || rm -f %D/share/games/gnome-mahjongg.dragon.scores
+@unexec [ -s %D/share/games/gnome-mahjongg.easy.scores ] || rm -f %D/share/games/gnome-mahjongg.easy.scores
+@unexec [ -s %D/share/games/gnome-mahjongg.pyramid.scores ] || rm -f %D/share/games/gnome-mahjongg.pyramid.scores
+@unexec [ -s %D/share/games/gnome-mahjongg.tictactoe.scores ] || rm -f %D/share/games/gnome-mahjongg.tictactoe.scores
+@unexec [ -s %D/share/games/gnome-mahjongg.ziggurat.scores ] || rm -f %D/share/games/gnome-mahjongg.ziggurat.scores
 @unexec [ -s %D/share/games/glines.Large.scores ] || rm -f %D/share/games/glines.Large.scores
 @unexec [ -s %D/share/games/glines.Medium.scores ] || rm -f %D/share/games/glines.Medium.scores
 @unexec [ -s %D/share/games/glines.Small.scores ] || rm -f %D/share/games/glines.Small.scores
@@ -177,19 +180,10 @@ share/applications/swell-foop.desktop
 @unexec [ -s %D/share/games/gnotski.9.scores ] || rm -f %D/share/games/gnotski.9.scores
 @unexec [ -s %D/share/games/gtali.Colors.scores ] || rm -f %D/share/games/gtali.Colors.scores
 @unexec [ -s %D/share/games/gtali.Regular.scores ] || rm -f %D/share/games/gtali.Regular.scores
-@unexec [ -s %D/share/games/mahjongg.bridges.scores ] || rm -f %D/share/games/mahjongg.bridges.scores
-@unexec [ -s %D/share/games/mahjongg.cloud.scores ] || rm -f %D/share/games/mahjongg.cloud.scores
-@unexec [ -s %D/share/games/mahjongg.confounding.scores ] || rm -f %D/share/games/mahjongg.confounding.scores
-@unexec [ -s %D/share/games/mahjongg.difficult.scores ] || rm -f %D/share/games/mahjongg.difficult.scores
-@unexec [ -s %D/share/games/mahjongg.dragon.scores ] || rm -f %D/share/games/mahjongg.dragon.scores
-@unexec [ -s %D/share/games/mahjongg.easy.scores ] || rm -f %D/share/games/mahjongg.easy.scores
-@unexec [ -s %D/share/games/mahjongg.pyramid.scores ] || rm -f %D/share/games/mahjongg.pyramid.scores
-@unexec [ -s %D/share/games/mahjongg.tictactoe.scores ] || rm -f %D/share/games/mahjongg.tictactoe.scores
-@unexec [ -s %D/share/games/mahjongg.ziggurat.scores ] || rm -f %D/share/games/mahjongg.ziggurat.scores
 @unexec [ -s %D/share/games/quadrapassel.scores ] || rm -f %D/share/games/quadrapassel.scores
 @unexec [ -s %D/share/games/swell-foop.large.scores ] || rm -f %D/share/games/swell-foop.large.scores
 @unexec [ -s %D/share/games/swell-foop.normal.scores ] || rm -f %D/share/games/swell-foop.normal.scores
-@unexec [ -s %D/share/games/swell-foop.small.scores ] || rm -f %D/share/games/swell-foop.small.scores
+@unexec [ -s %D/shar/games/swell-foop.small.scores ] || rm -f %D/share/games/swell-foop.small.scores
 share/glchess/engines.conf
 share/glchess/glchess.ui
 share/glchess/pieces/3d/bishop.3ds
@@ -324,17 +318,9 @@ share/gnobots2/themes/boo.svg
 share/gnobots2/themes/gnomes.png
 share/gnobots2/themes/robots.svg
 share/gnobots2/themes/ufo.svg
-%%DATADIR%%/swell-foop/preferences.ui
-%%DATADIR%%/swell-foop/themes/colors/bkg.svg
-%%DATADIR%%/swell-foop/themes/colors/blue.svg
-%%DATADIR%%/swell-foop/themes/colors/green.svg
-%%DATADIR%%/swell-foop/themes/colors/red.svg
-%%DATADIR%%/swell-foop/themes/colors/yellow.svg
-%%DATADIR%%/swell-foop/themes/shapesandcolors/bkg.svg
-%%DATADIR%%/swell-foop/themes/shapesandcolors/blue.svg
-%%DATADIR%%/swell-foop/themes/shapesandcolors/green.svg
-%%DATADIR%%/swell-foop/themes/shapesandcolors/red.svg
-%%DATADIR%%/swell-foop/themes/shapesandcolors/yellow.svg
+share/gnome-mahjongg/maps/mahjongg.map
+share/gnome-mahjongg/themes/postmodern.svg
+share/gnome-mahjongg/themes/smooth.png
 share/gnome-sudoku/images/footprints.png
 share/gnome-sudoku/print_games.ui
 share/gnome-sudoku/puzzles/easy
@@ -351,7 +337,6 @@ share/gnomine/face-win.svg
 share/gnomine/face-worried.svg
 share/gnomine/flag-question.svg
 share/gnomine/flag.svg
-share/gnomine/gnomine.ui
 share/gnomine/mine.svg
 share/gnomine/warning.svg
 share/gnotravex/gnotravex.ui
@@ -370,6 +355,86 @@ share/gtali/kismet3.svg
 share/gtali/kismet4.svg
 share/gtali/kismet5.svg
 share/gtali/kismet6.svg
+share/iagno/iagno.ui
+share/iagno/sounds/flip-piece.ogg
+share/iagno/sounds/gameover.ogg
+share/iagno/themes/black_and_white.svg
+share/iagno/themes/sun_and_star.svg
+share/icons/hicolor/16x16/apps/glchess.png
+share/icons/hicolor/16x16/apps/glines.png
+share/icons/hicolor/16x16/apps/gnect.png
+share/icons/hicolor/16x16/apps/gnibbles.png
+share/icons/hicolor/16x16/apps/gnobots2.png
+share/icons/hicolor/16x16/apps/gnome-sudoku.png
+share/icons/hicolor/16x16/apps/gnomine.png
+share/icons/hicolor/16x16/apps/gnotravex.png
+share/icons/hicolor/16x16/apps/gnotski.png
+share/icons/hicolor/16x16/apps/gtali.png
+share/icons/hicolor/16x16/apps/iagno.png
+share/icons/hicolor/16x16/apps/quadrapassel.png
+share/icons/hicolor/22x22/apps/glchess.png
+share/icons/hicolor/22x22/apps/glines.png
+share/icons/hicolor/22x22/apps/gnect.png
+share/icons/hicolor/22x22/apps/gnibbles.png
+share/icons/hicolor/22x22/apps/gnobots2.png
+share/icons/hicolor/22x22/apps/gnome-sudoku.png
+share/icons/hicolor/22x22/apps/gnomine.png
+share/icons/hicolor/22x22/apps/gnotravex.png
+share/icons/hicolor/22x22/apps/gnotski.png
+share/icons/hicolor/22x22/apps/gtali.png
+share/icons/hicolor/22x22/apps/iagno.png
+share/icons/hicolor/22x22/apps/quadrapassel.png
+share/icons/hicolor/24x24/actions/teleport-random.png
+share/icons/hicolor/24x24/actions/teleport.png
+share/icons/hicolor/24x24/apps/glchess.png
+share/icons/hicolor/24x24/apps/glines.png
+share/icons/hicolor/24x24/apps/gnect.png
+share/icons/hicolor/24x24/apps/gnibbles.png
+share/icons/hicolor/24x24/apps/gnobots2.png
+share/icons/hicolor/24x24/apps/gnome-sudoku.png
+share/icons/hicolor/24x24/apps/gnomine.png
+share/icons/hicolor/24x24/apps/gnotravex.png
+share/icons/hicolor/24x24/apps/gnotski.png
+share/icons/hicolor/24x24/apps/gtali.png
+share/icons/hicolor/24x24/apps/iagno.png
+share/icons/hicolor/24x24/apps/quadrapassel.png
+share/icons/hicolor/256x256/apps/gnomine.png
+share/icons/hicolor/256x256/apps/iagno.png
+share/icons/hicolor/32x32/apps/glchess.png
+share/icons/hicolor/32x32/apps/glines.png
+share/icons/hicolor/32x32/apps/gnect.png
+share/icons/hicolor/32x32/apps/gnibbles.png
+share/icons/hicolor/32x32/apps/gnobots2.png
+share/icons/hicolor/32x32/apps/gnome-sudoku.png
+share/icons/hicolor/32x32/apps/gnomine.png
+share/icons/hicolor/32x32/apps/gnotravex.png
+share/icons/hicolor/32x32/apps/gnotski.png
+share/icons/hicolor/32x32/apps/gtali.png
+share/icons/hicolor/32x32/apps/iagno.png
+share/icons/hicolor/32x32/apps/quadrapassel.png
+share/icons/hicolor/48x48/apps/glchess.png
+share/icons/hicolor/48x48/apps/glines.png
+share/icons/hicolor/48x48/apps/gnect.png
+share/icons/hicolor/48x48/apps/gnibbles.png
+share/icons/hicolor/48x48/apps/gnobots2.png
+share/icons/hicolor/48x48/apps/gnome-sudoku.png
+share/icons/hicolor/48x48/apps/gnomine.png
+share/icons/hicolor/48x48/apps/gnotravex.png
+share/icons/hicolor/48x48/apps/gnotski.png
+share/icons/hicolor/48x48/apps/gtali.png
+share/icons/hicolor/48x48/apps/iagno.png
+share/icons/hicolor/48x48/apps/quadrapassel.png
+share/icons/hicolor/scalable/apps/glchess.svg
+share/icons/hicolor/scalable/apps/glines.svg
+share/icons/hicolor/scalable/apps/gnect.svg
+share/icons/hicolor/scalable/apps/gnibbles.svg
+share/icons/hicolor/scalable/apps/gnobots2.svg
+share/icons/hicolor/scalable/apps/gnome-sudoku.svg
+share/icons/hicolor/scalable/apps/gnotravex.svg
+share/icons/hicolor/scalable/apps/gnotski.svg
+share/icons/hicolor/scalable/apps/gtali.svg
+share/icons/hicolor/scalable/apps/lightsoff.svg
+share/icons/hicolor/scalable/apps/quadrapassel.svg
 share/help/C/glchess/figures/game.png
 share/help/C/glchess/figures/new_game.png
 share/help/C/glchess/figures/preferences_game.png
@@ -417,6 +482,38 @@ share/help/C/gnibbles/legal.xml
 share/help/C/gnobots2/figures/gnobots2-main.png
 share/help/C/gnobots2/index.docbook
 share/help/C/gnobots2/legal.xml
+share/help/C/gnome-mahjongg/bug-filing.page
+share/help/C/gnome-mahjongg/choosing.page
+share/help/C/gnome-mahjongg/develop.page
+share/help/C/gnome-mahjongg/documentation.page
+share/help/C/gnome-mahjongg/figures/hints-video.ogv
+share/help/C/gnome-mahjongg/figures/layout-bridges.png
+share/help/C/gnome-mahjongg/figures/layout-cloud.png
+share/help/C/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/C/gnome-mahjongg/figures/layout-difficult.png
+share/help/C/gnome-mahjongg/figures/layout-easy.png
+share/help/C/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/C/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/C/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/C/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/C/gnome-mahjongg/figures/logo.png
+share/help/C/gnome-mahjongg/figures/logo32.png
+share/help/C/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/C/gnome-mahjongg/figures/moves-left.png
+share/help/C/gnome-mahjongg/gameplay.page
+share/help/C/gnome-mahjongg/hints.page
+share/help/C/gnome-mahjongg/index.page
+share/help/C/gnome-mahjongg/legal.xml
+share/help/C/gnome-mahjongg/license.page
+share/help/C/gnome-mahjongg/map.page
+share/help/C/gnome-mahjongg/moves.page
+share/help/C/gnome-mahjongg/pause.page
+share/help/C/gnome-mahjongg/rules.page
+share/help/C/gnome-mahjongg/scoring.page
+share/help/C/gnome-mahjongg/shortcuts.page
+share/help/C/gnome-mahjongg/strategy.page
+share/help/C/gnome-mahjongg/toolbar.page
+share/help/C/gnome-mahjongg/translate.page
 share/help/C/gnome-sudoku/basics.page
 share/help/C/gnome-sudoku/bug-filing.page
 share/help/C/gnome-sudoku/commandline.page
@@ -447,9 +544,9 @@ share/help/C/gnome-sudoku/strategy.page
 share/help/C/gnome-sudoku/toolbar.page
 share/help/C/gnome-sudoku/trackers.page
 share/help/C/gnome-sudoku/translate.page
+share/help/C/gnomine/board-size.page
 share/help/C/gnomine/bug-filing.page
 share/help/C/gnomine/develop.page
-share/help/C/gnomine/difficulty.page
 share/help/C/gnomine/documentation.page
 share/help/C/gnomine/faces.page
 share/help/C/gnomine/figures/easy-hints-1.png
@@ -526,42 +623,44 @@ share/help/C/iagno/sound.page
 share/help/C/iagno/strategy.page
 share/help/C/iagno/translate.page
 share/help/C/iagno/visual-results.page
-share/help/C/lightsoff/index.docbook
+share/help/C/lightsoff/basic.page
+share/help/C/lightsoff/bug-filing.page
+share/help/C/lightsoff/develop.page
+share/help/C/lightsoff/documentation.page
+share/help/C/lightsoff/figures/lightsoff.jpg
+share/help/C/lightsoff/figures/lightsoff.ogv
+share/help/C/lightsoff/figures/lightsoff_logo.jpg
+share/help/C/lightsoff/figures/lo1.jpg
+share/help/C/lightsoff/index.page
 share/help/C/lightsoff/legal.xml
-share/help/C/mahjongg/bug-filing.page
-share/help/C/mahjongg/choosing.page
-share/help/C/mahjongg/develop.page
-share/help/C/mahjongg/documentation.page
-share/help/C/mahjongg/figures/hints-video.ogv
-share/help/C/mahjongg/figures/layout-bridges.png
-share/help/C/mahjongg/figures/layout-cloud.png
-share/help/C/mahjongg/figures/layout-conf-cross.png
-share/help/C/mahjongg/figures/layout-difficult.png
-share/help/C/mahjongg/figures/layout-easy.png
-share/help/C/mahjongg/figures/layout-pyramid-walls.png
-share/help/C/mahjongg/figures/layout-red-dragon.png
-share/help/C/mahjongg/figures/layout-tic-tac-toe.png
-share/help/C/mahjongg/figures/layout-ziggurat.png
-share/help/C/mahjongg/figures/logo.png
-share/help/C/mahjongg/figures/logo32.png
-share/help/C/mahjongg/figures/mahjongg-video.ogv
-share/help/C/mahjongg/figures/moves-left.png
-share/help/C/mahjongg/gameplay.page
-share/help/C/mahjongg/hints.page
-share/help/C/mahjongg/index.page
-share/help/C/mahjongg/legal.xml
-share/help/C/mahjongg/license.page
-share/help/C/mahjongg/map.page
-share/help/C/mahjongg/moves.page
-share/help/C/mahjongg/pause.page
-share/help/C/mahjongg/rules.page
-share/help/C/mahjongg/scoring.page
-share/help/C/mahjongg/shortcuts.page
-share/help/C/mahjongg/strategy.page
-share/help/C/mahjongg/toolbar.page
-share/help/C/mahjongg/translate.page
-share/help/C/quadrapassel/index.docbook
+share/help/C/lightsoff/license.page
+share/help/C/lightsoff/rules.page
+share/help/C/lightsoff/strategy.page
+share/help/C/lightsoff/translate.page
+share/help/C/quadrapassel/bug-filing.page
+share/help/C/quadrapassel/develop.page
+share/help/C/quadrapassel/documentation.page
+share/help/C/quadrapassel/get-involved.page
+share/help/C/quadrapassel/index.page
 share/help/C/quadrapassel/legal.xml
+share/help/C/quadrapassel/license.page
+share/help/C/quadrapassel/media/fig2.png
+share/help/C/quadrapassel/media/fig3.png
+share/help/C/quadrapassel/media/fig4.png
+share/help/C/quadrapassel/media/fig5.png
+share/help/C/quadrapassel/media/go-home.png
+share/help/C/quadrapassel/media/go-previous.png
+share/help/C/quadrapassel/media/part1.jpg
+share/help/C/quadrapassel/media/part2.jpg
+share/help/C/quadrapassel/media/part3.jpg
+share/help/C/quadrapassel/media/part4.jpg
+share/help/C/quadrapassel/media/previous.png
+share/help/C/quadrapassel/media/quadrapassel.png
+share/help/C/quadrapassel/media/quadrapassel22.png
+share/help/C/quadrapassel/playgame.page
+share/help/C/quadrapassel/preferences.page
+share/help/C/quadrapassel/score.page
+share/help/C/quadrapassel/translate.page
 share/help/C/swell-foop/figures/play1.png
 share/help/C/swell-foop/figures/play2.png
 share/help/C/swell-foop/figures/play3.png
@@ -616,6 +715,38 @@ share/help/ca/gnibbles/legal.xml
 share/help/ca/gnobots2/figures/gnobots2-main.png
 share/help/ca/gnobots2/index.docbook
 share/help/ca/gnobots2/legal.xml
+share/help/ca/gnome-mahjongg/bug-filing.page
+share/help/ca/gnome-mahjongg/choosing.page
+share/help/ca/gnome-mahjongg/develop.page
+share/help/ca/gnome-mahjongg/documentation.page
+share/help/ca/gnome-mahjongg/figures/hints-video.ogv
+share/help/ca/gnome-mahjongg/figures/layout-bridges.png
+share/help/ca/gnome-mahjongg/figures/layout-cloud.png
+share/help/ca/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/ca/gnome-mahjongg/figures/layout-difficult.png
+share/help/ca/gnome-mahjongg/figures/layout-easy.png
+share/help/ca/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/ca/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/ca/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/ca/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/ca/gnome-mahjongg/figures/logo.png
+share/help/ca/gnome-mahjongg/figures/logo32.png
+share/help/ca/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/ca/gnome-mahjongg/figures/moves-left.png
+share/help/ca/gnome-mahjongg/gameplay.page
+share/help/ca/gnome-mahjongg/hints.page
+share/help/ca/gnome-mahjongg/index.page
+share/help/ca/gnome-mahjongg/legal.xml
+share/help/ca/gnome-mahjongg/license.page
+share/help/ca/gnome-mahjongg/map.page
+share/help/ca/gnome-mahjongg/moves.page
+share/help/ca/gnome-mahjongg/pause.page
+share/help/ca/gnome-mahjongg/rules.page
+share/help/ca/gnome-mahjongg/scoring.page
+share/help/ca/gnome-mahjongg/shortcuts.page
+share/help/ca/gnome-mahjongg/strategy.page
+share/help/ca/gnome-mahjongg/toolbar.page
+share/help/ca/gnome-mahjongg/translate.page
 share/help/ca/gnome-sudoku/basics.page
 share/help/ca/gnome-sudoku/bug-filing.page
 share/help/ca/gnome-sudoku/commandline.page
@@ -646,9 +777,9 @@ share/help/ca/gnome-sudoku/strategy.page
 share/help/ca/gnome-sudoku/toolbar.page
 share/help/ca/gnome-sudoku/trackers.page
 share/help/ca/gnome-sudoku/translate.page
+share/help/ca/gnomine/board-size.page
 share/help/ca/gnomine/bug-filing.page
 share/help/ca/gnomine/develop.page
-share/help/ca/gnomine/difficulty.page
 share/help/ca/gnomine/documentation.page
 share/help/ca/gnomine/faces.page
 share/help/ca/gnomine/figures/easy-hints-1.png
@@ -725,42 +856,44 @@ share/help/ca/iagno/sound.page
 share/help/ca/iagno/strategy.page
 share/help/ca/iagno/translate.page
 share/help/ca/iagno/visual-results.page
-share/help/ca/lightsoff/index.docbook
+share/help/ca/lightsoff/basic.page
+share/help/ca/lightsoff/bug-filing.page
+share/help/ca/lightsoff/develop.page
+share/help/ca/lightsoff/documentation.page
+share/help/ca/lightsoff/figures/lightsoff.jpg
+share/help/ca/lightsoff/figures/lightsoff.ogv
+share/help/ca/lightsoff/figures/lightsoff_logo.jpg
+share/help/ca/lightsoff/figures/lo1.jpg
+share/help/ca/lightsoff/index.page
 share/help/ca/lightsoff/legal.xml
-share/help/ca/mahjongg/bug-filing.page
-share/help/ca/mahjongg/choosing.page
-share/help/ca/mahjongg/develop.page
-share/help/ca/mahjongg/documentation.page
-share/help/ca/mahjongg/figures/hints-video.ogv
-share/help/ca/mahjongg/figures/layout-bridges.png
-share/help/ca/mahjongg/figures/layout-cloud.png
-share/help/ca/mahjongg/figures/layout-conf-cross.png
-share/help/ca/mahjongg/figures/layout-difficult.png
-share/help/ca/mahjongg/figures/layout-easy.png
-share/help/ca/mahjongg/figures/layout-pyramid-walls.png
-share/help/ca/mahjongg/figures/layout-red-dragon.png
-share/help/ca/mahjongg/figures/layout-tic-tac-toe.png
-share/help/ca/mahjongg/figures/layout-ziggurat.png
-share/help/ca/mahjongg/figures/logo.png
-share/help/ca/mahjongg/figures/logo32.png
-share/help/ca/mahjongg/figures/mahjongg-video.ogv
-share/help/ca/mahjongg/figures/moves-left.png
-share/help/ca/mahjongg/gameplay.page
-share/help/ca/mahjongg/hints.page
-share/help/ca/mahjongg/index.page
-share/help/ca/mahjongg/legal.xml
-share/help/ca/mahjongg/license.page
-share/help/ca/mahjongg/map.page
-share/help/ca/mahjongg/moves.page
-share/help/ca/mahjongg/pause.page
-share/help/ca/mahjongg/rules.page
-share/help/ca/mahjongg/scoring.page
-share/help/ca/mahjongg/shortcuts.page
-share/help/ca/mahjongg/strategy.page
-share/help/ca/mahjongg/toolbar.page
-share/help/ca/mahjongg/translate.page
-share/help/ca/quadrapassel/index.docbook
+share/help/ca/lightsoff/license.page
+share/help/ca/lightsoff/rules.page
+share/help/ca/lightsoff/strategy.page
+share/help/ca/lightsoff/translate.page
+share/help/ca/quadrapassel/bug-filing.page
+share/help/ca/quadrapassel/develop.page
+share/help/ca/quadrapassel/documentation.page
+share/help/ca/quadrapassel/get-involved.page
+share/help/ca/quadrapassel/index.page
 share/help/ca/quadrapassel/legal.xml
+share/help/ca/quadrapassel/license.page
+share/help/ca/quadrapassel/media/fig2.png
+share/help/ca/quadrapassel/media/fig3.png
+share/help/ca/quadrapassel/media/fig4.png
+share/help/ca/quadrapassel/media/fig5.png
+share/help/ca/quadrapassel/media/go-home.png
+share/help/ca/quadrapassel/media/go-previous.png
+share/help/ca/quadrapassel/media/part1.jpg
+share/help/ca/quadrapassel/media/part2.jpg
+share/help/ca/quadrapassel/media/part3.jpg
+share/help/ca/quadrapassel/media/part4.jpg
+share/help/ca/quadrapassel/media/previous.png
+share/help/ca/quadrapassel/media/quadrapassel.png
+share/help/ca/quadrapassel/media/quadrapassel22.png
+share/help/ca/quadrapassel/playgame.page
+share/help/ca/quadrapassel/preferences.page
+share/help/ca/quadrapassel/score.page
+share/help/ca/quadrapassel/translate.page
 share/help/ca/swell-foop/figures/play1.png
 share/help/ca/swell-foop/figures/play2.png
 share/help/ca/swell-foop/figures/play3.png
@@ -815,6 +948,38 @@ share/help/cs/gnibbles/legal.xml
 share/help/cs/gnobots2/figures/gnobots2-main.png
 share/help/cs/gnobots2/index.docbook
 share/help/cs/gnobots2/legal.xml
+share/help/cs/gnome-mahjongg/bug-filing.page
+share/help/cs/gnome-mahjongg/choosing.page
+share/help/cs/gnome-mahjongg/develop.page
+share/help/cs/gnome-mahjongg/documentation.page
+share/help/cs/gnome-mahjongg/figures/hints-video.ogv
+share/help/cs/gnome-mahjongg/figures/layout-bridges.png
+share/help/cs/gnome-mahjongg/figures/layout-cloud.png
+share/help/cs/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/cs/gnome-mahjongg/figures/layout-difficult.png
+share/help/cs/gnome-mahjongg/figures/layout-easy.png
+share/help/cs/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/cs/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/cs/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/cs/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/cs/gnome-mahjongg/figures/logo.png
+share/help/cs/gnome-mahjongg/figures/logo32.png
+share/help/cs/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/cs/gnome-mahjongg/figures/moves-left.png
+share/help/cs/gnome-mahjongg/gameplay.page
+share/help/cs/gnome-mahjongg/hints.page
+share/help/cs/gnome-mahjongg/index.page
+share/help/cs/gnome-mahjongg/legal.xml
+share/help/cs/gnome-mahjongg/license.page
+share/help/cs/gnome-mahjongg/map.page
+share/help/cs/gnome-mahjongg/moves.page
+share/help/cs/gnome-mahjongg/pause.page
+share/help/cs/gnome-mahjongg/rules.page
+share/help/cs/gnome-mahjongg/scoring.page
+share/help/cs/gnome-mahjongg/shortcuts.page
+share/help/cs/gnome-mahjongg/strategy.page
+share/help/cs/gnome-mahjongg/toolbar.page
+share/help/cs/gnome-mahjongg/translate.page
 share/help/cs/gnome-sudoku/basics.page
 share/help/cs/gnome-sudoku/bug-filing.page
 share/help/cs/gnome-sudoku/commandline.page
@@ -845,9 +1010,9 @@ share/help/cs/gnome-sudoku/strategy.page
 share/help/cs/gnome-sudoku/toolbar.page
 share/help/cs/gnome-sudoku/trackers.page
 share/help/cs/gnome-sudoku/translate.page
+share/help/cs/gnomine/board-size.page
 share/help/cs/gnomine/bug-filing.page
 share/help/cs/gnomine/develop.page
-share/help/cs/gnomine/difficulty.page
 share/help/cs/gnomine/documentation.page
 share/help/cs/gnomine/faces.page
 share/help/cs/gnomine/figures/easy-hints-1.png
@@ -924,40 +1089,30 @@ share/help/cs/iagno/sound.page
 share/help/cs/iagno/strategy.page
 share/help/cs/iagno/translate.page
 share/help/cs/iagno/visual-results.page
-share/help/cs/mahjongg/bug-filing.page
-share/help/cs/mahjongg/choosing.page
-share/help/cs/mahjongg/develop.page
-share/help/cs/mahjongg/documentation.page
-share/help/cs/mahjongg/figures/hints-video.ogv
-share/help/cs/mahjongg/figures/layout-bridges.png
-share/help/cs/mahjongg/figures/layout-cloud.png
-share/help/cs/mahjongg/figures/layout-conf-cross.png
-share/help/cs/mahjongg/figures/layout-difficult.png
-share/help/cs/mahjongg/figures/layout-easy.png
-share/help/cs/mahjongg/figures/layout-pyramid-walls.png
-share/help/cs/mahjongg/figures/layout-red-dragon.png
-share/help/cs/mahjongg/figures/layout-tic-tac-toe.png
-share/help/cs/mahjongg/figures/layout-ziggurat.png
-share/help/cs/mahjongg/figures/logo.png
-share/help/cs/mahjongg/figures/logo32.png
-share/help/cs/mahjongg/figures/mahjongg-video.ogv
-share/help/cs/mahjongg/figures/moves-left.png
-share/help/cs/mahjongg/gameplay.page
-share/help/cs/mahjongg/hints.page
-share/help/cs/mahjongg/index.page
-share/help/cs/mahjongg/legal.xml
-share/help/cs/mahjongg/license.page
-share/help/cs/mahjongg/map.page
-share/help/cs/mahjongg/moves.page
-share/help/cs/mahjongg/pause.page
-share/help/cs/mahjongg/rules.page
-share/help/cs/mahjongg/scoring.page
-share/help/cs/mahjongg/shortcuts.page
-share/help/cs/mahjongg/strategy.page
-share/help/cs/mahjongg/toolbar.page
-share/help/cs/mahjongg/translate.page
-share/help/cs/quadrapassel/index.docbook
+share/help/cs/quadrapassel/bug-filing.page
+share/help/cs/quadrapassel/develop.page
+share/help/cs/quadrapassel/documentation.page
+share/help/cs/quadrapassel/get-involved.page
+share/help/cs/quadrapassel/index.page
 share/help/cs/quadrapassel/legal.xml
+share/help/cs/quadrapassel/license.page
+share/help/cs/quadrapassel/media/fig2.png
+share/help/cs/quadrapassel/media/fig3.png
+share/help/cs/quadrapassel/media/fig4.png
+share/help/cs/quadrapassel/media/fig5.png
+share/help/cs/quadrapassel/media/go-home.png
+share/help/cs/quadrapassel/media/go-previous.png
+share/help/cs/quadrapassel/media/part1.jpg
+share/help/cs/quadrapassel/media/part2.jpg
+share/help/cs/quadrapassel/media/part3.jpg
+share/help/cs/quadrapassel/media/part4.jpg
+share/help/cs/quadrapassel/media/previous.png
+share/help/cs/quadrapassel/media/quadrapassel.png
+share/help/cs/quadrapassel/media/quadrapassel22.png
+share/help/cs/quadrapassel/playgame.page
+share/help/cs/quadrapassel/preferences.page
+share/help/cs/quadrapassel/score.page
+share/help/cs/quadrapassel/translate.page
 share/help/cs/swell-foop/figures/play1.png
 share/help/cs/swell-foop/figures/play2.png
 share/help/cs/swell-foop/figures/play3.png
@@ -978,6 +1133,38 @@ share/help/da/gnect/legal.xml
 share/help/da/gnobots2/figures/gnobots2-main.png
 share/help/da/gnobots2/index.docbook
 share/help/da/gnobots2/legal.xml
+share/help/da/gnome-mahjongg/bug-filing.page
+share/help/da/gnome-mahjongg/choosing.page
+share/help/da/gnome-mahjongg/develop.page
+share/help/da/gnome-mahjongg/documentation.page
+share/help/da/gnome-mahjongg/figures/hints-video.ogv
+share/help/da/gnome-mahjongg/figures/layout-bridges.png
+share/help/da/gnome-mahjongg/figures/layout-cloud.png
+share/help/da/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/da/gnome-mahjongg/figures/layout-difficult.png
+share/help/da/gnome-mahjongg/figures/layout-easy.png
+share/help/da/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/da/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/da/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/da/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/da/gnome-mahjongg/figures/logo.png
+share/help/da/gnome-mahjongg/figures/logo32.png
+share/help/da/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/da/gnome-mahjongg/figures/moves-left.png
+share/help/da/gnome-mahjongg/gameplay.page
+share/help/da/gnome-mahjongg/hints.page
+share/help/da/gnome-mahjongg/index.page
+share/help/da/gnome-mahjongg/legal.xml
+share/help/da/gnome-mahjongg/license.page
+share/help/da/gnome-mahjongg/map.page
+share/help/da/gnome-mahjongg/moves.page
+share/help/da/gnome-mahjongg/pause.page
+share/help/da/gnome-mahjongg/rules.page
+share/help/da/gnome-mahjongg/scoring.page
+share/help/da/gnome-mahjongg/shortcuts.page
+share/help/da/gnome-mahjongg/strategy.page
+share/help/da/gnome-mahjongg/toolbar.page
+share/help/da/gnome-mahjongg/translate.page
 share/help/da/gnome-sudoku/basics.page
 share/help/da/gnome-sudoku/bug-filing.page
 share/help/da/gnome-sudoku/commandline.page
@@ -1008,9 +1195,9 @@ share/help/da/gnome-sudoku/strategy.page
 share/help/da/gnome-sudoku/toolbar.page
 share/help/da/gnome-sudoku/trackers.page
 share/help/da/gnome-sudoku/translate.page
+share/help/da/gnomine/board-size.page
 share/help/da/gnomine/bug-filing.page
 share/help/da/gnomine/develop.page
-share/help/da/gnomine/difficulty.page
 share/help/da/gnomine/documentation.page
 share/help/da/gnomine/faces.page
 share/help/da/gnomine/figures/easy-hints-1.png
@@ -1064,38 +1251,6 @@ share/help/da/gtali/figures/mainwindow.png
 share/help/da/gtali/figures/preferences.png
 share/help/da/gtali/index.docbook
 share/help/da/gtali/legal.xml
-share/help/da/mahjongg/bug-filing.page
-share/help/da/mahjongg/choosing.page
-share/help/da/mahjongg/develop.page
-share/help/da/mahjongg/documentation.page
-share/help/da/mahjongg/figures/hints-video.ogv
-share/help/da/mahjongg/figures/layout-bridges.png
-share/help/da/mahjongg/figures/layout-cloud.png
-share/help/da/mahjongg/figures/layout-conf-cross.png
-share/help/da/mahjongg/figures/layout-difficult.png
-share/help/da/mahjongg/figures/layout-easy.png
-share/help/da/mahjongg/figures/layout-pyramid-walls.png
-share/help/da/mahjongg/figures/layout-red-dragon.png
-share/help/da/mahjongg/figures/layout-tic-tac-toe.png
-share/help/da/mahjongg/figures/layout-ziggurat.png
-share/help/da/mahjongg/figures/logo.png
-share/help/da/mahjongg/figures/logo32.png
-share/help/da/mahjongg/figures/mahjongg-video.ogv
-share/help/da/mahjongg/figures/moves-left.png
-share/help/da/mahjongg/gameplay.page
-share/help/da/mahjongg/hints.page
-share/help/da/mahjongg/index.page
-share/help/da/mahjongg/legal.xml
-share/help/da/mahjongg/license.page
-share/help/da/mahjongg/map.page
-share/help/da/mahjongg/moves.page
-share/help/da/mahjongg/pause.page
-share/help/da/mahjongg/rules.page
-share/help/da/mahjongg/scoring.page
-share/help/da/mahjongg/shortcuts.page
-share/help/da/mahjongg/strategy.page
-share/help/da/mahjongg/toolbar.page
-share/help/da/mahjongg/translate.page
 share/help/de/glchess/figures/game.png
 share/help/de/glchess/figures/new_game.png
 share/help/de/glchess/figures/preferences_game.png
@@ -1143,6 +1298,38 @@ share/help/de/gnibbles/legal.xml
 share/help/de/gnobots2/figures/gnobots2-main.png
 share/help/de/gnobots2/index.docbook
 share/help/de/gnobots2/legal.xml
+share/help/de/gnome-mahjongg/bug-filing.page
+share/help/de/gnome-mahjongg/choosing.page
+share/help/de/gnome-mahjongg/develop.page
+share/help/de/gnome-mahjongg/documentation.page
+share/help/de/gnome-mahjongg/figures/hints-video.ogv
+share/help/de/gnome-mahjongg/figures/layout-bridges.png
+share/help/de/gnome-mahjongg/figures/layout-cloud.png
+share/help/de/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/de/gnome-mahjongg/figures/layout-difficult.png
+share/help/de/gnome-mahjongg/figures/layout-easy.png
+share/help/de/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/de/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/de/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/de/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/de/gnome-mahjongg/figures/logo.png
+share/help/de/gnome-mahjongg/figures/logo32.png
+share/help/de/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/de/gnome-mahjongg/figures/moves-left.png
+share/help/de/gnome-mahjongg/gameplay.page
+share/help/de/gnome-mahjongg/hints.page
+share/help/de/gnome-mahjongg/index.page
+share/help/de/gnome-mahjongg/legal.xml
+share/help/de/gnome-mahjongg/license.page
+share/help/de/gnome-mahjongg/map.page
+share/help/de/gnome-mahjongg/moves.page
+share/help/de/gnome-mahjongg/pause.page
+share/help/de/gnome-mahjongg/rules.page
+share/help/de/gnome-mahjongg/scoring.page
+share/help/de/gnome-mahjongg/shortcuts.page
+share/help/de/gnome-mahjongg/strategy.page
+share/help/de/gnome-mahjongg/toolbar.page
+share/help/de/gnome-mahjongg/translate.page
 share/help/de/gnome-sudoku/basics.page
 share/help/de/gnome-sudoku/bug-filing.page
 share/help/de/gnome-sudoku/commandline.page
@@ -1173,9 +1360,9 @@ share/help/de/gnome-sudoku/strategy.page
 share/help/de/gnome-sudoku/toolbar.page
 share/help/de/gnome-sudoku/trackers.page
 share/help/de/gnome-sudoku/translate.page
+share/help/de/gnomine/board-size.page
 share/help/de/gnomine/bug-filing.page
 share/help/de/gnomine/develop.page
-share/help/de/gnomine/difficulty.page
 share/help/de/gnomine/documentation.page
 share/help/de/gnomine/faces.page
 share/help/de/gnomine/figures/easy-hints-1.png
@@ -1252,42 +1439,44 @@ share/help/de/iagno/sound.page
 share/help/de/iagno/strategy.page
 share/help/de/iagno/translate.page
 share/help/de/iagno/visual-results.page
-share/help/de/lightsoff/index.docbook
+share/help/de/lightsoff/basic.page
+share/help/de/lightsoff/bug-filing.page
+share/help/de/lightsoff/develop.page
+share/help/de/lightsoff/documentation.page
+share/help/de/lightsoff/figures/lightsoff.jpg
+share/help/de/lightsoff/figures/lightsoff.ogv
+share/help/de/lightsoff/figures/lightsoff_logo.jpg
+share/help/de/lightsoff/figures/lo1.jpg
+share/help/de/lightsoff/index.page
 share/help/de/lightsoff/legal.xml
-share/help/de/mahjongg/bug-filing.page
-share/help/de/mahjongg/choosing.page
-share/help/de/mahjongg/develop.page
-share/help/de/mahjongg/documentation.page
-share/help/de/mahjongg/figures/hints-video.ogv
-share/help/de/mahjongg/figures/layout-bridges.png
-share/help/de/mahjongg/figures/layout-cloud.png
-share/help/de/mahjongg/figures/layout-conf-cross.png
-share/help/de/mahjongg/figures/layout-difficult.png
-share/help/de/mahjongg/figures/layout-easy.png
-share/help/de/mahjongg/figures/layout-pyramid-walls.png
-share/help/de/mahjongg/figures/layout-red-dragon.png
-share/help/de/mahjongg/figures/layout-tic-tac-toe.png
-share/help/de/mahjongg/figures/layout-ziggurat.png
-share/help/de/mahjongg/figures/logo.png
-share/help/de/mahjongg/figures/logo32.png
-share/help/de/mahjongg/figures/mahjongg-video.ogv
-share/help/de/mahjongg/figures/moves-left.png
-share/help/de/mahjongg/gameplay.page
-share/help/de/mahjongg/hints.page
-share/help/de/mahjongg/index.page
-share/help/de/mahjongg/legal.xml
-share/help/de/mahjongg/license.page
-share/help/de/mahjongg/map.page
-share/help/de/mahjongg/moves.page
-share/help/de/mahjongg/pause.page
-share/help/de/mahjongg/rules.page
-share/help/de/mahjongg/scoring.page
-share/help/de/mahjongg/shortcuts.page
-share/help/de/mahjongg/strategy.page
-share/help/de/mahjongg/toolbar.page
-share/help/de/mahjongg/translate.page
-share/help/de/quadrapassel/index.docbook
+share/help/de/lightsoff/license.page
+share/help/de/lightsoff/rules.page
+share/help/de/lightsoff/strategy.page
+share/help/de/lightsoff/translate.page
+share/help/de/quadrapassel/bug-filing.page
+share/help/de/quadrapassel/develop.page
+share/help/de/quadrapassel/documentation.page
+share/help/de/quadrapassel/get-involved.page
+share/help/de/quadrapassel/index.page
 share/help/de/quadrapassel/legal.xml
+share/help/de/quadrapassel/license.page
+share/help/de/quadrapassel/media/fig2.png
+share/help/de/quadrapassel/media/fig3.png
+share/help/de/quadrapassel/media/fig4.png
+share/help/de/quadrapassel/media/fig5.png
+share/help/de/quadrapassel/media/go-home.png
+share/help/de/quadrapassel/media/go-previous.png
+share/help/de/quadrapassel/media/part1.jpg
+share/help/de/quadrapassel/media/part2.jpg
+share/help/de/quadrapassel/media/part3.jpg
+share/help/de/quadrapassel/media/part4.jpg
+share/help/de/quadrapassel/media/previous.png
+share/help/de/quadrapassel/media/quadrapassel.png
+share/help/de/quadrapassel/media/quadrapassel22.png
+share/help/de/quadrapassel/playgame.page
+share/help/de/quadrapassel/preferences.page
+share/help/de/quadrapassel/score.page
+share/help/de/quadrapassel/translate.page
 share/help/de/swell-foop/figures/play1.png
 share/help/de/swell-foop/figures/play2.png
 share/help/de/swell-foop/figures/play3.png
@@ -1342,6 +1531,38 @@ share/help/el/gnibbles/legal.xml
 share/help/el/gnobots2/figures/gnobots2-main.png
 share/help/el/gnobots2/index.docbook
 share/help/el/gnobots2/legal.xml
+share/help/el/gnome-mahjongg/bug-filing.page
+share/help/el/gnome-mahjongg/choosing.page
+share/help/el/gnome-mahjongg/develop.page
+share/help/el/gnome-mahjongg/documentation.page
+share/help/el/gnome-mahjongg/figures/hints-video.ogv
+share/help/el/gnome-mahjongg/figures/layout-bridges.png
+share/help/el/gnome-mahjongg/figures/layout-cloud.png
+share/help/el/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/el/gnome-mahjongg/figures/layout-difficult.png
+share/help/el/gnome-mahjongg/figures/layout-easy.png
+share/help/el/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/el/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/el/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/el/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/el/gnome-mahjongg/figures/logo.png
+share/help/el/gnome-mahjongg/figures/logo32.png
+share/help/el/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/el/gnome-mahjongg/figures/moves-left.png
+share/help/el/gnome-mahjongg/gameplay.page
+share/help/el/gnome-mahjongg/hints.page
+share/help/el/gnome-mahjongg/index.page
+share/help/el/gnome-mahjongg/legal.xml
+share/help/el/gnome-mahjongg/license.page
+share/help/el/gnome-mahjongg/map.page
+share/help/el/gnome-mahjongg/moves.page
+share/help/el/gnome-mahjongg/pause.page
+share/help/el/gnome-mahjongg/rules.page
+share/help/el/gnome-mahjongg/scoring.page
+share/help/el/gnome-mahjongg/shortcuts.page
+share/help/el/gnome-mahjongg/strategy.page
+share/help/el/gnome-mahjongg/toolbar.page
+share/help/el/gnome-mahjongg/translate.page
 share/help/el/gnome-sudoku/basics.page
 share/help/el/gnome-sudoku/bug-filing.page
 share/help/el/gnome-sudoku/commandline.page
@@ -1372,9 +1593,9 @@ share/help/el/gnome-sudoku/strategy.page
 share/help/el/gnome-sudoku/toolbar.page
 share/help/el/gnome-sudoku/trackers.page
 share/help/el/gnome-sudoku/translate.page
+share/help/el/gnomine/board-size.page
 share/help/el/gnomine/bug-filing.page
 share/help/el/gnomine/develop.page
-share/help/el/gnomine/difficulty.page
 share/help/el/gnomine/documentation.page
 share/help/el/gnomine/faces.page
 share/help/el/gnomine/figures/easy-hints-1.png
@@ -1451,42 +1672,44 @@ share/help/el/iagno/sound.page
 share/help/el/iagno/strategy.page
 share/help/el/iagno/translate.page
 share/help/el/iagno/visual-results.page
-share/help/el/lightsoff/index.docbook
+share/help/el/lightsoff/basic.page
+share/help/el/lightsoff/bug-filing.page
+share/help/el/lightsoff/develop.page
+share/help/el/lightsoff/documentation.page
+share/help/el/lightsoff/figures/lightsoff.jpg
+share/help/el/lightsoff/figures/lightsoff.ogv
+share/help/el/lightsoff/figures/lightsoff_logo.jpg
+share/help/el/lightsoff/figures/lo1.jpg
+share/help/el/lightsoff/index.page
 share/help/el/lightsoff/legal.xml
-share/help/el/mahjongg/bug-filing.page
-share/help/el/mahjongg/choosing.page
-share/help/el/mahjongg/develop.page
-share/help/el/mahjongg/documentation.page
-share/help/el/mahjongg/figures/hints-video.ogv
-share/help/el/mahjongg/figures/layout-bridges.png
-share/help/el/mahjongg/figures/layout-cloud.png
-share/help/el/mahjongg/figures/layout-conf-cross.png
-share/help/el/mahjongg/figures/layout-difficult.png
-share/help/el/mahjongg/figures/layout-easy.png
-share/help/el/mahjongg/figures/layout-pyramid-walls.png
-share/help/el/mahjongg/figures/layout-red-dragon.png
-share/help/el/mahjongg/figures/layout-tic-tac-toe.png
-share/help/el/mahjongg/figures/layout-ziggurat.png
-share/help/el/mahjongg/figures/logo.png
-share/help/el/mahjongg/figures/logo32.png
-share/help/el/mahjongg/figures/mahjongg-video.ogv
-share/help/el/mahjongg/figures/moves-left.png
-share/help/el/mahjongg/gameplay.page
-share/help/el/mahjongg/hints.page
-share/help/el/mahjongg/index.page
-share/help/el/mahjongg/legal.xml
-share/help/el/mahjongg/license.page
-share/help/el/mahjongg/map.page
-share/help/el/mahjongg/moves.page
-share/help/el/mahjongg/pause.page
-share/help/el/mahjongg/rules.page
-share/help/el/mahjongg/scoring.page
-share/help/el/mahjongg/shortcuts.page
-share/help/el/mahjongg/strategy.page
-share/help/el/mahjongg/toolbar.page
-share/help/el/mahjongg/translate.page
-share/help/el/quadrapassel/index.docbook
+share/help/el/lightsoff/license.page
+share/help/el/lightsoff/rules.page
+share/help/el/lightsoff/strategy.page
+share/help/el/lightsoff/translate.page
+share/help/el/quadrapassel/bug-filing.page
+share/help/el/quadrapassel/develop.page
+share/help/el/quadrapassel/documentation.page
+share/help/el/quadrapassel/get-involved.page
+share/help/el/quadrapassel/index.page
 share/help/el/quadrapassel/legal.xml
+share/help/el/quadrapassel/license.page
+share/help/el/quadrapassel/media/fig2.png
+share/help/el/quadrapassel/media/fig3.png
+share/help/el/quadrapassel/media/fig4.png
+share/help/el/quadrapassel/media/fig5.png
+share/help/el/quadrapassel/media/go-home.png
+share/help/el/quadrapassel/media/go-previous.png
+share/help/el/quadrapassel/media/part1.jpg
+share/help/el/quadrapassel/media/part2.jpg
+share/help/el/quadrapassel/media/part3.jpg
+share/help/el/quadrapassel/media/part4.jpg
+share/help/el/quadrapassel/media/previous.png
+share/help/el/quadrapassel/media/quadrapassel.png
+share/help/el/quadrapassel/media/quadrapassel22.png
+share/help/el/quadrapassel/playgame.page
+share/help/el/quadrapassel/preferences.page
+share/help/el/quadrapassel/score.page
+share/help/el/quadrapassel/translate.page
 share/help/el/swell-foop/figures/play1.png
 share/help/el/swell-foop/figures/play2.png
 share/help/el/swell-foop/figures/play3.png
@@ -1541,6 +1764,38 @@ share/help/en_GB/gnibbles/legal.xml
 share/help/en_GB/gnobots2/figures/gnobots2-main.png
 share/help/en_GB/gnobots2/index.docbook
 share/help/en_GB/gnobots2/legal.xml
+share/help/en_GB/gnome-mahjongg/bug-filing.page
+share/help/en_GB/gnome-mahjongg/choosing.page
+share/help/en_GB/gnome-mahjongg/develop.page
+share/help/en_GB/gnome-mahjongg/documentation.page
+share/help/en_GB/gnome-mahjongg/figures/hints-video.ogv
+share/help/en_GB/gnome-mahjongg/figures/layout-bridges.png
+share/help/en_GB/gnome-mahjongg/figures/layout-cloud.png
+share/help/en_GB/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/en_GB/gnome-mahjongg/figures/layout-difficult.png
+share/help/en_GB/gnome-mahjongg/figures/layout-easy.png
+share/help/en_GB/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/en_GB/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/en_GB/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/en_GB/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/en_GB/gnome-mahjongg/figures/logo.png
+share/help/en_GB/gnome-mahjongg/figures/logo32.png
+share/help/en_GB/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/en_GB/gnome-mahjongg/figures/moves-left.png
+share/help/en_GB/gnome-mahjongg/gameplay.page
+share/help/en_GB/gnome-mahjongg/hints.page
+share/help/en_GB/gnome-mahjongg/index.page
+share/help/en_GB/gnome-mahjongg/legal.xml
+share/help/en_GB/gnome-mahjongg/license.page
+share/help/en_GB/gnome-mahjongg/map.page
+share/help/en_GB/gnome-mahjongg/moves.page
+share/help/en_GB/gnome-mahjongg/pause.page
+share/help/en_GB/gnome-mahjongg/rules.page
+share/help/en_GB/gnome-mahjongg/scoring.page
+share/help/en_GB/gnome-mahjongg/shortcuts.page
+share/help/en_GB/gnome-mahjongg/strategy.page
+share/help/en_GB/gnome-mahjongg/toolbar.page
+share/help/en_GB/gnome-mahjongg/translate.page
 share/help/en_GB/gnome-sudoku/basics.page
 share/help/en_GB/gnome-sudoku/bug-filing.page
 share/help/en_GB/gnome-sudoku/commandline.page
@@ -1571,9 +1826,9 @@ share/help/en_GB/gnome-sudoku/strategy.page
 share/help/en_GB/gnome-sudoku/toolbar.page
 share/help/en_GB/gnome-sudoku/trackers.page
 share/help/en_GB/gnome-sudoku/translate.page
+share/help/en_GB/gnomine/board-size.page
 share/help/en_GB/gnomine/bug-filing.page
 share/help/en_GB/gnomine/develop.page
-share/help/en_GB/gnomine/difficulty.page
 share/help/en_GB/gnomine/documentation.page
 share/help/en_GB/gnomine/faces.page
 share/help/en_GB/gnomine/figures/easy-hints-1.png
@@ -1650,40 +1905,30 @@ share/help/en_GB/iagno/sound.page
 share/help/en_GB/iagno/strategy.page
 share/help/en_GB/iagno/translate.page
 share/help/en_GB/iagno/visual-results.page
-share/help/en_GB/mahjongg/bug-filing.page
-share/help/en_GB/mahjongg/choosing.page
-share/help/en_GB/mahjongg/develop.page
-share/help/en_GB/mahjongg/documentation.page
-share/help/en_GB/mahjongg/figures/hints-video.ogv
-share/help/en_GB/mahjongg/figures/layout-bridges.png
-share/help/en_GB/mahjongg/figures/layout-cloud.png
-share/help/en_GB/mahjongg/figures/layout-conf-cross.png
-share/help/en_GB/mahjongg/figures/layout-difficult.png
-share/help/en_GB/mahjongg/figures/layout-easy.png
-share/help/en_GB/mahjongg/figures/layout-pyramid-walls.png
-share/help/en_GB/mahjongg/figures/layout-red-dragon.png
-share/help/en_GB/mahjongg/figures/layout-tic-tac-toe.png
-share/help/en_GB/mahjongg/figures/layout-ziggurat.png
-share/help/en_GB/mahjongg/figures/logo.png
-share/help/en_GB/mahjongg/figures/logo32.png
-share/help/en_GB/mahjongg/figures/mahjongg-video.ogv
-share/help/en_GB/mahjongg/figures/moves-left.png
-share/help/en_GB/mahjongg/gameplay.page
-share/help/en_GB/mahjongg/hints.page
-share/help/en_GB/mahjongg/index.page
-share/help/en_GB/mahjongg/legal.xml
-share/help/en_GB/mahjongg/license.page
-share/help/en_GB/mahjongg/map.page
-share/help/en_GB/mahjongg/moves.page
-share/help/en_GB/mahjongg/pause.page
-share/help/en_GB/mahjongg/rules.page
-share/help/en_GB/mahjongg/scoring.page
-share/help/en_GB/mahjongg/shortcuts.page
-share/help/en_GB/mahjongg/strategy.page
-share/help/en_GB/mahjongg/toolbar.page
-share/help/en_GB/mahjongg/translate.page
-share/help/en_GB/quadrapassel/index.docbook
+share/help/en_GB/quadrapassel/bug-filing.page
+share/help/en_GB/quadrapassel/develop.page
+share/help/en_GB/quadrapassel/documentation.page
+share/help/en_GB/quadrapassel/get-involved.page
+share/help/en_GB/quadrapassel/index.page
 share/help/en_GB/quadrapassel/legal.xml
+share/help/en_GB/quadrapassel/license.page
+share/help/en_GB/quadrapassel/media/fig2.png
+share/help/en_GB/quadrapassel/media/fig3.png
+share/help/en_GB/quadrapassel/media/fig4.png
+share/help/en_GB/quadrapassel/media/fig5.png
+share/help/en_GB/quadrapassel/media/go-home.png
+share/help/en_GB/quadrapassel/media/go-previous.png
+share/help/en_GB/quadrapassel/media/part1.jpg
+share/help/en_GB/quadrapassel/media/part2.jpg
+share/help/en_GB/quadrapassel/media/part3.jpg
+share/help/en_GB/quadrapassel/media/part4.jpg
+share/help/en_GB/quadrapassel/media/previous.png
+share/help/en_GB/quadrapassel/media/quadrapassel.png
+share/help/en_GB/quadrapassel/media/quadrapassel22.png
+share/help/en_GB/quadrapassel/playgame.page
+share/help/en_GB/quadrapassel/preferences.page
+share/help/en_GB/quadrapassel/score.page
+share/help/en_GB/quadrapassel/translate.page
 share/help/en_GB/swell-foop/figures/play1.png
 share/help/en_GB/swell-foop/figures/play2.png
 share/help/en_GB/swell-foop/figures/play3.png
@@ -1738,6 +1983,38 @@ share/help/es/gnibbles/legal.xml
 share/help/es/gnobots2/figures/gnobots2-main.png
 share/help/es/gnobots2/index.docbook
 share/help/es/gnobots2/legal.xml
+share/help/es/gnome-mahjongg/bug-filing.page
+share/help/es/gnome-mahjongg/choosing.page
+share/help/es/gnome-mahjongg/develop.page
+share/help/es/gnome-mahjongg/documentation.page
+share/help/es/gnome-mahjongg/figures/hints-video.ogv
+share/help/es/gnome-mahjongg/figures/layout-bridges.png
+share/help/es/gnome-mahjongg/figures/layout-cloud.png
+share/help/es/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/es/gnome-mahjongg/figures/layout-difficult.png
+share/help/es/gnome-mahjongg/figures/layout-easy.png
+share/help/es/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/es/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/es/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/es/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/es/gnome-mahjongg/figures/logo.png
+share/help/es/gnome-mahjongg/figures/logo32.png
+share/help/es/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/es/gnome-mahjongg/figures/moves-left.png
+share/help/es/gnome-mahjongg/gameplay.page
+share/help/es/gnome-mahjongg/hints.page
+share/help/es/gnome-mahjongg/index.page
+share/help/es/gnome-mahjongg/legal.xml
+share/help/es/gnome-mahjongg/license.page
+share/help/es/gnome-mahjongg/map.page
+share/help/es/gnome-mahjongg/moves.page
+share/help/es/gnome-mahjongg/pause.page
+share/help/es/gnome-mahjongg/rules.page
+share/help/es/gnome-mahjongg/scoring.page
+share/help/es/gnome-mahjongg/shortcuts.page
+share/help/es/gnome-mahjongg/strategy.page
+share/help/es/gnome-mahjongg/toolbar.page
+share/help/es/gnome-mahjongg/translate.page
 share/help/es/gnome-sudoku/basics.page
 share/help/es/gnome-sudoku/bug-filing.page
 share/help/es/gnome-sudoku/commandline.page
@@ -1768,9 +2045,9 @@ share/help/es/gnome-sudoku/strategy.page
 share/help/es/gnome-sudoku/toolbar.page
 share/help/es/gnome-sudoku/trackers.page
 share/help/es/gnome-sudoku/translate.page
+share/help/es/gnomine/board-size.page
 share/help/es/gnomine/bug-filing.page
 share/help/es/gnomine/develop.page
-share/help/es/gnomine/difficulty.page
 share/help/es/gnomine/documentation.page
 share/help/es/gnomine/faces.page
 share/help/es/gnomine/figures/easy-hints-1.png
@@ -1847,42 +2124,44 @@ share/help/es/iagno/sound.page
 share/help/es/iagno/strategy.page
 share/help/es/iagno/translate.page
 share/help/es/iagno/visual-results.page
-share/help/es/lightsoff/index.docbook
+share/help/es/lightsoff/basic.page
+share/help/es/lightsoff/bug-filing.page
+share/help/es/lightsoff/develop.page
+share/help/es/lightsoff/documentation.page
+share/help/es/lightsoff/figures/lightsoff.jpg
+share/help/es/lightsoff/figures/lightsoff.ogv
+share/help/es/lightsoff/figures/lightsoff_logo.jpg
+share/help/es/lightsoff/figures/lo1.jpg
+share/help/es/lightsoff/index.page
 share/help/es/lightsoff/legal.xml
-share/help/es/mahjongg/bug-filing.page
-share/help/es/mahjongg/choosing.page
-share/help/es/mahjongg/develop.page
-share/help/es/mahjongg/documentation.page
-share/help/es/mahjongg/figures/hints-video.ogv
-share/help/es/mahjongg/figures/layout-bridges.png
-share/help/es/mahjongg/figures/layout-cloud.png
-share/help/es/mahjongg/figures/layout-conf-cross.png
-share/help/es/mahjongg/figures/layout-difficult.png
-share/help/es/mahjongg/figures/layout-easy.png
-share/help/es/mahjongg/figures/layout-pyramid-walls.png
-share/help/es/mahjongg/figures/layout-red-dragon.png
-share/help/es/mahjongg/figures/layout-tic-tac-toe.png
-share/help/es/mahjongg/figures/layout-ziggurat.png
-share/help/es/mahjongg/figures/logo.png
-share/help/es/mahjongg/figures/logo32.png
-share/help/es/mahjongg/figures/mahjongg-video.ogv
-share/help/es/mahjongg/figures/moves-left.png
-share/help/es/mahjongg/gameplay.page
-share/help/es/mahjongg/hints.page
-share/help/es/mahjongg/index.page
-share/help/es/mahjongg/legal.xml
-share/help/es/mahjongg/license.page
-share/help/es/mahjongg/map.page
-share/help/es/mahjongg/moves.page
-share/help/es/mahjongg/pause.page
-share/help/es/mahjongg/rules.page
-share/help/es/mahjongg/scoring.page
-share/help/es/mahjongg/shortcuts.page
-share/help/es/mahjongg/strategy.page
-share/help/es/mahjongg/toolbar.page
-share/help/es/mahjongg/translate.page
-share/help/es/quadrapassel/index.docbook
+share/help/es/lightsoff/license.page
+share/help/es/lightsoff/rules.page
+share/help/es/lightsoff/strategy.page
+share/help/es/lightsoff/translate.page
+share/help/es/quadrapassel/bug-filing.page
+share/help/es/quadrapassel/develop.page
+share/help/es/quadrapassel/documentation.page
+share/help/es/quadrapassel/get-involved.page
+share/help/es/quadrapassel/index.page
 share/help/es/quadrapassel/legal.xml
+share/help/es/quadrapassel/license.page
+share/help/es/quadrapassel/media/fig2.png
+share/help/es/quadrapassel/media/fig3.png
+share/help/es/quadrapassel/media/fig4.png
+share/help/es/quadrapassel/media/fig5.png
+share/help/es/quadrapassel/media/go-home.png
+share/help/es/quadrapassel/media/go-previous.png
+share/help/es/quadrapassel/media/part1.jpg
+share/help/es/quadrapassel/media/part2.jpg
+share/help/es/quadrapassel/media/part3.jpg
+share/help/es/quadrapassel/media/part4.jpg
+share/help/es/quadrapassel/media/previous.png
+share/help/es/quadrapassel/media/quadrapassel.png
+share/help/es/quadrapassel/media/quadrapassel22.png
+share/help/es/quadrapassel/playgame.page
+share/help/es/quadrapassel/preferences.page
+share/help/es/quadrapassel/score.page
+share/help/es/quadrapassel/translate.page
 share/help/es/swell-foop/figures/play1.png
 share/help/es/swell-foop/figures/play2.png
 share/help/es/swell-foop/figures/play3.png
@@ -1937,6 +2216,38 @@ share/help/eu/gnibbles/legal.xml
 share/help/eu/gnobots2/figures/gnobots2-main.png
 share/help/eu/gnobots2/index.docbook
 share/help/eu/gnobots2/legal.xml
+share/help/eu/gnome-mahjongg/bug-filing.page
+share/help/eu/gnome-mahjongg/choosing.page
+share/help/eu/gnome-mahjongg/develop.page
+share/help/eu/gnome-mahjongg/documentation.page
+share/help/eu/gnome-mahjongg/figures/hints-video.ogv
+share/help/eu/gnome-mahjongg/figures/layout-bridges.png
+share/help/eu/gnome-mahjongg/figures/layout-cloud.png
+share/help/eu/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/eu/gnome-mahjongg/figures/layout-difficult.png
+share/help/eu/gnome-mahjongg/figures/layout-easy.png
+share/help/eu/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/eu/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/eu/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/eu/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/eu/gnome-mahjongg/figures/logo.png
+share/help/eu/gnome-mahjongg/figures/logo32.png
+share/help/eu/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/eu/gnome-mahjongg/figures/moves-left.png
+share/help/eu/gnome-mahjongg/gameplay.page
+share/help/eu/gnome-mahjongg/hints.page
+share/help/eu/gnome-mahjongg/index.page
+share/help/eu/gnome-mahjongg/legal.xml
+share/help/eu/gnome-mahjongg/license.page
+share/help/eu/gnome-mahjongg/map.page
+share/help/eu/gnome-mahjongg/moves.page
+share/help/eu/gnome-mahjongg/pause.page
+share/help/eu/gnome-mahjongg/rules.page
+share/help/eu/gnome-mahjongg/scoring.page
+share/help/eu/gnome-mahjongg/shortcuts.page
+share/help/eu/gnome-mahjongg/strategy.page
+share/help/eu/gnome-mahjongg/toolbar.page
+share/help/eu/gnome-mahjongg/translate.page
 share/help/eu/gnome-sudoku/basics.page
 share/help/eu/gnome-sudoku/bug-filing.page
 share/help/eu/gnome-sudoku/commandline.page
@@ -1967,9 +2278,9 @@ share/help/eu/gnome-sudoku/strategy.page
 share/help/eu/gnome-sudoku/toolbar.page
 share/help/eu/gnome-sudoku/trackers.page
 share/help/eu/gnome-sudoku/translate.page
+share/help/eu/gnomine/board-size.page
 share/help/eu/gnomine/bug-filing.page
 share/help/eu/gnomine/develop.page
-share/help/eu/gnomine/difficulty.page
 share/help/eu/gnomine/documentation.page
 share/help/eu/gnomine/faces.page
 share/help/eu/gnomine/figures/easy-hints-1.png
@@ -2046,40 +2357,30 @@ share/help/eu/iagno/sound.page
 share/help/eu/iagno/strategy.page
 share/help/eu/iagno/translate.page
 share/help/eu/iagno/visual-results.page
-share/help/eu/mahjongg/bug-filing.page
-share/help/eu/mahjongg/choosing.page
-share/help/eu/mahjongg/develop.page
-share/help/eu/mahjongg/documentation.page
-share/help/eu/mahjongg/figures/hints-video.ogv
-share/help/eu/mahjongg/figures/layout-bridges.png
-share/help/eu/mahjongg/figures/layout-cloud.png
-share/help/eu/mahjongg/figures/layout-conf-cross.png
-share/help/eu/mahjongg/figures/layout-difficult.png
-share/help/eu/mahjongg/figures/layout-easy.png
-share/help/eu/mahjongg/figures/layout-pyramid-walls.png
-share/help/eu/mahjongg/figures/layout-red-dragon.png
-share/help/eu/mahjongg/figures/layout-tic-tac-toe.png
-share/help/eu/mahjongg/figures/layout-ziggurat.png
-share/help/eu/mahjongg/figures/logo.png
-share/help/eu/mahjongg/figures/logo32.png
-share/help/eu/mahjongg/figures/mahjongg-video.ogv
-share/help/eu/mahjongg/figures/moves-left.png
-share/help/eu/mahjongg/gameplay.page
-share/help/eu/mahjongg/hints.page
-share/help/eu/mahjongg/index.page
-share/help/eu/mahjongg/legal.xml
-share/help/eu/mahjongg/license.page
-share/help/eu/mahjongg/map.page
-share/help/eu/mahjongg/moves.page
-share/help/eu/mahjongg/pause.page
-share/help/eu/mahjongg/rules.page
-share/help/eu/mahjongg/scoring.page
-share/help/eu/mahjongg/shortcuts.page
-share/help/eu/mahjongg/strategy.page
-share/help/eu/mahjongg/toolbar.page
-share/help/eu/mahjongg/translate.page
-share/help/eu/quadrapassel/index.docbook
+share/help/eu/quadrapassel/bug-filing.page
+share/help/eu/quadrapassel/develop.page
+share/help/eu/quadrapassel/documentation.page
+share/help/eu/quadrapassel/get-involved.page
+share/help/eu/quadrapassel/index.page
 share/help/eu/quadrapassel/legal.xml
+share/help/eu/quadrapassel/license.page
+share/help/eu/quadrapassel/media/fig2.png
+share/help/eu/quadrapassel/media/fig3.png
+share/help/eu/quadrapassel/media/fig4.png
+share/help/eu/quadrapassel/media/fig5.png
+share/help/eu/quadrapassel/media/go-home.png
+share/help/eu/quadrapassel/media/go-previous.png
+share/help/eu/quadrapassel/media/part1.jpg
+share/help/eu/quadrapassel/media/part2.jpg
+share/help/eu/quadrapassel/media/part3.jpg
+share/help/eu/quadrapassel/media/part4.jpg
+share/help/eu/quadrapassel/media/previous.png
+share/help/eu/quadrapassel/media/quadrapassel.png
+share/help/eu/quadrapassel/media/quadrapassel22.png
+share/help/eu/quadrapassel/playgame.page
+share/help/eu/quadrapassel/preferences.page
+share/help/eu/quadrapassel/score.page
+share/help/eu/quadrapassel/translate.page
 share/help/eu/swell-foop/figures/play1.png
 share/help/eu/swell-foop/figures/play2.png
 share/help/eu/swell-foop/figures/play3.png
@@ -2091,10 +2392,44 @@ share/help/fi/gnect/figures/mainwindow.png
 share/help/fi/gnect/figures/tileset.png
 share/help/fi/gnect/index.docbook
 share/help/fi/gnect/legal.xml
-share/help/fi/lightsoff/index.docbook
+share/help/fi/lightsoff/basic.page
+share/help/fi/lightsoff/bug-filing.page
+share/help/fi/lightsoff/develop.page
+share/help/fi/lightsoff/documentation.page
+share/help/fi/lightsoff/figures/lightsoff.jpg
+share/help/fi/lightsoff/figures/lightsoff.ogv
+share/help/fi/lightsoff/figures/lightsoff_logo.jpg
+share/help/fi/lightsoff/figures/lo1.jpg
+share/help/fi/lightsoff/index.page
 share/help/fi/lightsoff/legal.xml
-share/help/fi/quadrapassel/index.docbook
+share/help/fi/lightsoff/license.page
+share/help/fi/lightsoff/rules.page
+share/help/fi/lightsoff/strategy.page
+share/help/fi/lightsoff/translate.page
+share/help/fi/quadrapassel/bug-filing.page
+share/help/fi/quadrapassel/develop.page
+share/help/fi/quadrapassel/documentation.page
+share/help/fi/quadrapassel/get-involved.page
+share/help/fi/quadrapassel/index.page
 share/help/fi/quadrapassel/legal.xml
+share/help/fi/quadrapassel/license.page
+share/help/fi/quadrapassel/media/fig2.png
+share/help/fi/quadrapassel/media/fig3.png
+share/help/fi/quadrapassel/media/fig4.png
+share/help/fi/quadrapassel/media/fig5.png
+share/help/fi/quadrapassel/media/go-home.png
+share/help/fi/quadrapassel/media/go-previous.png
+share/help/fi/quadrapassel/media/part1.jpg
+share/help/fi/quadrapassel/media/part2.jpg
+share/help/fi/quadrapassel/media/part3.jpg
+share/help/fi/quadrapassel/media/part4.jpg
+share/help/fi/quadrapassel/media/previous.png
+share/help/fi/quadrapassel/media/quadrapassel.png
+share/help/fi/quadrapassel/media/quadrapassel22.png
+share/help/fi/quadrapassel/playgame.page
+share/help/fi/quadrapassel/preferences.page
+share/help/fi/quadrapassel/score.page
+share/help/fi/quadrapassel/translate.page
 share/help/fr/glchess/figures/game.png
 share/help/fr/glchess/figures/new_game.png
 share/help/fr/glchess/figures/preferences_game.png
@@ -2142,6 +2477,38 @@ share/help/fr/gnibbles/legal.xml
 share/help/fr/gnobots2/figures/gnobots2-main.png
 share/help/fr/gnobots2/index.docbook
 share/help/fr/gnobots2/legal.xml
+share/help/fr/gnome-mahjongg/bug-filing.page
+share/help/fr/gnome-mahjongg/choosing.page
+share/help/fr/gnome-mahjongg/develop.page
+share/help/fr/gnome-mahjongg/documentation.page
+share/help/fr/gnome-mahjongg/figures/hints-video.ogv
+share/help/fr/gnome-mahjongg/figures/layout-bridges.png
+share/help/fr/gnome-mahjongg/figures/layout-cloud.png
+share/help/fr/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/fr/gnome-mahjongg/figures/layout-difficult.png
+share/help/fr/gnome-mahjongg/figures/layout-easy.png
+share/help/fr/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/fr/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/fr/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/fr/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/fr/gnome-mahjongg/figures/logo.png
+share/help/fr/gnome-mahjongg/figures/logo32.png
+share/help/fr/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/fr/gnome-mahjongg/figures/moves-left.png
+share/help/fr/gnome-mahjongg/gameplay.page
+share/help/fr/gnome-mahjongg/hints.page
+share/help/fr/gnome-mahjongg/index.page
+share/help/fr/gnome-mahjongg/legal.xml
+share/help/fr/gnome-mahjongg/license.page
+share/help/fr/gnome-mahjongg/map.page
+share/help/fr/gnome-mahjongg/moves.page
+share/help/fr/gnome-mahjongg/pause.page
+share/help/fr/gnome-mahjongg/rules.page
+share/help/fr/gnome-mahjongg/scoring.page
+share/help/fr/gnome-mahjongg/shortcuts.page
+share/help/fr/gnome-mahjongg/strategy.page
+share/help/fr/gnome-mahjongg/toolbar.page
+share/help/fr/gnome-mahjongg/translate.page
 share/help/fr/gnome-sudoku/basics.page
 share/help/fr/gnome-sudoku/bug-filing.page
 share/help/fr/gnome-sudoku/commandline.page
@@ -2172,9 +2539,9 @@ share/help/fr/gnome-sudoku/strategy.page
 share/help/fr/gnome-sudoku/toolbar.page
 share/help/fr/gnome-sudoku/trackers.page
 share/help/fr/gnome-sudoku/translate.page
+share/help/fr/gnomine/board-size.page
 share/help/fr/gnomine/bug-filing.page
 share/help/fr/gnomine/develop.page
-share/help/fr/gnomine/difficulty.page
 share/help/fr/gnomine/documentation.page
 share/help/fr/gnomine/faces.page
 share/help/fr/gnomine/figures/easy-hints-1.png
@@ -2251,42 +2618,44 @@ share/help/fr/iagno/sound.page
 share/help/fr/iagno/strategy.page
 share/help/fr/iagno/translate.page
 share/help/fr/iagno/visual-results.page
-share/help/fr/lightsoff/index.docbook
+share/help/fr/lightsoff/basic.page
+share/help/fr/lightsoff/bug-filing.page
+share/help/fr/lightsoff/develop.page
+share/help/fr/lightsoff/documentation.page
+share/help/fr/lightsoff/figures/lightsoff.jpg
+share/help/fr/lightsoff/figures/lightsoff.ogv
+share/help/fr/lightsoff/figures/lightsoff_logo.jpg
+share/help/fr/lightsoff/figures/lo1.jpg
+share/help/fr/lightsoff/index.page
 share/help/fr/lightsoff/legal.xml
-share/help/fr/mahjongg/bug-filing.page
-share/help/fr/mahjongg/choosing.page
-share/help/fr/mahjongg/develop.page
-share/help/fr/mahjongg/documentation.page
-share/help/fr/mahjongg/figures/hints-video.ogv
-share/help/fr/mahjongg/figures/layout-bridges.png
-share/help/fr/mahjongg/figures/layout-cloud.png
-share/help/fr/mahjongg/figures/layout-conf-cross.png
-share/help/fr/mahjongg/figures/layout-difficult.png
-share/help/fr/mahjongg/figures/layout-easy.png
-share/help/fr/mahjongg/figures/layout-pyramid-walls.png
-share/help/fr/mahjongg/figures/layout-red-dragon.png
-share/help/fr/mahjongg/figures/layout-tic-tac-toe.png
-share/help/fr/mahjongg/figures/layout-ziggurat.png
-share/help/fr/mahjongg/figures/logo.png
-share/help/fr/mahjongg/figures/logo32.png
-share/help/fr/mahjongg/figures/mahjongg-video.ogv
-share/help/fr/mahjongg/figures/moves-left.png
-share/help/fr/mahjongg/gameplay.page
-share/help/fr/mahjongg/hints.page
-share/help/fr/mahjongg/index.page
-share/help/fr/mahjongg/legal.xml
-share/help/fr/mahjongg/license.page
-share/help/fr/mahjongg/map.page
-share/help/fr/mahjongg/moves.page
-share/help/fr/mahjongg/pause.page
-share/help/fr/mahjongg/rules.page
-share/help/fr/mahjongg/scoring.page
-share/help/fr/mahjongg/shortcuts.page
-share/help/fr/mahjongg/strategy.page
-share/help/fr/mahjongg/toolbar.page
-share/help/fr/mahjongg/translate.page
-share/help/fr/quadrapassel/index.docbook
+share/help/fr/lightsoff/license.page
+share/help/fr/lightsoff/rules.page
+share/help/fr/lightsoff/strategy.page
+share/help/fr/lightsoff/translate.page
+share/help/fr/quadrapassel/bug-filing.page
+share/help/fr/quadrapassel/develop.page
+share/help/fr/quadrapassel/documentation.page
+share/help/fr/quadrapassel/get-involved.page
+share/help/fr/quadrapassel/index.page
 share/help/fr/quadrapassel/legal.xml
+share/help/fr/quadrapassel/license.page
+share/help/fr/quadrapassel/media/fig2.png
+share/help/fr/quadrapassel/media/fig3.png
+share/help/fr/quadrapassel/media/fig4.png
+share/help/fr/quadrapassel/media/fig5.png
+share/help/fr/quadrapassel/media/go-home.png
+share/help/fr/quadrapassel/media/go-previous.png
+share/help/fr/quadrapassel/media/part1.jpg
+share/help/fr/quadrapassel/media/part2.jpg
+share/help/fr/quadrapassel/media/part3.jpg
+share/help/fr/quadrapassel/media/part4.jpg
+share/help/fr/quadrapassel/media/previous.png
+share/help/fr/quadrapassel/media/quadrapassel.png
+share/help/fr/quadrapassel/media/quadrapassel22.png
+share/help/fr/quadrapassel/playgame.page
+share/help/fr/quadrapassel/preferences.page
+share/help/fr/quadrapassel/score.page
+share/help/fr/quadrapassel/translate.page
 share/help/fr/swell-foop/figures/play1.png
 share/help/fr/swell-foop/figures/play2.png
 share/help/fr/swell-foop/figures/play3.png
@@ -2358,9 +2727,9 @@ share/help/gl/gnome-sudoku/strategy.page
 share/help/gl/gnome-sudoku/toolbar.page
 share/help/gl/gnome-sudoku/trackers.page
 share/help/gl/gnome-sudoku/translate.page
+share/help/gl/gnomine/board-size.page
 share/help/gl/gnomine/bug-filing.page
 share/help/gl/gnomine/develop.page
-share/help/gl/gnomine/difficulty.page
 share/help/gl/gnomine/documentation.page
 share/help/gl/gnomine/faces.page
 share/help/gl/gnomine/figures/easy-hints-1.png
@@ -2400,8 +2769,100 @@ share/help/gl/gtali/figures/mainwindow.png
 share/help/gl/gtali/figures/preferences.png
 share/help/gl/gtali/index.docbook
 share/help/gl/gtali/legal.xml
-share/help/gl/lightsoff/index.docbook
+share/help/gl/lightsoff/basic.page
+share/help/gl/lightsoff/bug-filing.page
+share/help/gl/lightsoff/develop.page
+share/help/gl/lightsoff/documentation.page
+share/help/gl/lightsoff/figures/lightsoff.jpg
+share/help/gl/lightsoff/figures/lightsoff.ogv
+share/help/gl/lightsoff/figures/lightsoff_logo.jpg
+share/help/gl/lightsoff/figures/lo1.jpg
+share/help/gl/lightsoff/index.page
 share/help/gl/lightsoff/legal.xml
+share/help/gl/lightsoff/license.page
+share/help/gl/lightsoff/rules.page
+share/help/gl/lightsoff/strategy.page
+share/help/gl/lightsoff/translate.page
+share/help/hu/gnome-mahjongg/bug-filing.page
+share/help/hu/gnome-mahjongg/choosing.page
+share/help/hu/gnome-mahjongg/develop.page
+share/help/hu/gnome-mahjongg/documentation.page
+share/help/hu/gnome-mahjongg/figures/hints-video.ogv
+share/help/hu/gnome-mahjongg/figures/layout-bridges.png
+share/help/hu/gnome-mahjongg/figures/layout-cloud.png
+share/help/hu/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/hu/gnome-mahjongg/figures/layout-difficult.png
+share/help/hu/gnome-mahjongg/figures/layout-easy.png
+share/help/hu/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/hu/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/hu/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/hu/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/hu/gnome-mahjongg/figures/logo.png
+share/help/hu/gnome-mahjongg/figures/logo32.png
+share/help/hu/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/hu/gnome-mahjongg/figures/moves-left.png
+share/help/hu/gnome-mahjongg/gameplay.page
+share/help/hu/gnome-mahjongg/hints.page
+share/help/hu/gnome-mahjongg/index.page
+share/help/hu/gnome-mahjongg/legal.xml
+share/help/hu/gnome-mahjongg/license.page
+share/help/hu/gnome-mahjongg/map.page
+share/help/hu/gnome-mahjongg/moves.page
+share/help/hu/gnome-mahjongg/pause.page
+share/help/hu/gnome-mahjongg/rules.page
+share/help/hu/gnome-mahjongg/scoring.page
+share/help/hu/gnome-mahjongg/shortcuts.page
+share/help/hu/gnome-mahjongg/strategy.page
+share/help/hu/gnome-mahjongg/toolbar.page
+share/help/hu/gnome-mahjongg/translate.page
+share/help/hu/gnotravex/figures/gnotravex-logo.png
+share/help/hu/gnotravex/figures/gnotravex-video.ogv
+share/help/hu/gnotravex/hint.page
+share/help/hu/gnotravex/index.page
+share/help/hu/gnotravex/license.page
+share/help/hu/gnotravex/move.page
+share/help/hu/gnotravex/shortcut.page
+share/help/hu/gnotravex/size.page
+share/help/hu/gnotravex/usage.page
+share/help/hu/gnotravex/winning.page
+share/help/hu/lightsoff/basic.page
+share/help/hu/lightsoff/bug-filing.page
+share/help/hu/lightsoff/develop.page
+share/help/hu/lightsoff/documentation.page
+share/help/hu/lightsoff/figures/lightsoff.jpg
+share/help/hu/lightsoff/figures/lightsoff.ogv
+share/help/hu/lightsoff/figures/lightsoff_logo.jpg
+share/help/hu/lightsoff/figures/lo1.jpg
+share/help/hu/lightsoff/index.page
+share/help/hu/lightsoff/legal.xml
+share/help/hu/lightsoff/license.page
+share/help/hu/lightsoff/rules.page
+share/help/hu/lightsoff/strategy.page
+share/help/hu/lightsoff/translate.page
+share/help/hu/quadrapassel/bug-filing.page
+share/help/hu/quadrapassel/develop.page
+share/help/hu/quadrapassel/documentation.page
+share/help/hu/quadrapassel/get-involved.page
+share/help/hu/quadrapassel/index.page
+share/help/hu/quadrapassel/legal.xml
+share/help/hu/quadrapassel/license.page
+share/help/hu/quadrapassel/media/fig2.png
+share/help/hu/quadrapassel/media/fig3.png
+share/help/hu/quadrapassel/media/fig4.png
+share/help/hu/quadrapassel/media/fig5.png
+share/help/hu/quadrapassel/media/go-home.png
+share/help/hu/quadrapassel/media/go-previous.png
+share/help/hu/quadrapassel/media/part1.jpg
+share/help/hu/quadrapassel/media/part2.jpg
+share/help/hu/quadrapassel/media/part3.jpg
+share/help/hu/quadrapassel/media/part4.jpg
+share/help/hu/quadrapassel/media/previous.png
+share/help/hu/quadrapassel/media/quadrapassel.png
+share/help/hu/quadrapassel/media/quadrapassel22.png
+share/help/hu/quadrapassel/playgame.page
+share/help/hu/quadrapassel/preferences.page
+share/help/hu/quadrapassel/score.page
+share/help/hu/quadrapassel/translate.page
 share/help/it/glines/bug-filing.page
 share/help/it/glines/change-board-size.page
 share/help/it/glines/change-theme.page
@@ -2443,6 +2904,38 @@ share/help/it/gnibbles/legal.xml
 share/help/it/gnobots2/figures/gnobots2-main.png
 share/help/it/gnobots2/index.docbook
 share/help/it/gnobots2/legal.xml
+share/help/it/gnome-mahjongg/bug-filing.page
+share/help/it/gnome-mahjongg/choosing.page
+share/help/it/gnome-mahjongg/develop.page
+share/help/it/gnome-mahjongg/documentation.page
+share/help/it/gnome-mahjongg/figures/hints-video.ogv
+share/help/it/gnome-mahjongg/figures/layout-bridges.png
+share/help/it/gnome-mahjongg/figures/layout-cloud.png
+share/help/it/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/it/gnome-mahjongg/figures/layout-difficult.png
+share/help/it/gnome-mahjongg/figures/layout-easy.png
+share/help/it/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/it/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/it/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/it/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/it/gnome-mahjongg/figures/logo.png
+share/help/it/gnome-mahjongg/figures/logo32.png
+share/help/it/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/it/gnome-mahjongg/figures/moves-left.png
+share/help/it/gnome-mahjongg/gameplay.page
+share/help/it/gnome-mahjongg/hints.page
+share/help/it/gnome-mahjongg/index.page
+share/help/it/gnome-mahjongg/legal.xml
+share/help/it/gnome-mahjongg/license.page
+share/help/it/gnome-mahjongg/map.page
+share/help/it/gnome-mahjongg/moves.page
+share/help/it/gnome-mahjongg/pause.page
+share/help/it/gnome-mahjongg/rules.page
+share/help/it/gnome-mahjongg/scoring.page
+share/help/it/gnome-mahjongg/shortcuts.page
+share/help/it/gnome-mahjongg/strategy.page
+share/help/it/gnome-mahjongg/toolbar.page
+share/help/it/gnome-mahjongg/translate.page
 share/help/it/gnome-sudoku/basics.page
 share/help/it/gnome-sudoku/bug-filing.page
 share/help/it/gnome-sudoku/commandline.page
@@ -2473,9 +2966,9 @@ share/help/it/gnome-sudoku/strategy.page
 share/help/it/gnome-sudoku/toolbar.page
 share/help/it/gnome-sudoku/trackers.page
 share/help/it/gnome-sudoku/translate.page
+share/help/it/gnomine/board-size.page
 share/help/it/gnomine/bug-filing.page
 share/help/it/gnomine/develop.page
-share/help/it/gnomine/difficulty.page
 share/help/it/gnomine/documentation.page
 share/help/it/gnomine/faces.page
 share/help/it/gnomine/figures/easy-hints-1.png
@@ -2552,40 +3045,30 @@ share/help/it/iagno/sound.page
 share/help/it/iagno/strategy.page
 share/help/it/iagno/translate.page
 share/help/it/iagno/visual-results.page
-share/help/it/mahjongg/bug-filing.page
-share/help/it/mahjongg/choosing.page
-share/help/it/mahjongg/develop.page
-share/help/it/mahjongg/documentation.page
-share/help/it/mahjongg/figures/hints-video.ogv
-share/help/it/mahjongg/figures/layout-bridges.png
-share/help/it/mahjongg/figures/layout-cloud.png
-share/help/it/mahjongg/figures/layout-conf-cross.png
-share/help/it/mahjongg/figures/layout-difficult.png
-share/help/it/mahjongg/figures/layout-easy.png
-share/help/it/mahjongg/figures/layout-pyramid-walls.png
-share/help/it/mahjongg/figures/layout-red-dragon.png
-share/help/it/mahjongg/figures/layout-tic-tac-toe.png
-share/help/it/mahjongg/figures/layout-ziggurat.png
-share/help/it/mahjongg/figures/logo.png
-share/help/it/mahjongg/figures/logo32.png
-share/help/it/mahjongg/figures/mahjongg-video.ogv
-share/help/it/mahjongg/figures/moves-left.png
-share/help/it/mahjongg/gameplay.page
-share/help/it/mahjongg/hints.page
-share/help/it/mahjongg/index.page
-share/help/it/mahjongg/legal.xml
-share/help/it/mahjongg/license.page
-share/help/it/mahjongg/map.page
-share/help/it/mahjongg/moves.page
-share/help/it/mahjongg/pause.page
-share/help/it/mahjongg/rules.page
-share/help/it/mahjongg/scoring.page
-share/help/it/mahjongg/shortcuts.page
-share/help/it/mahjongg/strategy.page
-share/help/it/mahjongg/toolbar.page
-share/help/it/mahjongg/translate.page
-share/help/it/quadrapassel/index.docbook
+share/help/it/quadrapassel/bug-filing.page
+share/help/it/quadrapassel/develop.page
+share/help/it/quadrapassel/documentation.page
+share/help/it/quadrapassel/get-involved.page
+share/help/it/quadrapassel/index.page
 share/help/it/quadrapassel/legal.xml
+share/help/it/quadrapassel/license.page
+share/help/it/quadrapassel/media/fig2.png
+share/help/it/quadrapassel/media/fig3.png
+share/help/it/quadrapassel/media/fig4.png
+share/help/it/quadrapassel/media/fig5.png
+share/help/it/quadrapassel/media/go-home.png
+share/help/it/quadrapassel/media/go-previous.png
+share/help/it/quadrapassel/media/part1.jpg
+share/help/it/quadrapassel/media/part2.jpg
+share/help/it/quadrapassel/media/part3.jpg
+share/help/it/quadrapassel/media/part4.jpg
+share/help/it/quadrapassel/media/previous.png
+share/help/it/quadrapassel/media/quadrapassel.png
+share/help/it/quadrapassel/media/quadrapassel22.png
+share/help/it/quadrapassel/playgame.page
+share/help/it/quadrapassel/preferences.page
+share/help/it/quadrapassel/score.page
+share/help/it/quadrapassel/translate.page
 share/help/it/swell-foop/figures/play1.png
 share/help/it/swell-foop/figures/play2.png
 share/help/it/swell-foop/figures/play3.png
@@ -2599,16 +3082,50 @@ share/help/ja/glchess/figures/preferences_game.png
 share/help/ja/glchess/figures/preferences_view.png
 share/help/ja/glchess/index.docbook
 share/help/ja/glchess/legal.xml
-share/help/ja/quadrapassel/index.docbook
+share/help/ja/quadrapassel/bug-filing.page
+share/help/ja/quadrapassel/develop.page
+share/help/ja/quadrapassel/documentation.page
+share/help/ja/quadrapassel/get-involved.page
+share/help/ja/quadrapassel/index.page
 share/help/ja/quadrapassel/legal.xml
+share/help/ja/quadrapassel/license.page
+share/help/ja/quadrapassel/media/fig2.png
+share/help/ja/quadrapassel/media/fig3.png
+share/help/ja/quadrapassel/media/fig4.png
+share/help/ja/quadrapassel/media/fig5.png
+share/help/ja/quadrapassel/media/go-home.png
+share/help/ja/quadrapassel/media/go-previous.png
+share/help/ja/quadrapassel/media/part1.jpg
+share/help/ja/quadrapassel/media/part2.jpg
+share/help/ja/quadrapassel/media/part3.jpg
+share/help/ja/quadrapassel/media/part4.jpg
+share/help/ja/quadrapassel/media/previous.png
+share/help/ja/quadrapassel/media/quadrapassel.png
+share/help/ja/quadrapassel/media/quadrapassel22.png
+share/help/ja/quadrapassel/playgame.page
+share/help/ja/quadrapassel/preferences.page
+share/help/ja/quadrapassel/score.page
+share/help/ja/quadrapassel/translate.page
 share/help/ko/glchess/figures/game.png
 share/help/ko/glchess/figures/new_game.png
 share/help/ko/glchess/figures/preferences_game.png
 share/help/ko/glchess/figures/preferences_view.png
 share/help/ko/glchess/index.docbook
 share/help/ko/glchess/legal.xml
-share/help/ko/lightsoff/index.docbook
+share/help/ko/lightsoff/basic.page
+share/help/ko/lightsoff/bug-filing.page
+share/help/ko/lightsoff/develop.page
+share/help/ko/lightsoff/documentation.page
+share/help/ko/lightsoff/figures/lightsoff.jpg
+share/help/ko/lightsoff/figures/lightsoff.ogv
+share/help/ko/lightsoff/figures/lightsoff_logo.jpg
+share/help/ko/lightsoff/figures/lo1.jpg
+share/help/ko/lightsoff/index.page
 share/help/ko/lightsoff/legal.xml
+share/help/ko/lightsoff/license.page
+share/help/ko/lightsoff/rules.page
+share/help/ko/lightsoff/strategy.page
+share/help/ko/lightsoff/translate.page
 share/help/oc/glchess/figures/game.png
 share/help/oc/glchess/figures/new_game.png
 share/help/oc/glchess/figures/preferences_game.png
@@ -2656,6 +3173,38 @@ share/help/oc/gnibbles/legal.xml
 share/help/oc/gnobots2/figures/gnobots2-main.png
 share/help/oc/gnobots2/index.docbook
 share/help/oc/gnobots2/legal.xml
+share/help/oc/gnome-mahjongg/bug-filing.page
+share/help/oc/gnome-mahjongg/choosing.page
+share/help/oc/gnome-mahjongg/develop.page
+share/help/oc/gnome-mahjongg/documentation.page
+share/help/oc/gnome-mahjongg/figures/hints-video.ogv
+share/help/oc/gnome-mahjongg/figures/layout-bridges.png
+share/help/oc/gnome-mahjongg/figures/layout-cloud.png
+share/help/oc/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/oc/gnome-mahjongg/figures/layout-difficult.png
+share/help/oc/gnome-mahjongg/figures/layout-easy.png
+share/help/oc/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/oc/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/oc/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/oc/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/oc/gnome-mahjongg/figures/logo.png
+share/help/oc/gnome-mahjongg/figures/logo32.png
+share/help/oc/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/oc/gnome-mahjongg/figures/moves-left.png
+share/help/oc/gnome-mahjongg/gameplay.page
+share/help/oc/gnome-mahjongg/hints.page
+share/help/oc/gnome-mahjongg/index.page
+share/help/oc/gnome-mahjongg/legal.xml
+share/help/oc/gnome-mahjongg/license.page
+share/help/oc/gnome-mahjongg/map.page
+share/help/oc/gnome-mahjongg/moves.page
+share/help/oc/gnome-mahjongg/pause.page
+share/help/oc/gnome-mahjongg/rules.page
+share/help/oc/gnome-mahjongg/scoring.page
+share/help/oc/gnome-mahjongg/shortcuts.page
+share/help/oc/gnome-mahjongg/strategy.page
+share/help/oc/gnome-mahjongg/toolbar.page
+share/help/oc/gnome-mahjongg/translate.page
 share/help/oc/gnome-sudoku/basics.page
 share/help/oc/gnome-sudoku/bug-filing.page
 share/help/oc/gnome-sudoku/commandline.page
@@ -2686,9 +3235,9 @@ share/help/oc/gnome-sudoku/strategy.page
 share/help/oc/gnome-sudoku/toolbar.page
 share/help/oc/gnome-sudoku/trackers.page
 share/help/oc/gnome-sudoku/translate.page
+share/help/oc/gnomine/board-size.page
 share/help/oc/gnomine/bug-filing.page
 share/help/oc/gnomine/develop.page
-share/help/oc/gnomine/difficulty.page
 share/help/oc/gnomine/documentation.page
 share/help/oc/gnomine/faces.page
 share/help/oc/gnomine/figures/easy-hints-1.png
@@ -2765,40 +3314,30 @@ share/help/oc/iagno/sound.page
 share/help/oc/iagno/strategy.page
 share/help/oc/iagno/translate.page
 share/help/oc/iagno/visual-results.page
-share/help/oc/mahjongg/bug-filing.page
-share/help/oc/mahjongg/choosing.page
-share/help/oc/mahjongg/develop.page
-share/help/oc/mahjongg/documentation.page
-share/help/oc/mahjongg/figures/hints-video.ogv
-share/help/oc/mahjongg/figures/layout-bridges.png
-share/help/oc/mahjongg/figures/layout-cloud.png
-share/help/oc/mahjongg/figures/layout-conf-cross.png
-share/help/oc/mahjongg/figures/layout-difficult.png
-share/help/oc/mahjongg/figures/layout-easy.png
-share/help/oc/mahjongg/figures/layout-pyramid-walls.png
-share/help/oc/mahjongg/figures/layout-red-dragon.png
-share/help/oc/mahjongg/figures/layout-tic-tac-toe.png
-share/help/oc/mahjongg/figures/layout-ziggurat.png
-share/help/oc/mahjongg/figures/logo.png
-share/help/oc/mahjongg/figures/logo32.png
-share/help/oc/mahjongg/figures/mahjongg-video.ogv
-share/help/oc/mahjongg/figures/moves-left.png
-share/help/oc/mahjongg/gameplay.page
-share/help/oc/mahjongg/hints.page
-share/help/oc/mahjongg/index.page
-share/help/oc/mahjongg/legal.xml
-share/help/oc/mahjongg/license.page
-share/help/oc/mahjongg/map.page
-share/help/oc/mahjongg/moves.page
-share/help/oc/mahjongg/pause.page
-share/help/oc/mahjongg/rules.page
-share/help/oc/mahjongg/scoring.page
-share/help/oc/mahjongg/shortcuts.page
-share/help/oc/mahjongg/strategy.page
-share/help/oc/mahjongg/toolbar.page
-share/help/oc/mahjongg/translate.page
-share/help/oc/quadrapassel/index.docbook
+share/help/oc/quadrapassel/bug-filing.page
+share/help/oc/quadrapassel/develop.page
+share/help/oc/quadrapassel/documentation.page
+share/help/oc/quadrapassel/get-involved.page
+share/help/oc/quadrapassel/index.page
 share/help/oc/quadrapassel/legal.xml
+share/help/oc/quadrapassel/license.page
+share/help/oc/quadrapassel/media/fig2.png
+share/help/oc/quadrapassel/media/fig3.png
+share/help/oc/quadrapassel/media/fig4.png
+share/help/oc/quadrapassel/media/fig5.png
+share/help/oc/quadrapassel/media/go-home.png
+share/help/oc/quadrapassel/media/go-previous.png
+share/help/oc/quadrapassel/media/part1.jpg
+share/help/oc/quadrapassel/media/part2.jpg
+share/help/oc/quadrapassel/media/part3.jpg
+share/help/oc/quadrapassel/media/part4.jpg
+share/help/oc/quadrapassel/media/previous.png
+share/help/oc/quadrapassel/media/quadrapassel.png
+share/help/oc/quadrapassel/media/quadrapassel22.png
+share/help/oc/quadrapassel/playgame.page
+share/help/oc/quadrapassel/preferences.page
+share/help/oc/quadrapassel/score.page
+share/help/oc/quadrapassel/translate.page
 share/help/oc/swell-foop/figures/play1.png
 share/help/oc/swell-foop/figures/play2.png
 share/help/oc/swell-foop/figures/play3.png
@@ -2834,38 +3373,38 @@ share/help/pl/glines/scores.page
 share/help/pl/glines/shortcuts.page
 share/help/pl/glines/strategy.page
 share/help/pl/glines/translate.page
-share/help/pl/mahjongg/bug-filing.page
-share/help/pl/mahjongg/choosing.page
-share/help/pl/mahjongg/develop.page
-share/help/pl/mahjongg/documentation.page
-share/help/pl/mahjongg/figures/hints-video.ogv
-share/help/pl/mahjongg/figures/layout-bridges.png
-share/help/pl/mahjongg/figures/layout-cloud.png
-share/help/pl/mahjongg/figures/layout-conf-cross.png
-share/help/pl/mahjongg/figures/layout-difficult.png
-share/help/pl/mahjongg/figures/layout-easy.png
-share/help/pl/mahjongg/figures/layout-pyramid-walls.png
-share/help/pl/mahjongg/figures/layout-red-dragon.png
-share/help/pl/mahjongg/figures/layout-tic-tac-toe.png
-share/help/pl/mahjongg/figures/layout-ziggurat.png
-share/help/pl/mahjongg/figures/logo.png
-share/help/pl/mahjongg/figures/logo32.png
-share/help/pl/mahjongg/figures/mahjongg-video.ogv
-share/help/pl/mahjongg/figures/moves-left.png
-share/help/pl/mahjongg/gameplay.page
-share/help/pl/mahjongg/hints.page
-share/help/pl/mahjongg/index.page
-share/help/pl/mahjongg/legal.xml
-share/help/pl/mahjongg/license.page
-share/help/pl/mahjongg/map.page
-share/help/pl/mahjongg/moves.page
-share/help/pl/mahjongg/pause.page
-share/help/pl/mahjongg/rules.page
-share/help/pl/mahjongg/scoring.page
-share/help/pl/mahjongg/shortcuts.page
-share/help/pl/mahjongg/strategy.page
-share/help/pl/mahjongg/toolbar.page
-share/help/pl/mahjongg/translate.page
+share/help/pl/gnome-mahjongg/bug-filing.page
+share/help/pl/gnome-mahjongg/choosing.page
+share/help/pl/gnome-mahjongg/develop.page
+share/help/pl/gnome-mahjongg/documentation.page
+share/help/pl/gnome-mahjongg/figures/hints-video.ogv
+share/help/pl/gnome-mahjongg/figures/layout-bridges.png
+share/help/pl/gnome-mahjongg/figures/layout-cloud.png
+share/help/pl/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/pl/gnome-mahjongg/figures/layout-difficult.png
+share/help/pl/gnome-mahjongg/figures/layout-easy.png
+share/help/pl/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/pl/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/pl/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/pl/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/pl/gnome-mahjongg/figures/logo.png
+share/help/pl/gnome-mahjongg/figures/logo32.png
+share/help/pl/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/pl/gnome-mahjongg/figures/moves-left.png
+share/help/pl/gnome-mahjongg/gameplay.page
+share/help/pl/gnome-mahjongg/hints.page
+share/help/pl/gnome-mahjongg/index.page
+share/help/pl/gnome-mahjongg/legal.xml
+share/help/pl/gnome-mahjongg/license.page
+share/help/pl/gnome-mahjongg/map.page
+share/help/pl/gnome-mahjongg/moves.page
+share/help/pl/gnome-mahjongg/pause.page
+share/help/pl/gnome-mahjongg/rules.page
+share/help/pl/gnome-mahjongg/scoring.page
+share/help/pl/gnome-mahjongg/shortcuts.page
+share/help/pl/gnome-mahjongg/strategy.page
+share/help/pl/gnome-mahjongg/toolbar.page
+share/help/pl/gnome-mahjongg/translate.page
 share/help/pt_BR/glchess/figures/game.png
 share/help/pt_BR/glchess/figures/new_game.png
 share/help/pt_BR/glchess/figures/preferences_game.png
@@ -2902,9 +3441,9 @@ share/help/pt_BR/gnome-sudoku/strategy.page
 share/help/pt_BR/gnome-sudoku/toolbar.page
 share/help/pt_BR/gnome-sudoku/trackers.page
 share/help/pt_BR/gnome-sudoku/translate.page
+share/help/pt_BR/gnomine/board-size.page
 share/help/pt_BR/gnomine/bug-filing.page
 share/help/pt_BR/gnomine/develop.page
-share/help/pt_BR/gnomine/difficulty.page
 share/help/pt_BR/gnomine/documentation.page
 share/help/pt_BR/gnomine/faces.page
 share/help/pt_BR/gnomine/figures/easy-hints-1.png
@@ -2967,8 +3506,54 @@ share/help/pt_BR/iagno/sound.page
 share/help/pt_BR/iagno/strategy.page
 share/help/pt_BR/iagno/translate.page
 share/help/pt_BR/iagno/visual-results.page
-share/help/ro/lightsoff/index.docbook
+share/help/ro/gnotravex/figures/gnotravex-logo.png
+share/help/ro/gnotravex/figures/gnotravex-video.ogv
+share/help/ro/gnotravex/hint.page
+share/help/ro/gnotravex/index.page
+share/help/ro/gnotravex/license.page
+share/help/ro/gnotravex/move.page
+share/help/ro/gnotravex/shortcut.page
+share/help/ro/gnotravex/size.page
+share/help/ro/gnotravex/usage.page
+share/help/ro/gnotravex/winning.page
+share/help/ro/lightsoff/basic.page
+share/help/ro/lightsoff/bug-filing.page
+share/help/ro/lightsoff/develop.page
+share/help/ro/lightsoff/documentation.page
+share/help/ro/lightsoff/figures/lightsoff.jpg
+share/help/ro/lightsoff/figures/lightsoff.ogv
+share/help/ro/lightsoff/figures/lightsoff_logo.jpg
+share/help/ro/lightsoff/figures/lo1.jpg
+share/help/ro/lightsoff/index.page
 share/help/ro/lightsoff/legal.xml
+share/help/ro/lightsoff/license.page
+share/help/ro/lightsoff/rules.page
+share/help/ro/lightsoff/strategy.page
+share/help/ro/lightsoff/translate.page
+share/help/ro/quadrapassel/bug-filing.page
+share/help/ro/quadrapassel/develop.page
+share/help/ro/quadrapassel/documentation.page
+share/help/ro/quadrapassel/get-involved.page
+share/help/ro/quadrapassel/index.page
+share/help/ro/quadrapassel/legal.xml
+share/help/ro/quadrapassel/license.page
+share/help/ro/quadrapassel/media/fig2.png
+share/help/ro/quadrapassel/media/fig3.png
+share/help/ro/quadrapassel/media/fig4.png
+share/help/ro/quadrapassel/media/fig5.png
+share/help/ro/quadrapassel/media/go-home.png
+share/help/ro/quadrapassel/media/go-previous.png
+share/help/ro/quadrapassel/media/part1.jpg
+share/help/ro/quadrapassel/media/part2.jpg
+share/help/ro/quadrapassel/media/part3.jpg
+share/help/ro/quadrapassel/media/part4.jpg
+share/help/ro/quadrapassel/media/previous.png
+share/help/ro/quadrapassel/media/quadrapassel.png
+share/help/ro/quadrapassel/media/quadrapassel22.png
+share/help/ro/quadrapassel/playgame.page
+share/help/ro/quadrapassel/preferences.page
+share/help/ro/quadrapassel/score.page
+share/help/ro/quadrapassel/translate.page
 share/help/ru/glchess/figures/game.png
 share/help/ru/glchess/figures/new_game.png
 share/help/ru/glchess/figures/preferences_game.png
@@ -3003,6 +3588,38 @@ share/help/ru/glines/scores.page
 share/help/ru/glines/shortcuts.page
 share/help/ru/glines/strategy.page
 share/help/ru/glines/translate.page
+share/help/ru/gnome-mahjongg/bug-filing.page
+share/help/ru/gnome-mahjongg/choosing.page
+share/help/ru/gnome-mahjongg/develop.page
+share/help/ru/gnome-mahjongg/documentation.page
+share/help/ru/gnome-mahjongg/figures/hints-video.ogv
+share/help/ru/gnome-mahjongg/figures/layout-bridges.png
+share/help/ru/gnome-mahjongg/figures/layout-cloud.png
+share/help/ru/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/ru/gnome-mahjongg/figures/layout-difficult.png
+share/help/ru/gnome-mahjongg/figures/layout-easy.png
+share/help/ru/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/ru/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/ru/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/ru/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/ru/gnome-mahjongg/figures/logo.png
+share/help/ru/gnome-mahjongg/figures/logo32.png
+share/help/ru/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/ru/gnome-mahjongg/figures/moves-left.png
+share/help/ru/gnome-mahjongg/gameplay.page
+share/help/ru/gnome-mahjongg/hints.page
+share/help/ru/gnome-mahjongg/index.page
+share/help/ru/gnome-mahjongg/legal.xml
+share/help/ru/gnome-mahjongg/license.page
+share/help/ru/gnome-mahjongg/map.page
+share/help/ru/gnome-mahjongg/moves.page
+share/help/ru/gnome-mahjongg/pause.page
+share/help/ru/gnome-mahjongg/rules.page
+share/help/ru/gnome-mahjongg/scoring.page
+share/help/ru/gnome-mahjongg/shortcuts.page
+share/help/ru/gnome-mahjongg/strategy.page
+share/help/ru/gnome-mahjongg/toolbar.page
+share/help/ru/gnome-mahjongg/translate.page
 share/help/ru/gnome-sudoku/basics.page
 share/help/ru/gnome-sudoku/bug-filing.page
 share/help/ru/gnome-sudoku/commandline.page
@@ -3043,40 +3660,20 @@ share/help/ru/gnotravex/shortcut.page
 share/help/ru/gnotravex/size.page
 share/help/ru/gnotravex/usage.page
 share/help/ru/gnotravex/winning.page
-share/help/ru/lightsoff/index.docbook
+share/help/ru/lightsoff/basic.page
+share/help/ru/lightsoff/bug-filing.page
+share/help/ru/lightsoff/develop.page
+share/help/ru/lightsoff/documentation.page
+share/help/ru/lightsoff/figures/lightsoff.jpg
+share/help/ru/lightsoff/figures/lightsoff.ogv
+share/help/ru/lightsoff/figures/lightsoff_logo.jpg
+share/help/ru/lightsoff/figures/lo1.jpg
+share/help/ru/lightsoff/index.page
 share/help/ru/lightsoff/legal.xml
-share/help/ru/mahjongg/bug-filing.page
-share/help/ru/mahjongg/choosing.page
-share/help/ru/mahjongg/develop.page
-share/help/ru/mahjongg/documentation.page
-share/help/ru/mahjongg/figures/hints-video.ogv
-share/help/ru/mahjongg/figures/layout-bridges.png
-share/help/ru/mahjongg/figures/layout-cloud.png
-share/help/ru/mahjongg/figures/layout-conf-cross.png
-share/help/ru/mahjongg/figures/layout-difficult.png
-share/help/ru/mahjongg/figures/layout-easy.png
-share/help/ru/mahjongg/figures/layout-pyramid-walls.png
-share/help/ru/mahjongg/figures/layout-red-dragon.png
-share/help/ru/mahjongg/figures/layout-tic-tac-toe.png
-share/help/ru/mahjongg/figures/layout-ziggurat.png
-share/help/ru/mahjongg/figures/logo.png
-share/help/ru/mahjongg/figures/logo32.png
-share/help/ru/mahjongg/figures/mahjongg-video.ogv
-share/help/ru/mahjongg/figures/moves-left.png
-share/help/ru/mahjongg/gameplay.page
-share/help/ru/mahjongg/hints.page
-share/help/ru/mahjongg/index.page
-share/help/ru/mahjongg/legal.xml
-share/help/ru/mahjongg/license.page
-share/help/ru/mahjongg/map.page
-share/help/ru/mahjongg/moves.page
-share/help/ru/mahjongg/pause.page
-share/help/ru/mahjongg/rules.page
-share/help/ru/mahjongg/scoring.page
-share/help/ru/mahjongg/shortcuts.page
-share/help/ru/mahjongg/strategy.page
-share/help/ru/mahjongg/toolbar.page
-share/help/ru/mahjongg/translate.page
+share/help/ru/lightsoff/license.page
+share/help/ru/lightsoff/rules.page
+share/help/ru/lightsoff/strategy.page
+share/help/ru/lightsoff/translate.page
 share/help/ru/swell-foop/figures/play1.png
 share/help/ru/swell-foop/figures/play2.png
 share/help/ru/swell-foop/figures/play3.png
@@ -3131,6 +3728,38 @@ share/help/sl/gnibbles/legal.xml
 share/help/sl/gnobots2/figures/gnobots2-main.png
 share/help/sl/gnobots2/index.docbook
 share/help/sl/gnobots2/legal.xml
+share/help/sl/gnome-mahjongg/bug-filing.page
+share/help/sl/gnome-mahjongg/choosing.page
+share/help/sl/gnome-mahjongg/develop.page
+share/help/sl/gnome-mahjongg/documentation.page
+share/help/sl/gnome-mahjongg/figures/hints-video.ogv
+share/help/sl/gnome-mahjongg/figures/layout-bridges.png
+share/help/sl/gnome-mahjongg/figures/layout-cloud.png
+share/help/sl/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/sl/gnome-mahjongg/figures/layout-difficult.png
+share/help/sl/gnome-mahjongg/figures/layout-easy.png
+share/help/sl/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/sl/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/sl/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/sl/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/sl/gnome-mahjongg/figures/logo.png
+share/help/sl/gnome-mahjongg/figures/logo32.png
+share/help/sl/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/sl/gnome-mahjongg/figures/moves-left.png
+share/help/sl/gnome-mahjongg/gameplay.page
+share/help/sl/gnome-mahjongg/hints.page
+share/help/sl/gnome-mahjongg/index.page
+share/help/sl/gnome-mahjongg/legal.xml
+share/help/sl/gnome-mahjongg/license.page
+share/help/sl/gnome-mahjongg/map.page
+share/help/sl/gnome-mahjongg/moves.page
+share/help/sl/gnome-mahjongg/pause.page
+share/help/sl/gnome-mahjongg/rules.page
+share/help/sl/gnome-mahjongg/scoring.page
+share/help/sl/gnome-mahjongg/shortcuts.page
+share/help/sl/gnome-mahjongg/strategy.page
+share/help/sl/gnome-mahjongg/toolbar.page
+share/help/sl/gnome-mahjongg/translate.page
 share/help/sl/gnome-sudoku/basics.page
 share/help/sl/gnome-sudoku/bug-filing.page
 share/help/sl/gnome-sudoku/commandline.page
@@ -3161,9 +3790,9 @@ share/help/sl/gnome-sudoku/strategy.page
 share/help/sl/gnome-sudoku/toolbar.page
 share/help/sl/gnome-sudoku/trackers.page
 share/help/sl/gnome-sudoku/translate.page
+share/help/sl/gnomine/board-size.page
 share/help/sl/gnomine/bug-filing.page
 share/help/sl/gnomine/develop.page
-share/help/sl/gnomine/difficulty.page
 share/help/sl/gnomine/documentation.page
 share/help/sl/gnomine/faces.page
 share/help/sl/gnomine/figures/easy-hints-1.png
@@ -3240,42 +3869,44 @@ share/help/sl/iagno/sound.page
 share/help/sl/iagno/strategy.page
 share/help/sl/iagno/translate.page
 share/help/sl/iagno/visual-results.page
-share/help/sl/lightsoff/index.docbook
+share/help/sl/lightsoff/basic.page
+share/help/sl/lightsoff/bug-filing.page
+share/help/sl/lightsoff/develop.page
+share/help/sl/lightsoff/documentation.page
+share/help/sl/lightsoff/figures/lightsoff.jpg
+share/help/sl/lightsoff/figures/lightsoff.ogv
+share/help/sl/lightsoff/figures/lightsoff_logo.jpg
+share/help/sl/lightsoff/figures/lo1.jpg
+share/help/sl/lightsoff/index.page
 share/help/sl/lightsoff/legal.xml
-share/help/sl/mahjongg/bug-filing.page
-share/help/sl/mahjongg/choosing.page
-share/help/sl/mahjongg/develop.page
-share/help/sl/mahjongg/documentation.page
-share/help/sl/mahjongg/figures/hints-video.ogv
-share/help/sl/mahjongg/figures/layout-bridges.png
-share/help/sl/mahjongg/figures/layout-cloud.png
-share/help/sl/mahjongg/figures/layout-conf-cross.png
-share/help/sl/mahjongg/figures/layout-difficult.png
-share/help/sl/mahjongg/figures/layout-easy.png
-share/help/sl/mahjongg/figures/layout-pyramid-walls.png
-share/help/sl/mahjongg/figures/layout-red-dragon.png
-share/help/sl/mahjongg/figures/layout-tic-tac-toe.png
-share/help/sl/mahjongg/figures/layout-ziggurat.png
-share/help/sl/mahjongg/figures/logo.png
-share/help/sl/mahjongg/figures/logo32.png
-share/help/sl/mahjongg/figures/mahjongg-video.ogv
-share/help/sl/mahjongg/figures/moves-left.png
-share/help/sl/mahjongg/gameplay.page
-share/help/sl/mahjongg/hints.page
-share/help/sl/mahjongg/index.page
-share/help/sl/mahjongg/legal.xml
-share/help/sl/mahjongg/license.page
-share/help/sl/mahjongg/map.page
-share/help/sl/mahjongg/moves.page
-share/help/sl/mahjongg/pause.page
-share/help/sl/mahjongg/rules.page
-share/help/sl/mahjongg/scoring.page
-share/help/sl/mahjongg/shortcuts.page
-share/help/sl/mahjongg/strategy.page
-share/help/sl/mahjongg/toolbar.page
-share/help/sl/mahjongg/translate.page
-share/help/sl/quadrapassel/index.docbook
+share/help/sl/lightsoff/license.page
+share/help/sl/lightsoff/rules.page
+share/help/sl/lightsoff/strategy.page
+share/help/sl/lightsoff/translate.page
+share/help/sl/quadrapassel/bug-filing.page
+share/help/sl/quadrapassel/develop.page
+share/help/sl/quadrapassel/documentation.page
+share/help/sl/quadrapassel/get-involved.page
+share/help/sl/quadrapassel/index.page
 share/help/sl/quadrapassel/legal.xml
+share/help/sl/quadrapassel/license.page
+share/help/sl/quadrapassel/media/fig2.png
+share/help/sl/quadrapassel/media/fig3.png
+share/help/sl/quadrapassel/media/fig4.png
+share/help/sl/quadrapassel/media/fig5.png
+share/help/sl/quadrapassel/media/go-home.png
+share/help/sl/quadrapassel/media/go-previous.png
+share/help/sl/quadrapassel/media/part1.jpg
+share/help/sl/quadrapassel/media/part2.jpg
+share/help/sl/quadrapassel/media/part3.jpg
+share/help/sl/quadrapassel/media/part4.jpg
+share/help/sl/quadrapassel/media/previous.png
+share/help/sl/quadrapassel/media/quadrapassel.png
+share/help/sl/quadrapassel/media/quadrapassel22.png
+share/help/sl/quadrapassel/playgame.page
+share/help/sl/quadrapassel/preferences.page
+share/help/sl/quadrapassel/score.page
+share/help/sl/quadrapassel/translate.page
 share/help/sl/swell-foop/figures/play1.png
 share/help/sl/swell-foop/figures/play2.png
 share/help/sl/swell-foop/figures/play3.png
@@ -3330,6 +3961,38 @@ share/help/sr/gnibbles/legal.xml
 share/help/sr/gnobots2/figures/gnobots2-main.png
 share/help/sr/gnobots2/index.docbook
 share/help/sr/gnobots2/legal.xml
+share/help/sr/gnome-mahjongg/bug-filing.page
+share/help/sr/gnome-mahjongg/choosing.page
+share/help/sr/gnome-mahjongg/develop.page
+share/help/sr/gnome-mahjongg/documentation.page
+share/help/sr/gnome-mahjongg/figures/hints-video.ogv
+share/help/sr/gnome-mahjongg/figures/layout-bridges.png
+share/help/sr/gnome-mahjongg/figures/layout-cloud.png
+share/help/sr/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/sr/gnome-mahjongg/figures/layout-difficult.png
+share/help/sr/gnome-mahjongg/figures/layout-easy.png
+share/help/sr/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/sr/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/sr/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/sr/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/sr/gnome-mahjongg/figures/logo.png
+share/help/sr/gnome-mahjongg/figures/logo32.png
+share/help/sr/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/sr/gnome-mahjongg/figures/moves-left.png
+share/help/sr/gnome-mahjongg/gameplay.page
+share/help/sr/gnome-mahjongg/hints.page
+share/help/sr/gnome-mahjongg/index.page
+share/help/sr/gnome-mahjongg/legal.xml
+share/help/sr/gnome-mahjongg/license.page
+share/help/sr/gnome-mahjongg/map.page
+share/help/sr/gnome-mahjongg/moves.page
+share/help/sr/gnome-mahjongg/pause.page
+share/help/sr/gnome-mahjongg/rules.page
+share/help/sr/gnome-mahjongg/scoring.page
+share/help/sr/gnome-mahjongg/shortcuts.page
+share/help/sr/gnome-mahjongg/strategy.page
+share/help/sr/gnome-mahjongg/toolbar.page
+share/help/sr/gnome-mahjongg/translate.page
 share/help/sr/gnome-sudoku/basics.page
 share/help/sr/gnome-sudoku/bug-filing.page
 share/help/sr/gnome-sudoku/commandline.page
@@ -3360,9 +4023,9 @@ share/help/sr/gnome-sudoku/strategy.page
 share/help/sr/gnome-sudoku/toolbar.page
 share/help/sr/gnome-sudoku/trackers.page
 share/help/sr/gnome-sudoku/translate.page
+share/help/sr/gnomine/board-size.page
 share/help/sr/gnomine/bug-filing.page
 share/help/sr/gnomine/develop.page
-share/help/sr/gnomine/difficulty.page
 share/help/sr/gnomine/documentation.page
 share/help/sr/gnomine/faces.page
 share/help/sr/gnomine/figures/easy-hints-1.png
@@ -3439,40 +4102,30 @@ share/help/sr/iagno/sound.page
 share/help/sr/iagno/strategy.page
 share/help/sr/iagno/translate.page
 share/help/sr/iagno/visual-results.page
-share/help/sr/mahjongg/bug-filing.page
-share/help/sr/mahjongg/choosing.page
-share/help/sr/mahjongg/develop.page
-share/help/sr/mahjongg/documentation.page
-share/help/sr/mahjongg/figures/hints-video.ogv
-share/help/sr/mahjongg/figures/layout-bridges.png
-share/help/sr/mahjongg/figures/layout-cloud.png
-share/help/sr/mahjongg/figures/layout-conf-cross.png
-share/help/sr/mahjongg/figures/layout-difficult.png
-share/help/sr/mahjongg/figures/layout-easy.png
-share/help/sr/mahjongg/figures/layout-pyramid-walls.png
-share/help/sr/mahjongg/figures/layout-red-dragon.png
-share/help/sr/mahjongg/figures/layout-tic-tac-toe.png
-share/help/sr/mahjongg/figures/layout-ziggurat.png
-share/help/sr/mahjongg/figures/logo.png
-share/help/sr/mahjongg/figures/logo32.png
-share/help/sr/mahjongg/figures/mahjongg-video.ogv
-share/help/sr/mahjongg/figures/moves-left.png
-share/help/sr/mahjongg/gameplay.page
-share/help/sr/mahjongg/hints.page
-share/help/sr/mahjongg/index.page
-share/help/sr/mahjongg/legal.xml
-share/help/sr/mahjongg/license.page
-share/help/sr/mahjongg/map.page
-share/help/sr/mahjongg/moves.page
-share/help/sr/mahjongg/pause.page
-share/help/sr/mahjongg/rules.page
-share/help/sr/mahjongg/scoring.page
-share/help/sr/mahjongg/shortcuts.page
-share/help/sr/mahjongg/strategy.page
-share/help/sr/mahjongg/toolbar.page
-share/help/sr/mahjongg/translate.page
-share/help/sr/quadrapassel/index.docbook
+share/help/sr/quadrapassel/bug-filing.page
+share/help/sr/quadrapassel/develop.page
+share/help/sr/quadrapassel/documentation.page
+share/help/sr/quadrapassel/get-involved.page
+share/help/sr/quadrapassel/index.page
 share/help/sr/quadrapassel/legal.xml
+share/help/sr/quadrapassel/license.page
+share/help/sr/quadrapassel/media/fig2.png
+share/help/sr/quadrapassel/media/fig3.png
+share/help/sr/quadrapassel/media/fig4.png
+share/help/sr/quadrapassel/media/fig5.png
+share/help/sr/quadrapassel/media/go-home.png
+share/help/sr/quadrapassel/media/go-previous.png
+share/help/sr/quadrapassel/media/part1.jpg
+share/help/sr/quadrapassel/media/part2.jpg
+share/help/sr/quadrapassel/media/part3.jpg
+share/help/sr/quadrapassel/media/part4.jpg
+share/help/sr/quadrapassel/media/previous.png
+share/help/sr/quadrapassel/media/quadrapassel.png
+share/help/sr/quadrapassel/media/quadrapassel22.png
+share/help/sr/quadrapassel/playgame.page
+share/help/sr/quadrapassel/preferences.page
+share/help/sr/quadrapassel/score.page
+share/help/sr/quadrapassel/translate.page
 share/help/sr/swell-foop/figures/play1.png
 share/help/sr/swell-foop/figures/play2.png
 share/help/sr/swell-foop/figures/play3.png
@@ -3527,6 +4180,38 @@ share/help/sr@latin/gnibbles/legal.xml
 share/help/sr@latin/gnobots2/figures/gnobots2-main.png
 share/help/sr@latin/gnobots2/index.docbook
 share/help/sr@latin/gnobots2/legal.xml
+share/help/sr@latin/gnome-mahjongg/bug-filing.page
+share/help/sr@latin/gnome-mahjongg/choosing.page
+share/help/sr@latin/gnome-mahjongg/develop.page
+share/help/sr@latin/gnome-mahjongg/documentation.page
+share/help/sr@latin/gnome-mahjongg/figures/hints-video.ogv
+share/help/sr@latin/gnome-mahjongg/figures/layout-bridges.png
+share/help/sr@latin/gnome-mahjongg/figures/layout-cloud.png
+share/help/sr@latin/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/sr@latin/gnome-mahjongg/figures/layout-difficult.png
+share/help/sr@latin/gnome-mahjongg/figures/layout-easy.png
+share/help/sr@latin/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/sr@latin/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/sr@latin/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/sr@latin/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/sr@latin/gnome-mahjongg/figures/logo.png
+share/help/sr@latin/gnome-mahjongg/figures/logo32.png
+share/help/sr@latin/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/sr@latin/gnome-mahjongg/figures/moves-left.png
+share/help/sr@latin/gnome-mahjongg/gameplay.page
+share/help/sr@latin/gnome-mahjongg/hints.page
+share/help/sr@latin/gnome-mahjongg/index.page
+share/help/sr@latin/gnome-mahjongg/legal.xml
+share/help/sr@latin/gnome-mahjongg/license.page
+share/help/sr@latin/gnome-mahjongg/map.page
+share/help/sr@latin/gnome-mahjongg/moves.page
+share/help/sr@latin/gnome-mahjongg/pause.page
+share/help/sr@latin/gnome-mahjongg/rules.page
+share/help/sr@latin/gnome-mahjongg/scoring.page
+share/help/sr@latin/gnome-mahjongg/shortcuts.page
+share/help/sr@latin/gnome-mahjongg/strategy.page
+share/help/sr@latin/gnome-mahjongg/toolbar.page
+share/help/sr@latin/gnome-mahjongg/translate.page
 share/help/sr@latin/gnome-sudoku/basics.page
 share/help/sr@latin/gnome-sudoku/bug-filing.page
 share/help/sr@latin/gnome-sudoku/commandline.page
@@ -3557,9 +4242,9 @@ share/help/sr@latin/gnome-sudoku/strategy.page
 share/help/sr@latin/gnome-sudoku/toolbar.page
 share/help/sr@latin/gnome-sudoku/trackers.page
 share/help/sr@latin/gnome-sudoku/translate.page
+share/help/sr@latin/gnomine/board-size.page
 share/help/sr@latin/gnomine/bug-filing.page
 share/help/sr@latin/gnomine/develop.page
-share/help/sr@latin/gnomine/difficulty.page
 share/help/sr@latin/gnomine/documentation.page
 share/help/sr@latin/gnomine/faces.page
 share/help/sr@latin/gnomine/figures/easy-hints-1.png
@@ -3636,40 +4321,30 @@ share/help/sr@latin/iagno/sound.page
 share/help/sr@latin/iagno/strategy.page
 share/help/sr@latin/iagno/translate.page
 share/help/sr@latin/iagno/visual-results.page
-share/help/sr@latin/mahjongg/bug-filing.page
-share/help/sr@latin/mahjongg/choosing.page
-share/help/sr@latin/mahjongg/develop.page
-share/help/sr@latin/mahjongg/documentation.page
-share/help/sr@latin/mahjongg/figures/hints-video.ogv
-share/help/sr@latin/mahjongg/figures/layout-bridges.png
-share/help/sr@latin/mahjongg/figures/layout-cloud.png
-share/help/sr@latin/mahjongg/figures/layout-conf-cross.png
-share/help/sr@latin/mahjongg/figures/layout-difficult.png
-share/help/sr@latin/mahjongg/figures/layout-easy.png
-share/help/sr@latin/mahjongg/figures/layout-pyramid-walls.png
-share/help/sr@latin/mahjongg/figures/layout-red-dragon.png
-share/help/sr@latin/mahjongg/figures/layout-tic-tac-toe.png
-share/help/sr@latin/mahjongg/figures/layout-ziggurat.png
-share/help/sr@latin/mahjongg/figures/logo.png
-share/help/sr@latin/mahjongg/figures/logo32.png
-share/help/sr@latin/mahjongg/figures/mahjongg-video.ogv
-share/help/sr@latin/mahjongg/figures/moves-left.png
-share/help/sr@latin/mahjongg/gameplay.page
-share/help/sr@latin/mahjongg/hints.page
-share/help/sr@latin/mahjongg/index.page
-share/help/sr@latin/mahjongg/legal.xml
-share/help/sr@latin/mahjongg/license.page
-share/help/sr@latin/mahjongg/map.page
-share/help/sr@latin/mahjongg/moves.page
-share/help/sr@latin/mahjongg/pause.page
-share/help/sr@latin/mahjongg/rules.page
-share/help/sr@latin/mahjongg/scoring.page
-share/help/sr@latin/mahjongg/shortcuts.page
-share/help/sr@latin/mahjongg/strategy.page
-share/help/sr@latin/mahjongg/toolbar.page
-share/help/sr@latin/mahjongg/translate.page
-share/help/sr@latin/quadrapassel/index.docbook
+share/help/sr@latin/quadrapassel/bug-filing.page
+share/help/sr@latin/quadrapassel/develop.page
+share/help/sr@latin/quadrapassel/documentation.page
+share/help/sr@latin/quadrapassel/get-involved.page
+share/help/sr@latin/quadrapassel/index.page
 share/help/sr@latin/quadrapassel/legal.xml
+share/help/sr@latin/quadrapassel/license.page
+share/help/sr@latin/quadrapassel/media/fig2.png
+share/help/sr@latin/quadrapassel/media/fig3.png
+share/help/sr@latin/quadrapassel/media/fig4.png
+share/help/sr@latin/quadrapassel/media/fig5.png
+share/help/sr@latin/quadrapassel/media/go-home.png
+share/help/sr@latin/quadrapassel/media/go-previous.png
+share/help/sr@latin/quadrapassel/media/part1.jpg
+share/help/sr@latin/quadrapassel/media/part2.jpg
+share/help/sr@latin/quadrapassel/media/part3.jpg
+share/help/sr@latin/quadrapassel/media/part4.jpg
+share/help/sr@latin/quadrapassel/media/previous.png
+share/help/sr@latin/quadrapassel/media/quadrapassel.png
+share/help/sr@latin/quadrapassel/media/quadrapassel22.png
+share/help/sr@latin/quadrapassel/playgame.page
+share/help/sr@latin/quadrapassel/preferences.page
+share/help/sr@latin/quadrapassel/score.page
+share/help/sr@latin/quadrapassel/translate.page
 share/help/sr@latin/swell-foop/figures/play1.png
 share/help/sr@latin/swell-foop/figures/play2.png
 share/help/sr@latin/swell-foop/figures/play3.png
@@ -3724,6 +4399,38 @@ share/help/sv/gnibbles/legal.xml
 share/help/sv/gnobots2/figures/gnobots2-main.png
 share/help/sv/gnobots2/index.docbook
 share/help/sv/gnobots2/legal.xml
+share/help/sv/gnome-mahjongg/bug-filing.page
+share/help/sv/gnome-mahjongg/choosing.page
+share/help/sv/gnome-mahjongg/develop.page
+share/help/sv/gnome-mahjongg/documentation.page
+share/help/sv/gnome-mahjongg/figures/hints-video.ogv
+share/help/sv/gnome-mahjongg/figures/layout-bridges.png
+share/help/sv/gnome-mahjongg/figures/layout-cloud.png
+share/help/sv/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/sv/gnome-mahjongg/figures/layout-difficult.png
+share/help/sv/gnome-mahjongg/figures/layout-easy.png
+share/help/sv/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/sv/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/sv/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/sv/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/sv/gnome-mahjongg/figures/logo.png
+share/help/sv/gnome-mahjongg/figures/logo32.png
+share/help/sv/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/sv/gnome-mahjongg/figures/moves-left.png
+share/help/sv/gnome-mahjongg/gameplay.page
+share/help/sv/gnome-mahjongg/hints.page
+share/help/sv/gnome-mahjongg/index.page
+share/help/sv/gnome-mahjongg/legal.xml
+share/help/sv/gnome-mahjongg/license.page
+share/help/sv/gnome-mahjongg/map.page
+share/help/sv/gnome-mahjongg/moves.page
+share/help/sv/gnome-mahjongg/pause.page
+share/help/sv/gnome-mahjongg/rules.page
+share/help/sv/gnome-mahjongg/scoring.page
+share/help/sv/gnome-mahjongg/shortcuts.page
+share/help/sv/gnome-mahjongg/strategy.page
+share/help/sv/gnome-mahjongg/toolbar.page
+share/help/sv/gnome-mahjongg/translate.page
 share/help/sv/gnome-sudoku/basics.page
 share/help/sv/gnome-sudoku/bug-filing.page
 share/help/sv/gnome-sudoku/commandline.page
@@ -3754,9 +4461,9 @@ share/help/sv/gnome-sudoku/strategy.page
 share/help/sv/gnome-sudoku/toolbar.page
 share/help/sv/gnome-sudoku/trackers.page
 share/help/sv/gnome-sudoku/translate.page
+share/help/sv/gnomine/board-size.page
 share/help/sv/gnomine/bug-filing.page
 share/help/sv/gnomine/develop.page
-share/help/sv/gnomine/difficulty.page
 share/help/sv/gnomine/documentation.page
 share/help/sv/gnomine/faces.page
 share/help/sv/gnomine/figures/easy-hints-1.png
@@ -3833,42 +4540,44 @@ share/help/sv/iagno/sound.page
 share/help/sv/iagno/strategy.page
 share/help/sv/iagno/translate.page
 share/help/sv/iagno/visual-results.page
-share/help/sv/lightsoff/index.docbook
+share/help/sv/lightsoff/basic.page
+share/help/sv/lightsoff/bug-filing.page
+share/help/sv/lightsoff/develop.page
+share/help/sv/lightsoff/documentation.page
+share/help/sv/lightsoff/figures/lightsoff.jpg
+share/help/sv/lightsoff/figures/lightsoff.ogv
+share/help/sv/lightsoff/figures/lightsoff_logo.jpg
+share/help/sv/lightsoff/figures/lo1.jpg
+share/help/sv/lightsoff/index.page
 share/help/sv/lightsoff/legal.xml
-share/help/sv/mahjongg/bug-filing.page
-share/help/sv/mahjongg/choosing.page
-share/help/sv/mahjongg/develop.page
-share/help/sv/mahjongg/documentation.page
-share/help/sv/mahjongg/figures/hints-video.ogv
-share/help/sv/mahjongg/figures/layout-bridges.png
-share/help/sv/mahjongg/figures/layout-cloud.png
-share/help/sv/mahjongg/figures/layout-conf-cross.png
-share/help/sv/mahjongg/figures/layout-difficult.png
-share/help/sv/mahjongg/figures/layout-easy.png
-share/help/sv/mahjongg/figures/layout-pyramid-walls.png
-share/help/sv/mahjongg/figures/layout-red-dragon.png
-share/help/sv/mahjongg/figures/layout-tic-tac-toe.png
-share/help/sv/mahjongg/figures/layout-ziggurat.png
-share/help/sv/mahjongg/figures/logo.png
-share/help/sv/mahjongg/figures/logo32.png
-share/help/sv/mahjongg/figures/mahjongg-video.ogv
-share/help/sv/mahjongg/figures/moves-left.png
-share/help/sv/mahjongg/gameplay.page
-share/help/sv/mahjongg/hints.page
-share/help/sv/mahjongg/index.page
-share/help/sv/mahjongg/legal.xml
-share/help/sv/mahjongg/license.page
-share/help/sv/mahjongg/map.page
-share/help/sv/mahjongg/moves.page
-share/help/sv/mahjongg/pause.page
-share/help/sv/mahjongg/rules.page
-share/help/sv/mahjongg/scoring.page
-share/help/sv/mahjongg/shortcuts.page
-share/help/sv/mahjongg/strategy.page
-share/help/sv/mahjongg/toolbar.page
-share/help/sv/mahjongg/translate.page
-share/help/sv/quadrapassel/index.docbook
+share/help/sv/lightsoff/license.page
+share/help/sv/lightsoff/rules.page
+share/help/sv/lightsoff/strategy.page
+share/help/sv/lightsoff/translate.page
+share/help/sv/quadrapassel/bug-filing.page
+share/help/sv/quadrapassel/develop.page
+share/help/sv/quadrapassel/documentation.page
+share/help/sv/quadrapassel/get-involved.page
+share/help/sv/quadrapassel/index.page
 share/help/sv/quadrapassel/legal.xml
+share/help/sv/quadrapassel/license.page
+share/help/sv/quadrapassel/media/fig2.png
+share/help/sv/quadrapassel/media/fig3.png
+share/help/sv/quadrapassel/media/fig4.png
+share/help/sv/quadrapassel/media/fig5.png
+share/help/sv/quadrapassel/media/go-home.png
+share/help/sv/quadrapassel/media/go-previous.png
+share/help/sv/quadrapassel/media/part1.jpg
+share/help/sv/quadrapassel/media/part2.jpg
+share/help/sv/quadrapassel/media/part3.jpg
+share/help/sv/quadrapassel/media/part4.jpg
+share/help/sv/quadrapassel/media/previous.png
+share/help/sv/quadrapassel/media/quadrapassel.png
+share/help/sv/quadrapassel/media/quadrapassel22.png
+share/help/sv/quadrapassel/playgame.page
+share/help/sv/quadrapassel/preferences.page
+share/help/sv/quadrapassel/score.page
+share/help/sv/quadrapassel/translate.page
 share/help/sv/swell-foop/figures/play1.png
 share/help/sv/swell-foop/figures/play2.png
 share/help/sv/swell-foop/figures/play3.png
@@ -3951,6 +4660,38 @@ share/help/zh_CN/gnibbles/legal.xml
 share/help/zh_CN/gnobots2/figures/gnobots2-main.png
 share/help/zh_CN/gnobots2/index.docbook
 share/help/zh_CN/gnobots2/legal.xml
+share/help/zh_CN/gnome-mahjongg/bug-filing.page
+share/help/zh_CN/gnome-mahjongg/choosing.page
+share/help/zh_CN/gnome-mahjongg/develop.page
+share/help/zh_CN/gnome-mahjongg/documentation.page
+share/help/zh_CN/gnome-mahjongg/figures/hints-video.ogv
+share/help/zh_CN/gnome-mahjongg/figures/layout-bridges.png
+share/help/zh_CN/gnome-mahjongg/figures/layout-cloud.png
+share/help/zh_CN/gnome-mahjongg/figures/layout-conf-cross.png
+share/help/zh_CN/gnome-mahjongg/figures/layout-difficult.png
+share/help/zh_CN/gnome-mahjongg/figures/layout-easy.png
+share/help/zh_CN/gnome-mahjongg/figures/layout-pyramid-walls.png
+share/help/zh_CN/gnome-mahjongg/figures/layout-red-dragon.png
+share/help/zh_CN/gnome-mahjongg/figures/layout-tic-tac-toe.png
+share/help/zh_CN/gnome-mahjongg/figures/layout-ziggurat.png
+share/help/zh_CN/gnome-mahjongg/figures/logo.png
+share/help/zh_CN/gnome-mahjongg/figures/logo32.png
+share/help/zh_CN/gnome-mahjongg/figures/mahjongg-video.ogv
+share/help/zh_CN/gnome-mahjongg/figures/moves-left.png
+share/help/zh_CN/gnome-mahjongg/gameplay.page
+share/help/zh_CN/gnome-mahjongg/hints.page
+share/help/zh_CN/gnome-mahjongg/index.page
+share/help/zh_CN/gnome-mahjongg/legal.xml
+share/help/zh_CN/gnome-mahjongg/license.page
+share/help/zh_CN/gnome-mahjongg/map.page
+share/help/zh_CN/gnome-mahjongg/moves.page
+share/help/zh_CN/gnome-mahjongg/pause.page
+share/help/zh_CN/gnome-mahjongg/rules.page
+share/help/zh_CN/gnome-mahjongg/scoring.page
+share/help/zh_CN/gnome-mahjongg/shortcuts.page
+share/help/zh_CN/gnome-mahjongg/strategy.page
+share/help/zh_CN/gnome-mahjongg/toolbar.page
+share/help/zh_CN/gnome-mahjongg/translate.page
 share/help/zh_CN/gnome-sudoku/basics.page
 share/help/zh_CN/gnome-sudoku/bug-filing.page
 share/help/zh_CN/gnome-sudoku/commandline.page
@@ -3981,9 +4722,9 @@ share/help/zh_CN/gnome-sudoku/strategy.page
 share/help/zh_CN/gnome-sudoku/toolbar.page
 share/help/zh_CN/gnome-sudoku/trackers.page
 share/help/zh_CN/gnome-sudoku/translate.page
+share/help/zh_CN/gnomine/board-size.page
 share/help/zh_CN/gnomine/bug-filing.page
 share/help/zh_CN/gnomine/develop.page
-share/help/zh_CN/gnomine/difficulty.page
 share/help/zh_CN/gnomine/documentation.page
 share/help/zh_CN/gnomine/faces.page
 share/help/zh_CN/gnomine/figures/easy-hints-1.png
@@ -4060,42 +4801,44 @@ share/help/zh_CN/iagno/sound.page
 share/help/zh_CN/iagno/strategy.page
 share/help/zh_CN/iagno/translate.page
 share/help/zh_CN/iagno/visual-results.page
-share/help/zh_CN/lightsoff/index.docbook
+share/help/zh_CN/lightsoff/basic.page
+share/help/zh_CN/lightsoff/bug-filing.page
+share/help/zh_CN/lightsoff/develop.page
+share/help/zh_CN/lightsoff/documentation.page
+share/help/zh_CN/lightsoff/figures/lightsoff.jpg
+share/help/zh_CN/lightsoff/figures/lightsoff.ogv
+share/help/zh_CN/lightsoff/figures/lightsoff_logo.jpg
+share/help/zh_CN/lightsoff/figures/lo1.jpg
+share/help/zh_CN/lightsoff/index.page
 share/help/zh_CN/lightsoff/legal.xml
-share/help/zh_CN/mahjongg/bug-filing.page
-share/help/zh_CN/mahjongg/choosing.page
-share/help/zh_CN/mahjongg/develop.page
-share/help/zh_CN/mahjongg/documentation.page
-share/help/zh_CN/mahjongg/figures/hints-video.ogv
-share/help/zh_CN/mahjongg/figures/layout-bridges.png
-share/help/zh_CN/mahjongg/figures/layout-cloud.png
-share/help/zh_CN/mahjongg/figures/layout-conf-cross.png
-share/help/zh_CN/mahjongg/figures/layout-difficult.png
-share/help/zh_CN/mahjongg/figures/layout-easy.png
-share/help/zh_CN/mahjongg/figures/layout-pyramid-walls.png
-share/help/zh_CN/mahjongg/figures/layout-red-dragon.png
-share/help/zh_CN/mahjongg/figures/layout-tic-tac-toe.png
-share/help/zh_CN/mahjongg/figures/layout-ziggurat.png
-share/help/zh_CN/mahjongg/figures/logo.png
-share/help/zh_CN/mahjongg/figures/logo32.png
-share/help/zh_CN/mahjongg/figures/mahjongg-video.ogv
-share/help/zh_CN/mahjongg/figures/moves-left.png
-share/help/zh_CN/mahjongg/gameplay.page
-share/help/zh_CN/mahjongg/hints.page
-share/help/zh_CN/mahjongg/index.page
-share/help/zh_CN/mahjongg/legal.xml
-share/help/zh_CN/mahjongg/license.page
-share/help/zh_CN/mahjongg/map.page
-share/help/zh_CN/mahjongg/moves.page
-share/help/zh_CN/mahjongg/pause.page
-share/help/zh_CN/mahjongg/rules.page
-share/help/zh_CN/mahjongg/scoring.page
-share/help/zh_CN/mahjongg/shortcuts.page
-share/help/zh_CN/mahjongg/strategy.page
-share/help/zh_CN/mahjongg/toolbar.page
-share/help/zh_CN/mahjongg/translate.page
-share/help/zh_CN/quadrapassel/index.docbook
+share/help/zh_CN/lightsoff/license.page
+share/help/zh_CN/lightsoff/rules.page
+share/help/zh_CN/lightsoff/strategy.page
+share/help/zh_CN/lightsoff/translate.page
+share/help/zh_CN/quadrapassel/bug-filing.page
+share/help/zh_CN/quadrapassel/develop.page
+share/help/zh_CN/quadrapassel/documentation.page
+share/help/zh_CN/quadrapassel/get-involved.page
+share/help/zh_CN/quadrapassel/index.page
 share/help/zh_CN/quadrapassel/legal.xml
+share/help/zh_CN/quadrapassel/license.page
+share/help/zh_CN/quadrapassel/media/fig2.png
+share/help/zh_CN/quadrapassel/media/fig3.png
+share/help/zh_CN/quadrapassel/media/fig4.png
+share/help/zh_CN/quadrapassel/media/fig5.png
+share/help/zh_CN/quadrapassel/media/go-home.png
+share/help/zh_CN/quadrapassel/media/go-previous.png
+share/help/zh_CN/quadrapassel/media/part1.jpg
+share/help/zh_CN/quadrapassel/media/part2.jpg
+share/help/zh_CN/quadrapassel/media/part3.jpg
+share/help/zh_CN/quadrapassel/media/part4.jpg
+share/help/zh_CN/quadrapassel/media/previous.png
+share/help/zh_CN/quadrapassel/media/quadrapassel.png
+share/help/zh_CN/quadrapassel/media/quadrapassel22.png
+share/help/zh_CN/quadrapassel/playgame.page
+share/help/zh_CN/quadrapassel/preferences.page
+share/help/zh_CN/quadrapassel/score.page
+share/help/zh_CN/quadrapassel/translate.page
 share/help/zh_CN/swell-foop/figures/play1.png
 share/help/zh_CN/swell-foop/figures/play2.png
 share/help/zh_CN/swell-foop/figures/play3.png
@@ -4103,98 +4846,622 @@ share/help/zh_CN/swell-foop/figures/play4.png
 share/help/zh_CN/swell-foop/figures/start-up.png
 share/help/zh_CN/swell-foop/index.docbook
 share/help/zh_CN/swell-foop/legal.xml
-share/iagno/iagno.ui
-share/iagno/sounds/flip-piece.ogg
-share/iagno/sounds/gameover.ogg
-share/iagno/themes/black_and_white.svg
-share/iagno/themes/sun_and_star.svg
-share/icons/hicolor/16x16/apps/glchess.png
-share/icons/hicolor/16x16/apps/glines.png
-share/icons/hicolor/16x16/apps/gnect.png
-share/icons/hicolor/16x16/apps/gnibbles.png
-share/icons/hicolor/16x16/apps/gnobots2.png
-share/icons/hicolor/16x16/apps/gnome-sudoku.png
-share/icons/hicolor/16x16/apps/gnomine.png
-share/icons/hicolor/16x16/apps/gnotravex.png
-share/icons/hicolor/16x16/apps/gnotski.png
-share/icons/hicolor/16x16/apps/gtali.png
-share/icons/hicolor/16x16/apps/iagno.png
-share/icons/hicolor/16x16/apps/mahjongg.png
-share/icons/hicolor/16x16/apps/quadrapassel.png
+share/icons/hicolor/16x16/apps/gnome-mahjongg.png
 share/icons/hicolor/16x16/apps/swell-foop.png
-share/icons/hicolor/22x22/apps/glchess.png
-share/icons/hicolor/22x22/apps/glines.png
-share/icons/hicolor/22x22/apps/gnect.png
-share/icons/hicolor/22x22/apps/gnibbles.png
-share/icons/hicolor/22x22/apps/gnobots2.png
-share/icons/hicolor/22x22/apps/gnome-sudoku.png
-share/icons/hicolor/22x22/apps/gnomine.png
-share/icons/hicolor/22x22/apps/gnotravex.png
-share/icons/hicolor/22x22/apps/gnotski.png
-share/icons/hicolor/22x22/apps/gtali.png
-share/icons/hicolor/22x22/apps/iagno.png
-share/icons/hicolor/22x22/apps/mahjongg.png
-share/icons/hicolor/22x22/apps/quadrapassel.png
+share/icons/hicolor/22x22/apps/gnome-mahjongg.png
 share/icons/hicolor/22x22/apps/swell-foop.png
-share/icons/hicolor/24x24/actions/teleport-random.png
-share/icons/hicolor/24x24/actions/teleport.png
-share/icons/hicolor/24x24/apps/glchess.png
-share/icons/hicolor/24x24/apps/glines.png
-share/icons/hicolor/24x24/apps/gnect.png
-share/icons/hicolor/24x24/apps/gnibbles.png
-share/icons/hicolor/24x24/apps/gnobots2.png
-share/icons/hicolor/24x24/apps/gnome-sudoku.png
-share/icons/hicolor/24x24/apps/gnomine.png
-share/icons/hicolor/24x24/apps/gnotravex.png
-share/icons/hicolor/24x24/apps/gnotski.png
-share/icons/hicolor/24x24/apps/gtali.png
-share/icons/hicolor/24x24/apps/iagno.png
-share/icons/hicolor/24x24/apps/mahjongg.png
-share/icons/hicolor/24x24/apps/quadrapassel.png
+share/icons/hicolor/24x24/apps/gnome-mahjongg.png
 share/icons/hicolor/24x24/apps/swell-foop.png
-share/icons/hicolor/256x256/apps/gnomine.png
-share/icons/hicolor/256x256/apps/iagno.png
-share/icons/hicolor/32x32/apps/glchess.png
-share/icons/hicolor/32x32/apps/glines.png
-share/icons/hicolor/32x32/apps/gnect.png
-share/icons/hicolor/32x32/apps/gnibbles.png
-share/icons/hicolor/32x32/apps/gnobots2.png
-share/icons/hicolor/32x32/apps/gnome-sudoku.png
-share/icons/hicolor/32x32/apps/gnomine.png
-share/icons/hicolor/32x32/apps/gnotravex.png
-share/icons/hicolor/32x32/apps/gnotski.png
-share/icons/hicolor/32x32/apps/gtali.png
-share/icons/hicolor/32x32/apps/iagno.png
-share/icons/hicolor/32x32/apps/mahjongg.png
-share/icons/hicolor/32x32/apps/quadrapassel.png
+share/icons/hicolor/256x256/apps/swell-foop.png
+share/icons/hicolor/32x32/apps/gnome-mahjongg.png
 share/icons/hicolor/32x32/apps/swell-foop.png
-share/icons/hicolor/48x48/apps/glchess.png
-share/icons/hicolor/48x48/apps/glines.png
-share/icons/hicolor/48x48/apps/gnect.png
-share/icons/hicolor/48x48/apps/gnibbles.png
-share/icons/hicolor/48x48/apps/gnobots2.png
-share/icons/hicolor/48x48/apps/gnome-sudoku.png
-share/icons/hicolor/48x48/apps/gnomine.png
-share/icons/hicolor/48x48/apps/gnotravex.png
-share/icons/hicolor/48x48/apps/gnotski.png
-share/icons/hicolor/48x48/apps/gtali.png
-share/icons/hicolor/48x48/apps/iagno.png
-share/icons/hicolor/48x48/apps/mahjongg.png
-share/icons/hicolor/48x48/apps/quadrapassel.png
+share/icons/hicolor/48x48/apps/gnome-mahjongg.png
 share/icons/hicolor/48x48/apps/swell-foop.png
-share/icons/hicolor/scalable/apps/glchess.svg
-share/icons/hicolor/scalable/apps/glines.svg
-share/icons/hicolor/scalable/apps/gnect.svg
-share/icons/hicolor/scalable/apps/gnibbles.svg
-share/icons/hicolor/scalable/apps/gnobots2.svg
-share/icons/hicolor/scalable/apps/gnome-sudoku.svg
-share/icons/hicolor/scalable/apps/gnotravex.svg
-share/icons/hicolor/scalable/apps/gnotski.svg
-share/icons/hicolor/scalable/apps/gtali.svg
-share/icons/hicolor/scalable/apps/lightsoff.svg
-share/icons/hicolor/scalable/apps/mahjongg.svg
-share/icons/hicolor/scalable/apps/quadrapassel.svg
+share/icons/hicolor/icon-theme.cache
+share/icons/hicolor/scalable/apps/gnome-mahjongg.svg
 share/icons/hicolor/scalable/apps/swell-foop.svg
+share/locale/km/LC_MESSAGES/gnome-games.mo
+share/swell-foop/preferences.ui
+share/swell-foop/themes/colors/bkg.svg
+share/swell-foop/themes/colors/blue.svg
+share/swell-foop/themes/colors/green.svg
+share/swell-foop/themes/colors/highlight.svg
+share/swell-foop/themes/colors/red.svg
+share/swell-foop/themes/colors/yellow.svg
+share/swell-foop/themes/shapesandcolors/bkg.svg
+share/swell-foop/themes/shapesandcolors/blue.svg
+share/swell-foop/themes/shapesandcolors/green.svg
+share/swell-foop/themes/shapesandcolors/highlight.svg
+share/swell-foop/themes/shapesandcolors/red.svg
+share/swell-foop/themes/shapesandcolors/yellow.svg
+@dirrm share/swell-foop/themes/shapesandcolors
+@dirrm share/swell-foop/themes/colors
+@dirrm share/swell-foop/themes
+@dirrm share/swell-foop
+@dirrm share/help/zh_CN/swell-foop/figures
+@dirrm share/help/zh_CN/swell-foop
+@dirrm share/help/zh_CN/quadrapassel/media
+@dirrm share/help/zh_CN/quadrapassel
+@dirrm share/help/zh_CN/lightsoff/figures
+@dirrm share/help/zh_CN/lightsoff
+@dirrm share/help/zh_CN/iagno/figures
+@dirrm share/help/zh_CN/iagno
+@dirrm share/help/zh_CN/gtali/figures
+@dirrm share/help/zh_CN/gtali
+@dirrm share/help/zh_CN/gnotski/figures
+@dirrm share/help/zh_CN/gnotski
+@dirrm share/help/zh_CN/gnotravex/figures
+@dirrm share/help/zh_CN/gnotravex
+@dirrm share/help/zh_CN/gnomine/figures
+@dirrm share/help/zh_CN/gnomine
+@dirrm share/help/zh_CN/gnome-sudoku/figures
+@dirrm share/help/zh_CN/gnome-sudoku
+@dirrm share/help/zh_CN/gnome-mahjongg/figures
+@dirrm share/help/zh_CN/gnome-mahjongg
+@dirrm share/help/zh_CN/gnobots2/figures
+@dirrm share/help/zh_CN/gnobots2
+@dirrm share/help/zh_CN/gnibbles/figures
+@dirrm share/help/zh_CN/gnibbles
+@dirrm share/help/zh_CN/gnect/figures
+@dirrm share/help/zh_CN/gnect
+@dirrm share/help/zh_CN/glines/figures
+@dirrm share/help/zh_CN/glines
+@dirrm share/help/zh_CN/glchess/figures
+@dirrm share/help/zh_CN/glchess
+@dirrm share/help/zh_CN
+@dirrm share/help/tr/glines/figures
+@dirrm share/help/tr/glines
+@dirrm share/help/tr
+@dirrm share/help/sv/swell-foop/figures
+@dirrm share/help/sv/swell-foop
+@dirrm share/help/sv/quadrapassel/media
+@dirrm share/help/sv/quadrapassel
+@dirrm share/help/sv/lightsoff/figures
+@dirrm share/help/sv/lightsoff
+@dirrm share/help/sv/iagno/figures
+@dirrm share/help/sv/iagno
+@dirrm share/help/sv/gtali/figures
+@dirrm share/help/sv/gtali
+@dirrm share/help/sv/gnotski/figures
+@dirrm share/help/sv/gnotski
+@dirrm share/help/sv/gnotravex/figures
+@dirrm share/help/sv/gnotravex
+@dirrm share/help/sv/gnomine/figures
+@dirrm share/help/sv/gnomine
+@dirrm share/help/sv/gnome-sudoku/figures
+@dirrm share/help/sv/gnome-sudoku
+@dirrm share/help/sv/gnome-mahjongg/figures
+@dirrm share/help/sv/gnome-mahjongg
+@dirrm share/help/sv/gnobots2/figures
+@dirrm share/help/sv/gnobots2
+@dirrm share/help/sv/gnibbles/figures
+@dirrm share/help/sv/gnibbles
+@dirrm share/help/sv/gnect/figures
+@dirrm share/help/sv/gnect
+@dirrm share/help/sv/glines/figures
+@dirrm share/help/sv/glines
+@dirrm share/help/sv/glchess/figures
+@dirrm share/help/sv/glchess
+@dirrm share/help/sv
+@dirrm share/help/sr@latin/swell-foop/figures
+@dirrm share/help/sr@latin/swell-foop
+@dirrm share/help/sr@latin/quadrapassel/media
+@dirrm share/help/sr@latin/quadrapassel
+@dirrm share/help/sr@latin/iagno/figures
+@dirrm share/help/sr@latin/iagno
+@dirrm share/help/sr@latin/gtali/figures
+@dirrm share/help/sr@latin/gtali
+@dirrm share/help/sr@latin/gnotski/figures
+@dirrm share/help/sr@latin/gnotski
+@dirrm share/help/sr@latin/gnotravex/figures
+@dirrm share/help/sr@latin/gnotravex
+@dirrm share/help/sr@latin/gnomine/figures
+@dirrm share/help/sr@latin/gnomine
+@dirrm share/help/sr@latin/gnome-sudoku/figures
+@dirrm share/help/sr@latin/gnome-sudoku
+@dirrm share/help/sr@latin/gnome-mahjongg/figures
+@dirrm share/help/sr@latin/gnome-mahjongg
+@dirrm share/help/sr@latin/gnobots2/figures
+@dirrm share/help/sr@latin/gnobots2
+@dirrm share/help/sr@latin/gnibbles/figures
+@dirrm share/help/sr@latin/gnibbles
+@dirrm share/help/sr@latin/gnect/figures
+@dirrm share/help/sr@latin/gnect
+@dirrm share/help/sr@latin/glines/figures
+@dirrm share/help/sr@latin/glines
+@dirrm share/help/sr@latin/glchess/figures
+@dirrm share/help/sr@latin/glchess
+@dirrm share/help/sr@latin
+@dirrm share/help/sr/swell-foop/figures
+@dirrm share/help/sr/swell-foop
+@dirrm share/help/sr/quadrapassel/media
+@dirrm share/help/sr/quadrapassel
+@dirrm share/help/sr/iagno/figures
+@dirrm share/help/sr/iagno
+@dirrm share/help/sr/gtali/figures
+@dirrm share/help/sr/gtali
+@dirrm share/help/sr/gnotski/figures
+@dirrm share/help/sr/gnotski
+@dirrm share/help/sr/gnotravex/figures
+@dirrm share/help/sr/gnotravex
+@dirrm share/help/sr/gnomine/figures
+@dirrm share/help/sr/gnomine
+@dirrm share/help/sr/gnome-sudoku/figures
+@dirrm share/help/sr/gnome-sudoku
+@dirrm share/help/sr/gnome-mahjongg/figures
+@dirrm share/help/sr/gnome-mahjongg
+@dirrm share/help/sr/gnobots2/figures
+@dirrm share/help/sr/gnobots2
+@dirrm share/help/sr/gnibbles/figures
+@dirrm share/help/sr/gnibbles
+@dirrm share/help/sr/gnect/figures
+@dirrm share/help/sr/gnect
+@dirrm share/help/sr/glines/figures
+@dirrm share/help/sr/glines
+@dirrm share/help/sr/glchess/figures
+@dirrm share/help/sr/glchess
+@dirrm share/help/sr
+@dirrm share/help/sl/swell-foop/figures
+@dirrm share/help/sl/swell-foop
+@dirrm share/help/sl/quadrapassel/media
+@dirrm share/help/sl/quadrapassel
+@dirrm share/help/sl/lightsoff/figures
+@dirrm share/help/sl/lightsoff
+@dirrm share/help/sl/iagno/figures
+@dirrm share/help/sl/iagno
+@dirrm share/help/sl/gtali/figures
+@dirrm share/help/sl/gtali
+@dirrm share/help/sl/gnotski/figures
+@dirrm share/help/sl/gnotski
+@dirrm share/help/sl/gnotravex/figures
+@dirrm share/help/sl/gnotravex
+@dirrm share/help/sl/gnomine/figures
+@dirrm share/help/sl/gnomine
+@dirrm share/help/sl/gnome-sudoku/figures
+@dirrm share/help/sl/gnome-sudoku
+@dirrm share/help/sl/gnome-mahjongg/figures
+@dirrm share/help/sl/gnome-mahjongg
+@dirrm share/help/sl/gnobots2/figures
+@dirrm share/help/sl/gnobots2
+@dirrm share/help/sl/gnibbles/figures
+@dirrm share/help/sl/gnibbles
+@dirrm share/help/sl/gnect/figures
+@dirrm share/help/sl/gnect
+@dirrm share/help/sl/glines/figures
+@dirrm share/help/sl/glines
+@dirrm share/help/sl/glchess/figures
+@dirrm share/help/sl/glchess
+@dirrm share/help/sl
+@dirrm share/help/ru/swell-foop/figures
+@dirrm share/help/ru/swell-foop
+@dirrm share/help/ru/lightsoff/figures
+@dirrm share/help/ru/lightsoff
+@dirrm share/help/ru/gnotravex/figures
+@dirrm share/help/ru/gnotravex
+@dirrm share/help/ru/gnome-sudoku/figures
+@dirrm share/help/ru/gnome-sudoku
+@dirrm share/help/ru/gnome-mahjongg/figures
+@dirrm share/help/ru/gnome-mahjongg
+@dirrm share/help/ru/glines/figures
+@dirrm share/help/ru/glines
+@dirrm share/help/ru/glchess/figures
+@dirrm share/help/ru/glchess
+@dirrm share/help/ru
+@dirrm share/help/ro/quadrapassel/media
+@dirrm share/help/ro/quadrapassel
+@dirrm share/help/ro/lightsoff/figures
+@dirrm share/help/ro/lightsoff
+@dirrm share/help/ro/gnotravex/figures
+@dirrm share/help/ro/gnotravex
+@dirrm share/help/ro
+@dirrm share/help/pt_BR/iagno/figures
+@dirrm share/help/pt_BR/iagno
+@dirrm share/help/pt_BR/gtali/figures
+@dirrm share/help/pt_BR/gtali
+@dirrm share/help/pt_BR/gnomine/figures
+@dirrm share/help/pt_BR/gnomine
+@dirrm share/help/pt_BR/gnome-sudoku/figures
+@dirrm share/help/pt_BR/gnome-sudoku
+@dirrm share/help/pt_BR/glchess/figures
+@dirrm share/help/pt_BR/glchess
+@dirrm share/help/pt_BR
+@dirrm share/help/pl/gnome-mahjongg/figures
+@dirrm share/help/pl/gnome-mahjongg
+@dirrm share/help/pl/glines/figures
+@dirrm share/help/pl/glines
+@dirrm share/help/pl
+@dirrm share/help/oc/swell-foop/figures
+@dirrm share/help/oc/swell-foop
+@dirrm share/help/oc/quadrapassel/media
+@dirrm share/help/oc/quadrapassel
+@dirrm share/help/oc/iagno/figures
+@dirrm share/help/oc/iagno
+@dirrm share/help/oc/gtali/figures
+@dirrm share/help/oc/gtali
+@dirrm share/help/oc/gnotski/figures
+@dirrm share/help/oc/gnotski
+@dirrm share/help/oc/gnotravex/figures
+@dirrm share/help/oc/gnotravex
+@dirrm share/help/oc/gnomine/figures
+@dirrm share/help/oc/gnomine
+@dirrm share/help/oc/gnome-sudoku/figures
+@dirrm share/help/oc/gnome-sudoku
+@dirrm share/help/oc/gnome-mahjongg/figures
+@dirrm share/help/oc/gnome-mahjongg
+@dirrm share/help/oc/gnobots2/figures
+@dirrm share/help/oc/gnobots2
+@dirrm share/help/oc/gnibbles/figures
+@dirrm share/help/oc/gnibbles
+@dirrm share/help/oc/gnect/figures
+@dirrm share/help/oc/gnect
+@dirrm share/help/oc/glines/figures
+@dirrm share/help/oc/glines
+@dirrm share/help/oc/glchess/figures
+@dirrm share/help/oc/glchess
+@dirrm share/help/oc
+@dirrm share/help/ko/lightsoff/figures
+@dirrm share/help/ko/lightsoff
+@dirrm share/help/ko/glchess/figures
+@dirrm share/help/ko/glchess
+@dirrm share/help/ko
+@dirrm share/help/ja/quadrapassel/media
+@dirrm share/help/ja/quadrapassel
+@dirrm share/help/ja/glchess/figures
+@dirrm share/help/ja/glchess
+@dirrm share/help/ja
+@dirrm share/help/it/swell-foop/figures
+@dirrm share/help/it/swell-foop
+@dirrm share/help/it/quadrapassel/media
+@dirrm share/help/it/quadrapassel
+@dirrm share/help/it/iagno/figures
+@dirrm share/help/it/iagno
+@dirrm share/help/it/gtali/figures
+@dirrm share/help/it/gtali
+@dirrm share/help/it/gnotski/figures
+@dirrm share/help/it/gnotski
+@dirrm share/help/it/gnotravex/figures
+@dirrm share/help/it/gnotravex
+@dirrm share/help/it/gnomine/figures
+@dirrm share/help/it/gnomine
+@dirrm share/help/it/gnome-sudoku/figures
+@dirrm share/help/it/gnome-sudoku
+@dirrm share/help/it/gnome-mahjongg/figures
+@dirrm share/help/it/gnome-mahjongg
+@dirrm share/help/it/gnobots2/figures
+@dirrm share/help/it/gnobots2
+@dirrm share/help/it/gnibbles/figures
+@dirrm share/help/it/gnibbles
+@dirrm share/help/it/gnect/figures
+@dirrm share/help/it/gnect
+@dirrm share/help/it/glines/figures
+@dirrm share/help/it/glines
+@dirrm share/help/it
+@dirrm share/help/hu/quadrapassel/media
+@dirrm share/help/hu/quadrapassel
+@dirrm share/help/hu/lightsoff/figures
+@dirrm share/help/hu/lightsoff
+@dirrm share/help/hu/gnotravex/figures
+@dirrm share/help/hu/gnotravex
+@dirrm share/help/hu/gnome-mahjongg/figures
+@dirrm share/help/hu/gnome-mahjongg
+@dirrm share/help/hu
+@dirrm share/help/gl/lightsoff/figures
+@dirrm share/help/gl/lightsoff
+@dirrm share/help/gl/gtali/figures
+@dirrm share/help/gl/gtali
+@dirrm share/help/gl/gnomine/figures
+@dirrm share/help/gl/gnomine
+@dirrm share/help/gl/gnome-sudoku/figures
+@dirrm share/help/gl/gnome-sudoku
+@dirrm share/help/gl/glines/figures
+@dirrm share/help/gl/glines
+@dirrm share/help/gl/glchess/figures
+@dirrm share/help/gl/glchess
+@dirrm share/help/gl
+@dirrm share/help/fr/swell-foop/figures
+@dirrm share/help/fr/swell-foop
+@dirrm share/help/fr/quadrapassel/media
+@dirrm share/help/fr/quadrapassel
+@dirrm share/help/fr/lightsoff/figures
+@dirrm share/help/fr/lightsoff
+@dirrm share/help/fr/iagno/figures
+@dirrm share/help/fr/iagno
+@dirrm share/help/fr/gtali/figures
+@dirrm share/help/fr/gtali
+@dirrm share/help/fr/gnotski/figures
+@dirrm share/help/fr/gnotski
+@dirrm share/help/fr/gnotravex/figures
+@dirrm share/help/fr/gnotravex
+@dirrm share/help/fr/gnomine/figures
+@dirrm share/help/fr/gnomine
+@dirrm share/help/fr/gnome-sudoku/figures
+@dirrm share/help/fr/gnome-sudoku
+@dirrm share/help/fr/gnome-mahjongg/figures
+@dirrm share/help/fr/gnome-mahjongg
+@dirrm share/help/fr/gnobots2/figures
+@dirrm share/help/fr/gnobots2
+@dirrm share/help/fr/gnibbles/figures
+@dirrm share/help/fr/gnibbles
+@dirrm share/help/fr/gnect/figures
+@dirrm share/help/fr/gnect
+@dirrm share/help/fr/glines/figures
+@dirrm share/help/fr/glines
+@dirrm share/help/fr/glchess/figures
+@dirrm share/help/fr/glchess
+@dirrm share/help/fr
+@dirrm share/help/fi/quadrapassel/media
+@dirrm share/help/fi/quadrapassel
+@dirrm share/help/fi/lightsoff/figures
+@dirrm share/help/fi/lightsoff
+@dirrm share/help/fi/gnect/figures
+@dirrm share/help/fi/gnect
+@dirrm share/help/fi
+@dirrm share/help/eu/swell-foop/figures
+@dirrm share/help/eu/swell-foop
+@dirrm share/help/eu/quadrapassel/media
+@dirrm share/help/eu/quadrapassel
+@dirrm share/help/eu/iagno/figures
+@dirrm share/help/eu/iagno
+@dirrm share/help/eu/gtali/figures
+@dirrm share/help/eu/gtali
+@dirrm share/help/eu/gnotski/figures
+@dirrm share/help/eu/gnotski
+@dirrm share/help/eu/gnotravex/figures
+@dirrm share/help/eu/gnotravex
+@dirrm share/help/eu/gnomine/figures
+@dirrm share/help/eu/gnomine
+@dirrm share/help/eu/gnome-sudoku/figures
+@dirrm share/help/eu/gnome-sudoku
+@dirrm share/help/eu/gnome-mahjongg/figures
+@dirrm share/help/eu/gnome-mahjongg
+@dirrm share/help/eu/gnobots2/figures
+@dirrm share/help/eu/gnobots2
+@dirrm share/help/eu/gnibbles/figures
+@dirrm share/help/eu/gnibbles
+@dirrm share/help/eu/gnect/figures
+@dirrm share/help/eu/gnect
+@dirrm share/help/eu/glines/figures
+@dirrm share/help/eu/glines
+@dirrm share/help/eu/glchess/figures
+@dirrm share/help/eu/glchess
+@dirrm share/help/eu
+@dirrm share/help/es/swell-foop/figures
+@dirrm share/help/es/swell-foop
+@dirrm share/help/es/quadrapassel/media
+@dirrm share/help/es/quadrapassel
+@dirrm share/help/es/lightsoff/figures
+@dirrm share/help/es/lightsoff
+@dirrm share/help/es/iagno/figures
+@dirrm share/help/es/iagno
+@dirrm share/help/es/gtali/figures
+@dirrm share/help/es/gtali
+@dirrm share/help/es/gnotski/figures
+@dirrm share/help/es/gnotski
+@dirrm share/help/es/gnotravex/figures
+@dirrm share/help/es/gnotravex
+@dirrm share/help/es/gnomine/figures
+@dirrm share/help/es/gnomine
+@dirrm share/help/es/gnome-sudoku/figures
+@dirrm share/help/es/gnome-sudoku
+@dirrm share/help/es/gnome-mahjongg/figures
+@dirrm share/help/es/gnome-mahjongg
+@dirrm share/help/es/gnobots2/figures
+@dirrm share/help/es/gnobots2
+@dirrm share/help/es/gnibbles/figures
+@dirrm share/help/es/gnibbles
+@dirrm share/help/es/gnect/figures
+@dirrm share/help/es/gnect
+@dirrm share/help/es/glines/figures
+@dirrm share/help/es/glines
+@dirrm share/help/es/glchess/figures
+@dirrm share/help/es/glchess
+@dirrm share/help/es
+@dirrm share/help/en_GB/swell-foop/figures
+@dirrm share/help/en_GB/swell-foop
+@dirrm share/help/en_GB/quadrapassel/media
+@dirrm share/help/en_GB/quadrapassel
+@dirrm share/help/en_GB/iagno/figures
+@dirrm share/help/en_GB/iagno
+@dirrm share/help/en_GB/gtali/figures
+@dirrm share/help/en_GB/gtali
+@dirrm share/help/en_GB/gnotski/figures
+@dirrm share/help/en_GB/gnotski
+@dirrm share/help/en_GB/gnotravex/figures
+@dirrm share/help/en_GB/gnotravex
+@dirrm share/help/en_GB/gnomine/figures
+@dirrm share/help/en_GB/gnomine
+@dirrm share/help/en_GB/gnome-sudoku/figures
+@dirrm share/help/en_GB/gnome-sudoku
+@dirrm share/help/en_GB/gnome-mahjongg/figures
+@dirrm share/help/en_GB/gnome-mahjongg
+@dirrm share/help/en_GB/gnobots2/figures
+@dirrm share/help/en_GB/gnobots2
+@dirrm share/help/en_GB/gnibbles/figures
+@dirrm share/help/en_GB/gnibbles
+@dirrm share/help/en_GB/gnect/figures
+@dirrm share/help/en_GB/gnect
+@dirrm share/help/en_GB/glines/figures
+@dirrm share/help/en_GB/glines
+@dirrm share/help/en_GB/glchess/figures
+@dirrm share/help/en_GB/glchess
+@dirrm share/help/en_GB
+@dirrm share/help/el/swell-foop/figures
+@dirrm share/help/el/swell-foop
+@dirrm share/help/el/quadrapassel/media
+@dirrm share/help/el/quadrapassel
+@dirrm share/help/el/lightsoff/figures
+@dirrm share/help/el/lightsoff
+@dirrm share/help/el/iagno/figures
+@dirrm share/help/el/iagno
+@dirrm share/help/el/gtali/figures
+@dirrm share/help/el/gtali
+@dirrm share/help/el/gnotski/figures
+@dirrm share/help/el/gnotski
+@dirrm share/help/el/gnotravex/figures
+@dirrm share/help/el/gnotravex
+@dirrm share/help/el/gnomine/figures
+@dirrm share/help/el/gnomine
+@dirrm share/help/el/gnome-sudoku/figures
+@dirrm share/help/el/gnome-sudoku
+@dirrm share/help/el/gnome-mahjongg/figures
+@dirrm share/help/el/gnome-mahjongg
+@dirrm share/help/el/gnobots2/figures
+@dirrm share/help/el/gnobots2
+@dirrm share/help/el/gnibbles/figures
+@dirrm share/help/el/gnibbles
+@dirrm share/help/el/gnect/figures
+@dirrm share/help/el/gnect
+@dirrm share/help/el/glines/figures
+@dirrm share/help/el/glines
+@dirrm share/help/el/glchess/figures
+@dirrm share/help/el/glchess
+@dirrm share/help/el
+@dirrm share/help/de/swell-foop/figures
+@dirrm share/help/de/swell-foop
+@dirrm share/help/de/quadrapassel/media
+@dirrm share/help/de/quadrapassel
+@dirrm share/help/de/lightsoff/figures
+@dirrm share/help/de/lightsoff
+@dirrm share/help/de/iagno/figures
+@dirrm share/help/de/iagno
+@dirrm share/help/de/gtali/figures
+@dirrm share/help/de/gtali
+@dirrm share/help/de/gnotski/figures
+@dirrm share/help/de/gnotski
+@dirrm share/help/de/gnotravex/figures
+@dirrm share/help/de/gnotravex
+@dirrm share/help/de/gnomine/figures
+@dirrm share/help/de/gnomine
+@dirrm share/help/de/gnome-sudoku/figures
+@dirrm share/help/de/gnome-sudoku
+@dirrm share/help/de/gnome-mahjongg/figures
+@dirrm share/help/de/gnome-mahjongg
+@dirrm share/help/de/gnobots2/figures
+@dirrm share/help/de/gnobots2
+@dirrm share/help/de/gnibbles/figures
+@dirrm share/help/de/gnibbles
+@dirrm share/help/de/gnect/figures
+@dirrm share/help/de/gnect
+@dirrm share/help/de/glines/figures
+@dirrm share/help/de/glines
+@dirrm share/help/de/glchess/figures
+@dirrm share/help/de/glchess
+@dirrm share/help/de
+@dirrm share/help/da/gtali/figures
+@dirrm share/help/da/gtali
+@dirrm share/help/da/gnotski/figures
+@dirrm share/help/da/gnotski
+@dirrm share/help/da/gnotravex/figures
+@dirrm share/help/da/gnotravex
+@dirrm share/help/da/gnomine/figures
+@dirrm share/help/da/gnomine
+@dirrm share/help/da/gnome-sudoku/figures
+@dirrm share/help/da/gnome-sudoku
+@dirrm share/help/da/gnome-mahjongg/figures
+@dirrm share/help/da/gnome-mahjongg
+@dirrm share/help/da/gnobots2/figures
+@dirrm share/help/da/gnobots2
+@dirrm share/help/da/gnect/figures
+@dirrm share/help/da/gnect
+@dirrm share/help/da/glchess/figures
+@dirrm share/help/da/glchess
+@dirrm share/help/da
+@dirrm share/help/cs/swell-foop/figures
+@dirrm share/help/cs/swell-foop
+@dirrm share/help/cs/quadrapassel/media
+@dirrm share/help/cs/quadrapassel
+@dirrm share/help/cs/iagno/figures
+@dirrm share/help/cs/iagno
+@dirrm share/help/cs/gtali/figures
+@dirrm share/help/cs/gtali
+@dirrm share/help/cs/gnotski/figures
+@dirrm share/help/cs/gnotski
+@dirrm share/help/cs/gnotravex/figures
+@dirrm share/help/cs/gnotravex
+@dirrm share/help/cs/gnomine/figures
+@dirrm share/help/cs/gnomine
+@dirrm share/help/cs/gnome-sudoku/figures
+@dirrm share/help/cs/gnome-sudoku
+@dirrm share/help/cs/gnome-mahjongg/figures
+@dirrm share/help/cs/gnome-mahjongg
+@dirrm share/help/cs/gnobots2/figures
+@dirrm share/help/cs/gnobots2
+@dirrm share/help/cs/gnibbles/figures
+@dirrm share/help/cs/gnibbles
+@dirrm share/help/cs/gnect/figures
+@dirrm share/help/cs/gnect
+@dirrm share/help/cs/glines/figures
+@dirrm share/help/cs/glines
+@dirrm share/help/cs/glchess/figures
+@dirrm share/help/cs/glchess
+@dirrm share/help/cs
+@dirrm share/help/ca/swell-foop/figures
+@dirrm share/help/ca/swell-foop
+@dirrm share/help/ca/quadrapassel/media
+@dirrm share/help/ca/quadrapassel
+@dirrm share/help/ca/lightsoff/figures
+@dirrm share/help/ca/lightsoff
+@dirrm share/help/ca/iagno/figures
+@dirrm share/help/ca/iagno
+@dirrm share/help/ca/gtali/figures
+@dirrm share/help/ca/gtali
+@dirrm share/help/ca/gnotski/figures
+@dirrm share/help/ca/gnotski
+@dirrm share/help/ca/gnotravex/figures
+@dirrm share/help/ca/gnotravex
+@dirrm share/help/ca/gnomine/figures
+@dirrm share/help/ca/gnomine
+@dirrm share/help/ca/gnome-sudoku/figures
+@dirrm share/help/ca/gnome-sudoku
+@dirrm share/help/ca/gnome-mahjongg/figures
+@dirrm share/help/ca/gnome-mahjongg
+@dirrm share/help/ca/gnobots2/figures
+@dirrm share/help/ca/gnobots2
+@dirrm share/help/ca/gnibbles/figures
+@dirrm share/help/ca/gnibbles
+@dirrm share/help/ca/gnect/figures
+@dirrm share/help/ca/gnect
+@dirrm share/help/ca/glines/figures
+@dirrm share/help/ca/glines
+@dirrm share/help/ca/glchess/figures
+@dirrm share/help/ca/glchess
+@dirrm share/help/ca
+@dirrm share/help/C/swell-foop/figures
+@dirrm share/help/C/swell-foop
+@dirrm share/help/C/quadrapassel/media
+@dirrm share/help/C/quadrapassel
+@dirrm share/help/C/lightsoff/figures
+@dirrm share/help/C/lightsoff
+@dirrm share/help/C/iagno/figures
+@dirrm share/help/C/iagno
+@dirrm share/help/C/gtali/figures
+@dirrm share/help/C/gtali
+@dirrm share/help/C/gnotski/figures
+@dirrm share/help/C/gnotski
+@dirrm share/help/C/gnotravex/figures
+@dirrm share/help/C/gnotravex
+@dirrm share/help/C/gnomine/figures
+@dirrm share/help/C/gnomine
+@dirrm share/help/C/gnome-sudoku/figures
+@dirrm share/help/C/gnome-sudoku
+@dirrm share/help/C/gnome-mahjongg/figures
+@dirrm share/help/C/gnome-mahjongg
+@dirrm share/help/C/gnobots2/figures
+@dirrm share/help/C/gnobots2
+@dirrm share/help/C/gnibbles/figures
+@dirrm share/help/C/gnibbles
+@dirrm share/help/C/gnect/figures
+@dirrm share/help/C/gnect
+@dirrm share/help/C/glines/figures
+@dirrm share/help/C/glines
+@dirrm share/help/C/glchess/figures
+@dirrm share/help/C/glchess
+@dirrm share/help/C
+@dirrm share/help
+@dirrm share/gnome-mahjongg/themes
+@dirrm share/gnome-mahjongg/maps
+@dirrm share/gnome-mahjongg
+@dirrm share/games
 share/lightsoff/arrow.svg
 share/lightsoff/backing.svg
 share/lightsoff/highlight.svg
@@ -4286,9 +5553,6 @@ share/locale/xh/LC_MESSAGES/gnome-games.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-games.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-games.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
-share/mahjongg/maps/mahjongg.map
-share/mahjongg/themes/postmodern.svg
-share/mahjongg/themes/smooth.png
 share/quadrapassel/sounds/gameover.ogg
 share/quadrapassel/sounds/land.ogg
 share/quadrapassel/sounds/lines1.ogg
@@ -4299,9 +5563,6 @@ share/quadrapassel/sounds/slide.ogg
 share/quadrapassel/sounds/turn.ogg
 @dirrm share/quadrapassel/sounds
 @dirrm share/quadrapassel
-@dirrm share/mahjongg/themes
-@dirrm share/mahjongg/maps
-@dirrm share/mahjongg
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -4342,541 +5603,6 @@ share/quadrapassel/sounds/turn.ogg
 @dirrm share/iagno/themes
 @dirrm share/iagno/sounds
 @dirrm share/iagno
-@dirrm share/help/zh_CN/swell-foop/figures
-@dirrm share/help/zh_CN/swell-foop
-@dirrm share/help/zh_CN/quadrapassel
-@dirrm share/help/zh_CN/mahjongg/figures
-@dirrm share/help/zh_CN/mahjongg
-@dirrm share/help/zh_CN/lightsoff
-@dirrm share/help/zh_CN/iagno/figures
-@dirrm share/help/zh_CN/iagno
-@dirrm share/help/zh_CN/gtali/figures
-@dirrm share/help/zh_CN/gtali
-@dirrm share/help/zh_CN/gnotski/figures
-@dirrm share/help/zh_CN/gnotski
-@dirrm share/help/zh_CN/gnotravex/figures
-@dirrm share/help/zh_CN/gnotravex
-@dirrm share/help/zh_CN/gnomine/figures
-@dirrm share/help/zh_CN/gnomine
-@dirrm share/help/zh_CN/gnome-sudoku/figures
-@dirrm share/help/zh_CN/gnome-sudoku
-@dirrm share/help/zh_CN/gnobots2/figures
-@dirrm share/help/zh_CN/gnobots2
-@dirrm share/help/zh_CN/gnibbles/figures
-@dirrm share/help/zh_CN/gnibbles
-@dirrm share/help/zh_CN/gnect/figures
-@dirrm share/help/zh_CN/gnect
-@dirrm share/help/zh_CN/glines/figures
-@dirrm share/help/zh_CN/glines
-@dirrm share/help/zh_CN/glchess/figures
-@dirrm share/help/zh_CN/glchess
-@dirrmtry share/help/zh_CN
-@dirrm share/help/tr/glines/figures
-@dirrm share/help/tr/glines
-@dirrmtry share/help/tr
-@dirrm share/help/sv/swell-foop/figures
-@dirrm share/help/sv/swell-foop
-@dirrm share/help/sv/quadrapassel
-@dirrm share/help/sv/mahjongg/figures
-@dirrm share/help/sv/mahjongg
-@dirrm share/help/sv/lightsoff
-@dirrm share/help/sv/iagno/figures
-@dirrm share/help/sv/iagno
-@dirrm share/help/sv/gtali/figures
-@dirrm share/help/sv/gtali
-@dirrm share/help/sv/gnotski/figures
-@dirrm share/help/sv/gnotski
-@dirrm share/help/sv/gnotravex/figures
-@dirrm share/help/sv/gnotravex
-@dirrm share/help/sv/gnomine/figures
-@dirrm share/help/sv/gnomine
-@dirrm share/help/sv/gnome-sudoku/figures
-@dirrm share/help/sv/gnome-sudoku
-@dirrm share/help/sv/gnobots2/figures
-@dirrm share/help/sv/gnobots2
-@dirrm share/help/sv/gnibbles/figures
-@dirrm share/help/sv/gnibbles
-@dirrm share/help/sv/gnect/figures
-@dirrm share/help/sv/gnect
-@dirrm share/help/sv/glines/figures
-@dirrm share/help/sv/glines
-@dirrm share/help/sv/glchess/figures
-@dirrm share/help/sv/glchess
-@dirrmtry share/help/sv
-@dirrm share/help/sr@latin/swell-foop/figures
-@dirrm share/help/sr@latin/swell-foop
-@dirrm share/help/sr@latin/quadrapassel
-@dirrm share/help/sr@latin/mahjongg/figures
-@dirrm share/help/sr@latin/mahjongg
-@dirrm share/help/sr@latin/iagno/figures
-@dirrm share/help/sr@latin/iagno
-@dirrm share/help/sr@latin/gtali/figures
-@dirrm share/help/sr@latin/gtali
-@dirrm share/help/sr@latin/gnotski/figures
-@dirrm share/help/sr@latin/gnotski
-@dirrm share/help/sr@latin/gnotravex/figures
-@dirrm share/help/sr@latin/gnotravex
-@dirrm share/help/sr@latin/gnomine/figures
-@dirrm share/help/sr@latin/gnomine
-@dirrm share/help/sr@latin/gnome-sudoku/figures
-@dirrm share/help/sr@latin/gnome-sudoku
-@dirrm share/help/sr@latin/gnobots2/figures
-@dirrm share/help/sr@latin/gnobots2
-@dirrm share/help/sr@latin/gnibbles/figures
-@dirrm share/help/sr@latin/gnibbles
-@dirrm share/help/sr@latin/gnect/figures
-@dirrm share/help/sr@latin/gnect
-@dirrm share/help/sr@latin/glines/figures
-@dirrm share/help/sr@latin/glines
-@dirrm share/help/sr@latin/glchess/figures
-@dirrm share/help/sr@latin/glchess
-@dirrm share/help/sr@latin
-@dirrm share/help/sr/swell-foop/figures
-@dirrm share/help/sr/swell-foop
-@dirrm share/help/sr/quadrapassel
-@dirrm share/help/sr/mahjongg/figures
-@dirrm share/help/sr/mahjongg
-@dirrm share/help/sr/iagno/figures
-@dirrm share/help/sr/iagno
-@dirrm share/help/sr/gtali/figures
-@dirrm share/help/sr/gtali
-@dirrm share/help/sr/gnotski/figures
-@dirrm share/help/sr/gnotski
-@dirrm share/help/sr/gnotravex/figures
-@dirrm share/help/sr/gnotravex
-@dirrm share/help/sr/gnomine/figures
-@dirrm share/help/sr/gnomine
-@dirrm share/help/sr/gnome-sudoku/figures
-@dirrm share/help/sr/gnome-sudoku
-@dirrm share/help/sr/gnobots2/figures
-@dirrm share/help/sr/gnobots2
-@dirrm share/help/sr/gnibbles/figures
-@dirrm share/help/sr/gnibbles
-@dirrm share/help/sr/gnect/figures
-@dirrm share/help/sr/gnect
-@dirrm share/help/sr/glines/figures
-@dirrm share/help/sr/glines
-@dirrm share/help/sr/glchess/figures
-@dirrm share/help/sr/glchess
-@dirrmtry share/help/sr
-@dirrm share/help/sl/swell-foop/figures
-@dirrm share/help/sl/swell-foop
-@dirrm share/help/sl/quadrapassel
-@dirrm share/help/sl/mahjongg/figures
-@dirrm share/help/sl/mahjongg
-@dirrm share/help/sl/lightsoff
-@dirrm share/help/sl/iagno/figures
-@dirrm share/help/sl/iagno
-@dirrm share/help/sl/gtali/figures
-@dirrm share/help/sl/gtali
-@dirrm share/help/sl/gnotski/figures
-@dirrm share/help/sl/gnotski
-@dirrm share/help/sl/gnotravex/figures
-@dirrm share/help/sl/gnotravex
-@dirrm share/help/sl/gnomine/figures
-@dirrm share/help/sl/gnomine
-@dirrm share/help/sl/gnome-sudoku/figures
-@dirrm share/help/sl/gnome-sudoku
-@dirrm share/help/sl/gnobots2/figures
-@dirrm share/help/sl/gnobots2
-@dirrm share/help/sl/gnibbles/figures
-@dirrm share/help/sl/gnibbles
-@dirrm share/help/sl/gnect/figures
-@dirrm share/help/sl/gnect
-@dirrm share/help/sl/glines/figures
-@dirrm share/help/sl/glines
-@dirrm share/help/sl/glchess/figures
-@dirrm share/help/sl/glchess
-@dirrmtry share/help/sl
-@dirrm share/help/ru/swell-foop/figures
-@dirrm share/help/ru/swell-foop
-@dirrm share/help/ru/mahjongg/figures
-@dirrm share/help/ru/mahjongg
-@dirrm share/help/ru/lightsoff
-@dirrm share/help/ru/gnotravex/figures
-@dirrm share/help/ru/gnotravex
-@dirrm share/help/ru/gnome-sudoku/figures
-@dirrm share/help/ru/gnome-sudoku
-@dirrm share/help/ru/glines/figures
-@dirrm share/help/ru/glines
-@dirrm share/help/ru/glchess/figures
-@dirrm share/help/ru/glchess
-@dirrmtry share/help/ru
-@dirrm share/help/ro/lightsoff
-@dirrmtry share/help/ro
-@dirrm share/help/pt_BR/iagno/figures
-@dirrm share/help/pt_BR/iagno
-@dirrm share/help/pt_BR/gtali/figures
-@dirrm share/help/pt_BR/gtali
-@dirrm share/help/pt_BR/gnomine/figures
-@dirrm share/help/pt_BR/gnomine
-@dirrm share/help/pt_BR/gnome-sudoku/figures
-@dirrm share/help/pt_BR/gnome-sudoku
-@dirrm share/help/pt_BR/glchess/figures
-@dirrm share/help/pt_BR/glchess
-@dirrmtry share/help/pt_BR
-@dirrm share/help/pl/mahjongg/figures
-@dirrm share/help/pl/mahjongg
-@dirrm share/help/pl/glines/figures
-@dirrm share/help/pl/glines
-@dirrmtry share/help/pl
-@dirrm share/help/oc/swell-foop/figures
-@dirrm share/help/oc/swell-foop
-@dirrm share/help/oc/quadrapassel
-@dirrm share/help/oc/mahjongg/figures
-@dirrm share/help/oc/mahjongg
-@dirrm share/help/oc/iagno/figures
-@dirrm share/help/oc/iagno
-@dirrm share/help/oc/gtali/figures
-@dirrm share/help/oc/gtali
-@dirrm share/help/oc/gnotski/figures
-@dirrm share/help/oc/gnotski
-@dirrm share/help/oc/gnotravex/figures
-@dirrm share/help/oc/gnotravex
-@dirrm share/help/oc/gnomine/figures
-@dirrm share/help/oc/gnomine
-@dirrm share/help/oc/gnome-sudoku/figures
-@dirrm share/help/oc/gnome-sudoku
-@dirrm share/help/oc/gnobots2/figures
-@dirrm share/help/oc/gnobots2
-@dirrm share/help/oc/gnibbles/figures
-@dirrm share/help/oc/gnibbles
-@dirrm share/help/oc/gnect/figures
-@dirrm share/help/oc/gnect
-@dirrm share/help/oc/glines/figures
-@dirrm share/help/oc/glines
-@dirrm share/help/oc/glchess/figures
-@dirrm share/help/oc/glchess
-@dirrmtry share/help/oc
-@dirrm share/help/ko/lightsoff
-@dirrm share/help/ko/glchess/figures
-@dirrm share/help/ko/glchess
-@dirrmtry share/help/ko
-@dirrm share/help/ja/quadrapassel
-@dirrm share/help/ja/glchess/figures
-@dirrm share/help/ja/glchess
-@dirrmtry share/help/ja
-@dirrm share/help/it/swell-foop/figures
-@dirrm share/help/it/swell-foop
-@dirrm share/help/it/quadrapassel
-@dirrm share/help/it/mahjongg/figures
-@dirrm share/help/it/mahjongg
-@dirrm share/help/it/iagno/figures
-@dirrm share/help/it/iagno
-@dirrm share/help/it/gtali/figures
-@dirrm share/help/it/gtali
-@dirrm share/help/it/gnotski/figures
-@dirrm share/help/it/gnotski
-@dirrm share/help/it/gnotravex/figures
-@dirrm share/help/it/gnotravex
-@dirrm share/help/it/gnomine/figures
-@dirrm share/help/it/gnomine
-@dirrm share/help/it/gnome-sudoku/figures
-@dirrm share/help/it/gnome-sudoku
-@dirrm share/help/it/gnobots2/figures
-@dirrm share/help/it/gnobots2
-@dirrm share/help/it/gnibbles/figures
-@dirrm share/help/it/gnibbles
-@dirrm share/help/it/gnect/figures
-@dirrm share/help/it/gnect
-@dirrm share/help/it/glines/figures
-@dirrm share/help/it/glines
-@dirrmtry share/help/it
-@dirrm share/help/gl/lightsoff
-@dirrm share/help/gl/gtali/figures
-@dirrm share/help/gl/gtali
-@dirrm share/help/gl/gnomine/figures
-@dirrm share/help/gl/gnomine
-@dirrm share/help/gl/gnome-sudoku/figures
-@dirrm share/help/gl/gnome-sudoku
-@dirrm share/help/gl/glines/figures
-@dirrm share/help/gl/glines
-@dirrm share/help/gl/glchess/figures
-@dirrm share/help/gl/glchess
-@dirrmtry share/help/gl
-@dirrm share/help/fr/swell-foop/figures
-@dirrm share/help/fr/swell-foop
-@dirrm share/help/fr/quadrapassel
-@dirrm share/help/fr/mahjongg/figures
-@dirrm share/help/fr/mahjongg
-@dirrm share/help/fr/lightsoff
-@dirrm share/help/fr/iagno/figures
-@dirrm share/help/fr/iagno
-@dirrm share/help/fr/gtali/figures
-@dirrm share/help/fr/gtali
-@dirrm share/help/fr/gnotski/figures
-@dirrm share/help/fr/gnotski
-@dirrm share/help/fr/gnotravex/figures
-@dirrm share/help/fr/gnotravex
-@dirrm share/help/fr/gnomine/figures
-@dirrm share/help/fr/gnomine
-@dirrm share/help/fr/gnome-sudoku/figures
-@dirrm share/help/fr/gnome-sudoku
-@dirrm share/help/fr/gnobots2/figures
-@dirrm share/help/fr/gnobots2
-@dirrm share/help/fr/gnibbles/figures
-@dirrm share/help/fr/gnibbles
-@dirrm share/help/fr/gnect/figures
-@dirrm share/help/fr/gnect
-@dirrm share/help/fr/glines/figures
-@dirrm share/help/fr/glines
-@dirrm share/help/fr/glchess/figures
-@dirrm share/help/fr/glchess
-@dirrmtry share/help/fr
-@dirrm share/help/fi/quadrapassel
-@dirrm share/help/fi/lightsoff
-@dirrm share/help/fi/gnect/figures
-@dirrm share/help/fi/gnect
-@dirrmtry share/help/fi
-@dirrm share/help/eu/swell-foop/figures
-@dirrm share/help/eu/swell-foop
-@dirrm share/help/eu/quadrapassel
-@dirrm share/help/eu/mahjongg/figures
-@dirrm share/help/eu/mahjongg
-@dirrm share/help/eu/iagno/figures
-@dirrm share/help/eu/iagno
-@dirrm share/help/eu/gtali/figures
-@dirrm share/help/eu/gtali
-@dirrm share/help/eu/gnotski/figures
-@dirrm share/help/eu/gnotski
-@dirrm share/help/eu/gnotravex/figures
-@dirrm share/help/eu/gnotravex
-@dirrm share/help/eu/gnomine/figures
-@dirrm share/help/eu/gnomine
-@dirrm share/help/eu/gnome-sudoku/figures
-@dirrm share/help/eu/gnome-sudoku
-@dirrm share/help/eu/gnobots2/figures
-@dirrm share/help/eu/gnobots2
-@dirrm share/help/eu/gnibbles/figures
-@dirrm share/help/eu/gnibbles
-@dirrm share/help/eu/gnect/figures
-@dirrm share/help/eu/gnect
-@dirrm share/help/eu/glines/figures
-@dirrm share/help/eu/glines
-@dirrm share/help/eu/glchess/figures
-@dirrm share/help/eu/glchess
-@dirrmtry share/help/eu
-@dirrm share/help/es/swell-foop/figures
-@dirrm share/help/es/swell-foop
-@dirrm share/help/es/quadrapassel
-@dirrm share/help/es/mahjongg/figures
-@dirrm share/help/es/mahjongg
-@dirrm share/help/es/lightsoff
-@dirrm share/help/es/iagno/figures
-@dirrm share/help/es/iagno
-@dirrm share/help/es/gtali/figures
-@dirrm share/help/es/gtali
-@dirrm share/help/es/gnotski/figures
-@dirrm share/help/es/gnotski
-@dirrm share/help/es/gnotravex/figures
-@dirrm share/help/es/gnotravex
-@dirrm share/help/es/gnomine/figures
-@dirrm share/help/es/gnomine
-@dirrm share/help/es/gnome-sudoku/figures
-@dirrm share/help/es/gnome-sudoku
-@dirrm share/help/es/gnobots2/figures
-@dirrm share/help/es/gnobots2
-@dirrm share/help/es/gnibbles/figures
-@dirrm share/help/es/gnibbles
-@dirrm share/help/es/gnect/figures
-@dirrm share/help/es/gnect
-@dirrm share/help/es/glines/figures
-@dirrm share/help/es/glines
-@dirrm share/help/es/glchess/figures
-@dirrm share/help/es/glchess
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/swell-foop/figures
-@dirrm share/help/en_GB/swell-foop
-@dirrm share/help/en_GB/quadrapassel
-@dirrm share/help/en_GB/mahjongg/figures
-@dirrm share/help/en_GB/mahjongg
-@dirrm share/help/en_GB/iagno/figures
-@dirrm share/help/en_GB/iagno
-@dirrm share/help/en_GB/gtali/figures
-@dirrm share/help/en_GB/gtali
-@dirrm share/help/en_GB/gnotski/figures
-@dirrm share/help/en_GB/gnotski
-@dirrm share/help/en_GB/gnotravex/figures
-@dirrm share/help/en_GB/gnotravex
-@dirrm share/help/en_GB/gnomine/figures
-@dirrm share/help/en_GB/gnomine
-@dirrm share/help/en_GB/gnome-sudoku/figures
-@dirrm share/help/en_GB/gnome-sudoku
-@dirrm share/help/en_GB/gnobots2/figures
-@dirrm share/help/en_GB/gnobots2
-@dirrm share/help/en_GB/gnibbles/figures
-@dirrm share/help/en_GB/gnibbles
-@dirrm share/help/en_GB/gnect/figures
-@dirrm share/help/en_GB/gnect
-@dirrm share/help/en_GB/glines/figures
-@dirrm share/help/en_GB/glines
-@dirrm share/help/en_GB/glchess/figures
-@dirrm share/help/en_GB/glchess
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/swell-foop/figures
-@dirrm share/help/el/swell-foop
-@dirrm share/help/el/quadrapassel
-@dirrm share/help/el/mahjongg/figures
-@dirrm share/help/el/mahjongg
-@dirrm share/help/el/lightsoff
-@dirrm share/help/el/iagno/figures
-@dirrm share/help/el/iagno
-@dirrm share/help/el/gtali/figures
-@dirrm share/help/el/gtali
-@dirrm share/help/el/gnotski/figures
-@dirrm share/help/el/gnotski
-@dirrm share/help/el/gnotravex/figures
-@dirrm share/help/el/gnotravex
-@dirrm share/help/el/gnomine/figures
-@dirrm share/help/el/gnomine
-@dirrm share/help/el/gnome-sudoku/figures
-@dirrm share/help/el/gnome-sudoku
-@dirrm share/help/el/gnobots2/figures
-@dirrm share/help/el/gnobots2
-@dirrm share/help/el/gnibbles/figures
-@dirrm share/help/el/gnibbles
-@dirrm share/help/el/gnect/figures
-@dirrm share/help/el/gnect
-@dirrm share/help/el/glines/figures
-@dirrm share/help/el/glines
-@dirrm share/help/el/glchess/figures
-@dirrm share/help/el/glchess
-@dirrmtry share/help/el
-@dirrm share/help/de/swell-foop/figures
-@dirrm share/help/de/swell-foop
-@dirrm share/help/de/quadrapassel
-@dirrm share/help/de/mahjongg/figures
-@dirrm share/help/de/mahjongg
-@dirrm share/help/de/lightsoff
-@dirrm share/help/de/iagno/figures
-@dirrm share/help/de/iagno
-@dirrm share/help/de/gtali/figures
-@dirrm share/help/de/gtali
-@dirrm share/help/de/gnotski/figures
-@dirrm share/help/de/gnotski
-@dirrm share/help/de/gnotravex/figures
-@dirrm share/help/de/gnotravex
-@dirrm share/help/de/gnomine/figures
-@dirrm share/help/de/gnomine
-@dirrm share/help/de/gnome-sudoku/figures
-@dirrm share/help/de/gnome-sudoku
-@dirrm share/help/de/gnobots2/figures
-@dirrm share/help/de/gnobots2
-@dirrm share/help/de/gnibbles/figures
-@dirrm share/help/de/gnibbles
-@dirrm share/help/de/gnect/figures
-@dirrm share/help/de/gnect
-@dirrm share/help/de/glines/figures
-@dirrm share/help/de/glines
-@dirrm share/help/de/glchess/figures
-@dirrm share/help/de/glchess
-@dirrmtry share/help/de
-@dirrm share/help/da/mahjongg/figures
-@dirrm share/help/da/mahjongg
-@dirrm share/help/da/gtali/figures
-@dirrm share/help/da/gtali
-@dirrm share/help/da/gnotski/figures
-@dirrm share/help/da/gnotski
-@dirrm share/help/da/gnotravex/figures
-@dirrm share/help/da/gnotravex
-@dirrm share/help/da/gnomine/figures
-@dirrm share/help/da/gnomine
-@dirrm share/help/da/gnome-sudoku/figures
-@dirrm share/help/da/gnome-sudoku
-@dirrm share/help/da/gnobots2/figures
-@dirrm share/help/da/gnobots2
-@dirrm share/help/da/gnect/figures
-@dirrm share/help/da/gnect
-@dirrm share/help/da/glchess/figures
-@dirrm share/help/da/glchess
-@dirrmtry share/help/da
-@dirrm share/help/cs/swell-foop/figures
-@dirrm share/help/cs/swell-foop
-@dirrm share/help/cs/quadrapassel
-@dirrm share/help/cs/mahjongg/figures
-@dirrm share/help/cs/mahjongg
-@dirrm share/help/cs/iagno/figures
-@dirrm share/help/cs/iagno
-@dirrm share/help/cs/gtali/figures
-@dirrm share/help/cs/gtali
-@dirrm share/help/cs/gnotski/figures
-@dirrm share/help/cs/gnotski
-@dirrm share/help/cs/gnotravex/figures
-@dirrm share/help/cs/gnotravex
-@dirrm share/help/cs/gnomine/figures
-@dirrm share/help/cs/gnomine
-@dirrm share/help/cs/gnome-sudoku/figures
-@dirrm share/help/cs/gnome-sudoku
-@dirrm share/help/cs/gnobots2/figures
-@dirrm share/help/cs/gnobots2
-@dirrm share/help/cs/gnibbles/figures
-@dirrm share/help/cs/gnibbles
-@dirrm share/help/cs/gnect/figures
-@dirrm share/help/cs/gnect
-@dirrm share/help/cs/glines/figures
-@dirrm share/help/cs/glines
-@dirrm share/help/cs/glchess/figures
-@dirrm share/help/cs/glchess
-@dirrmtry share/help/cs
-@dirrm share/help/ca/swell-foop/figures
-@dirrm share/help/ca/swell-foop
-@dirrm share/help/ca/quadrapassel
-@dirrm share/help/ca/mahjongg/figures
-@dirrm share/help/ca/mahjongg
-@dirrm share/help/ca/lightsoff
-@dirrm share/help/ca/iagno/figures
-@dirrm share/help/ca/iagno
-@dirrm share/help/ca/gtali/figures
-@dirrm share/help/ca/gtali
-@dirrm share/help/ca/gnotski/figures
-@dirrm share/help/ca/gnotski
-@dirrm share/help/ca/gnotravex/figures
-@dirrm share/help/ca/gnotravex
-@dirrm share/help/ca/gnomine/figures
-@dirrm share/help/ca/gnomine
-@dirrm share/help/ca/gnome-sudoku/figures
-@dirrm share/help/ca/gnome-sudoku
-@dirrm share/help/ca/gnobots2/figures
-@dirrm share/help/ca/gnobots2
-@dirrm share/help/ca/gnibbles/figures
-@dirrm share/help/ca/gnibbles
-@dirrm share/help/ca/gnect/figures
-@dirrm share/help/ca/gnect
-@dirrm share/help/ca/glines/figures
-@dirrm share/help/ca/glines
-@dirrm share/help/ca/glchess/figures
-@dirrm share/help/ca/glchess
-@dirrmtry share/help/ca
-@dirrm share/help/C/swell-foop/figures
-@dirrm share/help/C/swell-foop
-@dirrm share/help/C/quadrapassel
-@dirrm share/help/C/mahjongg/figures
-@dirrm share/help/C/mahjongg
-@dirrm share/help/C/lightsoff
-@dirrm share/help/C/iagno/figures
-@dirrm share/help/C/iagno
-@dirrm share/help/C/gtali/figures
-@dirrm share/help/C/gtali
-@dirrm share/help/C/gnotski/figures
-@dirrm share/help/C/gnotski
-@dirrm share/help/C/gnotravex/figures
-@dirrm share/help/C/gnotravex
-@dirrm share/help/C/gnomine/figures
-@dirrm share/help/C/gnomine
-@dirrm share/help/C/gnome-sudoku/figures
-@dirrm share/help/C/gnome-sudoku
-@dirrm share/help/C/gnobots2/figures
-@dirrm share/help/C/gnobots2
-@dirrm share/help/C/gnibbles/figures
-@dirrm share/help/C/gnibbles
-@dirrm share/help/C/gnect/figures
-@dirrm share/help/C/gnect
-@dirrm share/help/C/glines/figures
-@dirrm share/help/C/glines
-@dirrm share/help/C/glchess/figures
-@dirrm share/help/C/glchess
-@dirrmtry share/help/C
-@dirrmtry share/help
 @dirrm share/gtali
 @dirrm share/gnotski
 @dirrm share/gnotravex
@@ -4884,11 +5610,6 @@ share/quadrapassel/sounds/turn.ogg
 @dirrm share/gnome-sudoku/puzzles
 @dirrm share/gnome-sudoku/images
 @dirrm share/gnome-sudoku
-@dirrm %%DATADIR%%/swell-foop/themes/shapesandcolors
-@dirrm %%DATADIR%%/swell-foop/themes/colors
-@dirrm %%DATADIR%%/swell-foop/themes
-@dirrm %%DATADIR%%/swell-foop
-@dirrm %%DATADIR%%
 @dirrm share/gnobots2/themes
 @dirrm share/gnobots2/sounds
 @dirrm share/gnobots2/pixmaps
@@ -4912,6 +5633,5 @@ share/quadrapassel/sounds/turn.ogg
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku
-@dirrm lib/gnome-games
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
