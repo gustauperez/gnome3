@@ -34,6 +34,9 @@ lib/gedit/plugins/bookmarks.plugin
 %%PYTHON%%lib/gedit/plugins/commander/commands/exceptions.py
 %%PYTHON%%lib/gedit/plugins/commander/commands/exceptions.pyc
 %%PYTHON%%lib/gedit/plugins/commander/commands/exceptions.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/metamodule.py
+%%PYTHON%%lib/gedit/plugins/commander/commands/metamodule.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/metamodule.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/method.py
 %%PYTHON%%lib/gedit/plugins/commander/commands/method.pyc
 %%PYTHON%%lib/gedit/plugins/commander/commands/method.pyo
@@ -85,9 +88,6 @@ lib/gedit/plugins/gpdefs.pyo
 %%PYTHON%%lib/gedit/plugins/joinlines.py
 %%PYTHON%%lib/gedit/plugins/joinlines.pyc
 %%PYTHON%%lib/gedit/plugins/joinlines.pyo
-%%PYTHON%%lib/gedit/plugins/commander/commands/metamodule.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/metamodule.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/metamodule.pyo
 lib/gedit/plugins/libbookmarks.a
 lib/gedit/plugins/libbookmarks.la
 lib/gedit/plugins/libbookmarks.so
