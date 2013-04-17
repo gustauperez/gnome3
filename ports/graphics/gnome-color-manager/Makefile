@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gnome-color-manager
-# Date Created:				31 March 2012
-# Whom:					FreeBSD GNOME Team <gnome@FreeBSD.org>
-#
+# Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/graphics/gnome-color-manager/Makefile,v 1.5 2012/08/03 17:06:52 kwm Exp $
-#
 
 PORTNAME=	gnome-color-manager
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,15 +11,18 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A session framework for the GNOME desktop to manage color profiles
 
 BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410
-LIB_DEPENDS=	lcms2.2:${PORTSDIR}/graphics/lcms2 \
-		colord.1:${PORTSDIR}/graphics/colord \
-		canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
-		exif.12:${PORTSDIR}/graphics/libexif
+		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410 \
+		itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	lcms2:${PORTSDIR}/graphics/lcms2 \
+		colord:${PORTSDIR}/graphics/colord \
+		colord-gtk:${PORTSDIR}/graphics/colord-gtk \
+		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
+		exif:${PORTSDIR}/graphics/libexif
 
 USE_XZ=		yes
 USE_XORG=	xrandr
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk30 vte3 desktopfileutils \
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack gtk30 vte3 desktopfileutils \
 		gnomedesktop3 gnomedocutils
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -38,7 +36,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		gcm-calibrate.1 gcm-import.1 gcm-inspect.1 gcm-picker.1 \
 		gcm-viewer.1
 
-.if defined(WITH_RAW)
+OPTIONS_DEFINE=	RAW
+OPTIONS_DEFAULT=RAW
+
+RAW_DESC=	Enable RAW EXIF support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MRAW}
 LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
 CONFIGURE_ARGS+=--enable-exiv=yes
 PLIST_SUB+=	RAW=""
