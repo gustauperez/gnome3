@@ -28,7 +28,6 @@ USES=		pathfix
 USE_GNOME=	gnomeprefix intlhack gtk30 libxml2 vte3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-spice --enable-ssh
 CPPFLAGS+=	-I${LOCALBASE}/include  -Wno-format-nonliteral
