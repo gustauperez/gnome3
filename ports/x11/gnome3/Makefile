@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gnome2
-# Date created:		21 May 2002
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome3/Makefile,v 1.42 2013/03/10 19:56:17 kwm Exp $
-#
 
 PORTNAME=	gnome3
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.2
 PORTREVISION?=	0
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
@@ -16,8 +11,6 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	The "meta-port" for the GNOME 3 integrated X11 desktop
-
-CONFLICTS?=	gnome2-[0-9]* gnome2-lite-[0-9]* gnome3-lite-[0-9]*
 
 RUN_DEPENDS?=	gnome-panel>=3.0.0:${PORTSDIR}/x11/gnome-panel3 \
 		dconf-editor:${PORTSDIR}/devel/dconf-editor \
@@ -41,9 +34,12 @@ RUN_DEPENDS?=	gnome-panel>=3.0.0:${PORTSDIR}/x11/gnome-panel3 \
 		${LOCALBASE}/share/help/C/gnome-help/index.page:${PORTSDIR}/misc/gnome-user-docs3 \
 		${LOCALBASE}/share/sounds/freedesktop/index.theme:${PORTSDIR}/audio/freedesktop-sound-theme
 
+CONFLICTS?=	gnome2-[0-9]* gnome2-lite-[0-9]* gnome3-lite-[0-9]*
+
 NO_BUILD=	yes
 
-OPTIONS=	GNOME_SHELL "Build Gnome-shell" off
+OPTIONS_DEFINE=	SHELL
+SHELL_DESC=	Build Gnome-shell
 
 .if ${.CURDIR:T}!="gnome3-lite"
 #OPTIONS+=	MAPI "Depend on evolution-mapi (pulls in samba4)" off
@@ -51,7 +47,7 @@ OPTIONS=	GNOME_SHELL "Build Gnome-shell" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GNOME_SHELL)
+.if ${PORT_OPTIONS:MSHELL}
 RUN_DEPENDS+=	gnome-shell>=3.0.0:${PORTSDIR}/x11/gnome-shell \
 		gnome-tweak-tool:${PORTSDIR}/deskutils/gnome-tweak-tool
 .endif
@@ -85,8 +81,8 @@ RUN_DEPENDS+=	empathy>=3.0.0:${PORTSDIR}/net-im/empathy3 \
 		totem>=3.0.0:${PORTSDIR}/multimedia/totem3 \
 		gconf-editor>=3.0.0:${PORTSDIR}/sysutils/gconf-editor3 \
 		gdm>=3.0.0:${PORTSDIR}/x11/gdm3 \
-		evolution>=3.0.0:${PORTSDIR}/mail/evolution3 \
-		evolution-exchange>=3.0.0:${PORTSDIR}/mail/evolution-exchange3
+		evolution>=3.0.0:${PORTSDIR}/mail/evolution3
+#		evolution-exchange>=3.0.0:${PORTSDIR}/mail/evolution-exchange3
 
 .if ${OSVERSION}>=800000
 RUN_DEPENDS+=	cheese>=3.0.0:${PORTSDIR}/multimedia/cheese3
