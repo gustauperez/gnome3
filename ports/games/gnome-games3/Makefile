@@ -11,7 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The game applications package for the GNOME 3 Desktop Environment
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		yelp-tools:${PORTSDIR}/textproc/yelp-tools \
+		yelp-check:${PORTSDIR}/textproc/yelp-tools \
 		itstool:${PORTSDIR}/textproc/itstool \
 		valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
