@@ -122,7 +122,7 @@ share/gnome-shell/js/ui/appFavorites.js
 share/gnome-shell/js/ui/boxpointer.js
 share/gnome-shell/js/ui/calendar.js
 share/gnome-shell/js/ui/checkBox.js
-share/gnome-shell/js/ui/components/__init__.js 
+share/gnome-shell/js/ui/components/__init__.js
 share/gnome-shell/js/ui/components/automountManager.js
 share/gnome-shell/js/ui/components/autorunManager.js
 share/gnome-shell/js/ui/components/keyring.js

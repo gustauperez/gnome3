@@ -1,10 +1,5 @@
-# New ports collection makefile for:   gnome-shell
-# Date created:        14 Aug 2009
-# Whom:                Pawel Worach <pawel.worach@gmail.com>
-#
+# Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-shell/Makefile,v 1.55 2012/08/27 17:49:26 kwm Exp $
-#
 
 PORTNAME=	gnome-shell
 PORTVERSION=	3.6.2
@@ -15,8 +10,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Next generation GNOME desktop shell
 
-BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
-		gcr>=3.4.1:${PORTSDIR}/security/gcr
+BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		caribou.0:${PORTSDIR}/accessibility/caribou \
 		mutter.0:${PORTSDIR}/x11-wm/mutter \
@@ -44,8 +38,8 @@ USE_GNOME=	gnomeprefix intlhack gtk30 gnomemenus3 \
 USE_GSTREAMER=	theora vp8 ogg
 USE_LDCONFIG=	yes
 
-GLIB_SCHEMAS=	org.gnome.shell.gschema.xml 
-#		org.gnome.shell.evolution.calendar.gschema.xml
+GLIB_SCHEMAS=	org.gnome.shell.gschema.xml
+
 MAN1=		gnome-shell.1
 
 CONFIGURE_ARGS+=--enable-compile-warnings=no \
