@@ -10,6 +10,7 @@ include/libgdata/gdata/gcontact/gdata-gcontact-jot.h
 include/libgdata/gdata/gcontact/gdata-gcontact-language.h
 include/libgdata/gdata/gcontact/gdata-gcontact-relation.h
 include/libgdata/gdata/gcontact/gdata-gcontact-website.h
+include/libgdata/gdata/gdata-goa-authorizer.h
 include/libgdata/gdata/gd/gdata-gd-email-address.h
 include/libgdata/gdata/gd/gdata-gd-im-address.h
 include/libgdata/gdata/gd/gdata-gd-name.h
@@ -57,6 +58,7 @@ include/libgdata/gdata/services/contacts/gdata-contacts-group.h
 include/libgdata/gdata/services/contacts/gdata-contacts-query.h
 include/libgdata/gdata/services/contacts/gdata-contacts-service.h
 include/libgdata/gdata/services/documents/gdata-documents-document.h
+include/libgdata/gdata/services/documents/gdata-documents-drawing.h
 include/libgdata/gdata/services/documents/gdata-documents-entry.h
 include/libgdata/gdata/services/documents/gdata-documents-enums.h
 include/libgdata/gdata/services/documents/gdata-documents-feed.h
@@ -66,6 +68,7 @@ include/libgdata/gdata/services/documents/gdata-documents-query.h
 include/libgdata/gdata/services/documents/gdata-documents-service.h
 include/libgdata/gdata/services/documents/gdata-documents-spreadsheet.h
 include/libgdata/gdata/services/documents/gdata-documents-text.h
+include/libgdata/gdata/services/documents/gdata-documents-upload-query.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-album.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-comment.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-enums.h
@@ -111,6 +114,7 @@ share/doc/gdata/GDataContactsContact.html
 share/doc/gdata/GDataContactsGroup.html
 share/doc/gdata/GDataContactsQuery.html
 share/doc/gdata/GDataContactsService.html
+share/doc/gdata/GDataDocumentsDrawing.html
 share/doc/gdata/GDataDocumentsDocument.html
 share/doc/gdata/GDataDocumentsEntry.html
 share/doc/gdata/GDataDocumentsFeed.html
@@ -120,6 +124,7 @@ share/doc/gdata/GDataDocumentsQuery.html
 share/doc/gdata/GDataDocumentsService.html
 share/doc/gdata/GDataDocumentsSpreadsheet.html
 share/doc/gdata/GDataDocumentsText.html
+share/doc/gdata/GDataDocumentsUploadQuery.html
 share/doc/gdata/GDataDownloadStream.html
 share/doc/gdata/GDataEntry.html
 share/doc/gdata/GDataFeed.html
@@ -141,6 +146,7 @@ share/doc/gdata/GDataGDWhen.html
 share/doc/gdata/GDataGDWhere.html
 share/doc/gdata/GDataGDWho.html
 share/doc/gdata/GDataGenerator.html
+share/doc/gdata/GDataGoaAuthorizer.html
 share/doc/gdata/GDataLink.html
 share/doc/gdata/GDataMediaCategory.html
 share/doc/gdata/GDataMediaContent.html
@@ -208,6 +214,8 @@ share/doc/gdata/ix11.html
 share/doc/gdata/ix12.html
 share/doc/gdata/ix13.html
 share/doc/gdata/ix14.html
+share/doc/gdata/ix15.html
+share/doc/gdata/ix16.html
 share/doc/gdata/left.png
 share/doc/gdata/pt01.html
 share/doc/gdata/pt02.html
@@ -251,6 +259,7 @@ share/locale/lv/LC_MESSAGES/gdata.mo
 share/locale/ml/LC_MESSAGES/gdata.mo
 share/locale/mr/LC_MESSAGES/gdata.mo
 share/locale/nb/LC_MESSAGES/gdata.mo
+share/locale/nl/LC_MESSAGES/gdata.mo
 share/locale/or/LC_MESSAGES/gdata.mo
 share/locale/pa/LC_MESSAGES/gdata.mo
 share/locale/pl/LC_MESSAGES/gdata.mo
@@ -312,133 +321,3 @@ share/locale/zh_TW/LC_MESSAGES/gdata.mo
 @dirrm include/libgdata/gdata/app
 @dirrm include/libgdata/gdata
 @dirrm include/libgdata
-@dirrm share/xmodmap
-@dirrm share/vfolders
-@dirrm share/vala/vapi
-@dirrm share/vala
-@dirrm share/sounds
-@dirrm share/sgml/docbook/gnome-customization-0.1
-@dirrm share/sgml/docbook
-@dirrm share/pixmaps/splash
-@dirrm share/pixmaps/document-icons
-@dirrm share/omf
-@dirrm share/oaf
-@dirrm share/mime-info
-@dirrm share/mc/templates
-@dirrm share/mc
-@dirrm share/mate/help
-@dirrm share/mate-control-center/keybindings
-@dirrm share/mate-control-center
-@dirrm share/mate-2.0/ui
-@dirrm share/mate-2.0
-@dirrm share/mate
-@dirrm share/locale/bn_IN/LC_MESSAGES
-@dirrm share/locale/bn_IN
-@dirrm share/images
-@dirrm share/gnome/wm-properties
-@dirrm share/gnome/ui
-@dirrm share/gnome/panel
-@dirrm share/gnome/help/lgpl/C
-@dirrm share/gnome/help/lgpl
-@dirrm share/gnome/help/gpl/C
-@dirrm share/gnome/help/gpl
-@dirrm share/gnome/help/fdl/C
-@dirrm share/gnome/help/fdl
-@dirrm share/gnome/help
-@dirrm share/gnome/autostart
-@dirrm share/gnome/apps/Utilities
-@dirrm share/gnome/apps/System
-@dirrm share/gnome/apps/Settings/Session
-@dirrm share/gnome/apps/Settings/Peripherals
-@dirrm share/gnome/apps/Settings/Documents
-@dirrm share/gnome/apps/Settings/Desktop
-@dirrm share/gnome/apps/Settings
-@dirrm share/gnome/apps/Multimedia
-@dirrm share/gnome/apps/Internet
-@dirrm share/gnome/apps/Graphics
-@dirrm share/gnome/apps/Games
-@dirrm share/gnome/apps/Development
-@dirrm share/gnome/apps/Audio
-@dirrm share/gnome/apps/Applications
-@dirrm share/gnome/apps
-@dirrm share/gnome-settings-daemon-3.0
-@dirrm share/gnome-control-center/keybindings
-@dirrm share/gnome-control-center
-@dirrm share/gnome-about
-@dirrm share/gnome-2.0/ui
-@dirrm share/gnome-2.0
-@dirrm share/gnome
-@dirrm share/gir-1.0
-@dirrm share/doc/libgda
-@dirrm share/control-center/keybindings/gtk-modules
-@dirrm share/control-center/keybindings
-@dirrm share/control-center/capplets
-@dirrm share/control-center/Session
-@dirrm share/control-center/Peripherals
-@dirrm share/control-center/Documents
-@dirrm share/control-center/Desktop
-@dirrm share/control-center-2.0/capplets
-@dirrm share/control-center-2.0
-@dirrm share/control-center
-@dirrm share/capplets
-@dirrm share/application-registry
-@dirrm share/applets/Utility
-@dirrm share/applets/Network
-@dirrm share/applets/Multimedia
-@dirrm share/applets/Monitors
-@dirrm share/applets/Clocks
-@dirrm share/applets/Amusements
-@dirrm share/applets
-@dirrm share/MateConf/gsettings
-@dirrm share/MateConf
-@dirrm libdata/matecomponent/servers
-@dirrm libdata/matecomponent
-@dirrm libdata/bonobo/servers
-@dirrm libdata/bonobo
-@dirrm lib/vfs/modules
-@dirrm lib/vfs
-@dirrm lib/matecomponent/monikers
-@dirrm lib/matecomponent-2.0/samples
-@dirrm lib/matecomponent-2.0
-@dirrm lib/matecomponent
-@dirrm lib/mate-vfs-2.0/modules
-@dirrm lib/mate-vfs-2.0
-@dirrm lib/gnome-vfs-2.0/modules
-@dirrm lib/gnome-vfs-2.0
-@dirrm lib/girepository-1.0
-@dirrm lib/bonobo/plugin
-@dirrm lib/bonobo/monikers
-@dirrm lib/bonobo
-@dirrm lib/GConf
-@dirrm include/gnome-1.0
-@dirrm include/gdkcardimage
-@dirrm include/gconf
-@dirrm etc/xdg/autostart
-@dirrm etc/xdg
-@dirrm etc/vfs/modules
-@dirrm etc/vfs
-@dirrm etc/sound/events
-@dirrm etc/sound
-@dirrm etc/mateconf/schemas
-@dirrm etc/mateconf/mateconf.xml.system
-@dirrm etc/mateconf/mateconf.xml.mandatory
-@dirrm etc/mateconf/mateconf.xml.defaults
-@dirrm etc/mateconf
-@dirrm etc/gnome/config
-@dirrm etc/gnome-vfs-2.0/modules
-@dirrm etc/gnome-vfs-2.0
-@dirrm etc/gnome
-@dirrm etc/gconf/schemas
-@dirrm etc/gconf/gconf.xml.system
-@dirrm etc/gconf/gconf.xml.mandatory
-@dirrm etc/gconf/gconf.xml.defaults
-@dirrm etc/gconf
-@dirrm etc/dconf/profile
-@dirrm etc/dconf/db
-@dirrm etc/dconf
-@dirrm etc/X11/sysconfig
-@dirrm etc/X11/starthere
-@dirrm etc/X11/serverconfig
-@dirrm etc/X11
-@dirrm etc/CORBA/servers
-@dirrm etc/CORBA
