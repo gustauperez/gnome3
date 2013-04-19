@@ -1,10 +1,4 @@
-Vinagre is a VNC Client for the GNOME Desktop.  Its features include:
+Documents is a document manager application designed to work with GNOME 3. It's 
+included in the default set of core applications since GNOME 3.2.
 
-* You can connect to several machines at the same time, we like tabs
-* You can keep track of your most used connections, we like favorites
-* You can keep track of your recently used connections, we like GtkRecent
-* You can browse your network for VNC servers, we like avahi
-* You don't need to supply the password on every connection, we like GNOME
-  Keyring
-
-WWW: http://www.gnome.org/projects/vinagre/
+WWW: https://live.gnome.org/GnomeDocuments
