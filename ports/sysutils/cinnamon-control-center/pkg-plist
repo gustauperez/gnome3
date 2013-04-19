@@ -78,24 +78,24 @@ share/cinnamon-control-center/icons/hicolor/32x32/status/cin-audio-input-microph
 share/cinnamon-control-center/icons/hicolor/32x32/status/cin-audio-input-microphone-low.png
 share/cinnamon-control-center/icons/hicolor/32x32/status/cin-audio-input-microphone-medium.png
 share/cinnamon-control-center/icons/hicolor/32x32/status/cin-audio-input-microphone-muted.png
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-center-back-testing.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-center-back.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-center-testing.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-center.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-left-back-testing.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-left-back.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-left-side-testing.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-left-side.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-left-testing.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-left.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-right-back-testing.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-right-back.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-right-side-testing.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-right-side.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-right-testing.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-speaker-right.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-subwoofer-testing.svg
-share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/audio-subwoofer.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-center-back-testing.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-center-back.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-center-testing.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-center.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-left-back-testing.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-left-back.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-left-side-testing.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-left-side.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-left-testing.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-left.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-right-back-testing.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-right-back.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-right-side-testing.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-right-side.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-right-testing.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-speaker-right.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-subwoofer-testing.svg
+share/cinnamon-control-center/icons/hicolor/48x48/devices/audio-subwoofer.svg
 share/cinnamon-control-center/language-options
 share/cinnamon-control-center/language-options.bak
 share/cinnamon-control-center/pixmaps/about-me-lock-open.png
@@ -135,12 +135,12 @@ share/cinnamon-control-center/ui/datetime/bg_dim.png
 share/cinnamon-control-center/ui/datetime/cc.png
 share/cinnamon-control-center/ui/datetime/datetime.ui
 share/cinnamon-control-center/ui/datetime/pin.png
-share/cinnamon-control-center/ui/datetime/timezone_%%XAWVER%%.75.png
-share/cinnamon-control-center/ui/datetime/timezone_%%XAWVER%%.75_dim.png
-share/cinnamon-control-center/ui/datetime/timezone_%%XAWVER%%.png
-share/cinnamon-control-center/ui/datetime/timezone_%%XAWVER%%_dim.png
-share/cinnamon-control-center/ui/datetime/timezone_-%%XAWVER%%.png
-share/cinnamon-control-center/ui/datetime/timezone_-%%XAWVER%%_dim.png
+share/cinnamon-control-center/ui/datetime/timezone_8.75.png
+share/cinnamon-control-center/ui/datetime/timezone_8.75_dim.png
+share/cinnamon-control-center/ui/datetime/timezone_8.png
+share/cinnamon-control-center/ui/datetime/timezone_8_dim.png
+share/cinnamon-control-center/ui/datetime/timezone_-8.png
+share/cinnamon-control-center/ui/datetime/timezone_-8_dim.png
 share/cinnamon-control-center/ui/datetime/timezone_-1.png
 share/cinnamon-control-center/ui/datetime/timezone_-10.png
 share/cinnamon-control-center/ui/datetime/timezone_-10_dim.png
@@ -259,11 +259,11 @@ share/icons/hicolor/32x32/apps/cinnamon-power-manager.png
 share/icons/hicolor/32x32/apps/cinnamon-preferences-color.png
 share/icons/hicolor/32x32/apps/cinnamon-preferences-desktop-display.png
 share/icons/hicolor/32x32/apps/cinnamon-preferences-system-time.png
-share/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/apps/cin-multimedia-volume-control.png
-share/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/apps/cinnamon-power-manager.png
-share/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/apps/cinnamon-preferences-color.png
-share/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/apps/cinnamon-preferences-system-time.png
-share/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices/cin-audio-headset.svg
+share/icons/hicolor/48x48/apps/cin-multimedia-volume-control.png
+share/icons/hicolor/48x48/apps/cinnamon-power-manager.png
+share/icons/hicolor/48x48/apps/cinnamon-preferences-color.png
+share/icons/hicolor/48x48/apps/cinnamon-preferences-system-time.png
+share/icons/hicolor/48x48/devices/cin-audio-headset.svg
 share/icons/hicolor/64x64/apps/cinnamon-preferences-color.png
 share/icons/hicolor/scalable/apps/cin-multimedia-volume-control.svg
 share/icons/hicolor/scalable/apps/cinnamon-preferences-color.svg
@@ -485,8 +485,8 @@ share/sounds/cinnamon/default/alerts/sonar.ogg
 @dirrm share/cinnamon-control-center/ui
 @dirrm share/cinnamon-control-center/sounds
 @dirrm share/cinnamon-control-center/pixmaps
-@dirrm share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%/devices
-@dirrm share/cinnamon-control-center/icons/hicolor/4%%XAWVER%%x4%%XAWVER%%
+@dirrm share/cinnamon-control-center/icons/hicolor/48x48/devices
+@dirrm share/cinnamon-control-center/icons/hicolor/48x48
 @dirrm share/cinnamon-control-center/icons/hicolor/32x32/status
 @dirrm share/cinnamon-control-center/icons/hicolor/32x32/devices
 @dirrm share/cinnamon-control-center/icons/hicolor/32x32
