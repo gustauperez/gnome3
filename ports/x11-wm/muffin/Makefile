@@ -15,7 +15,7 @@ BUILD_DEPENDS=	zenity>3.0.0:${PORTSDIR}/x11/zenity3 \
 		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
-		clutter-glx-1:${PORTSDIR}/graphics/clutter \
+		clutter-glx-1.0:${PORTSDIR}/graphics/clutter \
 		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3
 
