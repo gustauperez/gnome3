@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ibus
-# Date created:				21 October 2008
-# Whom:					Henry Hu <henry.hu.sh@gmail.com>
-#
-# $FreeBSD: ports/textproc/ibus/Makefile,v 1.25 2012/11/17 06:01:59 svnexp Exp $
-#
+# Created by: Henry Hu <henry.hu.sh@gmail.com>
+# $FreeBSD$
 
 PORTNAME=	ibus
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -17,12 +13,13 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
+		vapigen:${PORTSDIR}/lang/vala-vapigen \
 		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 gconf2
@@ -31,7 +28,7 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-GCONF_SCHEMAS=	ibus.schemas
+GLIB_SCHEMAS=	org.freedesktop.ibus.gschema.xml
 
 OPTIONS_DEFINE=	ISOCODES NLS GTK3 VALA GINTRO
 OPTIONS_DEFAULT=	ISOCODES GTK3 VALA GINTRO
@@ -88,8 +85,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share/xml/iso-codes/|${LOCALBASE}/share/xml/iso-codes/|g' ${WRKSRC}/ibus/lang.py
 	@${REINPLACE_CMD} -e 's|locale.bind_textdomain_codeset|gettext.bind_textdomain_codeset|g' ${WRKSRC}/setup/main.py
-	@${REINPLACE_CMD} -e 's|locale.bind_textdomain_codeset|gettext.bind_textdomain_codeset|g' ${WRKSRC}/ui/gtk/main.py
-	@${REINPLACE_CMD} -e 's|import locale|import gettext|g' ${WRKSRC}/ui/gtk/main.py
+#	@${REINPLACE_CMD} -e 's|locale.bind_textdomain_codeset|gettext.bind_textdomain_codeset|g' ${WRKSRC}/ui/gtk/main.py
+#	@${REINPLACE_CMD} -e 's|import locale|import gettext|g' ${WRKSRC}/ui/gtk/main.py
 	@${REINPLACE_CMD} -e 's|setpgrp ()|setpgrp (0,0)|g' ${WRKSRC}/bus/main.c
 	@${REINPLACE_CMD} -e 's|/var/lib/dbus|/var/db/dbus|g' ${WRKSRC}/src/ibusshare.c #devel/dbus/files/dbus.in
 
