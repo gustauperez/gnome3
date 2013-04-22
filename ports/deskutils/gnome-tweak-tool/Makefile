@@ -1,8 +1,8 @@
+# Created by: Jeremy Messenger <mezz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/deskutils/gnome-tweak-tool/Makefile,v 1.16 2012/12/31 17:16:02 mezz Exp $
 
 PORTNAME=	gnome-tweak-tool
-PORTVERSION=	3.4.0.1
+PORTVERSION=	3.6.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -15,10 +15,12 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-deskto
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix gconf2 pygobject3
+USES=		pathfix
+USE_GNOME=	gnomeprefix gconf2 pygobject3
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
