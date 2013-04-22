@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -22,7 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 USE_PYTHON=	yes
-USE_GNOME=	pygtk2 gconf2
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes

@@ -1,7 +1,6 @@
 bin/ibus
 bin/ibus-daemon
 bin/ibus-setup
-etc/bash_completion.d/ibus.bash
 etc/dconf/db/ibus
 etc/dconf/db/ibus.d/00-upstream-settings
 etc/dconf/profile/ibus
