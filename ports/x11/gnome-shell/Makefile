@@ -11,19 +11,20 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Next generation GNOME desktop shell
 
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		caribou.0:${PORTSDIR}/accessibility/caribou \
-		mutter.0:${PORTSDIR}/x11-wm/mutter \
+LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
+		caribou:${PORTSDIR}/accessibility/caribou \
+		mutter:${PORTSDIR}/x11-wm/mutter \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
 		gcr-3:${PORTSDIR}/security/gcr \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		telepathy-logger.3:${PORTSDIR}/net-im/telepathy-logger \
-		folks.25:${PORTSDIR}/net-im/folks \
-		pulse.0:${PORTSDIR}/audio/pulseaudio \
-		croco-0.6.3:${PORTSDIR}/textproc/libcroco \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		clutter-1.0:${PORTSDIR}/graphics/clutter \
-		gjs.0:${PORTSDIR}/lang/gjs
+		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
+		telepathy-logger:${PORTSDIR}/net-im/telepathy-logger \
+		folks:${PORTSDIR}/net-im/folks \
+		ibus:${PORTSDIR}/textproc/ibus \
+		pulse:${PORTSDIR}/audio/pulseaudio \
+		croco-0.6:${PORTSDIR}/textproc/libcroco \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		clutter-1:${PORTSDIR}/graphics/clutter \
+		gjs:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
