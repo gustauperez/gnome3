@@ -34,4 +34,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		baobab.1
 GLIB_SCHEMAS=	org.gnome.baobab.gschema.xml
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|inode/directory|inode/directory:1|g' \
+		${WRKSRC}/data/baobab.desktop.in.in
+
 .include <bsd.port.mk>
