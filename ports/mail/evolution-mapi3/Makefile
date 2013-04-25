@@ -1,10 +1,5 @@
-# New ports collection makefile for:	evolution-mapi
-# Date created:				24 Mar, 2009
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-mapi3/Makefile,v 1.16 2012/08/16 20:22:59 kwm Exp $
-#
 
 PORTNAME=	evolution-mapi
 PORTVERSION=	3.6.4
@@ -20,8 +15,6 @@ LIB_DEPENDS=	mapi.0:${PORTSDIR}/mail/libmapi
 RUN_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution3
 
 CONFLICTS=	evolution-mapi-2.[0-9]*
-
-#BROKEN=		needs newer libmapi which needs samba4 update.
 
 EVO_VER=	3.6.4
 LATEST_LINK=	evolution-mapi3
