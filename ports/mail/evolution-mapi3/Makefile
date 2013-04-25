@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	evolution-mapi
-PORTVERSION=	3.4.4
+PORTVERSION=	3.6.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,9 +21,9 @@ RUN_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution3
 
 CONFLICTS=	evolution-mapi-2.[0-9]*
 
-BROKEN=		needs newer libmapi which needs samba4 update.
+#BROKEN=		needs newer libmapi which needs samba4 update.
 
-EVO_VER=	3.4.3
+EVO_VER=	3.6.4
 LATEST_LINK=	evolution-mapi3
 USE_XZ=		yes
 USE_GETTEXT=	yes
@@ -34,7 +34,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS"=	-L${LOCALBASE}/lib
 
-VERSION=	3.0
+VERSION=	3.6
 PLIST_SUB=	VERSION=${VERSION}
 
 post-patch:
