@@ -42,7 +42,7 @@ OPTIONS_DEFINE=	SHELL
 SHELL_DESC=	Build Gnome-shell
 
 .if ${.CURDIR:T}!="gnome3-lite"
-#OPTIONS+=	MAPI "Depend on evolution-mapi (pulls in samba4)" off
+OPTIONS+=	MAPI "Depend on evolution-mapi (pulls in samba4)" off
 .endif
 
 .include <bsd.port.pre.mk>
