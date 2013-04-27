@@ -18,7 +18,7 @@ LIB_DEPENDS=	gtop-2:${PORTSDIR}/devel/libgtop \
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USES=		pathfix
-USE_GNOME=	gnomeprefix intlhack gtk30 gnomedocutils gconf2 glibmm gtkmm30 \
+USE_GNOME=	gnomeprefix intlhack gtk30 gnomedocutils gconf2 glibmm \
 		gtksourceviewmm3 vte3
 USE_GMAKE=	yes
 USE_GCC=	4.6+
