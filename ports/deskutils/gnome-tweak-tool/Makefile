@@ -9,7 +9,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Allows to tweak some hidden settings in GTK3 / GNOME3
 
-RUN_DEPENDS=	gsettings-desktop-schemas>=3.6.1:${PORTSDIR}/devel/gsettings-desktop-schemas \
+BUILD_DEPENDS=	gsettings-desktop-schemas>=3.6.0:${PORTSDIR}/devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gsettings-desktop-schemas>=3.6.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		gnome-shell:${PORTSDIR}/x11/gnome-shell
 
 USE_XZ=		yes
