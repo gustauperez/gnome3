@@ -30,10 +30,9 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 
 USE_XZ=		yes
 USE_XORG=	x11 xfixes sm
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack gtk30 gnomemenus3 \
 		gnomedesktop3 evolutiondataserver3 ltverhack
 USE_GSTREAMER=	theora vp8 ogg
