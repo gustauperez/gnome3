@@ -1,13 +1,9 @@
-# New ports collection makefile for:   at-spi
-# Date Created:			12 April 2002
-# Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/accessibility/py-atspi/Makefile,v 1.28 2012/05/31 11:27:46 kwm Exp $
-#
+#   $MCom: ports/trunk/accessibility/py-atspi/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	atspi
-PORTVERSION=	2.4.0
+PORTVERSION=	2.8.0
 CATEGORIES=	accessibility x11-toolkits python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pyatspi/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,9 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at
 CONFLICTS=	at-spi-1.[0-9]*
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix pkgconfig
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomehier intlhack pygobject3
+USE_GNOME=	gnomehier intlhack pygobject3
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
