@@ -1,10 +1,6 @@
-# Ports collection makefile for:	mousetweaks
-# Date created:			2008 01 10
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/accessibility/mousetweaks3/Makefile,v 1.16 2012/06/13 20:34:51 mezz Exp $
-#
+#   $MCom: ports/trunk/accessibility/mousetweaks3/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	mousetweaks
 PORTVERSION=	3.6.0
@@ -20,17 +16,16 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0.1.0:${PORTSDIR}/devel/gsettings-deskto
 
 CONFLICTS=	mousetweaks-2.[0-9]*
 
-USES=		pathfix
 LATEST_LINK=	mousetweaks3
-USE_XORG=	x11 xfixes xcursor xtst
 USE_XZ=		yes
-USE_GNOME=	gnomeprefix intlhack gnomedocutils gtk30
+USE_XORG=	x11 xfixes xcursor xtst
+USE_GNOME=	gnomeprefix intlhack gtk30
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix pkgconfig
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.mousetweaks.enums.xml \
 		org.gnome.mousetweaks.gschema.xml
