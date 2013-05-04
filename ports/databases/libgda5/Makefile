@@ -1,13 +1,9 @@
-# New ports collection makefile for:	libgda2
-# Date created:				02 June 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/databases/libgda5/Makefile,v 1.10 2012/10/25 13:08:55 kwm Exp $
-#
+#   $MCom: ports/trunk/databases/libgda5/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	libgda
-PORTVERSION?=	5.0.2
+PORTVERSION?=	5.0.3
 PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
@@ -20,18 +16,19 @@ COMMENT?=	Provides uniform access to different kinds of data sources
 USE_XZ=		yes
 LIBGDA5_SLAVE?=	no
 
+# until PKGNAMESUFFIX is added to UNIQUENAME or solved in another way. optionsfile save.
+UNIQUENAME=	${LATEST_LINK}
+
 .if !defined(REFERENCE_PORT)
 
-#BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
-    		soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
-#RUN_DEPENDS=	${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
+    		soup-2.4:${PORTSDIR}/devel/libsoup \
+		json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
+USES=		gettext pathfix pkgconfig
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
+USE_GNOME=	gnomeprefix glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
@@ -39,8 +36,8 @@ CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
 		--disable-default-binary \
 		--disable-introspection
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
@@ -91,7 +88,7 @@ CONFIGURE_ARGS+=	--without-postgres
 
 # MDB (MS Access)
 .if ${LIBGDA5_SLAVE}=="mdb"
-LIB_DEPENDS+=		mdbsql.0:${PORTSDIR}/databases/mdbtools
+LIB_DEPENDS+=		mdbsql:${PORTSDIR}/databases/mdbtools
 CONFIGURE_ARGS+=	--with-mdb=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-mdb
@@ -146,11 +143,5 @@ post-install:
 		${PREFIX}/libdata/pkgconfig/
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${LIBGDA5_SLAVE}=="jdbc" && ${OSVERSION} < 800000
-BROKEN=		does not compile on 7.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 .endif
