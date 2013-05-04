@@ -1,9 +1,6 @@
-# New ports collection makefile for:	libproxy
-# Date created:		26 February 2009
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/net/libproxy/Makefile,v 1.3 2012/06/01 10:49:56 kwm Exp $
+#    $MCom: ports/trunk/net/libproxy/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	libproxy
 PORTVERSION=	0.4.6
@@ -14,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GNOME=	gnomehier
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
