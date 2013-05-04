@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/py-gobject/Makefile,v 1.58 2012/12/30 18:15:16 mezz Exp $
+#   $MCom: ports/trunk/devel/py-gobject/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
@@ -20,32 +20,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
+LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20
+USES=		pathfix pkgconfig
+USE_GNOME=	glib20
 USE_PYTHON=	2.5+
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-docs --disable-introspection
 
 CONFLICTS=	py*-gtk-0*
 PLIST_SUB=	PYTHON_VER="${PYTHON_VER}"
-
-OPTIONS_DEFINE=	LIBFFI
-LIBFFI_DESC=	Enable libffi support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBFFI}
-LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
-CONFIGURE_ARGS+=--with-ffi
-.else
-CONFIGURE_ARGS+=--without-ffi
-.endif
 
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
