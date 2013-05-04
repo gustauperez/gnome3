@@ -18,14 +18,14 @@ USERS=		colord
 GROUPS=		colord
 
 USE_XZ=		yes
-USE_GNOME=	gnomehier glib20 intlhack gtk30
+USE_GNOME=	gnomehier glib20 intlhack
 USE_GMAKE=	yes
 USES=		gettext pathfix pkgconfig
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-CONFIGURE_ARGS=	--disable-gudev --enable-gtk-doc-html=no --enable-gtk
+CONFIGURE_ARGS=	--disable-gudev --disable-systemd-login --disable-gusb --enable-gtk-doc-html=no --enable-gtk
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
