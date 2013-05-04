@@ -1,6 +1,6 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/polkit/Makefile,v 1.23 2012/12/18 13:01:54 kwm Exp $
+#   $MCom: ports/trunk/sysutils/polkit/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	polkit
 PORTVERSION=	0.105
@@ -18,9 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-i
 
 USE_GNOME=	gnomehack glib20 intlhack gnomehier
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-authfw=pam \
@@ -39,8 +38,9 @@ OPTIONS_DEFINE=	MANPAGES
 
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410 \
+    		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-USE_GNOME+=	libxslt:build
+
 MAN1=		pkaction.1 pkcheck.1 pkexec.1 pkttyagent.1
 MAN8=		pklocalauthority.8 polkit.8 polkitd.8
 .else
