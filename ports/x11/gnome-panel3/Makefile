@@ -26,7 +26,7 @@ LIB_DEPENDS=	gweather-3.1:${PORTSDIR}/net/libgweather3 \
 		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 
-CONFLICTS=	gnome-panel-2.[0-9]* mate-panel-*
+CONFLICTS=	gnome-panel-2.[0-9]*
 
 USES=		pathfix
 LATEST_LINK=	gnome-panel3
