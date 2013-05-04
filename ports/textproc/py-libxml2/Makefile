@@ -1,9 +1,6 @@
-# New ports collection makefile for:	py-libxml2
-# Date created:				30 Jun 2004
-# Whom:					Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/textproc/py-libxml2/Makefile 18396 2013-04-27 14:52:06Z kwm $
 
 PORTREVISION=	0
 CATEGORIES=	textproc gnome python
@@ -18,10 +15,10 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOME=	gnomehack libxml2
+USE_GNOME+=	libxml2
 USE_PYTHON=	yes
 CPPFLAGS+=	`${PYTHON_VERSION}-config --cflags`
-LDFLAGS+=	`${PYTHON_VERSION}-config --libs`
+LDFLAGS+=	-L${LOCALBASE}/lib `${PYTHON_VERSION}-config --libs`
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
