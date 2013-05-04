@@ -1,6 +1,5 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/graphics/colord/Makefile,v 1.10 2012/12/17 23:50:40 kwm Exp $
 
 PORTNAME=	colord
 PORTVERSION=	0.1.32
@@ -19,23 +18,14 @@ USERS=		colord
 GROUPS=		colord
 
 USE_XZ=		yes
-USES=		pathfix
-USE_GNOME=	gnomehier glib20 intlhack
-USE_PKGCONFIG=	build
+USE_GNOME=	gnomehier glib20 intlhack gtk30
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix pkgconfig
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-CONFIGURE_ARGS=	--disable-gudev \
-		--enable-gtk-doc-html=no \
-		--disable-gusb \
-		--disable-sane \
-		--with-daemon-user=colord \
-		--disable-systemd-login
-# takes ages we don't want to wait.
-CONFIGURE_ARGS+=--disable-print-profiles
+CONFIGURE_ARGS=	--disable-gudev --enable-gtk-doc-html=no --enable-gtk
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
@@ -70,5 +60,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|2MAN_TRUE=$$|2MAN_TRUE='#'|g ; \
 		s|2MAN_FALSE='#'|2MAN_FALSE=|g" ${WRKSRC}/configure
 .endif
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
