@@ -1,26 +1,23 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libsecret
-PORTVERSION=	0.11
-CATEGORIES=	security  gnome
+PORTVERSION=	0.15
+CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	gustau.perez@gmail.com
-COMMENT=	A library to access the secret service API
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Library to access the secret service API
 
-BUILD_DEPENDS=	gobject-introspection>=0.9.0:${PORTSDIR}/devel/gobject-introspection \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
-USES=		pathfix
-GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
-CONFIGURE_ARGS=	--enable-introspection=yes
-USE_GMAKE=	yes
 USE_XZ=		yes
-USE_GNOME=	glib20 gnomehier intltool libxslt:build
-USE_PKGCONFIG=	build
+USE_GNOME=	gnomehier glib20 libxslt:build intltool
+USE_GMAKE=	yes
+USES=		gettext pathfix pkgconfig
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-introspection
 
 MAN1=		secret-tool.1
 
