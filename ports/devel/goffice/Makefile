@@ -1,13 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/goffice/Makefile,v 1.39 2012/12/13 20:33:05 kwm Exp $
-#
-# !!! When updating goffice, don't forget to update pkg-plist in:
-#     math/gnumeric science/gchemutils
+#   $MCom: ports/trunk/devel/goffice/Makefile 18385 2013-04-22 12:56:25Z kwm $
 
 PORTNAME=	goffice
-PORTVERSION=	0.8.17
-PORTREVISION=	2
+PORTVERSION=	0.10.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -19,26 +15,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 libgsf ltverhack
-USE_GETTEXT=	yes
+USE_GNOME=	gnomeprefix intlhack gtk30 libgsf ltverhack
+USES=		gettext pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB=	VERSION=${PORTVERSION} \
-		SHORT_VER=0.8
+CONFIGURE_ARGS=	--with-lasem=no --with-config-backend=gsettings
+
+PLIST_SUB=	VERSION=${PORTVERSION} SHORT_VER=${SHORT_VER}
+SHORT_VER=0.10
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	GCONF
-OPTIONS_DEAFULT=GCONF
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g'\
+		${WRKSRC}/configure
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	gconf2
-.else
-CONFIGURE_ARGS+=--with-config-backend=keyfile
-.endif
+post-install:
+	@${MKDIR} ${PREFIX}/lib/goffice/${SHORT_VER}/plugins
 
 .include <bsd.port.mk>
