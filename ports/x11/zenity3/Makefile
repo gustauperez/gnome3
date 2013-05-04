@@ -19,7 +19,7 @@ LATEST_LINK=	zenity3
 
 USES=		pathfix
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gtk30 gnomedocutils intlhack
+USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	x11
 USE_XZ=		yes
 USE_GETTEXT=	yes
