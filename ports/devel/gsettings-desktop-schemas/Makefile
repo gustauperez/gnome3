@@ -22,11 +22,10 @@ RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
-USE_GNOME=	gnomehack intltool glib20
-USE_PKGCONFIG=	build
+USES=		gettext pathfix pkgconfig
+USE_GNOME=	intltool glib20
 GNU_CONFIGURE=	yes
 
 GLIB_SCHEMAS=	org.gnome.desktop.a11y.applications.gschema.xml \
