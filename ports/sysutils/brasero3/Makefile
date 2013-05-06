@@ -32,7 +32,6 @@ USE_XORG=	sm ice
 USE_GNOME=	intlhack gnomeprefix gnomehack gnomedocutils gtk30 gconf2 \
 		libxml2 desktopfileutils
 USE_LDCONFIG=	yes
-USE_GSTREAMER=	gconf core
 USE_GSTREAMER1=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
