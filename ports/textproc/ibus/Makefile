@@ -25,6 +25,7 @@ USE_PYTHON=	yes
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+USE_GNOME=	dconf
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.freedesktop.ibus.gschema.xml
