@@ -21,7 +21,7 @@ LIB_DEPENDS=	lcms2:${PORTSDIR}/graphics/lcms2 \
 
 USE_XZ=		yes
 USE_XORG=	xrandr
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack gtk30 vte3 desktopfileutils \
 		gnomedesktop3 gnomedocutils
 USE_GMAKE=	yes
