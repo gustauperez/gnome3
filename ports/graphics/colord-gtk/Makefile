@@ -18,7 +18,7 @@ LIB_DEPENDS=	colord:${PORTSDIR}/graphics/colord \
 
 USE_XZ=		yes
 USES=		pathfix
-USE_GNOME=	gnomehier gtk30 intlhack 
+USE_GNOME=	gnomehier intlhack gtk30
 USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
