@@ -3,8 +3,7 @@
 #    $MCom: ports/sysutils/accountsservice/Makefile,v 1.13 2012/12/03 22:30:23 kwm Exp $
 
 PORTNAME=	accountsservice
-PORTVERSION=	0.6.24
-PORTREVISION=	2
+PORTVERSION=	0.6.31
 CATEGORIES=	sysutils devel
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
 
@@ -16,8 +15,8 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
 USE_XZ=		yes
-USE_GNOME=	gnomehack glib20 intlhack gnomehier libxslt:build
-USE_GETTEXT=	yes
+USES=		pathfix gettext
+USE_GNOME=	glib20 intlhack gnomehier libxslt:build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

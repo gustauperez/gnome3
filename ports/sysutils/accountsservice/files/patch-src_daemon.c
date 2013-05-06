@@ -1,14 +1,6 @@
---- src/daemon.c.orig	2012-08-16 19:03:51.000000000 +0000
-+++ src/daemon.c	2012-10-08 19:05:09.000000000 +0000
-@@ -68,6 +68,7 @@
-         "nobody4",
-         "noaccess",
-         "postgres",
-+        "pgsql",
-         "pvm",
-         "rpm",
-         "nfsnobody",
-@@ -77,6 +78,7 @@
+--- src/daemon.c.orig	2013-03-12 22:42:05.000000000 +0000
++++ src/daemon.c	2013-05-03 16:59:58.694839493 +0000
+@@ -77,6 +77,7 @@
          "games",
          "man",
          "at",
@@ -16,7 +8,7 @@
          NULL
  };
  
-@@ -304,7 +306,11 @@
+@@ -409,7 +410,11 @@
  
          /* Every iteration */
          fp = *state;
@@ -28,7 +20,7 @@
          if (pwent != NULL) {
                  return pwent;
          }
-@@ -1030,20 +1036,18 @@
+@@ -1135,20 +1140,18 @@
  
          sys_log (context, "create user '%s'", cd->user_name);
  
@@ -44,7 +36,7 @@
 +        argv[5] = cd->real_name;
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
 -                argv[4] = "-G";
--                argv[5] = "wheel";
+-                argv[5] = ADMIN_GROUP;
 -                argv[6] = "--";
 -                argv[7] = cd->user_name;
 +                argv[6] = "-G";
@@ -57,7 +49,7 @@
                  argv[6] = NULL;
          }
          else {
-@@ -1250,16 +1254,15 @@
+@@ -1355,16 +1358,15 @@
          g_remove (filename);
          g_free (filename);
  
