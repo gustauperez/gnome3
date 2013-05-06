@@ -23,6 +23,7 @@ CONFLICTS=	gnome-utils-2.[0-9]*
 
 USE_XZ=		yes
 USE_GMAKE=	yes
+USE_GCC=	4.2
 USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack libxml2 gtk30
 GNU_CONFIGURE=	yes
@@ -36,5 +37,7 @@ GLIB_SCHEMAS=	org.gnome.baobab.gschema.xml
 post-patch:
 	@${REINPLACE_CMD} -e 's|inode/directory|inode/directory:1|g' \
 		${WRKSRC}/data/baobab.desktop.in.in
+	@${REINPLACE_CMD} -e 's|-Wno-unused-but-set-variable||g' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
