@@ -27,11 +27,10 @@ CONFLICTS=	orca-2.[0-9]* py*-json-py-[0-9]*
 LATEST_LINK=	gnome-orca3
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USES=		pathfix
-USE_GNOME=	gnomeprefix gtk30 pygobject3 
+USES=		pathfix gettext 
+USE_GNOME=	gnomeprefix gtk30 pygobject3  pygobject
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -42,5 +41,7 @@ MAN1=		orca.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    	${WRKSRC}/src/orca/orca_i18n.py
+	@${REINPLACE_CMD} -e 's|from gi.repository import GObject|import gobject|g' \
+	    	${WRKSRC}/configure
 
 .include <bsd.port.mk>
