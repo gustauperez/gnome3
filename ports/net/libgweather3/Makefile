@@ -21,17 +21,18 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc
 CONFLICTS=	libgweather-2.[0-9]*
 
 LATEST_LINK=	libgweather3
-USE_GETTEXT=	yes
 USE_XZ=		yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomehier gnomeprefix gnomehack intlhack gconf2 ltverhack gtk30
+USES=		gettext pathfix
+USE_GNOME=	gnomehier gnomeprefix intlhack gconf2 ltverhack gtk30
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-#GCONF_SCHEMAS=	Gweather.schemas
+GLIB_SCHEMAS=	org.gnome.GWeather.enums.xml \
+		org.gnome.GWeather.gschema.xml
 
 .include <bsd.port.mk>
