@@ -22,11 +22,10 @@ LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant \
 		soup-2.4:${PORTSDIR}/devel/libsoup
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_GSTREAMER=	yes
 MAKE_JOBS_SAFE=	yes
 USE_XORG=	xt
-USES=		bison
+USES=		bison gettext
 USE_GCC=	4.6
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
@@ -41,9 +40,13 @@ CONFIGURE_ENV=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
 		ZLIB_LIBS="-L/usr/lib -lz" \
 		ac_cv_path_DOLT_BASH=""
 CPPFLAGS+=	-I${LOCALBASE}/include
+#CC=		gcc46
+#CXX=		g++46
+#CPP=		cpp46
 #CXXFLAGS+=	-std=gnu89
+#CXXFLAGS+=      -stdlib=libstdc++
 # -libstd=libc++
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -L/usr/local/lib/gcc46
 CONFIGURE_ARGS=	--with-gtk=3.0 \
 		--enable-svg-fonts \
 		--enable-webkit2=no \
