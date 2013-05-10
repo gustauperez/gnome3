@@ -61,8 +61,7 @@ WITH_DBUS=	yes
 .endif
 
 .if defined(WITH_DVI) || defined(WITH_T1LIB) || exists(${LOCALBASE}/lib/libkpathsea.a)
-BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS+=	tex:${PORTSDIR}/print/teTeX-base
+USE_TEX=	tetex
 
 CONFIGURE_ARGS+=	--enable-dvi
 GCONF_SCHEMAS+=	evince-thumbnailer-dvi.schemas
