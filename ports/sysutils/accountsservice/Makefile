@@ -1,9 +1,12 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
+# New ports collection makefile for:   accountsservice
+# Date Created:			8 Mar 2011
+# Whom:				Koop Mast <kwm@FreeBSD.org>
+#
 # $FreeBSD$
-#    $MCom: ports/sysutils/accountsservice/Makefile,v 1.13 2012/12/03 22:30:23 kwm Exp $
+#
 
 PORTNAME=	accountsservice
-PORTVERSION=	0.6.31
+PORTVERSION=	0.6.21
 CATEGORIES=	sysutils devel
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
 
@@ -11,21 +14,26 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	D-Bus interface for user account query and manipulation
 
 BUILD_DEPEND=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	xslt:${PORTSDIR}/textproc/libxslt \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
 USE_XZ=		yes
-USES=		pathfix gettext
-USE_GNOME=	glib20 intlhack gnomehier libxslt:build
+USE_GNOME=	gnomehack glib20 intlhack
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-systemd
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/gdm/custom.conf|${LOCALBASE}/etc/gdm/custom.conf|g' \
 		${WRKSRC}/src/daemon.c
+	@${REINPLACE_CMD} -e 's|/lib/AccountsService|/db/AccountsService|g' \
+		${WRKSRC}/src/user.c ${WRKSRC}/src/Makefile.in
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
