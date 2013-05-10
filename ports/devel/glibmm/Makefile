@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/devel/glibmm/Makefile 18393 2013-04-26 21:23:07Z kwm $
 
 PORTNAME=	glibmm
-PORTVERSION=	2.36.0
+PORTVERSION=	2.36.2
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
