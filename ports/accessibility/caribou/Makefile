@@ -25,12 +25,12 @@ LIB_DEPENDS=	clutter-glx-1.0.0:${PORTSDIR}/graphics/clutter \
 RUN_DEPENDS=	py*-atspi>=2.1.91:${PORTSDIR}/accessibility/py-atspi
 
 USE_XZ=		yes
+USES=		pathfix gettext
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=yes
-USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_XORG=	x11 xtst
-USE_GNOME=	gnomehack intltool pygobject3 gtk30 intlhack gnomedocutils \
+USE_GNOME=	intltool pygobject3 gtk30 intlhack gnomedocutils \
 		libxml2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -42,6 +42,8 @@ GLIB_SCHEMAS=	org.gnome.caribou.gschema.xml \
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|g' \
 		${WRKSRC}/tools/*.py
+#	@${REINPLACE_CMD} -e 's|from gi.repository import GLib|import glib|g' \
+#		${WRKSRC}/tools/make_schema.py
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' \
 		-e 's|$${BASH_SOURCE\[0\]}|.|g' \
 		${WRKSRC}/bin/antler-keyboard.in \
