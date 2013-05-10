@@ -15,13 +15,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 font viewer utility
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-USES=		pathfix
+USES=		pathfix gettext
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
