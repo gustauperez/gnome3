@@ -35,12 +35,11 @@ LATEST_LINK=	cheese3
 USE_XORG=	xxf86vm x11
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack evolutiondataserver3 librsvg2 \
+USES=		gettext pathfix pkgconfig
+USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 librsvg2 \
 		gnomedesktop3
-USE_GETTEXT=	yes
-USE_GSTREAMER=	bad gconf good jpeg ogg theora v4l2 vorbis 
-USE_GSTREAMER1=	good bad ugly
-INSTALLS_OMF=	yes
+#USE_GSTREAMER=	bad gconf good jpeg ogg theora v4l2 vorbis 
+USE_GSTREAMER1=	core good bad ugly
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
