@@ -29,12 +29,10 @@ CONFLICTS=	gedit-2.[0-9]*
 LATEST_LINK=	gedit3
 USE_XORG=	sm
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_PYTHON=	yes
-INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack gtksourceview3 libxml2 \
 		desktopfileutils gnomedocutils pygobject3
 CONFIGURE_ARGS=	--disable-updater
