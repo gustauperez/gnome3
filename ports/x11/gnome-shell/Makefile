@@ -32,10 +32,11 @@ USE_XZ=		yes
 USE_XORG=	x11 xfixes sm
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+USE_GCC=	4.6
 USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack gtk30 gnomemenus3 \
 		gnomedesktop3 evolutiondataserver3 ltverhack
-USE_GSTREAMER=	theora vp8 ogg
+USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 
 GLIB_SCHEMAS=	org.gnome.shell.gschema.xml
@@ -51,6 +52,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 post-patch:
 	@${REINPLACE_CMD} -e 's|applications.menu|gnome-applications.menu|g' \
 		${WRKSRC}/src/shell-app-system.c
+	@${REINPLACE_CMD} -e 's|\-DG_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/Makefile.in \
+		${WRKSRC}/browser-plugin/Makefile.in 
 	@${REINPLACE_CMD} -e 's|libnm-glib libnm-util ||g' \
 		${WRKSRC}/configure
 	@${CHMOD} a+x ${WRKSRC}/config/install-sh
