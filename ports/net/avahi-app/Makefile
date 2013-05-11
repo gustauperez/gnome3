@@ -29,7 +29,8 @@ RUN_DEPENDS?=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
-USE_GNOME?=	gnomehack ltverhack glib20 intltool
+USE_GNOME+=	ltverhack glib20 intltool
+USES+=		gettext pathfix pkgconfig
 USE_GETTEXT=	yes
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
