@@ -1,10 +1,5 @@
-# New ports collection makefile for:	xchat2
-# Date created:			17 Aug 2002
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/irc/xchat/Makefile,v 1.10 2012/09/03 16:30:20 mezz Exp $
-#
 
 PORTNAME=	xchat
 PORTVERSION=	2.8.8
@@ -23,8 +18,8 @@ CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gtk20
+USES=		gettext pathfix
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -DGLIB_COMPILATION
