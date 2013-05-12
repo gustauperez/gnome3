@@ -18,9 +18,9 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 
 USE_GMAKE=	yes
 USE_XZ=		yes
-USE_GNOME=	gnomehack gnomeprefix gtk30 intltool libxml2 libxslt \
-		ltverhack desktopfileutils gnomedocutils gtkmm30
-USE_GETTEXT=	yes
+USE_GNOME=	desktopfileutils gnomedocutils gnomeprefix gtk30 gtkmm30 intltool \
+		libxml2 libxslt ltverhack \
+USES=		gettext pathfix
 GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes

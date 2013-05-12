@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome-system-log
-# Date created:				06 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/deskutils/gnome-system-log/Makefile,v 1.2 2012/06/01 06:47:47 kwm Exp $
-#
 
 PORTNAME=	gnome-system-log
 PORTVERSION=	3.6.1
@@ -20,11 +16,11 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 CONFLICTS=	gnome-utils-2.[0-9]*
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk30 gnomedocutils
+USE_GNOME=	gnomeprefix intlhack gtk30 gnomedocutils
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gnomeutils2
-# Date created:				06 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnome-dictionary/Makefile,v 1.1 2012/05/31 15:11:22 kwm Exp $
-#
 
 PORTNAME=	gnome-dictionary
 PORTVERSION=	3.6.0
@@ -20,14 +15,13 @@ BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack gnomedocutils gtk30
+USE_GNOME=	gnomedocutils gnomeprefix gtk30 intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

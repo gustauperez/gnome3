@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gnome-contacts
-# Date Created:			17 Okt 2011
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by:				Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-contacts
 PORTVERSION=	3.6.2
@@ -21,11 +17,10 @@ LIB_DEPENDS=	goa-1.0.0:${PORTSDIR}/net/gnome-online-accounts \
 		cheese.7:${PORTSDIR}/multimedia/cheese3 \
 		notify.4:${PORTSDIR}/devel/libnotify
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_XZ=		yes
-USE_GNOME=	intlhack gtk30 gnomedesktop3 evolutiondataserver3
+USE_GNOME=	evolutiondataserver3 gtk30 gnomedesktop3 intlhack
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include

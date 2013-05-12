@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gnomeutils2
-# Date created:				06 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnome-search-tool/Makefile,v 1.3 2012/06/12 21:49:41 kwm Exp $
-#
 
 PORTNAME=	gnome-search-tool
 PORTVERSION=	3.6.0
@@ -19,14 +14,13 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_XZ=		yes
-USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack gtk30 gconf2 gnomedocutils
+USE_GNOME=	gconf2 gnomedocutils gnomeprefix gtk30 intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

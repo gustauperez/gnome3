@@ -24,8 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
-USES=		pathfix
+USES=		gettext pathfix
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
