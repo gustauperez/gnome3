@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gnomegames2
-# Date created:				08 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/games/gnome-games/Makefile,v 1.240 2012/09/01 23:02:09 mezz Exp $
-#
 
 PORTNAME=	gnome-games
 PORTVERSION=	2.32.1
@@ -26,12 +21,12 @@ CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]* gnome-games-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack \
-		librsvg2 desktopfileutils pygnomedesktop gnomedocutils
+USE_GNOME=	desktopfileutils gnomedocutils gnomeprefix intlhack \
+		librsvg2 pygnomedesktop
 USE_GSTREAMER=	vorbis ogg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sound=gstreamer \

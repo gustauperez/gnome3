@@ -25,15 +25,14 @@ CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]* gnome-games-2.[0-9]*
 LATEST_LINK=	gnome-games3
 USE_XZ=		yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_GL=		gl glu
 USE_XORG=	ice x11
 USE_GMAKE=	yes
 USE_SQLITE=	yes
-USES=		pathfix
-USE_GNOME=	gnomeprefix intlhack gtk30 pygobject3 \
-		librsvg2 desktopfileutils
+USES=		gettext pathfix
+USE_GNOME=	gnomedocutils gnomeprefix gtk30 \
+		intlhack librsvg2 pygobject3
 USE_GSTREAMER=	vorbis ogg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gtk=3.0 --enable-games=all
