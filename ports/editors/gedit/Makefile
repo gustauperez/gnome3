@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gedit2
-# Date created:				14 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/editors/gedit/Makefile,v 1.132 2012/09/01 23:02:09 mezz Exp $
-#
 
 PORTNAME=	gedit
 PORTVERSION=	2.30.4
@@ -25,13 +20,13 @@ CONFLICTS=	gedit-3.[0-9]*
 
 USE_XORG=	sm
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gtksourceview2 \
-		desktopfileutils gnomedocutils ltasneededhack
+USE_GNOME=	desktopfileutils gconf2 gnomedocutils gnomeprefix \
+		gtksourceview2 intlhack ltasneededhack \
 WANT_GNOME=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gedit-plugins
-# Date created:				19 September 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/editors/gedit-plugins/Makefile,v 1.54 2012/09/01 23:02:09 mezz Exp $
-#
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	2.32.0
@@ -26,9 +21,9 @@ CONFLICTS=	gedit-plugins-3.[0-9]*
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack gnomeprefix intlhack gnomevfs2
+USE_GNOME=	gnomeprefix gnomevfs2 intlhack
 WANT_GNOME=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
