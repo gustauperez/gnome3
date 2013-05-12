@@ -19,10 +19,9 @@ CONFLICTS=	file-roller-2.[0-9]*
 LATEST_LINK=	file-roller3
 USE_LDCONFIG=	yes
 USE_XZ=		yes
-USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		gettext pathfix
 USE_GNOME=	gnomeprefix intlhack desktopfileutils gnomedocutils \
 		gtk30 gconf2
 USE_XORG=	sm

@@ -29,10 +29,10 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 		ck-connector:${PORTSDIR}/sysutils/consolekit
 
 USE_XZ=		yes
-USE_GNOME=	gnomehack glib20 intltool ltverhack gnomehier
+USE_GNOME=	glib20 gnomehier intltool ltverhack
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl libtool
 USE_GMAKE=	yes

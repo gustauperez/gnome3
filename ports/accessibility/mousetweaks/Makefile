@@ -19,9 +19,9 @@ CONFLICTS=	mousetweaks-3.[0-9]*
 
 USE_XORG=	x11 xfixes xcursor xtst
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack
+USE_GNOME=	gnomeprefix gnomepanel intlhack
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
