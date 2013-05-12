@@ -26,8 +26,8 @@ USE_PERL5_BUILD=yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack atk pango gdkpixbuf2 ltverhack
-USE_GETTEXT=	yes
+USE_GNOME=	atk gdkpixbuf2 ltverhack pango
+USES=		gettext pathfix
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 PATCHDIR=	${.CURDIR}/../../x11-toolkits/gtk20/files

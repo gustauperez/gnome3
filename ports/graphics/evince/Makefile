@@ -1,10 +1,5 @@
-# New ports collection makefile for:	evince
-# Date created:				09 January 2005
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/graphics/evince/Makefile,v 1.159 2012/09/01 23:02:10 mezz Exp $
-#
 
 PORTNAME=	evince
 PORTVERSION=	2.32.0
@@ -28,17 +23,16 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix desktopfileutils \
-		gnomedocutils ltasneededhack gconf2
+USE_GNOME=	desktopfileutils gconf2 gnomedocutils gnomeprefix \
+		intlhack ltasneededhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
-GCONF_SCHEMAS=	\
-		evince-thumbnailer.schemas \
+GCONF_SCHEMAS=	evince-thumbnailer.schemas \
 		evince-thumbnailer-ps.schemas
 
 PLIST_SUB+=	VERSION=2.32

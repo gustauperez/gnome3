@@ -18,12 +18,10 @@ LIB_DEPENDS=	json-glib-1.0.0:${PORTSDIR}/devel/json-glib \
 		cogl.9:${PORTSDIR}/graphics/cogl
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
-USES=		pathfix
-USE_GNOME=	gdkpixbuf2 gnomehier ltverhack gnomeprefix atk pango
+USES=		gettext pathfix pkgconfig
+USE_GNOME=	atk gdkpixbuf2 gnomehier gnomeprefix ltverhack pango
 USE_GL=		gl
 USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
 USE_LDCONFIG=	yes

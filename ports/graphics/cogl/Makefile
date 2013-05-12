@@ -1,10 +1,5 @@
-# New ports collection makefile for:	clutter
-# Date created:		2008-12-25
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/graphics/cogl/Makefile,v 1.7 2012/07/24 10:07:47 kwm Exp $
-#
 
 PORTNAME=	cogl
 PORTVERSION=	1.10.4
@@ -22,12 +17,10 @@ BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 CONFLICTS=	clutter-1.6.[0-9]*
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
-USES=		pathfix
-USE_GNOME=	gdkpixbuf2 ltverhack gnomeprefix atk pango
+USES=		gettext pathfix pkgconfig
+USE_GNOME=	atk gdkpixbuf2 gnomeprefix ltverhack pango
 USE_GL=		gl
 USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
 USE_LDCONFIG=	yes

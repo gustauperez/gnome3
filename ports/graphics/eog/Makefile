@@ -1,10 +1,5 @@
-# New ports collection makefile for:	eog2
-# Date created:		21 May 2002
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/graphics/eog/Makefile,v 1.129 2012/09/01 23:02:09 mezz Exp $
-#
 
 PORTNAME=	eog
 PORTVERSION=	2.32.1
@@ -25,11 +20,11 @@ CONFLICTS=	eog-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack librsvg2 desktopfileutils \
-		gconf2 gnomedesktop
+USE_GNOME=	desktopfileutils gconf2 gnomedesktop gnomeprefix \
+		intlhack librsvg2
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

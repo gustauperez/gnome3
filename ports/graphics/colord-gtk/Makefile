@@ -17,11 +17,10 @@ LIB_DEPENDS=	colord:${PORTSDIR}/graphics/colord \
 		lcms2:${PORTSDIR}/graphics/lcms2
 
 USE_XZ=		yes
-USES=		pathfix
-USE_GNOME=	gnomehier intlhack gtk30
+USES=		gettext pathfix
+USE_GNOME=	gnomehier gtk30 intlhack
 USE_PKGCONFIG=	build
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
