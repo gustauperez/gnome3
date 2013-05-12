@@ -1,10 +1,6 @@
-# New ports collection makefile for:	evince
-# Date created:				09 January 2005
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/graphics/evince3/Makefile,v 1.18 2012/06/13 12:31:10 kwm Exp $
-#
+#    $MCom: ports/trunk/graphics/evince3/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	evince
 PORTVERSION=	3.6.1
@@ -19,8 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		itstool:${PORTSDIR}/textproc/itstool \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
-		spectre.1:${PORTSDIR}/print/libspectre
+LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-glib \
+		spectre:${PORTSDIR}/print/libspectre
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
@@ -32,14 +28,13 @@ USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix desktopfileutils \
-		gnomedocutils ltasneededhack
-CONFIGURE_ARGS+=--enable-introspection
+USES=		pathfix gettext pkgconfig desktop-file-utils
+USE_GNOME=	intlhack gnomeprefix ltasneededhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-xps --enable-introspection
 
 GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
 
@@ -47,39 +42,43 @@ PLIST_SUB=	VERSION=3.0
 
 MAN1=		evince.1
 
-OPTIONS=	DVI		"Enable DVI viewer support"		off \
-		T1LIB		"Enable T1LIB for TYPE1 fonts to DVI (Enables DVI)"	off \
-		NAUTILUS	"Enable Nautilus plugin"		on  \
-		KEYRING		"Enable Gnome-Keyring without Nautilus" on \
-		COMICS		"Enable comic book archives support"	on \
-		DJVU		"Enable DJVU support"			off
-#		XPS		"Enable XPS backend support"		off \
+OPTIONS_DEFINE=	DVI T1LIB NAUTILUS KEYRING COMICS IMPRESS DJVU
+OPTIONS_DEFAULT=NAUTILUS KEYRING COMICS
+DVI_DESC=	DVI viewer support
+T1LIB_DESC=	T1LIB for TYPE1 fonts to DVI (Enables DVI)
+NAUTILUS_DESC=	Nautilus plugin
+KEYRING_DESC=	Gnome-Keyring without Nautilus
+COMICS_DESC=	Comic book archives support
+IMPRESS_DESC=	Impress presentations support
+DJVU_DESC=	DJVU support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DVI) || defined(WITH_T1LIB) || exists(${LOCALBASE}/lib/libkpathsea.a)
-USE_TEX=	tetex
+.if ${PORT_OPTIONS:MDVI} || ${PORT_OPTIONS:MT1LIB}
+USE_TEX=	latex
 
 CONFIGURE_ARGS+=	--enable-dvi
 PLIST_SUB+=		DVI=""
-. if defined(WITH_T1LIB)
-LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
-
+. if ${PORT_OPTIONS:MT1LIB}
+LIB_DEPENDS+=	t1:${PORTSDIR}/devel/t1lib
 CONFIGURE_ARGS+=	--enable-t1lib
+. else
+CONFIGURE_ARGS+=	--disable-t1lib
 . endif
 .else
+CONFIGURE_ARGS+=	--disable-dvi
 PLIST_SUB+=		DVI="@comment "
 .endif
 
-.if !defined(WITHOUT_NAUTILUS)
+.if ${PORT_OPTIONS:MNAUTILUS}
 USE_GNOME+=		nautilus3
 CONFIGURE_ARGS+=	--enable-nautilus
 PLIST_SUB+=		NAUTILUS=""
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
-.if !defined(WITHOUT_KEYRING)
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+.if ${PORT_OPTIONS:MKEYRING}
+LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 .else
 CONFIGURE_ARGS+=	--without-keyring
 .endif
@@ -87,16 +86,15 @@ CONFIGURE_ARGS+=	--disable-nautilus
 PLIST_SUB+=		NAUTILUS="@comment "
 .endif
 
-#.if defined(WITH_XPS)
-#CONFIGURE_ARGS+=	--enable-xps
-#LIB_DEPENDS+=		
-#PLIST_SUB+=		XPS=""
-#.else
-CONFIGURE_ARGS+=	--disable-xps
-#PLIST_SUB+=		XPS="@comment "
-#.endif
+.if ${PORT_OPTIONS:MIMPRESS}
+CONFIGURE_ARGS+=	--enable-impress
+PLIST_SUB+=		IMPRESS=""
+.else
+CONFIGURE_ARGS+=	--disable-impress
+PLIST_SUB+=		IMPRESS="@comment "
+.endif
 
-.if defined(WITH_DJVU)
+.if ${PORT_OPTIONS:MDJVU}
 LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre
 CONFIGURE_ARGS+=	--enable-djvu
 PLIST_SUB+=		DJVU=""
@@ -105,7 +103,7 @@ CONFIGURE_ARGS+=	--disable-djvu
 PLIST_SUB+=		DJVU="@comment "
 .endif
 
-.if !defined(WITHOUT_COMICS)
+.if ${PORT_OPTIONS:MCOMICS}
 RUN_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 CONFIGURE_ARGS+=	--enable-comics
 PLIST_SUB+=		COMICS=""
@@ -121,8 +119,5 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^DOC_MODULE_VERSION/d' \
 		${WRKSRC}/help/reference/libdocument/Makefile.in \
 		${WRKSRC}/help/reference/libview/Makefile.in
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
