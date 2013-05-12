@@ -1,6 +1,5 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/seed3/Makefile,v 1.12 2013/01/29 16:33:10 kwm Exp $
 # NOTE: It may be necessary to update ${FILESDIR}/Seed.js on each release.
 # To do that, just replace imports.searchPaths with "." and ".." elements.
 
@@ -25,8 +24,8 @@ CONFLICTS=	seed-2.[0-9]*
 LATEST_LINK=	seed3
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gtk30 intltool libxml2
+USES=		gettext pathfix
+USE_GNOME=	gtk30 intltool libxml2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_SQLITE=	yes

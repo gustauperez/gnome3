@@ -1,6 +1,5 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/gconf2/Makefile,v 1.134 2013/01/22 10:45:34 kwm Exp $
 
 PORTNAME=	gconf2
 PORTVERSION=	3.2.6
@@ -25,9 +24,9 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	gnomehier gnomehack orbit2 gtk20 libxml2 ltverhack \
-		referencehack intlhack dconf
+USES=		gettext pathfix
+USE_GNOME=	dconf gnomehier gtk20 intlhack libxml2 ltverhack \
+		orbit2 referencehack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

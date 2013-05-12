@@ -1,10 +1,5 @@
-# New ports collection makefile for:   py-dbus
-# Date Created:			25 July 2004
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/py-dbus/Makefile,v 1.18 2012/08/24 10:45:24 kwm Exp $
-#
 
 PORTNAME=	dbus
 PORTVERSION=	1.1.1
@@ -18,8 +13,7 @@ COMMENT=	Python bindings for the D-BUS messaging system
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USE_GETTEXT=	yes
-USE_GNOME=	gnomehack
+USES=		gettext pathfix
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

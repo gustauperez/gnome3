@@ -1,6 +1,5 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom$
 
 PORTNAME=	gvfs
 PORTVERSION=	1.14.2
@@ -17,11 +16,10 @@ LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomeprefix intlhack intltool libxslt
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -21,13 +21,11 @@ CONFLICTS=	libgdata-0.6.*
 
 USE_XZ=		yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix
-USE_GNOME=	gnomeprefix intltool ltverhack glib20
-USE_PKGCONFIG=	build
+USES=		gettext pathfix pkgconfig
+USE_GNOME=	glib20 gnomeprefix intltool ltverhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-ca-certs=${LOCALBASE}/share/certs/ca-root-nss.crt

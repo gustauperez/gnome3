@@ -1,6 +1,5 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
-# $FreeBSD: head/devel/gobject-introspection/Makefile 314706 2013-03-20 02:39:49Z mezz $
-#   $MCom: ports/trunk/devel/gobject-introspection/Makefile 18393 2013-04-26 21:23:07Z kwm $
+# $FreeBSD$
 
 PORTNAME=	gobject-introspection
 PORTVERSION=	1.36.0
@@ -15,11 +14,11 @@ COMMENT=	Generate interface introspection data for GObject libraries
 BUILD_DEPENDS=	cairo-trace:${PORTSDIR}/graphics/cairo
 LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
 
-USES=		bison pathfix pkgconfig gettext
+USES=		bison gettext pathfix pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier glib20 ltverhack
+USE_GNOME=	glib20 gnomehier ltverhack
 USE_PYTHON=	-2.7
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

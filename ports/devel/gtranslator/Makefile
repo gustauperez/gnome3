@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gtranslator
-# Date created:				16 September 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/gtranslator/Makefile,v 1.21 2012/06/12 20:03:38 kwm Exp $
-#
 
 PORTNAME=	gtranslator
 PORTVERSION=	2.91.5
@@ -26,10 +21,10 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_XZ=		yes
-USE_GNOME=	gnomehack intlhack gnomeprefix gtk30 libgda4 \
-		gtksourceview3 libxml2
+USE_GNOME=	gnomeprefix gtk30 gtksourceview3 \
+		intlhack libgda4 libxml2
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes

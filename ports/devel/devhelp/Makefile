@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devhelp
-# Date created:				29 May 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/devhelp/Makefile,v 1.45 2012/09/01 23:02:09 mezz Exp $
 
 PORTNAME=	devhelp
 PORTVERSION=	2.32.0
@@ -23,9 +19,9 @@ CONFLICTS=	devhelp-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_XORG=	x11
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui libwnck
+USE_GNOME=	gnomeprefix intlhack libgnomeui libwnck
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

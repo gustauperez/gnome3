@@ -1,10 +1,5 @@
-# New ports collection makefile for:	libgdata
-# Date created:				9 May 2009
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/libgdata06/Makefile,v 1.3 2011/10/16 19:36:19 kwm Exp $
-#
 
 PORTNAME=	libgdata
 PORTVERSION=	0.6.6
@@ -23,11 +18,11 @@ CONFLICTS=	libgdata-0.10.*
 LATEST_LINK=	libgdata06
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack intltool ltverhack glib20
+USE_GNOME=	glib20 intltool ltverhack glib20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-html-dir="${PREFIX}/share/doc"

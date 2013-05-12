@@ -16,8 +16,7 @@ LIB_DEPENDS=	goa-1:${PORTSDIR}/net/gnome-online-accounts \
 		rest-0.7:${PORTSDIR}/www/rest
 
 USE_XZ=		yes
-#USE_GETTEXT=	yes
-USES=		pathfix
+USES=		gettext pathfix
 USE_GNOME=	gnomeprefix intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

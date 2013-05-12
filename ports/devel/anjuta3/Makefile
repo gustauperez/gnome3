@@ -1,6 +1,5 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/anjuta3/Makefile,v 1.3 2013/03/09 09:12:38 kwm Exp $
 
 PORTNAME=	anjuta
 PORTVERSION=	3.4.3
@@ -28,14 +27,13 @@ CONFLICTS=	anjuta-2.[0-9]*
 
 LATEST_LINK=	anjuta3
 USE_XZ=		yes
-USES=		bison pathfix
+USES=		bison gettext pathfix
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix vte3 gtksourceview3 libgda5 libwnck3
+USE_GNOME=	gnomeprefix gtksourceview3 libgda5 libwnck3 vte3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -1,10 +1,5 @@
-# New ports collection makefile for:	libpeas
-# Date created:				20 June 2010
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/libpeas/Makefile,v 1.19 2012/05/25 20:37:41 kwm Exp $
-#
 
 PORTNAME=	libpeas
 PORTVERSION=	1.6.1
@@ -18,11 +13,10 @@ COMMENT=	Next evolution of the Gedit plugins engine
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		valac:${PORTSDIR}/lang/vala
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_XZ=		yes
 USE_PYTHON=	2.5+
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20 gtk30 ltverhack

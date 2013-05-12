@@ -1,10 +1,5 @@
-# New ports collection makefile for:	glade3
-# Date created:		Sun May 22 17:22:53 CEST 2005
-# Whom:			Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/glade3/Makefile,v 1.53 2012/06/16 15:17:55 kwm Exp $
-#
 
 PORTNAME=	glade3
 PORTVERSION=	3.8.2
@@ -21,10 +16,10 @@ LATEST_LINK=	glade3
 INSTALLS_ICONS=	yes
 USE_XZ=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libxml2 gnomeprefix gnomehack \
-		gnomedocutils desktopfileutils ltverhack:10
+USE_GNOME=	desktopfileutils gnomedocutils gnomeprefix \
+		gtk20 libxml2 ltverhack:10
 WANT_GNOME=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
