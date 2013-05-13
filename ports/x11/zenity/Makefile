@@ -1,6 +1,6 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#   $MCom: ports/x11/zenity/Makefile,v 1.119 2013/01/09 18:51:14 kwm Exp $
+#
 
 PORTNAME=	zenity
 PORTVERSION=	2.32.1
@@ -16,9 +16,9 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20 gnomedocutils intlhack
+USE_GNOME=	gnomedocutils gnomeprefix gtk20 intlhack
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

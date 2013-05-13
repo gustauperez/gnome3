@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gnome-shell-extensions
-# Date created:        21 May 2011
-# Whom:                Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-shell-extensions/Makefile,v 1.1 2012/02/05 10:35:25 kwm Exp $
 #
 
 PORTNAME=	gnome-shell-extensions
@@ -18,9 +14,8 @@ LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 RUN_DEPENDS=	gnome-shell>=3.6.2:${PORTSDIR}/x11/gnome-shell
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USES=		pathfix
-USE_GNOME=	intltool glib20 gnomedesktop3
+USES=		gettext pathfix
+USE_GNOME=	glib20 gnomedesktop3 intltool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

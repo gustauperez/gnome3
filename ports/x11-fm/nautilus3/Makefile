@@ -1,9 +1,5 @@
-# New ports collection makefile for:    nautilus2
-# Date created:         		28th August 2000
-# Whom:                 		ade, archie
-#
+# Created by: ade, archie
 # $FreeBSD$
-#   $MCom: ports/x11-fm/nautilus3/Makefile,v 1.22 2012/06/13 13:31:24 kwm Exp $
 #
 
 PORTNAME=	nautilus
@@ -26,14 +22,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-i
 
 CONFLICTS=	nautilus-2.[0-9]*
 
-USES=		pathfix
+USES=		gettext pathfix
 LATEST_LINK=	nautilus3
 INSTALLS_ICONS=	yes
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 \
-		desktopfileutils ltverhack gvfs ltasneededhack
+USE_GNOME=	desktopfileutils gnomedesktop3 gnomeprefix gvfs intlhack libxml2 \
+		ltasneededhack ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

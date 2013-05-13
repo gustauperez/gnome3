@@ -1,6 +1,6 @@
 #!/bin/sh
 # $FreeBSD$
-#    $MCom: ports/x11/gdm3/files/gdm.in,v 1.2 2012/01/15 18:18:36 kwm Exp $
+#    $MCom$
 
 # PROVIDE: gdm
 # REQUIRE: LOGIN cleanvar moused syscons dbus

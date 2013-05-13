@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnometerminal
-# Date created:				1 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-terminal3/Makefile,v 1.12 2012/05/25 11:13:28 kwm Exp $
 #
 
 PORTNAME=	gnome-terminal
@@ -23,13 +19,12 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 LATEST_LINK=	gnome-terminal3
-USE_GETTEXT=	yes
 USE_XZ=		yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_XORG=	sm ice
-USES=		pathfix
-USE_GNOME=	gnomeprefix intlhack gconf2 vte3 gnomedocutils
+USES=		gettext pathfix
+USE_GNOME=	gconf2 gnomedocutils gnomeprefix intlhack vte3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -1,5 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
+#
 
 PORTNAME=	nemo
 PORTVERSION=	1.7.1
@@ -27,9 +28,8 @@ GH_COMMIT=	63f7b44
 
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USES=		pathfix
-USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 desktopfileutils
+USES=		gettext pathfix
+USE_GNOME=	desktopfileutils gnomedesktop3 gnomeprefix intlhack libxml2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool autoconf automake
 CPPFLAGS+=	-I${LOCALBASE}/include

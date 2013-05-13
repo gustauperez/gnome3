@@ -1,5 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
+#
 
 PORTNAME=	muffin
 PORTVERSION=	1.7.1
@@ -26,11 +27,10 @@ GH_COMMIT=	4b36a9a
 
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm
 USE_PYTHON=	2.5+
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool autoconf automake
-USES=		pathfix
-USE_GNOME=	gnomehier gnomeprefix intlhack gtk30 gconf2
+USES=		gettext pathfix
+USE_GNOME=	gconf2 gnomehier gnomeprefix gtk30 intlhack
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

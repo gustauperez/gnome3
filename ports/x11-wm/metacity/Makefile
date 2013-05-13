@@ -1,9 +1,5 @@
-# New ports collection makefile for:   metacity
-# Date created:        21 May 2002
-# Whom:                Garrett Rooney <rooneg@electricjellyfish.net>
-#
+# Created by: Garrett Rooney <rooneg@electricjellyfish.net>
 # $FreeBSD$
-#   $MCom: ports/x11-wm/metacity/Makefile,v 1.162 2012/09/03 16:28:30 mezz Exp $
 #
 
 PORTNAME=	metacity
@@ -25,10 +21,10 @@ CONFLICTS=	metacity-2.3[4-9]*
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xcomposite xdamage
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix intlhack gnomehack gconf2 ltverhack gtk20
+USE_GNOME=	gconf2 gnomeprefix gtk20 intlhack ltverhack
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

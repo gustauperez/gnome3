@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomepanel
-# Date created:				27 April 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-panel3/Makefile,v 1.26 2012/10/25 09:21:00 kwm Exp $
 #
 
 PORTNAME=	gnome-panel
@@ -28,15 +24,14 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/noti
 
 CONFLICTS=	gnome-panel-2.[0-9]*
 
-USES=		pathfix
+USES=		gettext pathfix
 LATEST_LINK=	gnome-panel3
-USE_GETTEXT=	yes
 USE_XORG=	ice sm x11 xau xrandr
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack gnomedesktop3 librsvg2 libwnck3 \
-		gnomemenus3 gnomedocutils ltverhack referencehack
+USE_GNOME=	gnomedesktop3 gnomedocutils gnomemenus3 gnomeprefix intlhack \
+		librsvg2 libwnck3 ltverhack referencehack
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

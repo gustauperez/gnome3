@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mx
-# Date created:		30 Mar 2011
-# Whom:			Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/x11-toolkits/mx/Makefile,v 1.4 2012/10/02 15:59:35 kwm Exp $
 #
 
 PORTNAME=	mx
@@ -21,10 +17,10 @@ LIB_DEPENDS=	clutter-glx-1.0.0:${PORTSDIR}/graphics/clutter \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack glib20 gtk20 intlhack ltverhack
+USE_GNOME=	glib20 gtk20 intlhack ltverhack
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 

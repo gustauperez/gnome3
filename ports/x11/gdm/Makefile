@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gdm2
-# Date created:        20 May 2002
-# Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gdm/Makefile,v 1.192 2012/09/03 16:28:28 mezz Exp $
 #
 
 PORTNAME=	gdm
@@ -35,15 +31,15 @@ USERS=		gdm
 GROUPS=		gdm
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_LDCONFIG=	yes
 USE_XORG=	dmx dmxproto
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomehier gconf2 librsvg2 \
-		gnomedocutils gnomeprefix gnomepanel
+USE_GNOME=	gconf2 gnomedocutils gnomehier gnomeprefix gnomepanel \
+		intlhack librsvg2
 GCONF_SCHEMAS=	gdm-simple-greeter.schemas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home \

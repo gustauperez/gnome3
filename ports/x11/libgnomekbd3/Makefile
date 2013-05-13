@@ -22,13 +22,12 @@ LATEST_LINK=	libgnomekbd3
 
 CONFLICTS=	libgnomekbd-2.[0-9]*
 
-USES=		pathfix
 USE_XZ=		yes
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix ltverhack intltool gtk30
 USE_AUTOTOOLS=	libtool
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomepanel
-# Date created:				27 April 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-panel/Makefile,v 1.237 2012/10/25 09:21:00 kwm Exp $
 #
 
 PORTNAME=	gnome-panel
@@ -26,14 +22,14 @@ LIB_DEPENDS=	gweather.1:${PORTSDIR}/net/libgweather \
 
 CONFLICTS=	gnome-panel-3.[0-9]* mate-panel-*
 
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_XORG=	ice sm x11 xau xrandr
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop libwnck gnomemenus \
-		gnomedocutils ltverhack referencehack librsvg2
+USE_GNOME=	gnomedesktop gnomedocutils gnomemenus gnomeprefix intlhack \
+		librsvg2 libwnck ltverhack referencehack
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

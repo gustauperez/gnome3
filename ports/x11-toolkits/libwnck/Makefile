@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/libwnck/Makefile,v 1.139 2013/03/09 09:12:39 kwm Exp $
+#
 
 PORTNAME=	libwnck
 PORTVERSION=	2.30.7
@@ -22,11 +22,10 @@ RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 CONFLICTS=	libwnck-3.[0-9]*
 
-USE_GETTEXT=	yes
 USE_XORG=	xres x11
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 ltverhack referencehack intlhack
-USES=		bison pathfix
+USE_GNOME=	gtk20 intlhack ltverhack referencehack
+USES=		bison gettext pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc

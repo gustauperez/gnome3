@@ -1,6 +1,6 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#   $MCom: ports/x11/zenity3/Makefile,v 1.7 2013/01/09 18:51:14 kwm Exp $
+#
 
 PORTNAME=	zenity
 PORTVERSION=	3.6.0
@@ -17,12 +17,11 @@ LICENSE=	LGPL20
 
 LATEST_LINK=	zenity3
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	x11
 USE_XZ=		yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib

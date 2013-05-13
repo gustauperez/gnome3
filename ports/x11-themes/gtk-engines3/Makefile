@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-engines2
-# Date Created:				21 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-themes/gtk-engines3/Makefile,v 1.5 2010/12/28 16:58:00 kwm Exp $
 #
 
 PORTNAME=	gtk-engines3
@@ -21,8 +17,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gtk30 intlhack ltasneededhack
-USE_GETTEXT=	yes
+USE_GNOME=	gtk30 intlhack ltasneededhack
+USES=		gettext pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

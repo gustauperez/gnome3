@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgnomekbd
-# Date created:		2006-11-07
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/libgnomekbd/Makefile,v 1.55 2012/09/03 16:28:29 mezz Exp $
 #
 
 PORTNAME=	libgnomekbd
@@ -21,10 +17,10 @@ LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
 CONFLICTS=	libgnomekbd-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack ltverhack gconf2
+USE_GNOME=	gconf2 gnomehack gnomeprefix ltverhack
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

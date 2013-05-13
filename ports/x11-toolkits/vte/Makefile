@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/vte/Makefile,v 1.125 2013/03/09 09:12:39 kwm Exp $
+#
 
 PORTNAME=	vte
 PORTVERSION=	0.26.2
@@ -19,10 +19,9 @@ USE_BZIP2=	yes
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gnome-pty-helper
 
 USE_GMAKE=	yes
-USES=		bison pathfix
+USES=		bison gettext pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
 USE_GNOME?=	gnomeprefix gtk20 ltverhack referencehack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
