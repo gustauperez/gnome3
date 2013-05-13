@@ -1,10 +1,6 @@
-# New ports collection makefile for:	totem-pl-parser
-# Date created:		2007-12-04
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/multimedia/totem-pl-parser/Makefile,v 1.51 2012/05/29 20:43:31 kwm Exp $
-#
 
 PORTNAME=	totem-pl-parser
 PORTVERSION=	3.4.3
@@ -22,9 +18,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-i
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix glib20 libxml2 intlhack ltverhack \
-		gnomehier
-USE_GETTEXT=	yes
+USE_GNOME=	glib20 gnomehier gnomehack gnomeprefix intlhack libxml2 \
+		ltverhack
+USES=		gettext pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-libarchive

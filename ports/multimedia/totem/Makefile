@@ -1,10 +1,6 @@
-# New ports collection makefile for:    totem
-# Date created:         17 Oct 2002
-# Whom:                 Hendrik Scholz <hendrik@scholz.net>
-#
+# Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
 #   $MCom: ports/multimedia/totem/Makefile,v 1.160 2012/08/17 19:06:44 kwm Exp $
-#
 
 PORTNAME=	totem
 PORTVERSION=	2.32.0
@@ -28,9 +24,9 @@ CONFLICTS=	totem-3.[0-9]*
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils \
-		nautilus2 ltverhack pygtk2 gnomehier
+USES=		gettext pathfix
+USE_GNOME=	desktopfileutils gnomehier gnomeprefix intlhack \
+		ltverhack nautilus2 pygtk2 
 USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
