@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	epiphany
-# Date created:				24 April 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/www/epiphany3/Makefile,v 1.26 2012/08/08 16:56:40 kwm Exp $
 #
 
 PORTNAME=	epiphany
@@ -32,16 +28,15 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 CONFLICTS=	epiphany-2.[0-9]*
 
-USE_PKGCONFIG=	build
 LATEST_LINK=	epiphany3
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix pkgconfig
 USE_XZ=		yes
 USE_PYTHON=	yes
 USE_SQLITE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedocutils libxml2 \
-		desktopfileutils gnomedesktop3
+USE_GNOME=	desktopfileutils gnomedesktop3 gnomedocutils gnomeprefix \
+		intlhack libxml2
 USE_XORG=	ice x11 sm
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtkhtml3
-# Date created:				12 March 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/www/gtkhtml4/Makefile,v 1.20 2012/08/16 14:59:38 kwm Exp $
 #
 
 PORTNAME=	gtkhtml
@@ -23,12 +19,11 @@ LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-USES=		pathfix
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_XZ=		yes
 USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage xproto
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gtk30 gconf2 ltverhack
+USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
