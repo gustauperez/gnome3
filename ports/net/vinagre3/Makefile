@@ -23,9 +23,8 @@ CONFLICTS=	vinagre-2.[0-9]*
 
 LATEST_LINK=	vinagre3
 USE_XZ=		yes
-USE_GETTEXT=	yes
-USES=		pathfix
-USE_GNOME=	gnomeprefix intlhack gtk30 libxml2 vte3
+USES=		gettext pathfix
+USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 vte3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

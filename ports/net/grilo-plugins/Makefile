@@ -12,14 +12,12 @@ COMMENT=	Grilo is a framework focused on making media discovery and browsing
 LIB_DEPENDS=	grilo-0.2:${PORTSDIR}/net/grilo
 RUN_DEPENDS=	grl-inspect-0.2:${PORTSDIR}/net/grilo
 
-USES=		pathfix
-USE_PKGCONFIG=	build
+USES=		gettext pathfix pkgconfig
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier intlhack glib20 ltverhack libxml2
-USE_GETTEXT=	yes
+USE_GNOME=	glib20 gnomehier intlhack libxml2 ltverhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

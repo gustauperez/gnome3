@@ -12,13 +12,12 @@ COMMENT=	a convenience library for the Yahoo! Place Finder APIs
 LIB_DEPENDS=	json-glib-1.0:${PORTSDIR}/devel/json-glib \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier gnomedocutils intlhack ltverhack evolutiondataserver3
-USE_GETTEXT=	yes
+USE_GNOME=	evolutiondataserver3 gnomedocutils gnomehier intlhack ltverhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

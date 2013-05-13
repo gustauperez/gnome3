@@ -1,10 +1,6 @@
-# New ports collection makefile for:	folks
-# Date created:				23 July 2010
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net-im/folks04/Makefile,v 1.3 2013/03/13 22:24:42 kwm Exp $
-#
 
 PORTNAME=	folks
 PORTVERSION=	0.4.3
@@ -24,8 +20,8 @@ CONFLICTS=	folks-0.[6-9].[0-9]*
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomehier
-USE_GETTEXT=	yes
+USE_GNOME=	gnomehier intlhack
+USES=		gettext pathfix
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

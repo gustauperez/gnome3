@@ -1,7 +1,4 @@
-# New ports collection makefile for:   gnomenetwork
-# Date Created:			03 June 2003
-# Whom:				Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net/gnome-nettool/Makefile,v 1.62 2012/09/01 23:02:11 mezz Exp $
 #
@@ -22,9 +19,9 @@ LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 CONFLICTS=	gnome-nettool-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libglade2 gconf2 gnomedocutils
+USE_GNOME=	gconf2 gnomedocutils gnomeprefix intlhack libglade2
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

@@ -1,7 +1,4 @@
-# Ports collection Makefile for:	gnomemeeting
-# Date created:				24/07/2001
-# Whom:					roger@FreeBSD.org
-#
+# Created by: roger@FreeBSD.org
 # $FreeBSD$
 #
 
@@ -23,11 +20,11 @@ CONFLICTS=	ekiga3-3.*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_SDL=	sdl
 INSTALLS_OMF=	yes
-USE_GNOME=	libgnomeui gnomeprefix gnomehack gnomedocutils \
-		evolutiondataserver intlhack
+USE_GNOME=	evolutiondataserver gnomedocutils gnomehack gnomeprefix \
+		intlhack libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

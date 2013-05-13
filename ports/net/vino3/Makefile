@@ -1,7 +1,4 @@
-# New ports collection makefile for:	vino
-# Date created:				16 July 2004
-# Whom:					Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
 #   $MCom: ports/net/vino3/Makefile,v 1.19 2012/06/01 07:49:00 kwm Exp $
 #
@@ -26,8 +23,8 @@ CONFLICTS=	vino-2.[0-9]*
 
 LATEST_LINK=	vino3
 USE_XZ=		yes
-USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gtk30
+USES=		gettext pathfix
+USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	xdamage xfixes xtst
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

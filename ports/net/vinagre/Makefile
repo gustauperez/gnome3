@@ -1,7 +1,4 @@
-# New ports collection makefile for:	vinagre
-# Date created:				16 December 2007
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net/vinagre/Makefile,v 1.48 2012/09/01 23:02:11 mezz Exp $
 #
@@ -25,9 +22,9 @@ LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
 CONFLICTS=	vinagre-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack vte gconf2 gnomedocutils \
-		gnomepanel
+USES=		gettext pathfix
+USE_GNOME=	gconf2 gnomedocutils gnomepanel gnomeprefix \
+		intlhack vte
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes

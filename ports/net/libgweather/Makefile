@@ -1,7 +1,4 @@
-# New ports collection makefile for:	libgweather
-# Date created:				14th Jan 2008
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net/libgweather/Makefile,v 1.47 2012/09/01 23:02:11 mezz Exp $
 #
@@ -21,10 +18,10 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc
 
 CONFLICTS=	libgweather-3.[0-9]*
 
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 ltverhack
+USE_GNOME=	gconf2 gnomeprefix intlhack ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

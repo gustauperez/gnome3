@@ -1,10 +1,6 @@
-# New ports collection makefile for:	farsight2
-# Date created:				27 February 2009
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net-im/farstream/Makefile,v 1.2 2012/06/13 09:31:14 kwm Exp $
-#
 
 PORTNAME=	farstream
 PORTVERSION=	0.2.2
@@ -20,11 +16,9 @@ CONFLICTS=	farsight2-[0-9]*
 
 FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_PKGCONFIG=	build
-USES=		pathfix
+USES=		gettext pathfix pkgconfig
 USE_GNOME=	glib20 ltverhack
 USE_GSTREAMER1=	good bad
 USE_AUTOTOOLS=	libtool

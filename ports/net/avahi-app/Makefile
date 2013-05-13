@@ -1,7 +1,4 @@
-# New ports collection makefile for:	avahi
-# Date created:		18 November 2005
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net/avahi-app/Makefile,v 1.25 2012/09/01 23:02:11 mezz Exp $
 #
@@ -29,9 +26,8 @@ RUN_DEPENDS?=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
-USE_GNOME+=	ltverhack glib20 intltool
+USE_GNOME+=	glib20 intltool ltverhack
 USES+=		gettext pathfix pkgconfig
-USE_GETTEXT=	yes
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

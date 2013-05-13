@@ -1,7 +1,4 @@
-# New ports collection makefile for:   gnome-online-accounts
-# Date Created:			15 Sep 2011
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/net/gnome-online-accounts/Makefile,v 1.7 2012/06/01 09:24:12 kwm Exp $
 
@@ -22,11 +19,10 @@ LIB_DEPENDS=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
 		secret-1:${PORTSDIR}/security/libsecret \
 		rest-0.7:${PORTSDIR}/www/rest
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_XZ=		yes
 USE_GNOME=	gtk30 intlhack
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

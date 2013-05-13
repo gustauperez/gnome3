@@ -1,7 +1,4 @@
-# New ports collection makefile for:	empathy
-# Date created:		2007-10-29
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/net-im/empathy/Makefile,v 1.90 2012/08/17 19:06:45 kwm Exp $
 
@@ -35,9 +32,9 @@ CONFLICTS=	empathy-3.[0-9]*
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_LDCONFIG=	yes
-USE_GNOME=	evolutiondataserver gnomehack gnomeprefix pygtk2 ltverhack
+USE_GNOME=	evolutiondataserver gnomeprefix ltverhack pygtk2
 USE_GSTREAMER=	yes
 USE_AUTOTOOLS=	libtool
 INSTALLS_OMF=	yes

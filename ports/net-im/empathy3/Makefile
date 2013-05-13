@@ -1,7 +1,4 @@
-# New ports collection makefile for:	empathy
-# Date created:		2007-10-29
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/net-im/empathy3/Makefile,v 1.32 2012/07/02 14:47:52 kwm Exp $
 
@@ -41,11 +38,10 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 CONFLICTS=	empathy-2.[0-9]*
 
-USES=		pathfix
+USES=		gettext pathfix
 LATEST_LINK=	empathy3
 USE_GMAKE=	yes
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	evolutiondataserver3 gnomeprefix ltverhack
 USE_GSTREAMER1=	yes
