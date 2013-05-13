@@ -1,7 +1,4 @@
-# New ports collection makefile for:   gcr
-# Date Created:			26 May 2012
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/security/gcr/Makefile,v 1.2 2012/09/20 09:42:43 kwm Exp $
 #
@@ -26,9 +23,8 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 CONFLICTS=	gnome-keyring-3.[0-2].[0-9]* gnome-keyring-2.[0-9]*
 
 USE_XZ=		yes
-USES=		pathfix pkgconfig
+USES=		gettext pathfix pkgconfig
 USE_GNOME=	gtk30 intlhack
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

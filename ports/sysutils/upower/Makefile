@@ -1,9 +1,5 @@
-# New ports collection makefile for:   DeviceKit-power
-# Date Created:			30 December 2009
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/upower/Makefile,v 1.31 2012/08/23 09:56:11 kwm Exp $
 #
 
 PORTNAME=	upower
@@ -22,10 +18,10 @@ LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
     		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
 
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack ltverhack glib20
+USE_GNOME=	glib20 intlhack ltverhack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes

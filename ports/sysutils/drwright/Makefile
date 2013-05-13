@@ -1,7 +1,4 @@
-# New ports collection makefile for:   drwright
-# Date Created:			26 Apr 2011
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -17,10 +14,10 @@ LIB_DEPENDS=	canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
 		notify.4:${PORTSDIR}/devel/libnotify
 
 USE_XZ=		yes
-USE_GNOME=	gnomehack intlhack gtk30 gnomecontrolcenter3
+USE_GNOME=	gnomecontrolcenter3 gtk30 intlhack
 USE_XORG=	x11 xscrnsaver
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

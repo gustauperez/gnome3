@@ -1,8 +1,5 @@
-# New ports collection Makefile for:	libgcrypt
-# Date created:				July 17 2002
-# Whom:					Tilman Linneweh <arved@FreeBSD.org>
-#
-# $FreeBSD: ports/security/libgcrypt/Makefile,v 1.56 2012/11/17 06:01:06 svnexp Exp $
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
+# $FreeBSD$
 
 PORTNAME=	libpwquality
 PORTVERSION=	1.2.1
@@ -15,9 +12,8 @@ COMMENT=	This is a libpwquality library for password quality checking
 BUILD_DEPENDS=	cracklib-check:${PORTSDIR}/security/cracklib
 LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	intltool

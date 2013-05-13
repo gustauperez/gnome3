@@ -24,11 +24,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 CONFLICTS=	gnome-keyring-2.[0-9]*
 
 LATEST_LINK=	gnome-keyring3
-USES=		pathfix
+USES=		gettext pathfix
 USE_XZ=		yes
-USE_GNOME=	gnomeprefix gtk30 ltverhack intlhack
+USE_GNOME=	gnomeprefix gtk30 intlhack ltverhack
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -19,9 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 CONFLICTS=	gnome-keyring-3.[0-9]* gcr-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20 ltverhack intlhack
+USE_GNOME=	gnomeprefix gtk20 intlhack ltverhack
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib" \

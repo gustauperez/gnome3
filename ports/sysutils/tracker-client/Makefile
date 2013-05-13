@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD: sysutils/tracker-client/Makefile 314141 2013-03-14 08:17:39Z pclin $
-#   $MCom: ports/sysutils/tracker-client/Makefile,v 1.14 2010/05/10 04:21:19 marcus Exp $
+# $FreeBSD$
+#
 
 PORTNAME=	tracker
 PORTVERSION=	0.14.4
@@ -30,14 +30,13 @@ RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 		pdftotext:${PORTSDIR}/graphics/poppler-utils \
 		w3m:${PORTSDIR}/www/w3m
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_XZ=		yes
 USE_FAM=	yes
 WANT_FAM_SYSTEM=gamin
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix ltasneededhack intltool ltverhack
+USE_GNOME=	gnomeprefix intltool ltasneededhack ltverhack
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	core
 INSTALLS_ICONS=	yes

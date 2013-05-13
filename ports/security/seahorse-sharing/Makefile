@@ -1,7 +1,4 @@
-# New ports collection makefile for:	Seahorse
-# Date created:		08 March 2000
-# Whom:			Dave McKay <dave@mu.org>
-#
+# Created by: Dave McKay <dave@mu.org>
 # $FreeBSD$
 #   $MCom: ports/security/seahorse-sharing/Makefile,v 1.1 2011/10/18 22:59:34 kwm Exp $
 #
@@ -23,9 +20,9 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		seahorse>=3.2.1:${PORTSDIR}/security/seahorse3
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix
+USE_GNOME=	gnomeprefix intlhack
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS=	-I${LOCALBASE}/include

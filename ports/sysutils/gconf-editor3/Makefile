@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gconf-editor
-# Date created:				12 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/gconf-editor3/Makefile,v 1.5 2011/11/23 09:59:47 kwm Exp $
 #
 
 PORTNAME=	gconf-editor
@@ -19,11 +15,11 @@ CONFLICTS=	gconf-editor-2.[0-9]*
 
 LATEST_LINK=	gconf-editor3
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gtk30 gconf2 gnomedocutils
+USE_GNOME=	gconf2 gnomedocutils gnomeprefix gtk30 intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

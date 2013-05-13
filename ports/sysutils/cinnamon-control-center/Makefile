@@ -39,11 +39,10 @@ GH_TAGNAME=	1.7.1
 GH_COMMIT=	a3883df
 
 USE_XORG=	x11 xfixes sm
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=		pathfix
-USE_GNOME=	gnomeprefix intlhack gtk30 gconf2 gnomemenus3 \
-		gnomedesktop3 evolutiondataserver3
+USES=		gettext pathfix
+USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomemenus3 \
+		gnomeprefix gtk30 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env

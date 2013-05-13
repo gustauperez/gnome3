@@ -15,9 +15,9 @@ LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_XZ=		yes
-USE_GNOME=	gnomehier gnomehack gnomeprefix ltverhack intlhack glib20
+USE_GNOME=	glib20 gnomehier gnomeprefix intlhack ltverhack
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

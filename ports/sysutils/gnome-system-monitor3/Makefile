@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomesystemmonitor
-# Date created:				09 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-system-monitor3/Makefile,v 1.13 2012/08/04 09:45:50 kwm Exp $
 #
 
 PORTNAME=	gnome-system-monitor
@@ -25,11 +21,11 @@ CONFLICTS=	gnome-system-monitor-2.[0-9]*
 
 LATEST_LINK=	gnome-system-monitor3
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libwnck3 gnomedocutils \
-		librsvg2
+USE_GNOME=	gnomedocutils gnomeprefix intlhack librsvg2 \
+		libwnck3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

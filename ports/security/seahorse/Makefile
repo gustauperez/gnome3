@@ -1,7 +1,4 @@
-# New ports collection makefile for:	Seahorse
-# Date created:		08 March 2000
-# Whom:			Dave McKay <dave@mu.org>
-#
+# Created by: Dave McKay <dave@mu.org>
 # $FreeBSD$
 #   $MCom: ports/security/seahorse/Makefile,v 1.109 2012/09/01 23:02:12 mezz Exp $
 #
@@ -29,9 +26,9 @@ CONFLICTS=	libcryptui-3.[0-9]* seahorse-3.[0-9]*
 USE_XORG=	sm
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix gconf2 gnomedocutils
+USE_GNOME=	gconf2 gnomedocutils gnomeprefix intlhack
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

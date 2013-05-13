@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomecontrolcenter2
-# Date created:				04 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.220 2012/09/01 23:02:12 mezz Exp $
 #
 
 PORTNAME=	gnome-control-center
@@ -27,12 +23,12 @@ RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 CONFLICTS=	gnome-control-center-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_GMAKE=	yes
 USE_GSTREAMER=	good
 WANT_GNOME=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack metacity gnomemenus \
-		desktopfileutils libgnomekbd gnomedesktop librsvg2 gconf2
+USE_GNOME=	desktopfileutils gconf2 gnomedesktop gnomemenus gnomeprefix \
+		intlhack libgnomekbd librsvg2 metacity
 USE_XORG=	xscrnsaver
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes

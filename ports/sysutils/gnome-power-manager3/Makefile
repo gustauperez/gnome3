@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-power-manager
-# Date created:				03 May 2006
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-power-manager3/Makefile,v 1.20 2012/06/13 13:03:24 kwm Exp $
 #
 
 PORTNAME=	gnome-power-manager
@@ -19,13 +15,12 @@ LIB_DEPENDS=	upower-glib.1:${PORTSDIR}/sysutils/upower \
 
 CONFLICTS=	gnome-power-manager-2.[0-9]*
 
-USES=		pathfix
+USES=		gettext pathfix
 LATEST_LINK=	gnome-power-manager3
-USE_GETTEXT=	yes
 USE_XZ=		yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack gtk30 gnomedocutils
+USE_GNOME=	gnomedocutils gnomeprefix gtk30 intlhack
 MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-doc-dir=${PREFIX}/share/doc \

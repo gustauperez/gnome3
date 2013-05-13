@@ -12,11 +12,10 @@ COMMENT=	GNOME frontend to the PolicyKit framework
 
 LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
-USES=		pathfix
+USES=		gettext pathfix
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gtk30 gtk20 intlhack
+USE_GNOME=	gnomeprefix gtk20 gtk30 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \

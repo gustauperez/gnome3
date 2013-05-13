@@ -1,9 +1,5 @@
-# New ports collection makefile for:	system-tools-backends
-# Date created:				11 February 2005
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/system-tools-backends/Makefile,v 1.64 2012/09/01 23:02:13 mezz Exp $
 #
 
 PORTNAME=	system-tools-backends
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-Net-DBus>=0:${PORTSDIR}/devel/p5-Net-DBus
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_GNOME=	gnomehack intlhack glib20
+USES=		pathfix
+USE_GNOME=	glib20 intlhack
 GNU_CONFIGURE=	yes
 USE_GNOME_SUBR=	yes
 CONFIGURE_ARGS=	--with-stb-group=wheel \

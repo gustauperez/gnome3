@@ -1,9 +1,6 @@
-# New ports collection makefile for:	bonfire
-# Date created:		2006-05-12
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/sysutils/brasero/Makefile,v 1.91 2012/09/01 23:02:12 mezz Exp $
+#
 
 PORTNAME=	brasero
 PORTVERSION=	2.32.1
@@ -25,12 +22,12 @@ RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 
 CONFLICTS=	brasero-3.[0-9]*
 
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	sm
-USE_GNOME=	intlhack gnomeprefix gnomehack gnomedocutils
+USE_GNOME=	gnomedocutils gnomeprefix intlhack
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	gconf core
 INSTALLS_OMF=	yes
