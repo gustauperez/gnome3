@@ -17,7 +17,6 @@ CONFLICTS=	gcalctool-6.[0-9]*
 
 USE_BZIP2=	yes
 USES=		bison gettext pathfix
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gconf2 gnomedocutils gnomeprefix gtk20 intlhack
