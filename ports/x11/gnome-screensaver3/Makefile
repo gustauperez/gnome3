@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USES=		gettext pathfix
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
-USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libgnomekbd
+USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libgnomekbd3
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pam-prefix=${PREFIX}/etc/pam.d \
