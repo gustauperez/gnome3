@@ -25,7 +25,7 @@ USE_XZ=		yes
 USE_GMAKE=	yes
 USES=		bison gettext pathfix
 USE_GNOME=	dconf desktopfileutils evolutiondataserver3 gnomedesktop3 gnomedocutils \
-		gnomeprefix gtkhtml4 intlhack ltasneededhack \
+		gnomeprefix gtkhtml4 intlhack ltasneededhack
 USE_AUTOTOOLS=	libtool
 USE_GSTREAMER=	yes
 INSTALLS_OMF=	yes
