@@ -23,10 +23,10 @@ CONFLICTS=	evolution-2.[0-9]*
 LATEST_LINK=	evolution3
 USE_XZ=		yes
 USE_GMAKE=	yes
-USES=		bison pathfix
+USES=		bison gettext pathfix
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 gtkhtml4 dconf \
-		desktopfileutils gnomedocutils ltasneededhack gnomedesktop3
+USE_GNOME=	dconf desktopfileutils evolutiondataserver3 gnomedesktop3 gnomedocutils \
+		gnomeprefix gtkhtml4 intlhack ltasneededhack \
 USE_AUTOTOOLS=	libtool
 USE_GSTREAMER=	yes
 INSTALLS_OMF=	yes

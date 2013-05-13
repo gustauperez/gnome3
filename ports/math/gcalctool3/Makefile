@@ -18,11 +18,10 @@ BUILD_DEPENDS=	yelp-build:${PORTSDIR}/textproc/yelp-tools \
 
 LATEST_LINK=	gcalctool3
 USE_XZ=	yes
-USES=		bison pathfix
-USE_GETTEXT=	yes
+USES=		bison gettext pathfix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix intlhack gconf2 gtk30 libxml2
+USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

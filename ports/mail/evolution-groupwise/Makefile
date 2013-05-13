@@ -1,10 +1,5 @@
-# New ports collection makefile for:	evolution-groupwise
-# Date created:				16 Okt 2011
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-groupwise/Makefile,v 1.4 2012/06/18 11:13:47 kwm Exp $
-#
 
 PORTNAME=	evolution-groupwise
 PORTVERSION=	3.4.2
@@ -20,12 +15,12 @@ RUN_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution3
 
 EVO_VER=	3.4.1
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_BDB=	41
-USE_GNOME=	gnomeprefix intlhack gnomehack ltasneededhack libxml2 \
-		gconf2 
+USE_GNOME=	gconf2 gnomeprefix intlhack libxml2 ltasneededhack \
+		 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-libdb=${LOCALBASE}

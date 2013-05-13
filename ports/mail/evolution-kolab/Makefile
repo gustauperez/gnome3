@@ -1,10 +1,5 @@
-# New ports collection makefile for:	evolution-kolab
-# Date created:				18 Jun 2012
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-kolab/Makefile,v 1.2 2012/08/16 20:28:18 kwm Exp $
-#
 
 PORTNAME=	evolution-kolab
 PORTVERSION=	3.6.4
@@ -22,12 +17,12 @@ RUN_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution3
 
 EVO_VER=	3.4.1
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext pathfix
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_SQLITE=	yes
 MAKE_JOBS_UNSAFE=yes
-USE_GNOME=	gnomeprefix intlhack gnomehack ltasneededhack libxml2 gconf2 
+USE_GNOME=	 gconf2 gnomeprefix intlhack libxml2 ltasneededhack 
 CONFIGURE_ENV=	ac_cv_path_GPERF=${LOCALBASE}/bin/gperf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

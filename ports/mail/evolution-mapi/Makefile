@@ -1,10 +1,5 @@
-# New ports collection makefile for:	evolution-mapi
-# Date created:				24 Mar, 2009
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-mapi/Makefile,v 1.27 2012/09/01 23:02:10 mezz Exp $
-#
 
 PORTNAME=	evolution-mapi
 PORTVERSION=	0.32.2
@@ -25,7 +20,7 @@ CONFLICTS=	evolution-mapi-3.[0-9]*
 PKGFILES=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	evolutiondataserver
 USE_LDCONFIG=	yes

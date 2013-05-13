@@ -1,10 +1,5 @@
-# New ports collection makefile for:	evolution-exchange
-# Date created:				28 April, 2005
-# Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
-#
+# Created by: Adam Weinberger, based off kiesel's ximian-exchange port
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-exchange3/Makefile,v 1.19 2012/08/16 20:20:46 kwm Exp $
-#
 
 PORTNAME=	evolution-exchange
 PORTVERSION=	3.4.4
@@ -22,13 +17,13 @@ CONFLICTS=	evolution-exchange-2.[0-9]*
 
 EVO_VER=	3.4.3
 LATEST_LINK=	evolution-exchange3
-USE_XZ=	yes
-USE_GETTEXT=	yes
+USE_XZ=		yes
+USES=		gettext pathfix
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_BDB=	41
 USE_OPENLDAP=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack ltasneededhack
+USE_GNOME=	gnomeprefix intlhack ltasneededhack
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \

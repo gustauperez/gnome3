@@ -16,11 +16,11 @@ COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 CONFLICTS=	gcalctool-6.[0-9]*
 
 USE_BZIP2=	yes
-USES=		bison pathfix
+USES=		bison gettext pathfix
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix intlhack gconf2 gnomedocutils gtk20
+USE_GNOME=	gconf2 gnomedocutils gnomeprefix gtk20 intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
