@@ -1,7 +1,4 @@
-# New ports collection makefile for:	packagekit
-# Date created:				15 Aug 2009
-# Whom:					Anders F Bjorklund <afb@users.sourceforge.net>
-#
+# Created by: Anders F Bjorklund <afb@users.sourceforge.net>
 # $FreeBSD$
 #   $MCom: ports/ports-mgmt/packagekit/Makefile,v 1.34 2012/12/30 18:15:16 mezz Exp $
 
@@ -26,7 +23,7 @@ RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
 
 USE_GMAKE=	yes
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	glib20 intltool
 USE_QT4=	#empty
 USE_ICONV=	yes

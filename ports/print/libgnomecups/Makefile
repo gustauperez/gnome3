@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgnomecups
-# Date created:				14 Jul 2003
-# Whom:					Glenn Johnson <glennpj@charter.net>
-#
+# Created by: Glenn Johnson <glennpj@charter.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libgnomecups
 PORTVERSION=	0.2.3
@@ -20,10 +16,8 @@ LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
-USES=		pathfix
-USE_GNOME=	intlhack ltverhack glib20
-USE_GETTEXT=	yes
+USES=		gettext pathfix pkgconfig
+USE_GNOME=	glib20 intlhack ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=  libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
