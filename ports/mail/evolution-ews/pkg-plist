@@ -58,6 +58,8 @@ share/locale/sv/LC_MESSAGES/evolution-ews.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-ews.mo
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrm lib/evolution-data-server-%%VERSION%%
 @dirrm include/evolution-data-server-%%VERSION%%/ews
 @dirrm include/evolution-data-server-%%VERSION%%
