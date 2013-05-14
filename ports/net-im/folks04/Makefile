@@ -10,8 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	library to aggregates people from multiple sources
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee06 \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 
@@ -20,7 +19,7 @@ CONFLICTS=	folks-0.[6-9].[0-9]*
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier intlhack
+USE_GNOME=	gnomehier intlhack introspection:build
 USES=		gettext pathfix
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include

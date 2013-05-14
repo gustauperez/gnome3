@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_
 		vala>=0.14.0:${PORTSDIR}/lang/vala \
 		itstool:${PORTSDIR}/textproc/itstool \
 		xmllint:${PORTSDIR}/textproc/libxml2 \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
 		hal:${PORTSDIR}/sysutils/hal \
 		gee.2:${PORTSDIR}/devel/libgee06 \
@@ -35,9 +34,8 @@ USE_XORG=	xxf86vm x11
 USE_XZ=		yes
 USE_GMAKE=	yes
 USES=		gettext pathfix pkgconfig
-USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 librsvg2 \
-		gnomedesktop3
-#USE_GSTREAMER=	bad gconf good jpeg ogg theora v4l2 vorbis 
+USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix \
+		intlhack introspection:build librsvg2
 USE_GSTREAMER1=	core good bad ugly
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

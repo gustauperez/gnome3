@@ -16,8 +16,7 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		fontconfig>=2.10.91:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	fontconfig>=2.10.91:${PORTSDIR}/x11-fonts/fontconfig
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		freetype:${PORTSDIR}/print/freetype2 \
 		harfbuzz:${PORTSDIR}/print/harfbuzz \
@@ -31,7 +30,7 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	glib20 ltverhack referencehack
+USE_GNOME=	glib20 introspection:build ltverhack referencehack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

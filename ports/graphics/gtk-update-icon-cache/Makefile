@@ -16,7 +16,6 @@ COMMENT=	Gtk-update-icon-cache utility from the Gtk+ toolkit
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
@@ -26,7 +25,8 @@ USE_PERL5_BUILD=yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	atk gdkpixbuf2 ltverhack pango
+USE_GNOME=	atk gdkpixbuf2 introspection:build \
+		ltverhack pango
 USES=		gettext pathfix
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite

@@ -10,8 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Interface privider to access the user's online accounts.
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
 		json-glib:${PORTSDIR}/devel/json-glib \
 		notify:${PORTSDIR}/devel/libnotify \
@@ -21,7 +20,7 @@ LIB_DEPENDS=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
 
 USES=		gettext pathfix
 USE_XZ=		yes
-USE_GNOME=	gtk30 intlhack
+USE_GNOME=	gtk30 intlhack introspection:build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

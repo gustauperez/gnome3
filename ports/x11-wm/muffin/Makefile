@@ -11,7 +11,6 @@ MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Compositing window manager forked from Mutter for use with Cinnamon
 
 BUILD_DEPENDS=	zenity>3.0.0:${PORTSDIR}/x11/zenity3 \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
@@ -30,7 +29,7 @@ USE_PYTHON=	2.5+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool autoconf automake
 USES=		gettext pathfix
-USE_GNOME=	gconf2 gnomehier gnomeprefix gtk30 intlhack
+USE_GNOME=	gconf2 gnomehier gnomeprefix gtk30 intlhack introspection:build
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

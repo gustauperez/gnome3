@@ -13,8 +13,7 @@ COMMENT=	File manager for the Cinnamon desktop
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		gtkdocize:${PORTSDIR}/textproc/gtk-doc \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas 
 LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
 		notify:${PORTSDIR}/devel/libnotify \
 		exempi:${PORTSDIR}/textproc/exempi
@@ -29,7 +28,7 @@ GH_COMMIT=	63f7b44
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USES=		gettext pathfix
-USE_GNOME=	desktopfileutils gnomedesktop3 gnomeprefix intlhack libxml2
+USE_GNOME=	desktopfileutils gnomedesktop3 gnomeprefix intlhack introspection:build libxml2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool autoconf automake
 CPPFLAGS+=	-I${LOCALBASE}/include

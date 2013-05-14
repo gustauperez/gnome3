@@ -10,14 +10,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A user interface builder for GTK+ 3
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-
 CONFLICTS=	glade3-3.*
 
 INSTALLS_ICONS=	yes
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomedocutils gnomeprefix gtk30 ltverhack
+USE_GNOME=	gnomedocutils gnomeprefix gtk30 \
+		introspection:build ltverhack
 WANT_GNOME=	yes
 USES=		gettext pathfix
 INSTALLS_OMF=	yes

@@ -19,8 +19,7 @@ USE_XZ=		yes
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:${PORTSDIR}/x11/xkeyboard-config \
 		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile \
-		itstool:${PORTSDIR}/textproc/itstool \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile
@@ -29,7 +28,7 @@ LATEST_LINK=	gnome-desktop3
 
 USE_XORG=	x11 xrandr xext
 USE_GNOME=	gnomedocutils gnomeprefix gtk30 intlhack \
-		ltverhack referencehack
+		introspection:build ltverhack referencehack
 USE_GMAKE=	yes
 USES=		bison gettext pathfix
 USE_PYTHON=	yes

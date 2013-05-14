@@ -16,17 +16,15 @@ COMMENT?=	Service discovery on a local network
 AVAHI_SLAVE?=	no
 
 .if ${AVAHI_SLAVE}!="header"
-BUILD_DEPENDS?=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2 \
 		daemon.0:${PORTSDIR}/devel/libdaemon \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gdbm.4:${PORTSDIR}/databases/gdbm
-RUN_DEPENDS?=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
-USE_GNOME+=	glib20 intltool ltverhack
+USE_GNOME+=	glib20 intltool introspection:build ltverhack
 USES+=		gettext pathfix pkgconfig
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes

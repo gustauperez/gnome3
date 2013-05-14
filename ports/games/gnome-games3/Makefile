@@ -10,8 +10,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The game applications package for the GNOME 3 Desktop Environment
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		yelp-check:${PORTSDIR}/textproc/yelp-tools \
+BUILD_DEPENDS=	yelp-check:${PORTSDIR}/textproc/yelp-tools \
 		itstool:${PORTSDIR}/textproc/itstool \
 		valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
@@ -32,7 +31,7 @@ USE_GMAKE=	yes
 USE_SQLITE=	yes
 USES=		gettext pathfix
 USE_GNOME=	gnomedocutils gnomeprefix gtk30 \
-		intlhack librsvg2 pygobject3
+		intlhack introspection:build librsvg2 pygobject3
 USE_GSTREAMER=	vorbis ogg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gtk=3.0 --enable-games=all

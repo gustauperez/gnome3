@@ -15,15 +15,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-
 CONFLICTS=	gnome-menus-2.[0-9]*
 
 LATEST_LINK=	gnome-menus3
 USE_XZ=		yes
 USE_GMAKE=	yes
 USES=		pkgconfig pathfix
-USE_GNOME=	gnomehier gnomeprefix intlhack glib20 ltverhack
+USE_GNOME=	glib20 gnomehier gnomeprefix intlhack introspection:build ltverhack
 USE_AUTOTOOLS=	libtool
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes

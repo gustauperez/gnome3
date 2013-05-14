@@ -12,8 +12,7 @@ COMMENT=	library to aggregates people from multiple sources
 
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
 		${LOCALBASE}/libdata/pkgconfig/zeitgeist-1.0.pc:${PORTSDIR}/sysutils/libzeitgeist \
-		${LOCALBASE}/libdata/pkgconfig/gcr-3.pc:${PORTSDIR}/security/gcr \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+		${LOCALBASE}/libdata/pkgconfig/gcr-3.pc:${PORTSDIR}/security/gcr
 LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee06 \
 		gcr:${PORTSDIR}/security/gcr \
 		zeitgeist-1.0:${PORTSDIR}/sysutils/libzeitgeist \
@@ -26,7 +25,8 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USES=		gettext pathfix
-USE_GNOME=	gnomehier intlhack ltverhack evolutiondataserver3
+USE_GNOME=	evolutiondataserver3 gnomehier intlhack \
+		introspection:build ltverhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

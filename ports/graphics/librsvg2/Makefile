@@ -12,13 +12,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection		
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		croco-${CROCO_VERSION}.3:${PORTSDIR}/textproc/libcroco
 RUN_DEPENDS=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
 
 USE_XZ=		yes
-USES=		gettext pathfix
+USES=		gettext introspection:build pathfix
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

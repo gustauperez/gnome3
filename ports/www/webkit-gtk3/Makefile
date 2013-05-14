@@ -14,8 +14,7 @@ COMMENT=	An opensource browser engine
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+		gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc
 LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant \
 		icutu:${PORTSDIR}/devel/icu \
 		curl:${PORTSDIR}/ftp/curl \
@@ -29,7 +28,8 @@ USES=		bison gettext
 USE_GCC=	4.6
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk30 libxslt gtk20 ltverhack
+USE_GNOME=	gtk20 gtk30 introspection:build \
+		ltverhack libxslt
 USE_SQLITE=	yes
 USE_RUBY=	yes
 USE_PERL5=	yes

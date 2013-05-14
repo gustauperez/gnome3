@@ -18,7 +18,6 @@ COMMENT=	Gnome On-Screen keyboard
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	clutter-glx-1.0.0:${PORTSDIR}/graphics/clutter \
 		gee.2:${PORTSDIR}/devel/libgee06 \
 		xklavier.12:${PORTSDIR}/x11/libxklavier
@@ -30,8 +29,8 @@ USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=yes
 USE_PYTHON=	yes
 USE_XORG=	x11 xtst
-USE_GNOME=	intltool pygobject3 gtk30 intlhack gnomedocutils \
-		libxml2
+USE_GNOME=	intltool gnomedocutils gtk30 intlhack introspection:build \
+		libxml2 pygobject3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

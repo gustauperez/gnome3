@@ -9,8 +9,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GLib based implimentation of the GData protocol
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
+BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
 		gcr-3:${PORTSDIR}/security/gcr \
@@ -25,7 +24,7 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USES=		gettext pathfix pkgconfig
-USE_GNOME=	glib20 gnomeprefix intltool ltverhack
+USE_GNOME=	glib20 gnomeprefix intltool introspection:build ltverhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-ca-certs=${LOCALBASE}/share/certs/ca-root-nss.crt
