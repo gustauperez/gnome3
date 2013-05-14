@@ -55,7 +55,7 @@ DJVU_DESC=	DJVU support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVI} || ${PORT_OPTIONS:MT1LIB}
-USE_TEX=	latex
+USE_TEX=	yes
 
 CONFIGURE_ARGS+=	--enable-dvi
 PLIST_SUB+=		DVI=""
