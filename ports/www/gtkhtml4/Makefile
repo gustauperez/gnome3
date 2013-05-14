@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	gtkhtml
-PORTVERSION=	4.5.2
+PORTVERSION=	4.6.5
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -23,7 +23,7 @@ USES=		gettext pathfix
 USE_XZ=		yes
 USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage xproto
 USE_GMAKE=	yes
-USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack ltverhack
+USE_GNOME=	gnomeprefix gtk30 intlhack ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
