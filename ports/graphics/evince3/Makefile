@@ -30,7 +30,7 @@ INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USES=		pathfix gettext pkgconfig desktop-file-utils
-USE_GNOME=	gnomeprefix intlhack introspection:build ltasneededhack
+USE_GNOME=	intlhack gnomeprefix ltasneededhack introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-xps --enable-introspection
@@ -54,7 +54,7 @@ DJVU_DESC=	DJVU support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVI} || ${PORT_OPTIONS:MT1LIB}
-USE_TEX=	yes
+USE_TEX=	latex
 
 CONFIGURE_ARGS+=	--enable-dvi
 PLIST_SUB+=		DVI=""

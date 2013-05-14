@@ -1,82 +1,3 @@
-%%DATADIR%%/hand-open.png
-%%DATADIR%%/icons/hicolor/16x16/actions/object-rotate-left.png
-%%DATADIR%%/icons/hicolor/16x16/actions/object-rotate-right.png
-%%DATADIR%%/icons/hicolor/16x16/actions/view-page-continuous.png
-%%DATADIR%%/icons/hicolor/16x16/actions/view-page-facing.png
-%%DATADIR%%/icons/hicolor/16x16/actions/zoom-fit-height.png
-%%DATADIR%%/icons/hicolor/16x16/actions/zoom-fit-width.png
-%%DATADIR%%/icons/hicolor/16x16/actions/zoom.png
-%%DATADIR%%/icons/hicolor/16x16/mimetypes/x-office-presentation.png
-%%DATADIR%%/icons/hicolor/22x22/actions/eye.png
-%%DATADIR%%/icons/hicolor/22x22/actions/object-rotate-left.png
-%%DATADIR%%/icons/hicolor/22x22/actions/object-rotate-right.png
-%%DATADIR%%/icons/hicolor/22x22/actions/view-page-continuous.png
-%%DATADIR%%/icons/hicolor/22x22/actions/view-page-facing.png
-%%DATADIR%%/icons/hicolor/22x22/actions/zoom-fit-page.png
-%%DATADIR%%/icons/hicolor/22x22/actions/zoom-fit-width.png
-%%DATADIR%%/icons/hicolor/22x22/actions/zoom.png
-%%DATADIR%%/icons/hicolor/22x22/mimetypes/x-office-presentation.png
-%%DATADIR%%/icons/hicolor/24x24/actions/object-rotate-left.png
-%%DATADIR%%/icons/hicolor/24x24/actions/object-rotate-right.png
-%%DATADIR%%/icons/hicolor/24x24/actions/stock_filters-invert.png
-%%DATADIR%%/icons/hicolor/24x24/actions/view-page-continuous.png
-%%DATADIR%%/icons/hicolor/24x24/actions/view-page-facing.png
-%%DATADIR%%/icons/hicolor/24x24/actions/zoom-fit-height.png
-%%DATADIR%%/icons/hicolor/24x24/actions/zoom-fit-width.png
-%%DATADIR%%/icons/hicolor/24x24/actions/zoom.png
-%%DATADIR%%/icons/hicolor/24x24/mimetypes/x-office-presentation.png
-%%DATADIR%%/icons/hicolor/32x32/actions/object-rotate-left.png
-%%DATADIR%%/icons/hicolor/32x32/actions/object-rotate-right.png
-%%DATADIR%%/icons/hicolor/32x32/actions/view-page-continuous.png
-%%DATADIR%%/icons/hicolor/32x32/actions/view-page-facing.png
-%%DATADIR%%/icons/hicolor/32x32/mimetypes/x-office-presentation.png
-%%DATADIR%%/icons/hicolor/48x48/actions/close.png
-%%DATADIR%%/icons/hicolor/48x48/actions/resize-se.png
-%%DATADIR%%/icons/hicolor/48x48/actions/resize-sw.png
-%%DATADIR%%/icons/hicolor/48x48/actions/view-page-continuous.png
-%%DATADIR%%/icons/hicolor/48x48/actions/view-page-facing.png
-%%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-left.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
-%%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
-%%DOCSDIR%%/EggFindBar.html
-%%DOCSDIR%%/EvFileMonitor.html
-%%DOCSDIR%%/EvHistory.html
-%%DOCSDIR%%/EvMessageArea.html
-%%DOCSDIR%%/EvNavigationAction.html
-%%DOCSDIR%%/EvNavigationActionWidget.html
-%%DOCSDIR%%/EvOpenRecentAction.html
-%%DOCSDIR%%/EvPageAction.html
-%%DOCSDIR%%/EvPageActionWidget.html
-%%DOCSDIR%%/EvPasswordView.html
-%%DOCSDIR%%/EvProgressMessageArea.html
-%%DOCSDIR%%/EvSidebar.html
-%%DOCSDIR%%/EvSidebarAttachments.html
-%%DOCSDIR%%/EvSidebarLayers.html
-%%DOCSDIR%%/EvSidebarLinks.html
-%%DOCSDIR%%/EvSidebarPage.html
-%%DOCSDIR%%/EvSidebarThumbnails.html
-%%DOCSDIR%%/EvWindow.html
-%%DOCSDIR%%/api-index-full.html
-%%DOCSDIR%%/evince-ev-application.html
-%%DOCSDIR%%/evince-ev-keyring.html
-%%DOCSDIR%%/evince-ev-media-player-keys.html
-%%DOCSDIR%%/evince-ev-metadata.html
-%%DOCSDIR%%/evince-ev-properties-dialog.html
-%%DOCSDIR%%/evince-ev-properties-fonts.html
-%%DOCSDIR%%/evince-ev-properties-license.html
-%%DOCSDIR%%/evince-ev-utils.html
-%%DOCSDIR%%/evince-ev-window-title.html
-%%DOCSDIR%%/evince-frontend.html
-%%DOCSDIR%%/evince.devhelp2
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/licence.html
-%%DOCSDIR%%/object-tree.html
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
 bin/evince
 bin/evince-previewer
 bin/evince-thumbnailer
@@ -127,18 +48,18 @@ include/evince/%%VERSION%%/libview/ev-stock-icons.h
 include/evince/%%VERSION%%/libview/ev-view-presentation.h
 include/evince/%%VERSION%%/libview/ev-view-type-builtins.h
 include/evince/%%VERSION%%/libview/ev-view.h
-lib/evince/4/backends/comicsdocument.evince-backend
-lib/evince/4/backends/djvudocument.evince-backend
-lib/evince/4/backends/dvidocument.evince-backend
-lib/evince/4/backends/libcomicsdocument.a
-lib/evince/4/backends/libcomicsdocument.la
-lib/evince/4/backends/libcomicsdocument.so
-lib/evince/4/backends/libdjvudocument.a
-lib/evince/4/backends/libdjvudocument.la
-lib/evince/4/backends/libdjvudocument.so
-lib/evince/4/backends/libdvidocument.a
-lib/evince/4/backends/libdvidocument.la
-lib/evince/4/backends/libdvidocument.so
+%%COMICS%%lib/evince/4/backends/comicsdocument.evince-backend
+%%DJVU%%lib/evince/4/backends/djvudocument.evince-backend
+%%DVI%%lib/evince/4/backends/dvidocument.evince-backend
+%%COMICS%%lib/evince/4/backends/libcomicsdocument.a
+%%COMICS%%lib/evince/4/backends/libcomicsdocument.la
+%%COMICS%%lib/evince/4/backends/libcomicsdocument.so
+%%DJVU%%lib/evince/4/backends/libdjvudocument.a
+%%DJVU%%lib/evince/4/backends/libdjvudocument.la
+%%DJVU%%lib/evince/4/backends/libdjvudocument.so
+%%DVI%%lib/evince/4/backends/libdvidocument.a
+%%DVI%%lib/evince/4/backends/libdvidocument.la
+%%DVI%%lib/evince/4/backends/libdvidocument.so
 lib/evince/4/backends/libpdfdocument.a
 lib/evince/4/backends/libpdfdocument.la
 lib/evince/4/backends/libpdfdocument.so
@@ -161,15 +82,54 @@ lib/libevview3.a
 lib/libevview3.la
 lib/libevview3.so
 lib/libevview3.so.3
-lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.a
-lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.la
-lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.so
+%%NAUTILUS%%lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.a
+%%NAUTILUS%%lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.la
+%%NAUTILUS%%lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.so
 libdata/pkgconfig/evince-document-%%VERSION%%.pc
 libdata/pkgconfig/evince-view-%%VERSION%%.pc
 libexec/evinced
 share/GConf/gsettings/evince.convert
 share/applications/evince.desktop
 share/dbus-1/services/org.gnome.evince.Daemon.service
+%%DOCSDIR%%/EggFindBar.html
+%%DOCSDIR%%/EvFileMonitor.html
+%%DOCSDIR%%/EvHistory.html
+%%DOCSDIR%%/EvMessageArea.html
+%%DOCSDIR%%/EvNavigationAction.html
+%%DOCSDIR%%/EvNavigationActionWidget.html
+%%DOCSDIR%%/EvOpenRecentAction.html
+%%DOCSDIR%%/EvPageAction.html
+%%DOCSDIR%%/EvPageActionWidget.html
+%%DOCSDIR%%/EvPasswordView.html
+%%DOCSDIR%%/EvProgressMessageArea.html
+%%DOCSDIR%%/EvSidebar.html
+%%DOCSDIR%%/EvSidebarAttachments.html
+%%DOCSDIR%%/EvSidebarLayers.html
+%%DOCSDIR%%/EvSidebarLinks.html
+%%DOCSDIR%%/EvSidebarPage.html
+%%DOCSDIR%%/EvSidebarThumbnails.html
+%%DOCSDIR%%/EvWindow.html
+%%DOCSDIR%%/api-index-full.html
+%%DOCSDIR%%/evince-ev-application.html
+%%DOCSDIR%%/evince-ev-keyring.html
+%%DOCSDIR%%/evince-ev-media-player-keys.html
+%%DOCSDIR%%/evince-ev-metadata.html
+%%DOCSDIR%%/evince-ev-properties-dialog.html
+%%DOCSDIR%%/evince-ev-properties-fonts.html
+%%DOCSDIR%%/evince-ev-properties-license.html
+%%DOCSDIR%%/evince-ev-utils.html
+%%DOCSDIR%%/evince-ev-window-title.html
+%%DOCSDIR%%/evince-frontend.html
+%%DOCSDIR%%/evince.devhelp2
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/licence.html
+%%DOCSDIR%%/object-tree.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
 share/doc/libevdocument/EvAnnotation.html
 share/doc/libevdocument/EvAsyncRenderer.html
 share/doc/libevdocument/EvAttachment.html
@@ -244,6 +204,46 @@ share/doc/libevview/right.png
 share/doc/libevview/style.css
 share/doc/libevview/up.png
 share/doc/libevview/view-view.html
+%%DATADIR%%/hand-open.png
+%%DATADIR%%/icons/hicolor/16x16/actions/object-rotate-left.png
+%%DATADIR%%/icons/hicolor/16x16/actions/object-rotate-right.png
+%%DATADIR%%/icons/hicolor/16x16/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/16x16/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/16x16/actions/zoom-fit-height.png
+%%DATADIR%%/icons/hicolor/16x16/actions/zoom-fit-width.png
+%%DATADIR%%/icons/hicolor/16x16/actions/zoom.png
+%%DATADIR%%/icons/hicolor/16x16/mimetypes/x-office-presentation.png
+%%DATADIR%%/icons/hicolor/22x22/actions/eye.png
+%%DATADIR%%/icons/hicolor/22x22/actions/object-rotate-left.png
+%%DATADIR%%/icons/hicolor/22x22/actions/object-rotate-right.png
+%%DATADIR%%/icons/hicolor/22x22/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/22x22/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/22x22/actions/zoom-fit-page.png
+%%DATADIR%%/icons/hicolor/22x22/actions/zoom-fit-width.png
+%%DATADIR%%/icons/hicolor/22x22/actions/zoom.png
+%%DATADIR%%/icons/hicolor/22x22/mimetypes/x-office-presentation.png
+%%DATADIR%%/icons/hicolor/24x24/actions/object-rotate-left.png
+%%DATADIR%%/icons/hicolor/24x24/actions/object-rotate-right.png
+%%DATADIR%%/icons/hicolor/24x24/actions/stock_filters-invert.png
+%%DATADIR%%/icons/hicolor/24x24/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/24x24/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/24x24/actions/zoom-fit-height.png
+%%DATADIR%%/icons/hicolor/24x24/actions/zoom-fit-width.png
+%%DATADIR%%/icons/hicolor/24x24/actions/zoom.png
+%%DATADIR%%/icons/hicolor/24x24/mimetypes/x-office-presentation.png
+%%DATADIR%%/icons/hicolor/32x32/actions/object-rotate-left.png
+%%DATADIR%%/icons/hicolor/32x32/actions/object-rotate-right.png
+%%DATADIR%%/icons/hicolor/32x32/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/32x32/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/32x32/mimetypes/x-office-presentation.png
+%%DATADIR%%/icons/hicolor/48x48/actions/close.png
+%%DATADIR%%/icons/hicolor/48x48/actions/resize-se.png
+%%DATADIR%%/icons/hicolor/48x48/actions/resize-sw.png
+%%DATADIR%%/icons/hicolor/48x48/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/48x48/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-left.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
+%%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 share/gir-1.0/EvinceDocument-%%VERSION%%.gir
 share/gir-1.0/EvinceView-%%VERSION%%.gir
 share/help/C/evince/annotation-properties.page
@@ -2965,315 +2965,154 @@ share/locale/zh_HK/LC_MESSAGES/evince.mo
 share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/locale/zu/LC_MESSAGES/evince.mo
 share/thumbnailers/evince.thumbnailer
-@dirrm share/xmodmap
-@dirrm share/vfolders
-@dirrm share/vala/vapi
-@dirrm share/vala
 @dirrm share/thumbnailers
-@dirrm share/sounds
-@dirrm share/sgml/docbook/gnome-customization-0.1
-@dirrm share/sgml/docbook
-@dirrm share/pixmaps/splash
-@dirrm share/pixmaps/document-icons
-@dirrm share/omf
-@dirrm share/oaf
-@dirrm share/mime-info
-@dirrm share/mc/templates
-@dirrm share/mc
-@dirrm share/mate/help
-@dirrm share/mate-control-center/keybindings
-@dirrm share/mate-control-center
-@dirrm share/mate-2.0/ui
-@dirrm share/mate-2.0
-@dirrm share/mate
-@dirrm share/locale/zu/LC_MESSAGES
-@dirrm share/locale/zu
-@dirrm share/locale/zh_HK/LC_MESSAGES
-@dirrm share/locale/zh_HK
-@dirrm share/locale/ug/LC_MESSAGES
-@dirrm share/locale/ug
-@dirrm share/locale/te/LC_MESSAGES
-@dirrm share/locale/te
-@dirrm share/locale/sr@latin/LC_MESSAGES
-@dirrm share/locale/sr@latin
-@dirrm share/locale/si/LC_MESSAGES
-@dirrm share/locale/si
-@dirrm share/locale/rw/LC_MESSAGES
-@dirrm share/locale/rw
-@dirrm share/locale/ps/LC_MESSAGES
-@dirrm share/locale/ps
-@dirrm share/locale/oc/LC_MESSAGES
-@dirrm share/locale/oc
-@dirrm share/locale/nds/LC_MESSAGES
-@dirrm share/locale/nds
-@dirrm share/locale/my/LC_MESSAGES
-@dirrm share/locale/my
-@dirrm share/locale/mr/LC_MESSAGES
-@dirrm share/locale/mr
-@dirrm share/locale/mg/LC_MESSAGES
-@dirrm share/locale/mg
-@dirrm share/locale/mai/LC_MESSAGES
-@dirrm share/locale/mai
-@dirrm share/locale/ku/LC_MESSAGES
-@dirrm share/locale/ku
-@dirrm share/locale/ks/LC_MESSAGES
-@dirrm share/locale/ks
-@dirrm share/locale/km/LC_MESSAGES
-@dirrm share/locale/km
-@dirrm share/locale/kk/LC_MESSAGES
-@dirrm share/locale/kk
-@dirrm share/locale/en@shaw/LC_MESSAGES
-@dirrm share/locale/en@shaw
-@dirrm share/locale/dz/LC_MESSAGES
-@dirrm share/locale/dz
-@dirrm share/locale/ca@valencia/LC_MESSAGES
-@dirrm share/locale/ca@valencia
-@dirrm share/locale/bn_IN/LC_MESSAGES
-@dirrm share/locale/bn_IN
-@dirrm share/locale/be@latin/LC_MESSAGES
-@dirrm share/locale/be@latin
-@dirrm share/locale/ast/LC_MESSAGES
-@dirrm share/locale/ast
-@dirrm share/locale/as/LC_MESSAGES
-@dirrm share/locale/as
-@dirrm share/locale/an/LC_MESSAGES
-@dirrm share/locale/an
-@dirrm share/images
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/256x256/apps
-@dirrm share/icons/hicolor/256x256
-@dirrm share/icons/hicolor/24x24/apps
-@dirrm share/icons/hicolor/24x24
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/my/LC_MESSAGES
+@dirrmtry share/locale/my
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ks/LC_MESSAGES
+@dirrmtry share/locale/ks
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
 @dirrm share/help/zh_TW/evince/figures
 @dirrm share/help/zh_TW/evince
-@dirrm share/help/zh_TW
+@dirrmtry share/help/zh_TW
 @dirrm share/help/zh_HK/evince/figures
 @dirrm share/help/zh_HK/evince
-@dirrm share/help/zh_HK
+@dirrmtry share/help/zh_HK
 @dirrm share/help/zh_CN/evince/figures
 @dirrm share/help/zh_CN/evince
-@dirrm share/help/zh_CN
+@dirrmtry share/help/zh_CN
 @dirrm share/help/vi/evince/figures
 @dirrm share/help/vi/evince
-@dirrm share/help/vi
+@dirrmtry share/help/vi
 @dirrm share/help/uk/evince/figures
 @dirrm share/help/uk/evince
-@dirrm share/help/uk
+@dirrmtry share/help/uk
 @dirrm share/help/te/evince/figures
 @dirrm share/help/te/evince
-@dirrm share/help/te
+@dirrmtry share/help/te
 @dirrm share/help/sv/evince/figures
 @dirrm share/help/sv/evince
-@dirrm share/help/sv
+@dirrmtry share/help/sv
 @dirrm share/help/sr/evince/figures
 @dirrm share/help/sr/evince
-@dirrm share/help/sr
+@dirrmtry share/help/sr
 @dirrm share/help/sl/evince/figures
 @dirrm share/help/sl/evince
-@dirrm share/help/sl
+@dirrmtry share/help/sl
 @dirrm share/help/ru/evince/figures
 @dirrm share/help/ru/evince
-@dirrm share/help/ru
+@dirrmtry share/help/ru
 @dirrm share/help/pt_BR/evince/figures
 @dirrm share/help/pt_BR/evince
-@dirrm share/help/pt_BR
+@dirrmtry share/help/pt_BR
 @dirrm share/help/oc/evince/figures
 @dirrm share/help/oc/evince
-@dirrm share/help/oc
+@dirrmtry share/help/oc
 @dirrm share/help/nl/evince/figures
 @dirrm share/help/nl/evince
-@dirrm share/help/nl
+@dirrmtry share/help/nl
 @dirrm share/help/lv/evince/figures
 @dirrm share/help/lv/evince
-@dirrm share/help/lv
+@dirrmtry share/help/lv
 @dirrm share/help/ko/evince/figures
 @dirrm share/help/ko/evince
-@dirrm share/help/ko
+@dirrmtry share/help/ko
 @dirrm share/help/ja/evince/figures
 @dirrm share/help/ja/evince
-@dirrm share/help/ja
+@dirrmtry share/help/ja
 @dirrm share/help/it/evince/figures
 @dirrm share/help/it/evince
-@dirrm share/help/it
+@dirrmtry share/help/it
 @dirrm share/help/id/evince/figures
 @dirrm share/help/id/evince
-@dirrm share/help/id
+@dirrmtry share/help/id
 @dirrm share/help/hu/evince/figures
 @dirrm share/help/hu/evince
-@dirrm share/help/hu
+@dirrmtry share/help/hu
 @dirrm share/help/gl/evince/figures
 @dirrm share/help/gl/evince
-@dirrm share/help/gl
+@dirrmtry share/help/gl
 @dirrm share/help/fr/evince/figures
 @dirrm share/help/fr/evince
-@dirrm share/help/fr
+@dirrmtry share/help/fr
 @dirrm share/help/fi/evince/figures
 @dirrm share/help/fi/evince
-@dirrm share/help/fi
+@dirrmtry share/help/fi
 @dirrm share/help/eu/evince/figures
 @dirrm share/help/eu/evince
-@dirrm share/help/eu
+@dirrmtry share/help/eu
 @dirrm share/help/es/evince/figures
 @dirrm share/help/es/evince
-@dirrm share/help/es
+@dirrmtry share/help/es
 @dirrm share/help/en_GB/evince/figures
 @dirrm share/help/en_GB/evince
-@dirrm share/help/en_GB
+@dirrmtry share/help/en_GB
 @dirrm share/help/el/evince/figures
 @dirrm share/help/el/evince
-@dirrm share/help/el
+@dirrmtry share/help/el
 @dirrm share/help/de/evince/figures
 @dirrm share/help/de/evince
-@dirrm share/help/de
+@dirrmtry share/help/de
 @dirrm share/help/da/evince/figures
 @dirrm share/help/da/evince
-@dirrm share/help/da
+@dirrmtry share/help/da
 @dirrm share/help/cs/evince/figures
 @dirrm share/help/cs/evince
-@dirrm share/help/cs
+@dirrmtry share/help/cs
 @dirrm share/help/ca/evince/figures
 @dirrm share/help/ca/evince
-@dirrm share/help/ca
+@dirrmtry share/help/ca
 @dirrm share/help/bg/evince/figures
 @dirrm share/help/bg/evince
-@dirrm share/help/bg
+@dirrmtry share/help/bg
 @dirrm share/help/C/evince/figures
 @dirrm share/help/C/evince
-@dirrm share/help/C
-@dirrm share/help
-@dirrm share/gnome/wm-properties
-@dirrm share/gnome/ui
-@dirrm share/gnome/panel
-@dirrm share/gnome/help/lgpl/C
-@dirrm share/gnome/help/lgpl
-@dirrm share/gnome/help/gpl/C
-@dirrm share/gnome/help/gpl
-@dirrm share/gnome/help/fdl/C
-@dirrm share/gnome/help/fdl
-@dirrm share/gnome/help
-@dirrm share/gnome/autostart
-@dirrm share/gnome/apps/Utilities
-@dirrm share/gnome/apps/System
-@dirrm share/gnome/apps/Settings/Session
-@dirrm share/gnome/apps/Settings/Peripherals
-@dirrm share/gnome/apps/Settings/Documents
-@dirrm share/gnome/apps/Settings/Desktop
-@dirrm share/gnome/apps/Settings
-@dirrm share/gnome/apps/Multimedia
-@dirrm share/gnome/apps/Internet
-@dirrm share/gnome/apps/Graphics
-@dirrm share/gnome/apps/Games
-@dirrm share/gnome/apps/Development
-@dirrm share/gnome/apps/Audio
-@dirrm share/gnome/apps/Applications
-@dirrm share/gnome/apps
-@dirrm share/gnome-settings-daemon-%%VERSION%%
-@dirrm share/gnome-control-center/keybindings
-@dirrm share/gnome-control-center
-@dirrm share/gnome-about
-@dirrm share/gnome-2.0/ui
-@dirrm share/gnome-2.0
-@dirrm share/gnome
-@dirrm share/glib-2.0/schemas
-@dirrm share/glib-2.0
-@dirrm share/gir-1.0
-@dirrm share/doc/libgda
-@dirrm share/doc/libevview
-@dirrm share/doc/libevdocument
-@dirrm share/dbus-1/services
-@dirrm share/dbus-1
-@dirrm share/control-center/keybindings/gtk-modules
-@dirrm share/control-center/keybindings
-@dirrm share/control-center/capplets
-@dirrm share/control-center/Session
-@dirrm share/control-center/Peripherals
-@dirrm share/control-center/Documents
-@dirrm share/control-center/Desktop
-@dirrm share/control-center-2.0/capplets
-@dirrm share/control-center-2.0
-@dirrm share/control-center
-@dirrm share/capplets
-@dirrm share/applications
-@dirrm share/application-registry
-@dirrm share/applets/Utility
-@dirrm share/applets/Network
-@dirrm share/applets/Multimedia
-@dirrm share/applets/Monitors
-@dirrm share/applets/Clocks
-@dirrm share/applets/Amusements
-@dirrm share/applets
-@dirrm share/MateConf/gsettings
-@dirrm share/MateConf
-@dirrm share/GConf/gsettings
-@dirrm share/GConf
-@dirrm libdata/matecomponent/servers
-@dirrm libdata/matecomponent
-@dirrm libdata/bonobo/servers
-@dirrm libdata/bonobo
-@dirrm lib/vfs/modules
-@dirrm lib/vfs
-@dirrm lib/nautilus/extensions-%%VERSION%%
-@dirrm lib/nautilus
-@dirrm lib/matecomponent/monikers
-@dirrm lib/matecomponent-2.0/samples
-@dirrm lib/matecomponent-2.0
-@dirrm lib/matecomponent
-@dirrm lib/mate-vfs-2.0/modules
-@dirrm lib/mate-vfs-2.0
-@dirrm lib/gnome-vfs-2.0/modules
-@dirrm lib/gnome-vfs-2.0
-@dirrm lib/girepository-1.0
-@dirrm lib/evince/4/backends
-@dirrm lib/evince/4
-@dirrm lib/evince
-@dirrm lib/bonobo/plugin
-@dirrm lib/bonobo/monikers
-@dirrm lib/bonobo
-@dirrm lib/GConf
-@dirrm include/gnome-1.0
-@dirrm include/gdkcardimage
-@dirrm include/gconf
-@dirrm include/evince/%%VERSION%%/libview
-@dirrm include/evince/%%VERSION%%/libdocument
-@dirrm include/evince/%%VERSION%%
-@dirrm include/evince
-@dirrm etc/xdg/autostart
-@dirrm etc/xdg
-@dirrm etc/vfs/modules
-@dirrm etc/vfs
-@dirrm etc/sound/events
-@dirrm etc/sound
-@dirrm etc/mateconf/schemas
-@dirrm etc/mateconf/mateconf.xml.system
-@dirrm etc/mateconf/mateconf.xml.mandatory
-@dirrm etc/mateconf/mateconf.xml.defaults
-@dirrm etc/mateconf
-@dirrm etc/gnome/config
-@dirrm etc/gnome-vfs-2.0/modules
-@dirrm etc/gnome-vfs-2.0
-@dirrm etc/gnome
-@dirrm etc/gconf/schemas
-@dirrm etc/gconf/gconf.xml.system
-@dirrm etc/gconf/gconf.xml.mandatory
-@dirrm etc/gconf/gconf.xml.defaults
-@dirrm etc/gconf
-@dirrm etc/dconf/profile
-@dirrm etc/dconf/db
-@dirrm etc/dconf
-@dirrm etc/X11/sysconfig
-@dirrm etc/X11/starthere
-@dirrm etc/X11/serverconfig
-@dirrm etc/X11
-@dirrm etc/CORBA/servers
-@dirrm etc/CORBA
-@dirrm %%DOCSDIR%%
+@dirrmtry share/help/C
+@dirrmtry share/help
 @dirrm %%DATADIR%%/icons/hicolor/scalable/mimetypes
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable
@@ -3294,3 +3133,14 @@ share/thumbnailers/evince.thumbnailer
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrm share/doc/libevview
+@dirrm share/doc/libevdocument
+@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrm lib/evince/4/backends
+@dirrm lib/evince/4
+@dirrm lib/evince
+@dirrm include/evince/%%VERSION%%/libview
+@dirrm include/evince/%%VERSION%%/libdocument
+@dirrm include/evince/%%VERSION%%
+@dirrm include/evince
