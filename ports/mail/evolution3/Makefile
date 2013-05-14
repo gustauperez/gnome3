@@ -15,7 +15,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss \
 		gcr-3:${PORTSDIR}/security/gcr \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
-		canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
+		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
 		notify:${PORTSDIR}/devel/libnotify
 
 CONFLICTS=	evolution-2.[0-9]*
@@ -23,18 +23,15 @@ CONFLICTS=	evolution-2.[0-9]*
 LATEST_LINK=	evolution3
 USE_XZ=		yes
 USE_GMAKE=	yes
-USES=		bison gettext pathfix
-USE_GNOME=	dconf desktopfileutils evolutiondataserver3 gnomedesktop3 gnomedocutils \
-		gnomeprefix gtkhtml4 intlhack ltasneededhack
+USES=		bison gettext pathfix desktop-file-utils
+USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 gtkhtml4 \
+		gnomedocutils ltasneededhack gnomedesktop3
 USE_AUTOTOOLS=	libtool
-USE_GSTREAMER=	yes
-INSTALLS_OMF=	yes
+USE_GSTREAMER1=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/evolution/%%VERSION%%
 CONFIGURE_ARGS=	--enable-nss=yes \
-		--enable-mono=no \
-		--disable-nm \
 		--with-sub-version=" FreeBSD GNOME Team Port"
 # gtkimageview needs to get a gtk3 release first.
 CONFIGURE_ARGS+=--disable-image-inline
@@ -64,25 +61,27 @@ EVO_VERSION=	3.6
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
-OPTIONS=	LDAP "Enable LDAP support" on \
-		WEATHER "Enable weather calendar backend" on \
-		CANBERRA "Enable canberra plugin" on \
-		SPAMASSASSIN "Enable SpamAssassin spam filtering" off
-#		PST "Enable Outlook .pst importer" off \
+OPTIONS_DEFINE=	LDAP WEATHER CANBERRA SPAMASSASSIN PST
+OPTIONS_DEFAULT=LDAP WEATHER CANBERRA
+CANBERRA_DESC=	Canberra theme audio plugin
+WEATHER_DESC=	Weather calendar backend
+SPAMASSASSIN_DESC=	SpamAssassin spam filtering
+PST_DESC=	Outlook .pst importer
+MAPS_DESC=	Contact maps
 
 .include <bsd.port.options.mk>
 
 USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
 
-.if !defined(WITHOUT_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-openldap=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-openldap=no
 .endif
 
-.if defined(WITH_WEATHER)
-LIB_DEPENDS+=	gweather-3.1:${PORTSDIR}/net/libgweather3
+.if ${PORT_OPTIONS:MWEATHER}
+LIB_DEPENDS+=	gweather-3:${PORTSDIR}/net/libgweather3
 CONFIGURE_ARGS+=--enable-weather
 PLIST_SUB+=	WEATHER=""
 .else
@@ -90,7 +89,7 @@ CONFIGURE_ARGS+=--disable-weather
 PLIST_SUB+=	WEATHER="@comment "
 .endif
 
-.if defined(WITH_SPAMASSASSIN)
+.if ${PORT_OPTIONS:MSPAMASSASSIN}
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
@@ -105,8 +104,8 @@ CONFIGURE_ARGS+=	--with-krb5=/usr
 KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .endif
 
-.if defined(WITH_CANBERRA)
-LIB_DEPENDS+=	canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3
+.if ${PORT_OPTIONS:MCANBERRA}
+LIB_DEPENDS+=	canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3
 CONFIGURE_ARGS+=--enable-canberra=yes
 PLIST_SUB+=	CANBERRA=""
 .else
@@ -114,15 +113,24 @@ CONFIGURE_ARGS+=--enable-canberra=no
 PLIST_SUB+=	CANBERRA="@comment "
 .endif
 
-# libpst doesn't install a .pc file, evo configure needs that
-#.if defined(WITH_PST)
-#CONFIGURE_ARGS+=	--enable-pst-import
-#BUILD_DEPENDS+=		lspst:${PORTSDIR}/mail/libpst
-#RUN_DEPENDS+=		lspst:${PORTSDIR}/mail/libpst
-#PLIST_SUB+=		PST=""
-#.else
+.if ${PORT_OPTIONS:MPST}
+CONFIGURE_ARGS+=	--enable-pst-import
+BUILD_DEPENDS+=		libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
+RUN_DEPENDS+=		libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
+PLIST_SUB+=		PST=""
+.else
 CONFIGURE_ARGS+=	--disable-pst-import
 PLIST_SUB+=		PST="@comment "
+.endif
+
+#.if ${PORT_OPTIONS:MMAPS}
+# needs geoclue
+#LIB_DEPENDS+=		champlain-0.12:${PORTSDIR}/graphics/libchamplain
+#CONFIGURE_ARGS+=	--enable-contact-maps
+#PLIST_SUB+=		MAPS=""
+#.else
+CONFIGURE_ARGS+=	--disable-contact-maps
+PLIST_SUB+=		MAPS="@comment "
 #.endif
 
 post-patch:

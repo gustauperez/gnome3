@@ -604,7 +604,6 @@ lib/evolution/%%VERSION%%/modules/module-vcard-inline.so
 lib/evolution/%%VERSION%%/modules/module-web-inspector.a
 lib/evolution/%%VERSION%%/modules/module-web-inspector.la
 lib/evolution/%%VERSION%%/modules/module-web-inspector.so
-
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-dbx-import.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-dbx-import.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-dbx-import.so
@@ -641,6 +640,9 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-mark-all-read.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.so
+%%PST%%lib/evolution/%%VERSION%%/plugins/liborg-gnome-pst-import.a
+%%PST%%lib/evolution/%%VERSION%%/plugins/liborg-gnome-pst-import.la
+%%PST%%lib/evolution/%%VERSION%%/plugins/liborg-gnome-pst-import.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-publish-calendar.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-publish-calendar.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-publish-calendar.so
@@ -662,6 +664,7 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-mail-to-task.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mailing-list-actions.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mark-all-read.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-prefer-plain.eplug
+%%PST%%lib/evolution/%%VERSION%%/plugins/org-gnome-pst-import.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-publish-calendar.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-save-calendar.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-templates.eplug
@@ -748,6 +751,7 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/errors/addressbook.error
 %%DATADIR%%/%%VERSION%%/errors/calendar.error
 %%DATADIR%%/%%VERSION%%/errors/e-system.error
+%%DATADIR%%/%%VERSION%%/errors/evolution-mdn.error
 %%DATADIR%%/%%VERSION%%/errors/evolution-offline-alert.error
 %%DATADIR%%/%%VERSION%%/errors/filter.error
 %%DATADIR%%/%%VERSION%%/errors/mail-composer.error
@@ -5180,7 +5184,6 @@ share/locale/xh/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
-%%DATADIR%%/%%VERSION%%/errors/evolution-mdn.error
 share/GConf/gsettings/evolution.convert
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
@@ -5220,6 +5223,58 @@ share/GConf/gsettings/evolution.convert
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm share/help/zh_CN/evolution/figures
+@dirrm share/help/zh_CN/evolution
+@dirrmtry share/help/zh_CN
+@dirrm share/help/te/evolution/figures
+@dirrm share/help/te/evolution
+@dirrmtry share/help/te
+@dirrm share/help/sv/evolution/figures
+@dirrm share/help/sv/evolution
+@dirrmtry share/help/sv
+@dirrm share/help/sl/evolution/figures
+@dirrm share/help/sl/evolution
+@dirrmtry share/help/sl
+@dirrm share/help/ru/evolution/figures
+@dirrm share/help/ru/evolution
+@dirrmtry share/help/ru
+@dirrm share/help/oc/evolution/figures
+@dirrm share/help/oc/evolution
+@dirrmtry share/help/oc
+@dirrm share/help/mk/evolution/figures
+@dirrm share/help/mk/evolution
+@dirrmtry share/help/mk
+@dirrm share/help/hu/evolution/figures
+@dirrm share/help/hu/evolution
+@dirrmtry share/help/hu
+@dirrm share/help/gl/evolution/figures
+@dirrm share/help/gl/evolution
+@dirrmtry share/help/gl
+@dirrm share/help/fr/evolution/figures
+@dirrm share/help/fr/evolution
+@dirrmtry share/help/fr
+@dirrm share/help/eu/evolution/figures
+@dirrm share/help/eu/evolution
+@dirrmtry share/help/eu
+@dirrm share/help/es/evolution/figures
+@dirrm share/help/es/evolution
+@dirrmtry share/help/es
+@dirrm share/help/en_GB/evolution/figures
+@dirrm share/help/en_GB/evolution
+@dirrmtry share/help/en_GB
+@dirrm share/help/el/evolution/figures
+@dirrm share/help/el/evolution
+@dirrmtry share/help/el
+@dirrm share/help/de/evolution/figures
+@dirrm share/help/de/evolution
+@dirrmtry share/help/de
+@dirrm share/help/cs/evolution/figures
+@dirrm share/help/cs/evolution
+@dirrmtry share/help/cs
+@dirrm share/help/C/evolution/figures
+@dirrm share/help/C/evolution
+@dirrmtry share/help/C
+@dirrmtry share/help
 @dirrm %%DATADIR%%/%%VERSION%%/views/tasks
 @dirrm %%DATADIR%%/%%VERSION%%/views/memos
 @dirrm %%DATADIR%%/%%VERSION%%/views/mail
@@ -5258,44 +5313,6 @@ share/GConf/gsettings/evolution.convert
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor
 @dirrm %%DATADIR%%/%%VERSION%%/icons
-@dirrm share/help/zh_CN/evolution/figures
-@dirrm share/help/zh_CN/evolution
-@dirrm share/help/te/evolution/figures
-@dirrm share/help/te/evolution
-@dirrm share/help/te
-@dirrm share/help/sv/evolution/figures
-@dirrm share/help/sv/evolution
-@dirrm share/help/sl/evolution/figures
-@dirrm share/help/sl/evolution
-@dirrm share/help/ru/evolution/figures
-@dirrm share/help/ru/evolution
-@dirrm share/help/ru
-@dirrm share/help/oc/evolution/figures
-@dirrm share/help/oc/evolution
-@dirrm share/help/mk/evolution/figures
-@dirrm share/help/mk/evolution
-@dirrm share/help/mk
-@dirrm share/help/hu/evolution/figures
-@dirrm share/help/hu/evolution
-@dirrm share/help/gl/evolution/figures
-@dirrm share/help/gl/evolution
-@dirrm share/help/fr/evolution/figures
-@dirrm share/help/fr/evolution
-@dirrm share/help/eu/evolution/figures
-@dirrm share/help/eu/evolution
-@dirrm share/help/es/evolution/figures
-@dirrm share/help/es/evolution
-@dirrm share/help/en_GB/evolution/figures
-@dirrm share/help/en_GB/evolution
-@dirrm share/help/en_GB
-@dirrm share/help/el/evolution/figures
-@dirrm share/help/el/evolution
-@dirrm share/help/de/evolution/figures
-@dirrm share/help/de/evolution
-@dirrm share/help/cs/evolution/figures
-@dirrm share/help/cs/evolution
-@dirrm share/help/C/evolution/figures
-@dirrm share/help/C/evolution
 @dirrm %%DATADIR%%/%%VERSION%%/help/quickref/sv
 @dirrm %%DATADIR%%/%%VERSION%%/help/quickref/sq
 @dirrm %%DATADIR%%/%%VERSION%%/help/quickref/pt
@@ -5411,4 +5428,3 @@ share/GConf/gsettings/evolution.convert
 @dirrm include/evolution-%%VERSION%%/addressbook/gui
 @dirrm include/evolution-%%VERSION%%/addressbook
 @dirrm include/evolution-%%VERSION%%
-@dirrm %%DATADIR%%/%%VERSION%%/theme
