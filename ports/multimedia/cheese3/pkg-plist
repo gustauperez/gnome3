@@ -10,10 +10,10 @@ include/cheese/cheese.h
 lib/girepository-1.0/Cheese-3.0.typelib
 lib/libcheese-gtk.la
 lib/libcheese-gtk.so
+lib/libcheese-gtk.so.23
 lib/libcheese.la
 lib/libcheese.so
 lib/libcheese.so.7
-lib/libcheese-gtk.so.23
 libdata/pkgconfig/cheese-gtk.pc
 libdata/pkgconfig/cheese.pc
 share/applications/cheese.desktop
@@ -833,6 +833,7 @@ share/locale/zu/LC_MESSAGES/cheese.mo
 @dirrmtry share/icons/hicolor/256x256
 @dirrmtry share/help/zh_CN/cheese/figures
 @dirrmtry share/help/zh_CN/cheese
+@dirrmtry share/help/zh_CN
 @dirrmtry share/help/th/cheese/figures
 @dirrmtry share/help/th/cheese
 @dirrmtry share/help/th
@@ -841,17 +842,22 @@ share/locale/zu/LC_MESSAGES/cheese.mo
 @dirrmtry share/help/te
 @dirrmtry share/help/sv/cheese/figures
 @dirrmtry share/help/sv/cheese
+@dirrmtry share/help/sv
 @dirrmtry share/help/sl/cheese/figures
 @dirrmtry share/help/sl/cheese
+@dirrmtry share/help/sl
 @dirrmtry share/help/ru/cheese/figures
 @dirrmtry share/help/ru/cheese
 @dirrmtry share/help/ru
 @dirrmtry share/help/pt_BR/cheese/figures
 @dirrmtry share/help/pt_BR/cheese
+@dirrmtry share/help/pt_BR
 @dirrmtry share/help/pa/cheese/figures
 @dirrmtry share/help/pa/cheese
+@dirrmtry share/help/pa
 @dirrmtry share/help/oc/cheese/figures
 @dirrmtry share/help/oc/cheese
+@dirrmtry share/help/oc
 @dirrmtry share/help/nl/cheese/figures
 @dirrmtry share/help/nl/cheese
 @dirrmtry share/help/nl
@@ -860,6 +866,7 @@ share/locale/zu/LC_MESSAGES/cheese.mo
 @dirrmtry share/help/lv
 @dirrmtry share/help/ko/cheese/figures
 @dirrmtry share/help/ko/cheese
+@dirrmtry share/help/ko
 @dirrmtry share/help/it/cheese/figures
 @dirrmtry share/help/it/cheese
 @dirrmtry share/help/it
@@ -868,29 +875,40 @@ share/locale/zu/LC_MESSAGES/cheese.mo
 @dirrmtry share/help/id
 @dirrmtry share/help/hu/cheese/figures
 @dirrmtry share/help/hu/cheese
+@dirrmtry share/help/hu
 @dirrmtry share/help/gl/cheese/figures
 @dirrmtry share/help/gl/cheese
+@dirrmtry share/help/gl
 @dirrmtry share/help/fr/cheese/figures
 @dirrmtry share/help/fr/cheese
+@dirrmtry share/help/fr
 @dirrmtry share/help/fi/cheese/figures
 @dirrmtry share/help/fi/cheese
+@dirrmtry share/help/fi
 @dirrmtry share/help/es/cheese/figures
 @dirrmtry share/help/es/cheese
+@dirrmtry share/help/es
 @dirrmtry share/help/en_GB/cheese/figures
 @dirrmtry share/help/en_GB/cheese
 @dirrmtry share/help/en_GB
 @dirrmtry share/help/el/cheese/figures
 @dirrmtry share/help/el/cheese
+@dirrmtry share/help/el
 @dirrmtry share/help/de/cheese/figures
 @dirrmtry share/help/de/cheese
+@dirrmtry share/help/de
 @dirrmtry share/help/cs/cheese/figures
 @dirrmtry share/help/cs/cheese
+@dirrmtry share/help/cs
 @dirrmtry share/help/ca/cheese/figures
 @dirrmtry share/help/ca/cheese
+@dirrmtry share/help/ca
 @dirrmtry share/help/C/cheese/figures
 @dirrmtry share/help/C/cheese
-@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%
+@dirrmtry share/help/C
+@dirrmtry share/help
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm include/cheese

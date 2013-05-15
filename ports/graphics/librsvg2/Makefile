@@ -17,11 +17,12 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 RUN_DEPENDS=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
 
 USE_XZ=		yes
-USES=		gettext introspection:build pathfix
+USES=		gettext pathfix
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehier gnomeprefix gtk20 libgsf ltverhack
+USE_GNOME=	gnomehier gnomeprefix gtk20 introspection:build \
+		libgsf ltverhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-svgz \

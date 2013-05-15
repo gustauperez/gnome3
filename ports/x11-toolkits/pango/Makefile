@@ -22,15 +22,14 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		harfbuzz:${PORTSDIR}/print/harfbuzz \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
-		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT} \
-		${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
+		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
 
 USES=		gettext pathfix pkgconfig
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	glib20 introspection:build ltverhack referencehack
+USE_GNOME=	glib20 introspection ltverhack referencehack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

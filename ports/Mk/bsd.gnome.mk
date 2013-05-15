@@ -68,7 +68,7 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #
 
 # non-version specific components
-_USE_GNOME_ALL= esound intlhack intltool ltasneededhack lthack ltverhack \
+_USE_GNOME_ALL= esound intlhack intltool introspection ltasneededhack lthack ltverhack \
 		gnomehack referencehack gnomehier gnomemimedata gnomeprefix \
 		pkgconfig
 

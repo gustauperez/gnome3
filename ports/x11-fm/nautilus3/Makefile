@@ -27,7 +27,7 @@ INSTALLS_ICONS=	yes
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils gnomedesktop3 gnomeprefix gvfs intlhack introspection:build \
-		libxml2 ltasneededhack ltverhack \
+		libxml2 ltasneededhack ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

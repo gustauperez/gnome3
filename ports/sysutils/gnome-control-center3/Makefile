@@ -75,7 +75,6 @@ CONFIGURE_ARGS+=--disable-cups
 
 .if ${OSVERSION}>=800000 && (defined(WITH_CHEESE) && (${ARCH}=="i386" || ${ARCH}=="amd64"))
 CONFIGURE_ARGS+=--with-cheese
-BUILD_DEPENDS+=	cheese>=3.0.1:${PORTSDIR}/multimedia/cheese3
 LIB_DEPENDS+=	cheese.7:${PORTSDIR}/multimedia/cheese3
 .else
 CONFIGURE_ARGS+=--without-cheese

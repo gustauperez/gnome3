@@ -28,8 +28,7 @@ USES=		bison gettext
 USE_GCC=	4.6
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk20 gtk30 introspection:build \
-		ltverhack libxslt
+USE_GNOME=	gtk30 introspection:build ltverhack libxslt
 USE_SQLITE=	yes
 USE_RUBY=	yes
 USE_PERL5=	yes

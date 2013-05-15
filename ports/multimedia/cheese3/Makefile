@@ -1,10 +1,5 @@
-# New ports collection makefile for:	cheese
-# Date created:				13 January 2008
-# Whom:					FreeBSD GNOME Team <gnome@FreeBSD.org>
-#
 # $FreeBSD$
 #   $MCom: ports/multimedia/cheese3/Makefile,v 1.17 2013/03/13 22:35:53 kwm Exp $
-#
 
 PORTNAME=	cheese
 PORTVERSION=	3.6.0
@@ -18,8 +13,7 @@ COMMENT=	A Photobooth-inspired app for taking pictures and videos from webcam
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat \
 		${LOCALBASE}/libdata/pkgconfig/gnome-video-effects.pc:${PORTSDIR}/graphics/gnome-video-effects \
 		vala>=0.14.0:${PORTSDIR}/lang/vala \
-		itstool:${PORTSDIR}/textproc/itstool \
-		xmllint:${PORTSDIR}/textproc/libxml2 \
+		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
 		hal:${PORTSDIR}/sysutils/hal \
 		gee.2:${PORTSDIR}/devel/libgee06 \
@@ -33,10 +27,11 @@ LATEST_LINK=	cheese3
 USE_XORG=	xxf86vm x11
 USE_XZ=		yes
 USE_GMAKE=	yes
+USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix intlhack introspection:build \
+		librsvg2 libxml2:build
 USES=		gettext pathfix pkgconfig
-USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix \
-		intlhack introspection:build librsvg2
-USE_GSTREAMER1=	core good bad ugly
+USE_GSTREAMER1=	bad good jpeg ogg theora v4l2
+INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
