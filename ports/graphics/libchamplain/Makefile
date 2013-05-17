@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libchamplain
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -23,7 +23,7 @@ USES=		pathfix
 USE_GNOME=	gnomehier gtk30 introspection:build ltverhack
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_SQLITE=	yes
+USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
