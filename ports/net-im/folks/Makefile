@@ -10,10 +10,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	library to aggregates people from multiple sources
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
-		${LOCALBASE}/libdata/pkgconfig/zeitgeist-1.0.pc:${PORTSDIR}/sysutils/libzeitgeist \
-		${LOCALBASE}/libdata/pkgconfig/gcr-3.pc:${PORTSDIR}/security/gcr
-LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee06 \
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
+LIB_DEPENDS=	gee-0.8.2:${PORTSDIR}/devel/libgee \
 		gcr:${PORTSDIR}/security/gcr \
 		zeitgeist-1.0:${PORTSDIR}/sysutils/libzeitgeist \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
