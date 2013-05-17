@@ -1,6 +1,6 @@
 # Created by: ade, archie
 # $FreeBSD$
-#
+# $MCom$
 
 PORTNAME=	nautilus
 PORTVERSION=	3.6.3
@@ -23,7 +23,6 @@ CONFLICTS=	nautilus-2.[0-9]*
 
 USES=		gettext pathfix
 LATEST_LINK=	nautilus3
-INSTALLS_ICONS=	yes
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils gnomedesktop3 gnomeprefix gvfs intlhack introspection:build \
@@ -31,9 +30,9 @@ USE_GNOME=	desktopfileutils gnomedesktop3 gnomeprefix gvfs intlhack introspectio
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LIBS="-pthread"
 CONFIGURE_ARGS=	--enable-static --disable-packagekit --disable-tracker
-MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GLIB_SCHEMAS=	org.gnome.nautilus.gschema.xml
 
