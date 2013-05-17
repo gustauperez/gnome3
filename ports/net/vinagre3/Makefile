@@ -37,7 +37,7 @@ GLIB_SCHEMAS=	org.gnome.Vinagre.gschema.xml
 MAN1=		vinagre.1
 
 OPTIONS_DEFINE=	TELEPATHY RDP
-OPTIONS_DEFAULT=RDP
+OPTIONS_DEFAULT=TELEPATHY RDP
 
 TELEPATHY_DESC=	Enable telepathy integration
 RDP_DESC=	Enable MS Windows remote desktop support
