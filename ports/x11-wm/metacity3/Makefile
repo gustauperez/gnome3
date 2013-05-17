@@ -17,7 +17,7 @@ BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity3 \
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		gtop-2.0:${PORTSDIR}/devel/libgtop \
 		canberra-gtk:${PORTSDIR}/audio/libcanberra
-RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity3 \
+RUN_DEPENDS=	zenity=>3.0.0:${PORTSDIR}/x11/zenity3 \
 		gsettings-desktop-schemas>=3.3.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 CONFLICTS=	metacity-2.30.[0-9]*
@@ -32,7 +32,6 @@ USE_GNOME=	gnomeprefix gtk20 intlhack libxml2:build ltverhack
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GLIB_SCHEMAS=	org.gnome.metacity.gschema.xml
 
