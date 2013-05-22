@@ -22,6 +22,7 @@ USE_PKGCONFIG=	build
 USES=		pathfix
 USE_GNOME=	gnomehier gtk30 introspection:build ltverhack
 USE_AUTOTOOLS=	libtool
+USE_GL=		gl
 USE_GMAKE=	yes
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes

@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_PKGCONFIG=	build
 USES=		pathfix
 USE_GNOME=	gtk20 ltverhack:1 gnomehier
+USE_GL=		gl
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_SQLITE=	yes
