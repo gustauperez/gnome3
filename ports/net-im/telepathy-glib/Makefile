@@ -13,6 +13,8 @@ BUILD_DEPENDS=	vala-vapigen>=0.20.0:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 
+PORTSCOUT=	limitw:1,even
+
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
