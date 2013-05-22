@@ -14,14 +14,16 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Jabber Connection Manager for Telepathy Framework
 
 BUILD_DEPENDS=	telepathy-glib>=0.18.0:${PORTSDIR}/net-im/telepathy-glib \
+		libnice>0:${PORTSDIR}/net-im/libnice \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
-		nice:${PORTSDIR}/net-im/libnice \
+		nice:${PORTSDIR}/net-im/libnice-gst1 \
 		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		loudmouth-1:${PORTSDIR}/net-im/loudmouth
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+		libnice-gst1>0:${PORTSDIR}/net-im/libnice-gst1
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	${PTHREAD_LIBS}
