@@ -2,7 +2,7 @@
 # $FreeBSD: print/cups-base/Makefile 317220 2013-05-03 16:36:39Z ehaupt $
 
 PORTNAME=	cups
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.2
 DISTVERSIONSUFFIX=	-source
 PORTREVISION=	1
 CATEGORIES=	print
@@ -70,14 +70,16 @@ OPTIONS_DEFINE=	GNUTLS
 PORTREVISION=	1
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
-OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM LDAP DBUS LIBUSB XDG_OPEN GHOSTSCRIPT XPDF AVAHI MDNSRESPONDER
-OPTIONS_DEFAULT=	LIBPAPER GHOSTSCRIPT
+OPTIONS_DEFINE=		GNUTLS LIBPAPER PHP PYTHON PAM LDAP DBUS LIBUSB XDG_OPEN AVAHI MDNSRESPONDER
+#OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM LDAP DBUS LIBUSB XDG_OPEN GHOSTSCRIPT XPDF AVAHI MDNSRESPONDER
+#OPTIONS_DEFAULT=	LIBPAPER GHOSTSCRIPT
+OPTIONS_DEFAULT=	LIBPAPER
 NO_OPTIONS_SORT=	yes
 .endif
 
 LIBUSB_DESC=		USB support
-GHOSTSCRIPT_DESC=	Build pdftops with GHOSTSCRIPT
-XPDF_DESC=		Build pdftops with XPDF
+#GHOSTSCRIPT_DESC=	Build pdftops with GHOSTSCRIPT
+#XPDF_DESC=		Build pdftops with XPDF
 XDG_OPEN=		Build with XDG_OPEN as browser
 
 .include <bsd.port.options.mk>
@@ -98,7 +100,7 @@ LIB_DEPENDS+=	cups:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 # force build if old cups is installed.
 BUILD_DEPENDS+=	cups-client${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client
 COMMENT2=	Library cupsimage
-CONFIGURE_ARGS+=	--disable-pdftops
+#CONFIGURE_ARGS+=	--disable-pdftops
 INSTALL_WRKSRC=	${WRKSRC}/filter
 PLIST=		${MASTERDIR}/pkg-plist.image
 USE_LDCONFIG=	yes
@@ -147,21 +149,21 @@ CONFIGURE_ARGS+=	--without-php
 PLIST_SUB+=		PHP="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MGHOSTSCRIPT}
-.if ${PORT_OPTIONS:MXPDF}
-IGNORE=			you must select one and only one option to build pdftops
-.endif
-USE_GHOSTSCRIPT=	yes
-CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/gs
-PLIST_SUB+=		WITH_PDFTOPS=""
-.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MXPDF}
+#.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MGHOSTSCRIPT}
+#.if ${PORT_OPTIONS:MXPDF}
+#IGNORE=			you must select one and only one option to build pdftops
+#.endif
+#USE_GHOSTSCRIPT=	yes
+#CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/gs
+#PLIST_SUB+=		WITH_PDFTOPS=""
+#.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MXPDF}
 BUILD_DEPENDS+=		${CUPS_PDFTOPS}:${PORTSDIR}/graphics/xpdf
-RUN_DEPENDS+=		${CUPS_PDFTOPS}:${PORTSDIR}/graphics/xpdf
-CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${CUPS_PDFTOPS}
-PLIST_SUB+=		WITH_PDFTOPS=""
-.else
-PLIST_SUB+=		WITH_PDFTOPS="@comment "
-.endif
+#RUN_DEPENDS+=		${CUPS_PDFTOPS}:${PORTSDIR}/graphics/xpdf
+#CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${CUPS_PDFTOPS}
+#PLIST_SUB+=		WITH_PDFTOPS=""
+#.else
+#PLIST_SUB+=		WITH_PDFTOPS="@comment "
+#.endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python
@@ -250,6 +252,7 @@ MAN1=	cancel.1 \
 	ppdpo.1
 MAN5=	classes.conf.5 \
 	client.conf.5 \
+		cups-files.conf.5 \
 	cups-snmp.conf.5 \
 	cupsd.conf.5 \
 	ipptoolfile.5 \
@@ -272,7 +275,7 @@ MAN8=	accept.8 \
 	cups-deviced.8 \
 	cups-driverd.8 \
 	cups-lpd.8 \
-	cups-polld.8 \
+	cups-snmp.8 \
 	lpadmin.8 \
 	lpinfo.8 \
 	lpmove.8 \
@@ -357,10 +360,10 @@ pre-build:
 .endif
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
-post-build:
-	cd ${WRKSRC}/filter && ${MAKE} pdftops
-.endif
+#.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
+#post-build:
+#	cd ${WRKSRC}/filter && ${MAKE} pdftops
+#.endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
 pre-su-install:
@@ -385,9 +388,9 @@ post-install:
 .elif defined(CUPS_IMAGE)
 	${INSTALL_DATA} ${WRKSRC}/cups/raster.h ${PREFIX}/include/cups/
 .else
-.if  ${PORT_OPTIONS:MGHOSTSCRIPT} || ${PORT_OPTIONS:MXPDF}
-	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops ${PREFIX}/libexec/cups/filter/
-.endif
+#.if  ${PORT_OPTIONS:MGHOSTSCRIPT} || ${PORT_OPTIONS:MXPDF}
+#	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops ${PREFIX}/libexec/cups/filter/
+#.endif
 	${LN} -s ${PREFIX}/bin/lpr ${PREFIX}/bin/lpr-cups
 	${INSTALL} -d ${CUPS_ETCDIR}/
 	${CP} -p ${WRKSRC}/conf/snmp.conf ${WRKSRC}/conf/snmp.conf.N

@@ -2,7 +2,7 @@
 # $FreeBSD: print/cups/Makefile 313559 2013-03-07 03:25:10Z bdrewery $
 
 PORTNAME=	cups
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.2
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
