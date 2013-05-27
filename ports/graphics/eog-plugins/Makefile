@@ -3,7 +3,7 @@
 
 PORTNAME=	eog-plugins
 PORTVERSION=	2.30.1
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_CHAMPLAIN) || \
     (exists(${LOCALBASE}/lib/libchamplain-0.8.so)) || defined(WITH_CHAMPLIAN)
+USE_GL=		gl
 LIB_DEPENDS+=	champlain-0.8.1:${PORTSDIR}/graphics/libchamplain08
 PLIST_SUB+=	CHAMPLAIN=""
 .else
