@@ -11,7 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	library to aggregates people from multiple sources
 
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
-LIB_DEPENDS=	gee-0.8.2:${PORTSDIR}/devel/libgee \
+LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee06 \
 		gcr:${PORTSDIR}/security/gcr \
 		zeitgeist-1.0:${PORTSDIR}/sysutils/libzeitgeist \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
