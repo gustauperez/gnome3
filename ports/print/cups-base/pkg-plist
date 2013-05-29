@@ -256,7 +256,6 @@ sbin/reject
 %%DATADIR%%/ipptool/ipp-2.0.test
 %%DATADIR%%/ipptool/ipp-2.1.test
 %%DATADIR%%/ipptool/testfile.jpg
-%%DATADIR%%/ipptool/testfile.pcl
 %%DATADIR%%/ipptool/testfile.pdf
 %%DATADIR%%/ipptool/testfile.pcl
 %%DATADIR%%/ipptool/testfile.ps
@@ -349,76 +348,6 @@ sbin/reject
 %%DATADIR%%/templates/classes-header.tmpl
 %%DATADIR%%/templates/classes.tmpl
 %%DATADIR%%/templates/command.tmpl
-%%DATADIR%%/templates/cs/add-class.tmpl
-%%DATADIR%%/templates/cs/add-printer.tmpl
-%%DATADIR%%/templates/cs/add-rss-subscription.tmpl
-%%DATADIR%%/templates/cs/admin.tmpl
-%%DATADIR%%/templates/cs/choose-device.tmpl
-%%DATADIR%%/templates/cs/choose-make.tmpl
-%%DATADIR%%/templates/cs/choose-model.tmpl
-%%DATADIR%%/templates/cs/choose-serial.tmpl
-%%DATADIR%%/templates/cs/choose-uri.tmpl
-%%DATADIR%%/templates/cs/class-added.tmpl
-%%DATADIR%%/templates/cs/class-confirm.tmpl
-%%DATADIR%%/templates/cs/class-deleted.tmpl
-%%DATADIR%%/templates/cs/class-jobs-header.tmpl
-%%DATADIR%%/templates/cs/class-modified.tmpl
-%%DATADIR%%/templates/cs/class.tmpl
-%%DATADIR%%/templates/cs/classes-header.tmpl
-%%DATADIR%%/templates/cs/classes.tmpl
-%%DATADIR%%/templates/cs/command.tmpl
-%%DATADIR%%/templates/cs/edit-config.tmpl
-%%DATADIR%%/templates/cs/error-op.tmpl
-%%DATADIR%%/templates/cs/error.tmpl
-%%DATADIR%%/templates/cs/header.tmpl
-%%DATADIR%%/templates/cs/help-header.tmpl
-%%DATADIR%%/templates/cs/help-printable.tmpl
-%%DATADIR%%/templates/cs/help-trailer.tmpl
-%%DATADIR%%/templates/cs/job-cancel.tmpl
-%%DATADIR%%/templates/cs/job-hold.tmpl
-%%DATADIR%%/templates/cs/job-move.tmpl
-%%DATADIR%%/templates/cs/job-moved.tmpl
-%%DATADIR%%/templates/cs/job-release.tmpl
-%%DATADIR%%/templates/cs/job-restart.tmpl
-%%DATADIR%%/templates/cs/jobs-header.tmpl
-%%DATADIR%%/templates/cs/jobs.tmpl
-%%DATADIR%%/templates/cs/list-available-printers.tmpl
-%%DATADIR%%/templates/cs/modify-class.tmpl
-%%DATADIR%%/templates/cs/modify-printer.tmpl
-%%DATADIR%%/templates/cs/norestart.tmpl
-%%DATADIR%%/templates/cs/option-boolean.tmpl
-%%DATADIR%%/templates/cs/option-conflict.tmpl
-%%DATADIR%%/templates/cs/option-header.tmpl
-%%DATADIR%%/templates/cs/option-pickmany.tmpl
-%%DATADIR%%/templates/cs/option-pickone.tmpl
-%%DATADIR%%/templates/cs/option-trailer.tmpl
-%%DATADIR%%/templates/cs/pager.tmpl
-%%DATADIR%%/templates/cs/printer-accept.tmpl
-%%DATADIR%%/templates/cs/printer-added.tmpl
-%%DATADIR%%/templates/cs/printer-configured.tmpl
-%%DATADIR%%/templates/cs/printer-confirm.tmpl
-%%DATADIR%%/templates/cs/printer-default.tmpl
-%%DATADIR%%/templates/cs/printer-deleted.tmpl
-%%DATADIR%%/templates/cs/printer-jobs-header.tmpl
-%%DATADIR%%/templates/cs/printer-modified.tmpl
-%%DATADIR%%/templates/cs/printer-purge.tmpl
-%%DATADIR%%/templates/cs/printer-reject.tmpl
-%%DATADIR%%/templates/cs/printer-start.tmpl
-%%DATADIR%%/templates/cs/printer-stop.tmpl
-%%DATADIR%%/templates/cs/printer.tmpl
-%%DATADIR%%/templates/cs/printers-header.tmpl
-%%DATADIR%%/templates/cs/printers.tmpl
-%%DATADIR%%/templates/cs/restart.tmpl
-%%DATADIR%%/templates/cs/samba-export.tmpl
-%%DATADIR%%/templates/cs/samba-exported.tmpl
-%%DATADIR%%/templates/cs/search.tmpl
-%%DATADIR%%/templates/cs/set-printer-options-header.tmpl
-%%DATADIR%%/templates/cs/set-printer-options-trailer.tmpl
-%%DATADIR%%/templates/cs/subscription-added.tmpl
-%%DATADIR%%/templates/cs/subscription-canceled.tmpl
-%%DATADIR%%/templates/cs/test-page.tmpl
-%%DATADIR%%/templates/cs/trailer.tmpl
-%%DATADIR%%/templates/cs/users.tmpl
 %%DATADIR%%/templates/edit-config.tmpl
 %%DATADIR%%/templates/error-op.tmpl
 %%DATADIR%%/templates/error.tmpl
@@ -492,76 +421,6 @@ sbin/reject
 %%DATADIR%%/templates/es/test-page.tmpl
 %%DATADIR%%/templates/es/trailer.tmpl
 %%DATADIR%%/templates/es/users.tmpl
-%%DATADIR%%/templates/fr/add-class.tmpl
-%%DATADIR%%/templates/fr/add-printer.tmpl
-%%DATADIR%%/templates/fr/add-rss-subscription.tmpl
-%%DATADIR%%/templates/fr/admin.tmpl
-%%DATADIR%%/templates/fr/choose-device.tmpl
-%%DATADIR%%/templates/fr/choose-make.tmpl
-%%DATADIR%%/templates/fr/choose-model.tmpl
-%%DATADIR%%/templates/fr/choose-serial.tmpl
-%%DATADIR%%/templates/fr/choose-uri.tmpl
-%%DATADIR%%/templates/fr/class-added.tmpl
-%%DATADIR%%/templates/fr/class-confirm.tmpl
-%%DATADIR%%/templates/fr/class-deleted.tmpl
-%%DATADIR%%/templates/fr/class-jobs-header.tmpl
-%%DATADIR%%/templates/fr/class-modified.tmpl
-%%DATADIR%%/templates/fr/class.tmpl
-%%DATADIR%%/templates/fr/classes-header.tmpl
-%%DATADIR%%/templates/fr/classes.tmpl
-%%DATADIR%%/templates/fr/command.tmpl
-%%DATADIR%%/templates/fr/edit-config.tmpl
-%%DATADIR%%/templates/fr/error-op.tmpl
-%%DATADIR%%/templates/fr/error.tmpl
-%%DATADIR%%/templates/fr/header.tmpl
-%%DATADIR%%/templates/fr/help-header.tmpl
-%%DATADIR%%/templates/fr/help-printable.tmpl
-%%DATADIR%%/templates/fr/help-trailer.tmpl
-%%DATADIR%%/templates/fr/job-cancel.tmpl
-%%DATADIR%%/templates/fr/job-hold.tmpl
-%%DATADIR%%/templates/fr/job-move.tmpl
-%%DATADIR%%/templates/fr/job-moved.tmpl
-%%DATADIR%%/templates/fr/job-release.tmpl
-%%DATADIR%%/templates/fr/job-restart.tmpl
-%%DATADIR%%/templates/fr/jobs-header.tmpl
-%%DATADIR%%/templates/fr/jobs.tmpl
-%%DATADIR%%/templates/fr/list-available-printers.tmpl
-%%DATADIR%%/templates/fr/modify-class.tmpl
-%%DATADIR%%/templates/fr/modify-printer.tmpl
-%%DATADIR%%/templates/fr/norestart.tmpl
-%%DATADIR%%/templates/fr/option-boolean.tmpl
-%%DATADIR%%/templates/fr/option-conflict.tmpl
-%%DATADIR%%/templates/fr/option-header.tmpl
-%%DATADIR%%/templates/fr/option-pickmany.tmpl
-%%DATADIR%%/templates/fr/option-pickone.tmpl
-%%DATADIR%%/templates/fr/option-trailer.tmpl
-%%DATADIR%%/templates/fr/pager.tmpl
-%%DATADIR%%/templates/fr/printer-accept.tmpl
-%%DATADIR%%/templates/fr/printer-added.tmpl
-%%DATADIR%%/templates/fr/printer-configured.tmpl
-%%DATADIR%%/templates/fr/printer-confirm.tmpl
-%%DATADIR%%/templates/fr/printer-default.tmpl
-%%DATADIR%%/templates/fr/printer-deleted.tmpl
-%%DATADIR%%/templates/fr/printer-jobs-header.tmpl
-%%DATADIR%%/templates/fr/printer-modified.tmpl
-%%DATADIR%%/templates/fr/printer-purge.tmpl
-%%DATADIR%%/templates/fr/printer-reject.tmpl
-%%DATADIR%%/templates/fr/printer-start.tmpl
-%%DATADIR%%/templates/fr/printer-stop.tmpl
-%%DATADIR%%/templates/fr/printer.tmpl
-%%DATADIR%%/templates/fr/printers-header.tmpl
-%%DATADIR%%/templates/fr/printers.tmpl
-%%DATADIR%%/templates/fr/restart.tmpl
-%%DATADIR%%/templates/fr/samba-export.tmpl
-%%DATADIR%%/templates/fr/samba-exported.tmpl
-%%DATADIR%%/templates/fr/search.tmpl
-%%DATADIR%%/templates/fr/set-printer-options-header.tmpl
-%%DATADIR%%/templates/fr/set-printer-options-trailer.tmpl
-%%DATADIR%%/templates/fr/subscription-added.tmpl
-%%DATADIR%%/templates/fr/subscription-canceled.tmpl
-%%DATADIR%%/templates/fr/test-page.tmpl
-%%DATADIR%%/templates/fr/trailer.tmpl
-%%DATADIR%%/templates/fr/users.tmpl
 %%DATADIR%%/templates/header.tmpl
 %%DATADIR%%/templates/help-header.tmpl
 %%DATADIR%%/templates/help-printable.tmpl
@@ -671,76 +530,6 @@ sbin/reject
 %%DATADIR%%/templates/printers-header.tmpl
 %%DATADIR%%/templates/printers.tmpl
 %%DATADIR%%/templates/restart.tmpl
-%%DATADIR%%/templates/ru/add-class.tmpl
-%%DATADIR%%/templates/ru/add-printer.tmpl
-%%DATADIR%%/templates/ru/add-rss-subscription.tmpl
-%%DATADIR%%/templates/ru/admin.tmpl
-%%DATADIR%%/templates/ru/choose-device.tmpl
-%%DATADIR%%/templates/ru/choose-make.tmpl
-%%DATADIR%%/templates/ru/choose-model.tmpl
-%%DATADIR%%/templates/ru/choose-serial.tmpl
-%%DATADIR%%/templates/ru/choose-uri.tmpl
-%%DATADIR%%/templates/ru/class-added.tmpl
-%%DATADIR%%/templates/ru/class-confirm.tmpl
-%%DATADIR%%/templates/ru/class-deleted.tmpl
-%%DATADIR%%/templates/ru/class-jobs-header.tmpl
-%%DATADIR%%/templates/ru/class-modified.tmpl
-%%DATADIR%%/templates/ru/class.tmpl
-%%DATADIR%%/templates/ru/classes-header.tmpl
-%%DATADIR%%/templates/ru/classes.tmpl
-%%DATADIR%%/templates/ru/command.tmpl
-%%DATADIR%%/templates/ru/edit-config.tmpl
-%%DATADIR%%/templates/ru/error-op.tmpl
-%%DATADIR%%/templates/ru/error.tmpl
-%%DATADIR%%/templates/ru/header.tmpl
-%%DATADIR%%/templates/ru/help-header.tmpl
-%%DATADIR%%/templates/ru/help-printable.tmpl
-%%DATADIR%%/templates/ru/help-trailer.tmpl
-%%DATADIR%%/templates/ru/job-cancel.tmpl
-%%DATADIR%%/templates/ru/job-hold.tmpl
-%%DATADIR%%/templates/ru/job-move.tmpl
-%%DATADIR%%/templates/ru/job-moved.tmpl
-%%DATADIR%%/templates/ru/job-release.tmpl
-%%DATADIR%%/templates/ru/job-restart.tmpl
-%%DATADIR%%/templates/ru/jobs-header.tmpl
-%%DATADIR%%/templates/ru/jobs.tmpl
-%%DATADIR%%/templates/ru/list-available-printers.tmpl
-%%DATADIR%%/templates/ru/modify-class.tmpl
-%%DATADIR%%/templates/ru/modify-printer.tmpl
-%%DATADIR%%/templates/ru/norestart.tmpl
-%%DATADIR%%/templates/ru/option-boolean.tmpl
-%%DATADIR%%/templates/ru/option-conflict.tmpl
-%%DATADIR%%/templates/ru/option-header.tmpl
-%%DATADIR%%/templates/ru/option-pickmany.tmpl
-%%DATADIR%%/templates/ru/option-pickone.tmpl
-%%DATADIR%%/templates/ru/option-trailer.tmpl
-%%DATADIR%%/templates/ru/pager.tmpl
-%%DATADIR%%/templates/ru/printer-accept.tmpl
-%%DATADIR%%/templates/ru/printer-added.tmpl
-%%DATADIR%%/templates/ru/printer-configured.tmpl
-%%DATADIR%%/templates/ru/printer-confirm.tmpl
-%%DATADIR%%/templates/ru/printer-default.tmpl
-%%DATADIR%%/templates/ru/printer-deleted.tmpl
-%%DATADIR%%/templates/ru/printer-jobs-header.tmpl
-%%DATADIR%%/templates/ru/printer-modified.tmpl
-%%DATADIR%%/templates/ru/printer-purge.tmpl
-%%DATADIR%%/templates/ru/printer-reject.tmpl
-%%DATADIR%%/templates/ru/printer-start.tmpl
-%%DATADIR%%/templates/ru/printer-stop.tmpl
-%%DATADIR%%/templates/ru/printer.tmpl
-%%DATADIR%%/templates/ru/printers-header.tmpl
-%%DATADIR%%/templates/ru/printers.tmpl
-%%DATADIR%%/templates/ru/restart.tmpl
-%%DATADIR%%/templates/ru/samba-export.tmpl
-%%DATADIR%%/templates/ru/samba-exported.tmpl
-%%DATADIR%%/templates/ru/search.tmpl
-%%DATADIR%%/templates/ru/set-printer-options-header.tmpl
-%%DATADIR%%/templates/ru/set-printer-options-trailer.tmpl
-%%DATADIR%%/templates/ru/subscription-added.tmpl
-%%DATADIR%%/templates/ru/subscription-canceled.tmpl
-%%DATADIR%%/templates/ru/test-page.tmpl
-%%DATADIR%%/templates/ru/trailer.tmpl
-%%DATADIR%%/templates/ru/users.tmpl
 %%DATADIR%%/templates/samba-export.tmpl
 %%DATADIR%%/templates/samba-exported.tmpl
 %%DATADIR%%/templates/search.tmpl
@@ -752,16 +541,11 @@ sbin/reject
 %%DATADIR%%/templates/trailer.tmpl
 %%DATADIR%%/templates/users.tmpl
 %%DOCSDIR%%/ca/index.html
-%%DOCSDIR%%/cs/index.html
 %%DOCSDIR%%/es/index.html
-%%DOCSDIR%%/fr/index.html
 %%DOCSDIR%%/help/man-cups-snmp.html
-%%DOCSDIR%%/help/ref-cups-files-conf.html
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/ja/index.html
 %%DOCSDIR%%/robots.txt
-%%DOCSDIR%%/ru/index.html
-%%ETCDIR%%/cups-files.conf
 %%EXAMPLESDIR%%/ulpt-cupsd.conf
 share/applications/cups.desktop
 share/icons/hicolor/16x16/apps/cups.png
@@ -769,11 +553,8 @@ share/icons/hicolor/32x32/apps/cups.png
 share/icons/hicolor/64x64/apps/cups.png
 share/icons/hicolor/128x128/apps/cups.png
 share/locale/ca/cups_ca.po
-share/locale/cs/cups_cs.po
 share/locale/es/cups_es.po
-share/locale/fr/cups_fr.po
 share/locale/ja/cups_ja.po
-share/locale/ru/cups_ru.po
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/32x32/apps
@@ -785,22 +566,16 @@ share/locale/ru/cups_ru.po
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
-@dirrm %%DOCSDIR%%/ru
 @dirrm %%DOCSDIR%%/ja
 @dirrm %%DATADIR%%/ipptool
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%/help
 @dirrm %%DOCSDIR%%/es
-@dirrm %%DOCSDIR%%/fr
-@dirrm %%DOCSDIR%%/cs
 @dirrm %%DOCSDIR%%/ca
 @dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/templates/ru
 @dirrm %%DATADIR%%/templates/ja
-@dirrm %%DATADIR%%/templates/fr
 @dirrm %%DATADIR%%/templates/es
-@dirrm %%DATADIR%%/templates/cs
 @dirrm %%DATADIR%%/templates/ca
 @dirrm %%DATADIR%%/templates
 @exec  mkdir -p %D/%%DATADIR%%/profiles
@@ -809,7 +584,6 @@ share/locale/ru/cups_ru.po
 @exec  mkdir -p %D/%%DATADIR%%/model
 @dirrmtry %%DATADIR%%/model
 @dirrm %%DATADIR%%/mime
-@dirrm %%DATADIR%%/ipptool
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/drv
