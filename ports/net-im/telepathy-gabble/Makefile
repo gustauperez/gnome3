@@ -1,7 +1,4 @@
-# New ports collection makefile for:	telepathy-gabble
-# Date created:				Apr 19 2007
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by:  Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/net-im/telepathy-gabble/Makefile,v 1.22 2012/08/08 16:56:40 kwm Exp $
 
@@ -25,8 +22,9 @@ LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		libnice-gst1>0:${PORTSDIR}/net-im/libnice-gst1
 
+PORTSCOUT=	limitw:1,even
+
 GNU_CONFIGURE=	yes
-LDFLAGS+=	${PTHREAD_LIBS}
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 USES=		pathfix
@@ -35,6 +33,7 @@ USE_SQLITE=	yes
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
+CONFIGURE_ENV=	LIBS="-pthread"
 
 MAN8=		telepathy-gabble.8
 
