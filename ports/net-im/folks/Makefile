@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net-im/folks/Makefile,v 1.30 2013/03/12 19:52:18 kwm Exp $
+#   $MCom: ports/trunk/net-im/folks/Makefile 18507 2013-05-27 14:05:09Z kwm $
 
 PORTNAME=	folks
 PORTVERSION=	0.8.0
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee06 \
 		gcr:${PORTSDIR}/security/gcr \
 		zeitgeist-1.0:${PORTSDIR}/sysutils/libzeitgeist \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
+		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
 
 CONFLICTS=	folks-0.4.[0-9]*
 
@@ -22,10 +22,11 @@ USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USES=		gettext pathfix
+USES=		gettext pathfix pkgconfig
 USE_GNOME=	evolutiondataserver3 gnomehier intlhack \
 		introspection:build ltverhack
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-tracker-backend
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -33,16 +34,18 @@ GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
 
 PLIST_SUB=	LIBVER=25 VERSION=37
 
-#OPTIONS=	SOCIALWEB "Enable social web backend" on
+OPTIONS_DEFINE=	SOCIALWEB
+OPTIONS_DEFAULT=SOCIALWEB
+SOCIALWEB_DESC=	Social web backend
 
-#.include <bsd.port.options.mk>
+.include <bsd.port.options.mk>
 
-#.if defined(WITH_SOCIALWEB)
-#LIB_DEPENDS+=	socialweb.0:${PORTSDIR}/www/libsocialweb
-#CONFIGURE_ARGS+=--enable-libsocialweb-backend=yes
-#.else
+.if ${PORT_OPTIONS:MSOCIALWEB}
+LIB_DEPENDS+=	socialweb:${PORTSDIR}/www/libsocialweb
+CONFIGURE_ARGS+=--enable-libsocialweb-backend=yes
+.else
 CONFIGURE_ARGS+=--enable-libsocialweb-backend=no
-#.endif
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|g' \
