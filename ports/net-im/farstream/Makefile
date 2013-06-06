@@ -3,19 +3,18 @@
 #   $MCom: ports/net-im/farstream/Makefile,v 1.2 2012/06/13 09:31:14 kwm Exp $
 
 PORTNAME=	farstream
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://freedesktop.org/software/farstream/releases/farstream/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of GStreamer modules and libraries for videoconferencing
 
-BUILD_DEPENDS=	libnice>0:$(PORTSDIR)/net-im/libnice
-RUN_DEPENDS=	libnice-gst1>0:${PORTSDIR}/net-im/libnice-gst1
+LIB_DEPENDS=	nice:${PORTSDIR}/net-im/libnice
+RUN_DEPENDS=	libnice-gst1>=0:${PORTSDIR}/net-im/libnice-gst1
 
 CONFLICTS=	farsight2-[0-9]*
 
-FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
