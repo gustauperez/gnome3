@@ -3,7 +3,7 @@
 #    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 18393 2013-04-26 21:23:07Z kwm $
 
 PORTNAME=	gdk-pixbuf
-PORTVERSION=	2.28.1
+PORTVERSION=	2.28.2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
