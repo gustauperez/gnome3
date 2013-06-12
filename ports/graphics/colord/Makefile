@@ -1,8 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
+#    $MCom: ports/graphics/colord/Makefile,v 1.10 2012/12/17 23:50:40 kwm Exp $
 
 PORTNAME=	colord
-PORTVERSION=	0.1.32
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -17,14 +18,22 @@ USERS=		colord
 GROUPS=		colord
 
 USE_XZ=		yes
-USE_GNOME=	glib20 gnomehier intlhack introspection:build
+USE_GNOME=	gnomehier glib20 intlhack introspection:build
 USE_GMAKE=	yes
 USES=		gettext pathfix pkgconfig
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-CONFIGURE_ARGS=	--disable-gudev --disable-systemd-login --disable-gusb --enable-gtk-doc-html=no --enable-gtk
+CONFIGURE_ARGS=	--disable-gudev \
+		--enable-gtk-doc-html=no \
+		--disable-bash-completion \
+		--disable-gusb \
+		--disable-sane \
+		--with-daemon-user=colord \
+		--disable-systemd-login
+# takes ages we don't want to wait.
+CONFIGURE_ARGS+=--disable-print-profiles
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
