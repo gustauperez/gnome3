@@ -1,7 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-control-center3/Makefile,v 1.39 2012/06/14 22:28:30 kwm Exp $
-#
+#   $MCom: ports/trunk/sysutils/gnome-control-center3/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	3.6.3
@@ -16,20 +15,20 @@ BUILD_DEPENDS=	gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-
 		gsettings-desktop-schemas>=3.2.2:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		${LOCALBASE}/libdata/pkgconfig/pwquality.pc:${PORTSDIR}/security/libpwquality \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
-		xklavier.12:${PORTSDIR}/x11/libxklavier \
-		upower-glib.1:${PORTSDIR}/sysutils/upower \
-		colord.1:${PORTSDIR}/graphics/colord \
-		goa-1.0.0:${PORTSDIR}/net/gnome-online-accounts \
-		socialweb.0:${PORTSDIR}/www/libsocialweb \
+LIB_DEPENDS=	canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
+		xklavier:${PORTSDIR}/x11/libxklavier \
+		upower-glib:${PORTSDIR}/sysutils/upower \
+		colord:${PORTSDIR}/graphics/colord \
+		ibus:${PORTSDIR}/textproc/ibus \
+		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
 		krb5support:${PORTSDIR}/security/krb5 \
-		gtop-2.0.7:${PORTSDIR}/devel/libgtop \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit
+		socialweb:${PORTSDIR}/www/libsocialweb \
+		gtop-2.0:${PORTSDIR}/devel/libgtop \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 		gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon3 \
 		gsettings-desktop-schemas>=3.2.2:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		${LOCALBASE}/libdata/pkgconfig/pwquality.pc:${PORTSDIR}/security/libpwquality \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
 		apg:${PORTSDIR}/security/apg \
@@ -42,18 +41,15 @@ USE_XZ=		yes
 USES=		desktop-file-utils gettext pathfix pkgconfig shared-mime-info
 USE_GMAKE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gconf2 gnomedesktop3 gnomehier gnomemenus3 gnomeprefix \
-		intlhack libgnomekbd3 libxml2
+USE_GNOME=	gnomeprefix gnomehier intlhack libxml2 gnomemenus3 \
+		libgnomekbd3 gnomedesktop3 gconf2
 USE_XORG=	xscrnsaver x11 xxf86misc kbproto xi
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-libsocialweb=yes \
-		--disable-ibus
+CONFIGURE_ARGS=	--with-libsocialweb=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		gnome-control-center.1
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME
@@ -63,7 +59,7 @@ WITH_GNOME=	yes
 OPTIONS_DEFINE=	CUPS
 OPTIONS_DEFAULT=CUPS
 CUPS_DESC=	Cups (printing) support
-CHEESE_DESC=	Cheese webcam support" Off
+CHEESE_DESC=	Cheese webcam support
 
 OPTIONS_DEFINE_i386=	CHEESE
 OPTIONS_DEFAULT_i386=	CHEESE
@@ -71,6 +67,7 @@ OPTIONS_DEFINE_amd64=	CHEESE
 OPTIONS_DEFAULT_amd64=	CHEESE
 
 .include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 PLIST_SUB+=	CUPS=""
@@ -81,6 +78,7 @@ CONFIGURE_ARGS+=--disable-cups
 
 .if ${PORT_OPTIONS:MCHEESE}
 CONFIGURE_ARGS+=--with-cheese
+BUILD_DEPENDS+=	cheese>=3.0.1:${PORTSDIR}/multimedia/cheese3
 LIB_DEPENDS+=	cheese.7:${PORTSDIR}/multimedia/cheese3
 .else
 CONFIGURE_ARGS+=--without-cheese
@@ -90,7 +88,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|datetime wacom|datetime|g' \
 		${WRKSRC}/panels/Makefile.in
 
-post-install:
-	@-update-desktop-database
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
