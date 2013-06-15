@@ -49,8 +49,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L/usr/local/lib/gcc46
 CONFIGURE_ARGS=	--with-gtk=3.0 \
 		--enable-svg-fonts \
 		--enable-webkit2=no \
-		--disable-geolocation \
-		--enable-introspection
+		--disable-geolocation
 MAKEFILE=	GNUmakefile
 
 BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk3
