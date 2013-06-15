@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/x11/gnome3/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	gnome3
 PORTVERSION=	3.6.2
@@ -11,6 +12,8 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	The "meta-port" for the GNOME 3 integrated X11 desktop
+
+CONFLICTS?=	gnome2-[0-9]* gnome2-lite-[0-9]* gnome3-lite-[0-9]*
 
 RUN_DEPENDS?=	gnome-panel>=3.0.0:${PORTSDIR}/x11/gnome-panel3 \
 		dconf-editor:${PORTSDIR}/devel/dconf-editor \
@@ -34,19 +37,17 @@ RUN_DEPENDS?=	gnome-panel>=3.0.0:${PORTSDIR}/x11/gnome-panel3 \
 		${LOCALBASE}/share/help/C/gnome-help/index.page:${PORTSDIR}/misc/gnome-user-docs3 \
 		${LOCALBASE}/share/sounds/freedesktop/index.theme:${PORTSDIR}/audio/freedesktop-sound-theme
 
-CONFLICTS?=	gnome2-[0-9]* gnome2-lite-[0-9]* gnome3-lite-[0-9]*
-
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	SHELL
-SHELL_DESC=	Build Gnome-shell
+SHELL_DESC=	Include Gnome-shell
 
 .if ${.CURDIR:T}!="gnome3-lite"
 #OPTIONS_DEFINE+=MAPI
 MAPI_DESC=	Depend on evolution-mapi (pulls in samba4)" off
 .endif
 
-include <bsd.port.options.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSHELL}
 RUN_DEPENDS+=	gnome-shell>=3.0.0:${PORTSDIR}/x11/gnome-shell \
@@ -82,8 +83,8 @@ RUN_DEPENDS+=	empathy>=3.0.0:${PORTSDIR}/net-im/empathy3 \
 		totem>=3.0.0:${PORTSDIR}/multimedia/totem3 \
 		gconf-editor>=3.0.0:${PORTSDIR}/sysutils/gconf-editor3 \
 		gdm>=3.0.0:${PORTSDIR}/x11/gdm3 \
-		evolution>=3.0.0:${PORTSDIR}/mail/evolution3
-#		evolution-exchange>=3.0.0:${PORTSDIR}/mail/evolution-exchange3
+		evolution>=3.0.0:${PORTSDIR}/mail/evolution3 \
+		cheese>=3.0.0:${PORTSDIR}/multimedia/cheese3
 
 .if ${PORT_OPTIONS:MMAPI}
 RUN_DEPENDS+=	evolution-mapi>=3.0.0:${PORTSDIR}/mail/evolution-mapi3
