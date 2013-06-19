@@ -44,7 +44,7 @@ RDP_DESC=	Enable MS Windows remote desktop support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTELEPATHY)
+.if ${PORT_OPTIONS:MTELEPATHY}
 LIB_DEPENDS+=	telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 PLIST_SUB+=	TELEPATHY=""
