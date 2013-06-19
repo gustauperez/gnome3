@@ -34,7 +34,7 @@ OPTIONS_DEFINE=		MANPAGES
 
 .include <bsd.port.options.mk>
 
-if ${PORT_OPTIONS:MMANPAGES} || defined(PACKAGE_BUILDING)
+.if ${PORT_OPTIONS:MMANPAGES} || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410
 MAN1=		gnome-power-statistics.1
