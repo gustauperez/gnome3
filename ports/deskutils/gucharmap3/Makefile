@@ -14,13 +14,12 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gucharmap-2.[0-9]*
 
-USES=		gettext pathfix
 LATEST_LINK=	gucharmap3
 USE_XZ=		yes
+USES=		gettext pathfix pkgconfig
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomedocutils gtk30 intlhack
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-Bsymbolic
 CPPFLAGS+=	-I${LOCALBASE}/include
