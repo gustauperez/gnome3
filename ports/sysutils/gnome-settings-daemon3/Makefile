@@ -16,6 +16,7 @@ BUILD_DEPENDS=	gnome-session>=2.91.0:${PORTSDIR}/x11/gnome-session3 \
 LIB_DEPENDS=	canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
 		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit \
 		colord.1:${PORTSDIR}/graphics/colord \
+		lcms2:${PORTSDIR}/graphics/lcms2 \
 		pulse.0:${PORTSDIR}/audio/pulseaudio \
 		gdbm.4:${PORTSDIR}/databases/gdbm \
 		notify.4:${PORTSDIR}/devel/libnotify
