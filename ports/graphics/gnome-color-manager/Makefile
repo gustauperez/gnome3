@@ -1,8 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/graphics/gnome-color-manager/Makefile 18575 2013-06-18 16:28:35Z kwm $
 
 PORTNAME=	gnome-color-manager
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,8 +12,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A session framework for the GNOME desktop to manage color profiles
 
 BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410 \
-		itstool:${PORTSDIR}/textproc/itstool
+		itstool:${PORTSDIR}/textproc/itstool \
+		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410
 LIB_DEPENDS=	lcms2:${PORTSDIR}/graphics/lcms2 \
 		colord:${PORTSDIR}/graphics/colord \
 		colord-gtk:${PORTSDIR}/graphics/colord-gtk \
@@ -21,10 +22,9 @@ LIB_DEPENDS=	lcms2:${PORTSDIR}/graphics/lcms2 \
 
 USE_XZ=		yes
 USE_XORG=	xrandr
-USES=		gettext pathfix pkgconfig
-USE_GNOME=	desktopfileutils gnomedesktop3 gnomedocutils gnomeprefix \
-		gtk30 intlhack vte3
+USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack vte3
 USE_GMAKE=	yes
+USES=		desktop-file-utils gettext pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
@@ -56,8 +56,5 @@ post-patch:
 		s|-Wignored-qualifiers||g ; s|-Wtype-limits||g ; \
 		s|-Wmissing-parameter-type||g' \
 			${WRKSRC}/configure
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
