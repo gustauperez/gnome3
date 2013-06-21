@@ -500,7 +500,6 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrm share/sounds/gnome/default/alerts
 @dirrm share/sounds/gnome/default
 @dirrm share/sounds/gnome
-@dirrm share/polkit-1/rules.d
 @dirrmtry share/pixmaps/faces
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
@@ -538,8 +537,12 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/lo/LC_MESSAGES
 @dirrmtry share/locale/lo
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/ilo/LC_MESSAGES
@@ -564,8 +567,6 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrmtry share/locale/as
 @dirrm %%DATADIR%%/ui/user-accounts
 %%CUPS%%@dirrm %%DATADIR%%/ui/printers
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/ui/printers
 @dirrm %%DATADIR%%/ui/datetime
 @dirrm %%DATADIR%%/ui/background
 @dirrm %%DATADIR%%/ui
