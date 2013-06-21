@@ -32,7 +32,7 @@ USE_XZ=		yes
 USE_XORG=	x11 xfixes sm
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GCC=	4.6
+#USE_GCC=	4.6
 USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack gtk30 gnomemenus3 \
 		gnomedesktop3 evolutiondataserver3 ltverhack
