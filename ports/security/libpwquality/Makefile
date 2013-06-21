@@ -7,9 +7,8 @@ CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/libpwquality/
 
 MAINTAINER=	gnome@freebsd.org
-COMMENT=	This is a libpwquality library for password quality checking
+COMMENT=	Library for generating random passwords and quality checking
 
-BUILD_DEPENDS=	cracklib-check:${PORTSDIR}/security/cracklib
 LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
 
 USES=		gettext pathfix
@@ -17,13 +16,29 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	intltool
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=--disable-pam \
-		--disable-nls
-#CONFIGURE_ENV+=	 ac_cv_header_libintl_h=no 
+CONFIGURE_ARGS+=--disable-pam
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib
+# configure needs to be fixed
+CONFIGURE_ENV+=	LIBS="-lintl"
+
+MAN1=	pwmake.1 pwscore.1
+MAN5=	pwquality.conf.5
+
+OPTIONS_DEFINE=	PYTHON
+OPTIONS_DEFAULT=PYTHON
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPYTHON}
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=--enable-python-bindings
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=--disable-python-bindings
+PLIST_SUB+=	PYTHON="@comment "
+.endif
 
 .include <bsd.port.mk>
