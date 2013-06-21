@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/x11-toolkits/gdl3/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	gdl
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
