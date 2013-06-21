@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gnome-devel-docs
-# Date created:		2007-09-18
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/misc/gnome-devel-docs3/Makefile,v 1.10 2012/06/03 02:27:49 mezz Exp $
-#
 
 PORTNAME=	gnome-devel-docs
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
