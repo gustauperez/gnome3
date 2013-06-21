@@ -16,13 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/yelp-xsl.pc:${PORTSDIR}/textproc/yelp-xsl \
 		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	webkitgtk-3.0.0:${PORTSDIR}/www/webkit-gtk3
+LIB_DEPENDS=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/yelp-xsl.pc:${PORTSDIR}/textproc/yelp-xsl
 
 CONFLICTS=	yelp-2.[0-9]*
 
-USES=		desktop-file-utils gettext pathfix pkgconfig
 LATEST_LINK=	yelp3
+USES=		desktop-file-utils gettext pathfix pkgconfig
 USE_XZ=		yes
 USE_XORG=	x11 ice
 USE_GMAKE=	yes
@@ -31,8 +31,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
+LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
 
 .include <bsd.port.pre.mk>
