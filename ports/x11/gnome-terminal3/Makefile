@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/x11/gnome-terminal3/Makefile 18559 2013-06-17 20:56:34Z kwm $
 
 PORTNAME=	gnome-terminal
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,16 +15,16 @@ CONFLICTS=	gnome-terminal-2.[0-9]*
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 LATEST_LINK=	gnome-terminal3
+USES=		gettext pathfix pkgconfig
 USE_XZ=		yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_XORG=	sm ice
-USES=		gettext pathfix
-USE_GNOME=	gconf2 gnomedocutils gnomeprefix intlhack vte3
+USE_GNOME=	gconf2 gnomeprefix intlhack vte3 gnomedocutils
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
