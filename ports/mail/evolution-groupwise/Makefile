@@ -15,11 +15,11 @@ RUN_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution3
 
 EVO_VER=	3.4.1
 USE_XZ=		yes
-USES=		gettext pathfix
+USES=		gettext pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_BDB=	41
-USE_GNOME=	gconf2 gnomeprefix intlhack libxml2 ltasneededhack \
+USE_BDB=	5
+USE_GNOME=	gconf2 gnomeprefix intlhack libxml2 ltasneededhack
 		 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
