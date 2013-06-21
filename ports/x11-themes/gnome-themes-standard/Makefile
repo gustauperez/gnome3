@@ -13,8 +13,8 @@ COMMENT=	Standard themes for GNOME
 
 CONFLICTS=	gnome-themes-2.[0-9]*
 
-USES=		gettext pathfix
 USE_XZ=		yes
+USES=		gettext pathfix
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack librsvg2
