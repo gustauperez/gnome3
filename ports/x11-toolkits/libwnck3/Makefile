@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	libwnck
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.5
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
@@ -16,7 +16,7 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 
 CONFLICTS=	libwnck-2.[0-9]*
 
