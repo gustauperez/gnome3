@@ -11,8 +11,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A collection of backgrounds for GNOME
 
-USES=		gettext pathfix
 USE_XZ=		yes
+USES=		gettext pathfix
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack
