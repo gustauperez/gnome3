@@ -24,7 +24,7 @@ SLAVEDIRS=	mail/gmime26-sharp
 BUILD_DEPENDS=	${LOCALBASE}/include/gpg-error.h:${PORTSDIR}/security/libgpg-error
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
 
-USES=		pathfix
+USES=		pathfix pkgconfig
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}26
 USE_ICONV=	yes
 USE_GMAKE=	yes
