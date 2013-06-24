@@ -32,9 +32,9 @@ libdata/pkgconfig/gtksourceview-3.0.pc
 share/gir-1.0/GtkSource-3.0.gir
 share/doc/gtksourceview-3.0/GtkSourceBuffer.html
 share/doc/gtksourceview-3.0/GtkSourceCompletion.html
+share/doc/gtksourceview-3.0/GtkSourceCompletionContext.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionInfo.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionItem.html
-share/doc/gtksourceview-3.0/GtkSourceCompletionContext.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionProposal.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionProvider.html
 share/doc/gtksourceview-3.0/GtkSourceGutter.html
@@ -68,7 +68,6 @@ share/doc/gtksourceview-3.0/rn02.html
 share/doc/gtksourceview-3.0/style-reference.html
 share/doc/gtksourceview-3.0/style.css
 share/doc/gtksourceview-3.0/up.png
-
 share/gtksourceview-3.0/language-specs/R.lang
 share/gtksourceview-3.0/language-specs/actionscript.lang
 share/gtksourceview-3.0/language-specs/ada.lang
@@ -133,8 +132,8 @@ share/gtksourceview-3.0/language-specs/mallard.lang
 share/gtksourceview-3.0/language-specs/markdown.lang
 share/gtksourceview-3.0/language-specs/matlab.lang
 share/gtksourceview-3.0/language-specs/mxml.lang
-share/gtksourceview-3.0/language-specs/netrexx.lang
 share/gtksourceview-3.0/language-specs/nemerle.lang
+share/gtksourceview-3.0/language-specs/netrexx.lang
 share/gtksourceview-3.0/language-specs/nsis.lang
 share/gtksourceview-3.0/language-specs/objc.lang
 share/gtksourceview-3.0/language-specs/objj.lang
@@ -151,9 +150,9 @@ share/gtksourceview-3.0/language-specs/pkgconfig.lang
 share/gtksourceview-3.0/language-specs/po.lang
 share/gtksourceview-3.0/language-specs/prolog.lang
 share/gtksourceview-3.0/language-specs/protobuf.lang
+share/gtksourceview-3.0/language-specs/puppet.lang
 share/gtksourceview-3.0/language-specs/python.lang
 share/gtksourceview-3.0/language-specs/python3.lang
-share/gtksourceview-3.0/language-specs/puppet.lang
 share/gtksourceview-3.0/language-specs/rpmspec.lang
 share/gtksourceview-3.0/language-specs/ruby.lang
 share/gtksourceview-3.0/language-specs/scheme.lang
