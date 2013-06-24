@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/sysutils/gnome-system-monitor3/Makefile 18579 2013-06-23 08:34:44Z kwm $
 
 PORTNAME=	gnome-system-monitor
 PORTVERSION=	3.6.1
@@ -13,8 +13,7 @@ COMMENT=	GNOME 3 system monitor program
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
 		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop \
-		gtkmm-3.0:${PORTSDIR}/x11-toolkits/gtkmm30
+LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 CONFLICTS=	gnome-system-monitor-2.[0-9]*
@@ -24,8 +23,7 @@ USE_XZ=		yes
 USES=		gettext pathfix
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomedocutils gnomeprefix intlhack librsvg2 \
-		libwnck3
+USE_GNOME=	gnomeprefix gtkmm30 intlhack librsvg2 libwnck3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
