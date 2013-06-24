@@ -13,7 +13,7 @@ COMMENT=	A GLib/GObject wrapper for the Skydrive and Hotmail API
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	goa-1:${PORTSDIR}/net/gnome-online-accounts \
 		json-glib-1:${PORTSDIR}/devel/json-glib \
-		rest-0.7:${PORTSDIR}/devel/rest
+		rest-0.7:${PORTSDIR}/devel/librest
 
 USE_XZ=		yes
 USES=		gettext pathfix
