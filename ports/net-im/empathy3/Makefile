@@ -12,24 +12,23 @@ COMMENT=	GNOME IM client based around telepathy
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
-		${LOCALBASE}/libdata/pkgconfig/clutter-gst-2.0.pc:${PORTSDIR}/multimedia/clutter-gst \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		itstool:${PORTSDIR}/textproc/itstool \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
-LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
-		geocode-glib:${PORTSDIR}/net-im/geocode-glib \
+LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant \
+		geocode-glib:${PORTSDIR}/net/geocode-glib \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
-		pulse.0:${PORTSDIR}/audio/pulseaudio \
-		telepathy.2:${PORTSDIR}/net-im/libtelepathy \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		telepathy-farstream.3:${PORTSDIR}/net-im/telepathy-farstream \
-		telepathy-logger.3:${PORTSDIR}/net-im/telepathy-logger \
-		folks-telepathy.25:${PORTSDIR}/net-im/folks \
-		notify.4:${PORTSDIR}/devel/libnotify \
+		pulse:${PORTSDIR}/audio/pulseaudio \
+		telepathy:${PORTSDIR}/net-im/libtelepathy \
+		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
+		telepathy-farstream:${PORTSDIR}/net-im/telepathy-farstream \
+		telepathy-logger:${PORTSDIR}/net-im/telepathy-logger \
+		folks-telepathy:${PORTSDIR}/net-im/folks \
+		notify:${PORTSDIR}/devel/libnotify \
 		gcr-3:${PORTSDIR}/security/gcr \
-		canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3 \
+		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
 		clutter-gst-2.0:${PORTSDIR}/multimedia/clutter-gst \
-		webkitgtk-3.0.0:${PORTSDIR}/www/webkit-gtk3 \
+		webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
 		soup-2.4:${PORTSDIR}/devel/libsoup
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
@@ -38,10 +37,10 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 CONFLICTS=	empathy-2.[0-9]*
 
-USES=		gettext pathfix
 LATEST_LINK=	empathy3
 USE_GMAKE=	yes
 USE_XZ=		yes
+USES=		gettext pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	evolutiondataserver3 gnomeprefix ltverhack
 USE_GSTREAMER1=	yes
@@ -49,8 +48,8 @@ USE_AUTOTOOLS=	libtool
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PYTHON=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-Werror \
 		--enable-goa \
 		--enable-gst-1.0=yes \
@@ -106,7 +105,8 @@ PLIST_SUB+=	NST="@comment "
 #.endif
 
 .if ${PORT_OPTIONS:MMAP}
-LIB_DEPENDS+=	champlain-0.12.0:${PORTSDIR}/graphics/libchamplain
+USE_GL=		gl
+LIB_DEPENDS+=	champlain-0.12:${PORTSDIR}/graphics/libchamplain
 CONFIGURE_ARGS+=--enable-map
 PLIST_SUB+=	MAP=""
 .else
@@ -115,7 +115,8 @@ PLIST_SUB+=	MAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCHEESE}
-LIB_DEPENDS+=	cheese-gtk:${PORTSDIR}/multimedia/cheese3
+BUILD_DEPENDS+=	cheese>=3.0.0:${PORTSDIR}/multimedia/cheese3
+RUN_DEPENDS+=	cheese>=3.0.0:${PORTSDIR}/multimedia/cheese3
 CONFIGURE_ARGS+=--with-cheese
 .else
 CONFIGURE_ARGS+=--without-cheese
