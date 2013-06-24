@@ -57,6 +57,5 @@ post-patch:
 		${WRKSRC}/browser-plugin/Makefile.in 
 	@${REINPLACE_CMD} -e 's|libnm-glib libnm-util ||g' \
 		${WRKSRC}/configure
-	@${CHMOD} a+x ${WRKSRC}/config/install-sh
 
 .include <bsd.port.mk>
