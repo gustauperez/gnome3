@@ -11,11 +11,11 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen saver and locker
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=3.1.90:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	pam_helper:${PORTSDIR}/security/pam_helper \
-		gsettings-desktop-schemas>=3.1.90:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring3
 
 CONFLICTS=	gnome-screensaver-2.[0-9]*
@@ -23,7 +23,7 @@ CONFLICTS=	gnome-screensaver-2.[0-9]*
 LATEST_LINK=	gnome-screensaver3
 USE_XZ=		yes
 USE_GMAKE=	yes
-USES=		gettext pathfix
+USES=		gettext pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libgnomekbd3
