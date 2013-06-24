@@ -11,13 +11,12 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Javascript binding
 
-BUILD_DEPENDS=	spidermonkey185>=1.8.5:${PORTSDIR}/lang/spidermonkey185
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		cairo:${PORTSDIR}/graphics/cairo \
 		mozjs185:${PORTSDIR}/lang/spidermonkey185
 
 USE_XZ=		yes
-USES=		gettext pathfix pkgconfig
+USES=		gettext pathfix pkgconfig shebangfix
 USE_GMAKE=	yes
 USE_PYTHON_BUILD=yes
 USE_AUTOTOOLS=	libtool
@@ -27,8 +26,6 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-patch:
-	${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|g' \
-		${WRKSRC}/scripts/make-tests
+SHEBANG_FILES=	scripts/make-tests
 
 .include <bsd.port.mk>
