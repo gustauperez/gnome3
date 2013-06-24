@@ -317,6 +317,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-shell.mo
 @dirrm share/gnome-shell/js
 @dirrm share/gnome-shell
 @dirrm lib/gnome-shell
-@dirrm lib/browser_plugins
+@dirrmtry lib/browser_plugins
 @dirrm share/doc/st
 @dirrm share/doc/shell
