@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	A personal social data server.
 
-LIB_DEPENDS=	rest-0.7.0:${PORTSDIR}/www/rest \
+LIB_DEPENDS=	rest-0.7.0:${PORTSDIR}/devel/rest \
 		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
 
 USE_GNOME=	gconf2 glib20 intlhack libxslt:build
