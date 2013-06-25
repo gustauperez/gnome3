@@ -19,7 +19,7 @@ LIB_DEPENDS=	canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
 		upower-glib:${PORTSDIR}/sysutils/upower \
 		colord:${PORTSDIR}/graphics/colord \
 		ibus:${PORTSDIR}/textproc/ibus \
-		libpwquality:${PORTSDIR}/security/libpwquality \
+		pwquality:${PORTSDIR}/security/libpwquality \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
 		socialweb:${PORTSDIR}/www/libsocialweb \
 		gtop-2.0:${PORTSDIR}/devel/libgtop \
