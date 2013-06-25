@@ -13,13 +13,13 @@ COMMENT=	Control center for GNOME 3 project
 
 BUILD_DEPENDS=	gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon3 \
 		gsettings-desktop-schemas>=3.2.2:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		libpwquality>=0:${PORTSDIR}/security/libpwquality \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
 		xklavier:${PORTSDIR}/x11/libxklavier \
 		upower-glib:${PORTSDIR}/sysutils/upower \
 		colord:${PORTSDIR}/graphics/colord \
 		ibus:${PORTSDIR}/textproc/ibus \
+		libpwquality:${PORTSDIR}/security/libpwquality \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
 		socialweb:${PORTSDIR}/www/libsocialweb \
 		gtop-2.0:${PORTSDIR}/devel/libgtop \
