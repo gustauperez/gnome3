@@ -1,6 +1,6 @@
---- daemon/Makefile.in.orig	2013-04-12 00:53:59.667693353 +0000
-+++ daemon/Makefile.in	2013-04-12 00:54:27.682691596 +0000
-@@ -752,6 +752,7 @@
+--- daemon/Makefile.in.orig	2009-05-31 15:51:18.000000000 -0400
++++ daemon/Makefile.in	2009-05-31 15:56:32.000000000 -0400
+@@ -660,6 +661,7 @@ gdm_session_worker_SOURCES = session-wor
  gdm_session_worker_LDFLAGS = \
  	$(XLIB_LIBS)				\
  	$(PAM_LIBS)				\
