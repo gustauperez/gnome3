@@ -20,7 +20,7 @@ LIB_DEPENDS=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
 
 USES=		gettext pathfix
 USE_XZ=		yes
-USE_GNOME=	gtk30 intlhack introspection:build
+USE_GNOME=	gtk30 intlhack introspection:build libxslt:build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
