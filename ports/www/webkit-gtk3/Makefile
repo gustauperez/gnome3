@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/www/webkit-gtk3/Makefile,v 1.32 2013/03/09 09:12:39 kwm Exp $
+#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 18618 2013-07-03 19:59:13Z kwm $
 
 PORTNAME=	webkit
 PORTVERSION=	2.0.3
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant \
 		secret-1:${PORTSDIR}/security/libsecret \
 		icutu:${PORTSDIR}/devel/icu \
+		harfbuzz:${PORTSDIR}/print/harfbuzz \
 		webp:${PORTSDIR}/graphics/webp \
 		curl:${PORTSDIR}/ftp/curl \
 		soup-2.4:${PORTSDIR}/devel/libsoup
@@ -32,10 +33,8 @@ USES=		bison gettext pkgconfig shebangfix
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 USE_GMAKE=	yes
-#USE_AUTOTOOLS=	libtool
 USE_GNOME=	cairo gnomehier gtk20 gtk30 introspection:build \
 		libxslt:build
-#ltverhack lthack
 USE_SQLITE=	3
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
@@ -52,7 +51,7 @@ CONFIGURE_ARGS=	--with-gtk=3.0 \
 		--enable-introspection
 MAKEFILE=	GNUmakefile
 
-CONFIGURE_ARGS+=--disable-silent-rules
+#CONFIGURE_ARGS+=--disable-silent-rules
 CONFIGURE_ARGS+=--disable-egl \
 		--disable-gles2
 #		--with-acceleration-backend=opengl # clutter broken?
@@ -79,7 +78,7 @@ OPTIONS_DEFAULT=WEBGL WEBAUDIO
 WEBAUDIO_DESC=	Web audio support
 WEBGL_DESC=	Enable Web GL support
 DEBUG_DESC=	Just enable debug symbols
-FULLDEBUG_DESC=	Enable fullblown debug support
+FULLDEBUG_DESC=	Enable asserts and other debug support
 
 .include <bsd.port.options.mk>
 
@@ -102,7 +101,7 @@ CONFIGURE_ARGS+=--enable-debug
 CONFIGURE_ARGS+=--disable-debug
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG} || ${PORT_OPTIONS:MFULLDEBUG}
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug-symbols=yes
 .endif
 
@@ -112,16 +111,15 @@ CONFIGURE_ARGS+=--enable-debug-symbols=yes
 CPPFLAGS+=	-DGTEST_USE_OWN_TR1_TUPLE
 CXXFLAGS+=	-Wno-c++11-extensions -Qunused-arguments -stdlib=libc++
 LDFLAGS+=	-stdlib=libc++
-.if ${OSVERSION}<1000024
+.if ${OSVERSION}<1000019
 LDFLAGS+=	-Wl,-Bstatic -licu
-#BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33 \
-#		libc++>=0:${PORTSDIR}/devel/libc++
-#RUN_DEPENDS+=	libc++>=0:${PORTSDIR}/devel/libc++
-#CC=		clang33
-#CXX=		clang++33
-#CPP=		clang-cpp33
-#CONFIGURE_ENV+=	CC=${CC} CXX=${CXX} CPP=${CPP}
-#CPPFLAGS+=	-I${LOCALBASE}/include/c++/v1
+BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33 \
+		libc++>=0:${PORTSDIR}/devel/libc++
+RUN_DEPENDS+=	libc++>=0:${PORTSDIR}/devel/libc++
+CC=		clang33
+CXX=		clang++33
+CPP=		clang-cpp33
+CONFIGURE_ENV+=	CC=${CC} CXX=${CXX} CPP=${CPP}
 .endif
 
 .if ${ARCH} == powerpc64
@@ -139,9 +137,6 @@ post-patch:
 		${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp
 	@${FIND} ${WRKSRC} -name GNUmakefile.* | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-# disable static library.
-#	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|' \
-#		${WRKDIR}/gnome-libtool
 	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
 		${WRKSRC}/Source/WebCore/dom/make_names.pl \
 		${WRKSRC}/Source/WebCore/css/make-css-file-arrays.pl \
@@ -150,11 +145,6 @@ post-patch:
 		${WRKSRC}/Source/WebCore/css/makevalues.pl \
 		${WRKSRC}/Source/WebCore/css/makeprop.pl \
 		${WRKSRC}/Source/WebCore/make-hash-tools.pl
-#.if !defined(WITH_GCC_COMPILER)
-#	@${REINPLACE_CMD} -e 's|-lstdc++|-lc++|g' \
-#	@${REINPLACE_CMD} -e 's|-lstdc++||g' \
-#		${WRKSRC}/GNUmakefile.in
-#.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Programs/GtkLauncher \
