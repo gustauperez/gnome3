@@ -40,6 +40,10 @@ GLIB_SCHEMAS=	org.cinnamon.muffin.gschema.xml
 MAN1=		muffin-message.1 muffin-theme-viewer.1 muffin-window-demo.1 \
 		muffin.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|REQUIRED_AUTOMAKE_VERSION=1.10|REQUIRED_AUTOMAKE_VERSION=1.14|g' \
+		${WRKSRC}/autogen.sh
+
 pre-configure:
 		@cd ${WRKSRC} && ${SH} autogen.sh
 
