@@ -34,7 +34,8 @@ USE_AUTOTOOLS=	libtool autoconf automake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--enable-static --disable-packagekit --disable-tracker
-MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
+MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias" \
+		REQUIRED_AUTOMAKE_VERSION=1.14
 
 GLIB_SCHEMAS=	org.nemo.gschema.xml
 
@@ -54,6 +55,10 @@ post-patch:
 
 	@${FIND} ${WRKSRC} -name \* | ${XARGS} ${EGREP} -l "#!.*\/usr\/bin\/python" | \
 		${XARGS} ${REINPLACE_CMD} -e "s|#!.*python.*|#!/usr/bin/env python|g"
+
+	@${REINPLACE_CMD} -e 's|REQUIRED_AUTOMAKE_VERSION=1.10|REQUIRED_AUTOMAKE_VERSION=1.14|g' \
+		${WRKSRC}/autogen.sh
+
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
