@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/sysutils/upower/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	upower
 PORTVERSION=	0.9.18
@@ -15,12 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
     		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
 
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_GNOME=	glib20 intlhack introspection:build ltverhack
+USE_GNOME=	intlhack ltverhack glib20 introspection
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
@@ -35,8 +33,8 @@ CONFIGURE_ARGS+=--disable-man-pages
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410 \
     		${LOCALBASE}/share/xml/docbook/4.1.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-sk \
+    		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-USE_GNOME+=	libxslt:build
 MAN1=		upower.1
 MAN7=		UPower.7
 MAN8=		upowerd.8

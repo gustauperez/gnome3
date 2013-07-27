@@ -1,6 +1,6 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/polkit/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/sysutils/polkit/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	polkit
 PORTVERSION=	0.105
@@ -15,8 +15,7 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	dbus-launch:${PORTSDIR}/devel/dbus
 
 USE_GNOME=	glib20 intlhack gnomehier introspection
-USE_GMAKE=	yes
-USES=		gettext pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \

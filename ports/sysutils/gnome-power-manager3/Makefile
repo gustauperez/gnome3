@@ -16,9 +16,8 @@ LIB_DEPENDS=	upower-glib:${PORTSDIR}/sysutils/upower \
 CONFLICTS=	gnome-power-manager-2.[0-9]*
 
 LATEST_LINK=	gnome-power-manager3
-USES=		gettext pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack
 MAKE_JOBS_UNSAFE=yes

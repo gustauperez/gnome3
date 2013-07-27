@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/sysutils/system-tools-backends/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	system-tools-backends
 PORTVERSION=	2.10.2
@@ -12,15 +12,14 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Backend system admin scripts for gnome-system-tools
 
 BUILD_DEPENDS=	p5-Net-DBus>=0:${PORTSDIR}/devel/p5-Net-DBus
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	p5-Net-DBus>=0:${PORTSDIR}/devel/p5-Net-DBus
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_PERL5=	yes
-USES=		pathfix
-USE_GNOME=	glib20 intlhack
+USES=		gmake pathfix
+USE_GNOME=	intlhack glib20
 GNU_CONFIGURE=	yes
 USE_GNOME_SUBR=	yes
 CONFIGURE_ARGS=	--with-stb-group=wheel \

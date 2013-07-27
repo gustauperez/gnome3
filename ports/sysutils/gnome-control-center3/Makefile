@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/gnome-control-center3/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/sysutils/gnome-control-center3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	3.6.3
@@ -19,9 +19,9 @@ LIB_DEPENDS=	canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
 		upower-glib:${PORTSDIR}/sysutils/upower \
 		colord:${PORTSDIR}/graphics/colord \
 		ibus:${PORTSDIR}/textproc/ibus \
-		pwquality:${PORTSDIR}/security/libpwquality \
 		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
 		socialweb:${PORTSDIR}/www/libsocialweb \
+		pwquality:${PORTSDIR}/security/libpwquality \
 		gtop-2.0:${PORTSDIR}/devel/libgtop \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
@@ -37,8 +37,8 @@ CONFLICTS=	gnome-control-center-2.[0-9]* gnome-media-2.[0-9]*
 
 LATEST_LINK=	gnome-control-center3
 USE_XZ=		yes
-USES=		desktop-file-utils gettext pathfix pkgconfig shared-mime-info
-USE_GMAKE=	yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
 USE_GNOME=	gnomeprefix gnomehier intlhack libxml2 gnomemenus3 \
 		libgnomekbd3 gnomedesktop3 gconf2
 USE_XORG=	xscrnsaver x11 xxf86misc kbproto xi

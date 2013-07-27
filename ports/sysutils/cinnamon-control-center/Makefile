@@ -27,7 +27,7 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		croco:${PORTSDIR}/textproc/libcroco \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		clutter-glx-1:${PORTSDIR}/graphics/clutter \
-		clutter-gst-2:${PORTSDIR}/multimedia/clutter-gst \
+		clutter-gst-1:${PORTSDIR}/multimedia/clutter-gst \
 		gjs:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
@@ -39,10 +39,9 @@ GH_TAGNAME=	1.7.1
 GH_COMMIT=	a3883df
 
 USE_XORG=	x11 xfixes sm
-USE_GMAKE=	yes
-USES=		gettext pathfix
-USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomemenus3 \
-		gnomeprefix gtk30 intlhack
+USES=		gettext gmake pathfix
+USE_GNOME=	gnomeprefix intlhack gtk30 gconf2 gnomemenus3 \
+		gnomedesktop3 evolutiondataserver3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env

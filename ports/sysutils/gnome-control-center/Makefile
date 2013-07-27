@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/sysutils/gnome-control-center/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	2.32.1
@@ -12,10 +12,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for GNOME 2 project
 
-LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	canberra-gtk:${PORTSDIR}/audio/libcanberra \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
+		unique-1.0:${PORTSDIR}/x11-toolkits/unique
 BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
@@ -23,12 +23,12 @@ RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 CONFLICTS=	gnome-control-center-3.[0-9]*
 
 USE_BZIP2=	yes
-USES=		gettext pathfix
-USE_GMAKE=	yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
 USE_GSTREAMER=	good
 WANT_GNOME=	yes
-USE_GNOME=	desktopfileutils gconf2 gnomedesktop gnomemenus gnomeprefix \
-		intlhack libgnomekbd librsvg2 metacity
+USE_GNOME=	gnomeprefix intlhack metacity gnomemenus \
+		libgnomekbd gnomedesktop librsvg2 gconf2
 USE_XORG=	xscrnsaver
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
@@ -61,8 +61,5 @@ post-patch:
 	    	${WRKSRC}/capplets/common/gnome-theme-info.c
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${PREFIX}/sbin|g' \
 		${WRKSRC}/capplets/display/org.gnome.randr.policy.in
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.post.mk>

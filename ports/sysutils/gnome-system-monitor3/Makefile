@@ -20,9 +20,8 @@ CONFLICTS=	gnome-system-monitor-2.[0-9]*
 
 LATEST_LINK=	gnome-system-monitor3
 USE_XZ=		yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 INSTALLS_OMF=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtkmm30 intlhack librsvg2 libwnck3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

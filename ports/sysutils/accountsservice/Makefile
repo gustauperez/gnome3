@@ -1,5 +1,9 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
+# New ports collection makefile for:   accountsservice
+# Date Created:			8 Mar 2011
+# Whom:				Koop Mast <kwm@FreeBSD.org>
+#
 # $FreeBSD$
+#
 
 PORTNAME=	accountsservice
 PORTVERSION=	0.6.21
@@ -14,8 +18,8 @@ LIB_DEPENDS=	xslt:${PORTSDIR}/textproc/libxslt \
 		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
 USE_XZ=		yes
-USE_GNOME=	glib20 intlhack introspection:build
-USES=		gettext pathfix
+USE_GNOME=	gnomehack glib20 intlhack
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

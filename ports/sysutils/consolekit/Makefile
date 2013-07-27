@@ -1,6 +1,5 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/sysutils/consolekit/Makefile,v 1.30 2012/08/17 19:06:46 kwm Exp $
+#    $MCom: ports/trunk/sysutils/consolekit/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	consolekit
 PORTVERSION=	0.4.5
@@ -11,14 +10,13 @@ DISTFILES=	ConsoleKit-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for defining and tracking users
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-    		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+    		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
 WRKSRC=		${WRKDIR}/ConsoleKit-${PORTVERSION}
 USE_BZIP2=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_XORG=	x11
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
