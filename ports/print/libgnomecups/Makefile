@@ -12,12 +12,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Support library for gnome cups administration
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
+LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext pathfix pkgconfig
-USE_GNOME=	glib20 intlhack ltverhack
+USE_GNOME=	intlhack ltverhack glib20
+USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=  libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
