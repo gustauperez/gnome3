@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/math/gcalctool/Makefile,v 1.146 2013/03/09 09:12:38 kwm Exp $
+#   $MCom: ports/trunk/math/gcalctool/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gcalctool
 PORTVERSION=	5.32.2
@@ -16,10 +16,9 @@ COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 CONFLICTS=	gcalctool-6.[0-9]*
 
 USE_BZIP2=	yes
-USES=		bison gettext pathfix
-USE_GMAKE=	yes
+USES=		bison gettext gmake pathfix
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gconf2 gnomedocutils gnomeprefix gtk20 intlhack
+USE_GNOME=	gnomeprefix intlhack gconf2 gnomedocutils gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
