@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/security/gnome-keyring3/Makefile,v 1.24 2013/02/15 16:35:39 kwm Exp $
+#   $MCom: ports/trunk/security/gnome-keyring3/Makefile 18410 2013-05-01 15:20:45Z kwm $
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	3.6.2
@@ -12,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program that keeps passwords and other secrets
 
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
-		gcr>=3.4.1:${PORTSDIR}/security/gcr
+		gcr>=3.5.3:${PORTSDIR}/security/gcr
 LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
 		dbus-1:${PORTSDIR}/devel/dbus \
 		gcr:${PORTSDIR}/security/gcr \
@@ -24,10 +24,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 CONFLICTS=	gnome-keyring-2.[0-9]*
 
 LATEST_LINK=	gnome-keyring3
-USES=		gettext pathfix
 USE_XZ=		yes
-USE_GNOME=	gnomeprefix gtk30 intlhack ltverhack
-USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix gtk30 ltverhack intlhack
+USES=		gettext gmake pathfix pkgconfig
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/security/gnome-keyring/Makefile,v 1.106 2013/02/15 16:35:39 kwm Exp $
+#   $MCom: ports/trunk/security/gnome-keyring/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	2.32.1
@@ -19,9 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 CONFLICTS=	gnome-keyring-3.[0-9]* gcr-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gtk20 intlhack ltverhack
-USE_GMAKE=	yes
-USES=		gettext pathfix
+USE_GNOME=	gnomeprefix gtk20 ltverhack intlhack
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib" \
