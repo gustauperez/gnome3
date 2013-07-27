@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#  $MCom: ports/trunk/net/vinagre3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	vinagre
 PORTVERSION=	3.6.2
@@ -11,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	gtk-vnc-2:${PORTSDIR}/net/gtk-vnc3 \
+LIB_DEPENDS=	gtk-vnc-2.0:${PORTSDIR}/net/gtk-vnc3 \
     		avahi-core:${PORTSDIR}/net/avahi-app \
 		avahi-ui-gtk3:${PORTSDIR}/net/avahi-gtk3 \
 		gdbm:${PORTSDIR}/databases/gdbm \
@@ -23,13 +24,13 @@ CONFLICTS=	vinagre-2.[0-9]*
 
 LATEST_LINK=	vinagre3
 USE_XZ=		yes
-USES=		gettext pathfix
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
 USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 vte3
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-spice --enable-ssh
-CPPFLAGS+=	-I${LOCALBASE}/include  -Wno-format-nonliteral
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.Vinagre.gschema.xml
@@ -38,9 +39,8 @@ MAN1=		vinagre.1
 
 OPTIONS_DEFINE=	TELEPATHY RDP
 OPTIONS_DEFAULT=TELEPATHY RDP
-
-TELEPATHY_DESC=	Enable telepathy integration
-RDP_DESC=	Enable MS Windows remote desktop support
+TELEPATHY_DESC=	Telepathy integration
+RDP_DESC=	MS Windows remote desktop support
 
 .include <bsd.port.options.mk>
 
@@ -64,9 +64,7 @@ PLIST_SUB+=	RDP="@comment "
 .endif
 
 post-install:
-	@-update-desktop-database > /dev/null
-	@-update-mime-database ${PREFIX}/share/mime > /dev/null
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

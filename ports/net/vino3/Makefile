@@ -1,7 +1,6 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $MCom: ports/net/vino3/Makefile,v 1.19 2012/06/01 07:49:00 kwm Exp $
-#
+#   $MCom: ports/trunk/net/vino3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	vino
 PORTVERSION=	3.6.2
@@ -23,10 +22,9 @@ CONFLICTS=	vino-2.[0-9]*
 
 LATEST_LINK=	vino3
 USE_XZ=		yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	xdamage xfixes xtst
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--without-network-manager \
@@ -35,8 +33,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.Vino.enums.xml org.gnome.Vino.gschema.xml
 
-.if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
+OPTIONS_DEFINE=	NOTIFY
+OPTIONS_DEFAULT=NOTIFY
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNOTIFY}
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=--without-libnotify
 .endif

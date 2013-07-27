@@ -1,7 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net/vinagre/Makefile,v 1.48 2012/09/01 23:02:11 mezz Exp $
-#
+#   $MCom: ports/trunk/net/vinagre/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	vinagre
 PORTVERSION=	2.30.3
@@ -13,19 +12,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
-LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
-    		avahi-core.7:${PORTSDIR}/net/avahi-app \
-		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
-		gdbm.4:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gtk-vnc-1.0:${PORTSDIR}/net/gtk-vnc \
+    		avahi-core:${PORTSDIR}/net/avahi-app \
+		avahi-ui:${PORTSDIR}/net/avahi-gtk \
+		gdbm:${PORTSDIR}/databases/gdbm \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 
 CONFLICTS=	vinagre-3.[0-9]*
 
 USE_BZIP2=	yes
-USES=		gettext pathfix
-USE_GNOME=	gconf2 gnomedocutils gnomepanel gnomeprefix \
-		intlhack vte
-USE_GMAKE=	yes
+USES=		desktop-file-utils gettext gmake pathfix shared-mime-info
+USE_GNOME=	gnomeprefix intlhack vte gconf2 gnomedocutils gnomepanel
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -37,11 +34,13 @@ GCONF_SCHEMAS=	vinagre.schemas
 
 MAN1=		vinagre.1
 
-OPTIONS=	TELEPATHY "Enable telepathy integration" on
+OPTIONS_DEFINE=	TELEPATHY
+OPTIONS_DEFAULT=TELEPATHY
+TELEPATHY_DESC=	Telepathy integration
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_TELEPATHY)
+.if ${PORT_OPTIONS:MTELEPATHY}
 CONFIGURE_ARGS+=--enable-telepathy
 LIB_DEPENDS+=	telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 PLIST_SUB+=	TELEPATHY=""
@@ -51,13 +50,11 @@ PLIST_SUB+=	TELEPATHY="@comment "
 .endif
 
 post-install:
-	@-update-desktop-database > /dev/null
-	@-update-mime-database ${PREFIX}/share/mime > /dev/null
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog MAINTAINERS NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,7 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net/gnome-nettool3/Makefile,v 1.3 2012/04/13 11:45:24 mezz Exp $
-#
+#   $MCom: ports/trunk/net/gnome-nettool3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-nettool
 PORTVERSION=	3.2.0
@@ -13,15 +12,14 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME utility that provides network information statistics
 
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
+LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 
 CONFLICTS=	gnome-nettool-2.[0-9]*
 LATEST_LINK=	gnome-nettool3
 
 USE_XZ=		yes
-USE_GNOME=	gnomedocutils gnomeprefix gtk30 intlhack
-USE_GMAKE=	yes
-USES=		gettext pathfix
+USE_GNOME=	intlhack gnomeprefix gtk30 gnomedocutils
+USES=		gettext gmake pathfix
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
