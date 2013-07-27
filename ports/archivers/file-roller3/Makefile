@@ -20,8 +20,7 @@ LATEST_LINK=	file-roller3
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
-USES=		gettext pathfix
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack desktopfileutils gnomedocutils \
 		gtk30 gconf2
 USE_XORG=	sm
