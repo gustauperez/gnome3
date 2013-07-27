@@ -15,6 +15,8 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		cairo:${PORTSDIR}/graphics/cairo \
 		mozjs185:${PORTSDIR}/lang/spidermonkey185
 
+CONFLICTS_BUILD=spidermonkey17-1.7.*
+
 USE_XZ=		yes
 USES=		gettext pathfix pkgconfig shebangfix
 USE_GMAKE=	yes
