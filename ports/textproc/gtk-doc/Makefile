@@ -1,9 +1,6 @@
-# New ports collection makefile for:	gtk-doc
-# Date created:				8 March 2001
-# Whom:					fenner
-#
+# Created by: fenner
 # $FreeBSD$
-#    $MCom: ports/textproc/gtk-doc/Makefile,v 1.14 2012/08/04 21:04:24 kwm Exp $
+#    $MCom: ports/trunk/textproc/gtk-doc/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gtk-doc
 PORTVERSION=	1.18
@@ -30,10 +27,9 @@ CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 USE_XZ=		yes
 USE_PERL5=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnomeprefix libxslt gnomedocutils
-USE_PKGCONFIG=	build
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	gnomeprefix libxslt gnomedocutils
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
 

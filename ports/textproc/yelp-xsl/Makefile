@@ -1,10 +1,6 @@
-# New ports collection makefile for:	yelp
-# Date created:				18 May 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/textproc/yelp-xsl/Makefile,v 1.11 2012/08/04 10:11:40 kwm Exp $
-#
+#   $MCom: ports/trunk/textproc/yelp-xsl/Makefile 18500 2013-05-26 22:35:07Z kwm $
 
 PORTNAME=	yelp-xsl
 PORTVERSION=	3.6.1
@@ -18,20 +14,10 @@ COMMENT=	DocBook XSLT stylesheets for yelp
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 USE_XZ=		yes
-USE_GMAKE=	yes
-USES=		pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack libxml2 libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-.include <bsd.port.pre.mk>
-
-# Around the time GCC stack protection (aka Propolice) for userland
-# was enabled on src/share/mk/bsd.sys.mk
-# SVN rev 180012 on 2008-06-25 21:33:28Z by ru
-.if ${OSVERSION} >= 800040
-LDFLAGS+=	-fstack-protector
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -24,9 +24,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 USE_PYTHON=	yes
 
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USE_GCC=	4.6+
-USE_GNOME=	dconf
+USES=		gmake
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.freedesktop.ibus.gschema.xml
@@ -57,7 +55,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gtk30
+USE_GNOME+=	gtk30 dconf
 PLIST_SUB+=	GTK3=""
 .else
 CONFIGURE_ARGS+=	--disable-gtk3
@@ -73,8 +71,7 @@ PLIST_SUB+=	VALA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGINTRO}
-BUILD_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
-RUN_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
+USE_GNOME+=		introspection
 CONFIGURE_ARGS+=	--enable-introspection=yes
 PLIST_SUB+=		GINTRO=""
 .else
@@ -90,6 +87,9 @@ post-patch:
 #	@${REINPLACE_CMD} -e 's|import locale|import gettext|g' ${WRKSRC}/ui/gtk/main.py
 	@${REINPLACE_CMD} -e 's|setpgrp ()|setpgrp (0,0)|g' ${WRKSRC}/bus/main.c
 	@${REINPLACE_CMD} -e 's|/var/lib/dbus|/var/db/dbus|g' ${WRKSRC}/src/ibusshare.c #devel/dbus/files/dbus.in
+	@${REINPLACE_CMD} -e 's|-Wno-unused-but-set-variable||g' \
+		${WRKSRC}/engine/Makefile.in ${WRKSRC}/tools/Makefile.in \
+		${WRKSRC}/ui/gtk3/Makefile.in
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/xdg/autostart
