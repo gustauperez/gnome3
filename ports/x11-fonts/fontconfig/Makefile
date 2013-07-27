@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD: head/x11-fonts/fontconfig/Makefile 300897 2012-07-14 14:29:18Z beat $
-#   $MCom: ports/trunk/x11-fonts/fontconfig/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/x11-fonts/fontconfig/Makefile 18634 2013-07-26 10:42:35Z kwm $
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.10.92
@@ -18,12 +18,10 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	ltverhack
-USE_PKGCONFIG=	build
 CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
 		--with-templatedir=${PREFIX}/etc/fonts/conf.avail \
 		--with-xmldir=${PREFIX}/etc/fonts \
@@ -35,7 +33,6 @@ CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--disable-docs
 MAKE_ENV=	LC_ALL=C
-MAKE_JOBS_SAFE=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 MAN1=		fc-cache.1 fc-cat.1 fc-list.1 fc-match.1 fc-query.1 fc-scan.1
