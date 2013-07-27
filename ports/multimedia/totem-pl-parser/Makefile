@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/multimedia/totem-pl-parser/Makefile,v 1.51 2012/05/29 20:43:31 kwm Exp $
+#   $MCom: ports/trunk/multimedia/totem-pl-parser/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	totem-pl-parser
 PORTVERSION=	3.4.5
@@ -12,14 +12,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject-based library to parse a host of playlist formats
 
 LIB_DEPENDS=	gmime-2.6:${PORTSDIR}/mail/gmime26 \
-		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
-RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
+		soup-gnome-2.4:${PORTSDIR}/devel/libsoup-gnome
 
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack gnomehier gnomeprefix \
-		intlhack introspection:build libxml2 ltverhack
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
+USE_GNOME=	gnomeprefix glib20 libxml2 intlhack ltverhack gnomehier \
+		introspection:build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-libarchive
@@ -28,12 +26,14 @@ CONFIGURE_ENV=	ARCHIVE_CFLAGS="-I/usr/include" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	QUVI "Enable flash media stream URL support"  off
+OPTIONS_DEFINE=	QUVI
+OPTIONS_DEFAULT=QUVI
+QUVI_DESC=	Flash media stream URL support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_QUVI)
-LIB_DEPENDS+=	quvi.7:${PORTSDIR}/multimedia/libquvi
+.if ${PORT_OPTIONS:MQUVI}
+LIB_DEPENDS+=	quvi:${PORTSDIR}/multimedia/libquvi
 CONFIGURE_ARGS+=--enable-quvi
 .else
 CONFIGURE_ARGS+=--enable-quvi=no

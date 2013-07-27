@@ -1,5 +1,5 @@
 # $FreeBSD$
-#   $MCom: ports/multimedia/cheese3/Makefile,v 1.17 2013/03/13 22:35:53 kwm Exp $
+#   $MCom: ports/trunk/multimedia/cheese3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	cheese
 PORTVERSION=	3.6.0
@@ -26,10 +26,10 @@ CONFLICTS=	cheese-2.[0-9]*
 LATEST_LINK=	cheese3
 USE_XORG=	xxf86vm x11
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix intlhack introspection:build \
-		librsvg2 libxml2:build
-USES=		gettext pathfix pkgconfig
+USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 librsvg2 \
+		gnomedesktop3 libxml2:build introspection:build
+USES=		gettext gmake pathfix pkgconfig
+# USE_GSTREAMER= bad gconf good jpeg ogg theora v4l2 vorbis
 USE_GSTREAMER1=	bad good jpeg ogg theora v4l2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

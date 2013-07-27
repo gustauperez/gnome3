@@ -1,6 +1,6 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#   $MCom: ports/multimedia/totem/Makefile,v 1.160 2012/08/17 19:06:44 kwm Exp $
+#   $MCom: ports/trunk/multimedia/totem/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	totem
 PORTVERSION=	2.32.0
@@ -14,8 +14,8 @@ COMMENT?=	A gstreamer-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	gdata.7:${PORTSDIR}/devel/libgdata06 \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser
+		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
+		totem-plparser:${PORTSDIR}/multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		${PYTHON_SITELIBDIR}/atom/__init__.py:${PORTSDIR}/devel/py-gdata
@@ -24,12 +24,10 @@ CONFLICTS=	totem-3.[0-9]*
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes
-USES=		gettext pathfix
-USE_GNOME=	desktopfileutils gnomehier gnomeprefix intlhack \
-		ltverhack nautilus2 pygtk2 
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
+USE_GNOME=	gnomeprefix intlhack nautilus2 ltverhack pygtk2 gnomehier
 USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
@@ -44,10 +42,12 @@ MAN1=		totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
 
-OPTIONS=	LIRC "Enable lirc support" off \
-		GALAGO "Enable Galago support" off \
-		BROWSER_PLUGINS "Enable install plugins for gecko browser" on \
-#		TRACKER "Enable tracker local search plugin" off
+OPTIONS_DEFINE=	LIRC GALAGO BROWSER_PLUGINS
+GALAGO_DESC=	Galago support
+BROWSER_PLUGINS_DESC=	Plugins for gecko browser
+#TRACKER_DESC=	Tracker local search plugin
+
+OPTIONS_DEFAULT=       BROWSER_PLUGINS
 
 # check configure script for allowed_plugins="..." for new plugins
 TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
@@ -57,7 +57,7 @@ TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
 # Not using:
 # TOTEM_PLUGINS= mythtv bemused jamendo
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 #.if defined(WITH_TRACKER)
 #LIB_DEPENDS+=	tracker-gtk.0:${PORTSDIR}/sysutils/tracker-libtrackergtk
@@ -67,7 +67,7 @@ TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
 PLIST_SUB+=	TRACKER="@comment "
 #.endif
 
-.if defined(WITH_LIRC)
+.if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 PLIST_SUB+=	LIRC=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
@@ -75,7 +75,7 @@ TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
 PLIST_SUB+=	LIRC="@comment "
 .endif
 
-.if defined(WITH_GALAGO)
+.if ${PORT_OPTIONS:MGALAGO}
 LIB_DEPENDS+=	galago.3:${PORTSDIR}/devel/libgalago
 PLIST_SUB+=	GALAGO=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} galago
@@ -83,7 +83,7 @@ TOTEM_PLUGINS:=	${TOTEM_PLUGINS} galago
 PLIST_SUB+=	GALAGO="@comment "
 .endif
 
-.if !defined(WITHOUT_BROWSER_PLUGINS)
+.if  ${PORT_OPTIONS:MBROWSER_PLUGINS}
 CONFIGURE_ARGS+=--enable-browser-plugins \
 		--enable-gmp-plugin \
 		--enable-narrowspace-plugin
@@ -105,7 +105,7 @@ PLIST_SUB+=	BROWSER_PLUGINS="@comment "
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
-DEFAULT_DVD_DEVICE=/dev/acd0
+DEFAULT_DVD_DEVICE=/dev/cd0
 .endif
 
 pre-everything::
@@ -119,10 +119,9 @@ post-patch:
 		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 
 post-install:
-	@-update-desktop-database
 	${MKDIR} ${PREFIX}/share/vala/vapi
 	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vapi ${PREFIX}/share/vala/vapi
 	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${PREFIX}/share/vala/vapi
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
