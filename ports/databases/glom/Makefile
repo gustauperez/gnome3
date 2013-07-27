@@ -26,8 +26,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 USE_XZ=		yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext pathfix pkgconfig shared-mime-info desktop-file-utils
-USE_GMAKE=	yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
 USE_GNOME=	gnomedocutils gnomeprefix intltool pygobject3 libxml2 \
 		gtksourceviewmm3 libgdamm5
 USE_LDCONFIG=	yes

@@ -29,8 +29,7 @@ CONFLICTS=	evolution-data-server-2.[0-9]*
 
 LATEST_LINK=	evolution-data-server3
 USE_XZ=		yes
-USE_GMAKE=	yes
-USES=		bison gettext pathfix
+USES=		bison gettext gmake pathfix pkgconfig
 USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack introspection:build libxml2 \
 		ltasneededhack ltverhack
 USE_OPENLDAP=	yes
