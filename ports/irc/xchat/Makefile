@@ -17,8 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

@@ -21,9 +21,8 @@ RUN_DEPENDS=	samba4>=4.0.1:${PORTSDIR}/net/samba4
 CODENAME=	QUADRANT
 DOWNLOADCODE=	220
 
-USE_GMAKE=	yes
 USE_SQLITE=	3
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

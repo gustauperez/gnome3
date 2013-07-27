@@ -16,9 +16,8 @@ LIB_DEPENDS=	goa-1:${PORTSDIR}/net/gnome-online-accounts \
 		rest-0.7:${PORTSDIR}/devel/librest
 
 USE_XZ=		yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_GNOME=	gnomeprefix intlhack
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

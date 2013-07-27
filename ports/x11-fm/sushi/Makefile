@@ -23,10 +23,9 @@ LIB_DEPENDS=	gcr:${PORTSDIR}/security/gcr \
 RUN_DEPENDS=	nautilus:${PORTSDIR}/x11-fm/nautilus3 \
 		${LOCALBASE}/libdata/pkgconfig/evince-document-3.0.pc:${PORTSDIR}/graphics/evince3
 
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 INSTALLS_ICONS=	yes
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_GCC=	4.6
 USE_GNOME=	gnomeprefix gtksourceview3 intlhack
 USE_LDCONFIG=	yes

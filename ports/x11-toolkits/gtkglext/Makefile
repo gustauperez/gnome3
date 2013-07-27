@@ -26,8 +26,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 OPTIONS_DEFINE=	DOCS
 
 USE_BZIP2=	yes
-USES=		gettext iconv pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		gettext gmake iconv pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xmu xrandr xrender xt xxf86vm

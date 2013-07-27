@@ -14,8 +14,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pathfix
+USES=		gmake pathfix
 USE_GCC=	4.6+
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

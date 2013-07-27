@@ -30,13 +30,12 @@ RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 		pdftotext:${PORTSDIR}/graphics/poppler-utils \
 		w3m:${PORTSDIR}/www/w3m
 
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_XZ=		yes
 USE_FAM=	yes
 WANT_FAM_SYSTEM=gamin
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix intltool ltasneededhack ltverhack
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	core
 INSTALLS_ICONS=	yes

@@ -17,10 +17,10 @@ LIB_DEPENDS=	xslt:${PORTSDIR}/textproc/libxslt \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
+USES=		gmake
 USE_XZ=		yes
 USE_GNOME=	gnomehack glib20 intlhack
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

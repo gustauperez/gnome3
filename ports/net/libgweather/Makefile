@@ -18,9 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc
 
 CONFLICTS=	libgweather-3.[0-9]*
 
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gconf2 gnomeprefix intlhack ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

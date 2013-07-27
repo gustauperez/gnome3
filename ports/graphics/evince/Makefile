@@ -23,8 +23,7 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
-USES=		gettext pathfix
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix
 INSTALLS_OMF=	yes
 USE_GNOME=	desktopfileutils gconf2 gnomedocutils gnomeprefix \
 		intlhack ltasneededhack

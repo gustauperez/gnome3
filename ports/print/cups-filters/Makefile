@@ -37,9 +37,8 @@ GHOSTSCRIPT_DESC=	Build pdftops with GHOSTSCRIPT
 XPDF_DESC=		Build pdftops with XPDF
 
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_GNOME=	glib20 intlhack
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_GCC=	4.6+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ZLIB_CFLAGS="-I/usr/include" \

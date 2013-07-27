@@ -25,9 +25,8 @@ USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
 USE_GNOME+=	glib20 intltool introspection:build ltverhack
-USES+=		gettext pathfix pkgconfig
+USES+=		gettext gmake pathfix pkgconfig
 USE_GNOME_SUBR=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-distro=freebsd \

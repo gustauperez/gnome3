@@ -24,10 +24,9 @@ SLAVEDIRS=	mail/gmime26-sharp
 BUILD_DEPENDS=	${LOCALBASE}/include/gpg-error.h:${PORTSDIR}/security/libgpg-error
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
 
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}26
 USE_ICONV=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20 ltverhack:6
 USE_PKGCONFIG=	build
