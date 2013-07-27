@@ -32,10 +32,9 @@ USE_XZ=		yes
 USE_GNOME=	glib20 gnomehier intltool ltverhack
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl libtool
-USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \

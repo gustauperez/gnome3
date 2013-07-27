@@ -31,10 +31,9 @@ CONFLICTS=	rhythmbox-0.[0-9]*
 
 LATEST_LINK=	rhythmbox3
 USE_BZIP2=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 INSTALLS_OMF=	yes
 USE_XORG=	ice xproto
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 WANT_GNOME=	yes
 USE_GSTREAMER=	flac mp3 jpeg cdparanoia vorbis
