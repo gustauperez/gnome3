@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libxklavier
-# Date created:				31 May 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/libxklavier/Makefile,v 1.58 2012/09/03 16:28:29 mezz Exp $
-#
+#   $MCom: ports/trunk/x11/libxklavier/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	libxklavier
 PORTVERSION=	5.2.1
@@ -21,9 +17,8 @@ RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
 
 USE_XORG=	x11 xkbfile
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack introspection:build \
-		libxml2 ltverhack:12
+USES=		gmake pathfix
+USE_GNOME=	libxml2 glib20 ltverhack:12 introspection:build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

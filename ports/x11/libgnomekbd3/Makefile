@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libgnomekbd
-# Date created:		2006-11-07
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/libgnomekbd3/Makefile,v 1.10 2012/06/14 04:21:55 mezz Exp $
-#
+#   $MCom: ports/trunk/x11/libgnomekbd3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	libgnomekbd
 PORTVERSION=	3.6.0
@@ -15,21 +11,20 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME keyboard shared library
 
-LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
+BUILD_DEPENDS=	libxklavier>=5.2:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	xklavier:${PORTSDIR}/x11/libxklavier
 
 LATEST_LINK=	libgnomekbd3
 
 CONFLICTS=	libgnomekbd-2.[0-9]*
 
 USE_XZ=		yes
-USES=		pathfix gettext
-USE_GNOME=	gnomeprefix gtk30 intltool \
-		introspection:build ltverhack
+USE_GNOME=	gnomeprefix ltverhack intltool gtk30 introspection:build
 USE_AUTOTOOLS=	libtool
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

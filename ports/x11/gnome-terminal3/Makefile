@@ -19,10 +19,9 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 LATEST_LINK=	gnome-terminal3
-USES=		gettext pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 INSTALLS_OMF=	yes
-USE_GMAKE=	yes
 USE_XORG=	sm ice
 USE_GNOME=	gconf2 gnomeprefix intlhack vte3 gnomedocutils
 GNU_CONFIGURE=	yes

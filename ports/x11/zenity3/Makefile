@@ -1,6 +1,6 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/x11/zenity3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	zenity
 PORTVERSION=	3.6.0
@@ -11,21 +11,19 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Display GNOME dialogs from the command line
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-
 LICENSE=	LGPL20
 
-LATEST_LINK=	zenity3
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
-USES=		gettext pathfix
-USE_GMAKE=	yes
+LATEST_LINK=	zenity3
+USES=		gettext gmake pathfix
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	x11
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-pthread"
 
 MAN1=		zenity.1
 
@@ -33,12 +31,11 @@ CONFLICTS=	gtkada-1.2.*
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
-#OPTIONS=	NOTIFY "Enable libnotify support" on
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=		notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		notify:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=	--enable-libnotify
 .else
 CONFIGURE_ARGS+=	--disable-libnotify

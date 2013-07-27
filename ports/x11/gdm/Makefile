@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/x11/gdm/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gdm
 PORTVERSION=	2.30.7
@@ -14,12 +14,12 @@ COMMENT=	GNOME 2 version of xdm display manager
 
 BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit \
-		polkit-gtk-1.0:${PORTSDIR}/sysutils/polkit-gnome \
+LIB_DEPENDS=	ck-connector:${PORTSDIR}/sysutils/consolekit \
+		polkit-gtk-1:${PORTSDIR}/sysutils/polkit-gnome \
     		execinfo:${PORTSDIR}/devel/libexecinfo \
-		upower-glib.1:${PORTSDIR}/sysutils/upower \
-		xklavier.12:${PORTSDIR}/x11/libxklavier \
-		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+		upower-glib:${PORTSDIR}/sysutils/upower \
+		xklavier:${PORTSDIR}/x11/libxklavier \
+		canberra-gtk:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gnome-session:${PORTSDIR}/x11/gnome-session \
@@ -31,15 +31,14 @@ USERS=		gdm
 GROUPS=		gdm
 
 USE_XZ=		yes
-USES=		gettext pathfix
 USE_LDCONFIG=	yes
 USE_XORG=	dmx dmxproto
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gconf2 gnomedocutils gnomehier gnomeprefix gnomepanel \
-		intlhack librsvg2
+USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	intlhack gnomehier gconf2 librsvg2 \
+		gnomedocutils gnomeprefix gnomepanel
 GCONF_SCHEMAS=	gdm-simple-greeter.schemas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home \
@@ -56,19 +55,20 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNOME_LOCALSTATEDIR=	/var
 
-OPTIONS=	IPV6 "Enable IPv6 support" off \
-		KEYRING "Enable GnomeKeyring/PAM integration" on
+OPTIONS_DEFINE=	IPV6 KEYRING
+OPTIONS_DEFAULt=KEYRING
+KEYRING_DESC=	GnomeKeyring/PAM integration
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_KEYRING)
-SUB_LIST+=	PAM_KEYRING=\#
-.else
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+.if ${PORT_OPTIONS:MKEYRING}
+LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 SUB_LIST+=	PAM_KEYRING=
+.else
+SUB_LIST+=	PAM_KEYRING=\#
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -104,4 +104,4 @@ post-install:
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,6 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
+#   $MCom: ports/trunk/x11/gnome-shell/Makefile 18582 2013-06-23 10:52:15Z kwm $
 
 PORTNAME=	gnome-shell
 PORTVERSION=	3.6.2
@@ -21,21 +22,19 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		folks:${PORTSDIR}/net-im/folks \
 		ibus:${PORTSDIR}/textproc/ibus \
 		pulse:${PORTSDIR}/audio/pulseaudio \
-		croco-0:${PORTSDIR}/textproc/libcroco \
+		croco-0.6:${PORTSDIR}/textproc/libcroco \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		clutter-1:${PORTSDIR}/graphics/clutter \
+		clutter-1.0:${PORTSDIR}/graphics/clutter \
 		gjs:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 USE_XZ=		yes
 USE_XORG=	x11 xfixes sm
-USES=		pathfix gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix
 USE_AUTOTOOLS=	libtool
-#USE_GCC=	4.6
-USE_GNOME=	gnomeprefix intlhack gtk30 gnomemenus3 \
-		gnomedesktop3 evolutiondataserver3 ltverhack
+USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomemenus3 gnomeprefix \
+		gtk30 intlhack ltverhack
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 

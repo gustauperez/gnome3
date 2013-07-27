@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/x11/gnome-panel/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-panel
 PORTVERSION=	2.32.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,22 +16,20 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	gweather.1:${PORTSDIR}/net/libgweather \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	gweather:${PORTSDIR}/net/libgweather \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		canberra-gtk:${PORTSDIR}/audio/libcanberra
 
-CONFLICTS=	gnome-panel-3.[0-9]* mate-panel-*
+CONFLICTS=	gnome-panel-3.[0-9]*
 
-USES=		gettext pathfix
 USE_XORG=	ice sm x11 xau xrandr
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomedesktop gnomedocutils gnomemenus gnomeprefix intlhack \
-		librsvg2 libwnck ltverhack referencehack
-WANT_GNOME=	yes
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix
+USE_GNOME=	gnomeprefix intlhack gnomedesktop libwnck gnomemenus \
+		gnomedocutils ltverhack referencehack librsvg2
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-network-manager
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -44,24 +42,22 @@ GCONF_SCHEMAS=	clock.schemas fish.schemas \
 		panel-toplevel.schemas window-list.schemas \
 		workspace-switcher.schemas
 
-OPTIONS=	EVOLUTION "use the Evolution calendar if installed" on \
-		BONOBO "Support for bonobo applets aka Gnome 2 applets" on
 
-.if defined(PACKAGE_BUILDING)
-.undef WITHOUT_GNOME
-WITH_GNOME=	yes
-.endif
+OPTIONS_DEFINE=	EVOLUTION BONOBO
+OPTIONS_DEFAULT=EVOLUTION BONOBO
+EVOLUTION_DESC=	Use the Evolution calendar
+BONOBO_DESC=	Support for bonobo applets aka Gnome 2 applets
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_EVOLUTION) && ${HAVE_GNOME:Mevolutiondataserver}!=""
+.if ${PORT_OPTIONS:MEVOLUTION}
 USE_GNOME+=	evolutiondataserver
 #CONFIGURE_ARGS+=--enable-eds
 .else
 CONFIGURE_ARGS+=--disable-eds
 .endif
 
-.if defined(WITH_BONOBO)
+.if ${PORT_OPTIONS:MBONOBO}
 USE_GNOME+=	libbonoboui
 CONFIGURE_ARGS+=--enable-bonobo
 PLIST_SUB+=	BONOBO=""
@@ -84,6 +80,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/gnome-panel/modules
 	-${LOCALBASE}/bin/gio-querymodules ${PREFIX}/lib/gnome-panel/modules
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 .endif

@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/x11/gnome-session3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-session
 PORTVERSION=	3.6.2
@@ -11,8 +11,6 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the GNOME 3 desktop
 
-CONFLICTS=	gnome-session-2.[0-9]*
-
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
 		json-glib-1.0:${PORTSDIR}/devel/json-glib \
@@ -20,14 +18,15 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-USES=		gettext pathfix
+CONFLICTS=	gnome-session-2.[0-9]*
+
 LATEST_LINK=	gnome-session3
 INSTALLS_ICONS=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite
 USE_GL=		gl
-USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack intltool librsvg2
-USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix intlhack gconf2 intltool gtk30
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docbook-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
