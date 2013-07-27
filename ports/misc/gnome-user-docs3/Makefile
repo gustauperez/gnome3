@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnomeuserdocs2
-# Date created:        			07 July 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/misc/gnome-user-docs3/Makefile,v 1.13 2012/06/06 22:05:58 kwm Exp $
-#
+#   $MCom: ports/trunk/misc/gnome-user-docs3/Makefile 18566 2013-06-18 07:35:39Z kwm $
 
 PORTNAME=	gnome-user-docs
 PORTVERSION=	3.6.2
@@ -17,12 +13,11 @@ COMMENT=	GNOME 3 users guide
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
-USES=		pathfix
 LATEST_LINK=	gnome-user-docs3
 USE_XZ=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
-USE_GNOME=	gnomeprefix gnomehier libxml2
+USES=		gmake pathfix
+USE_GNOME=	gnomeprefix gnomehier libxml2:build
 
 .include <bsd.port.mk>
