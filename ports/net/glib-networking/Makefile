@@ -24,7 +24,6 @@ USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack glib20 intltool
 USES=		gettext gmake
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -22,7 +22,6 @@ USES=		gmake iconv
 USE_BZIP2=	yes
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
-MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gtk20 pangox-compat
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys\
