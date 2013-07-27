@@ -1,6 +1,5 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nemo
 PORTVERSION=	1.7.1
@@ -13,7 +12,7 @@ COMMENT=	File manager for the Cinnamon desktop
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		gtkdocize:${PORTSDIR}/textproc/gtk-doc \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas 
+		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
 		notify:${PORTSDIR}/devel/libnotify \
 		exempi:${PORTSDIR}/textproc/exempi
@@ -26,16 +25,14 @@ GH_TAGNAME=	1.7.1
 GH_COMMIT=	63f7b44
 
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
-USES=		gettext pathfix
-USE_GNOME=	desktopfileutils gnomedesktop3 gnomeprefix intlhack introspection:build libxml2
+USES=		desktop-file-utils gettext gmake pathfix
+USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 introspection:build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool autoconf automake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--enable-static --disable-packagekit --disable-tracker
-MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias" \
-		REQUIRED_AUTOMAKE_VERSION=1.14
+MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GLIB_SCHEMAS=	org.nemo.gschema.xml
 
@@ -56,14 +53,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \* | ${XARGS} ${EGREP} -l "#!.*\/usr\/bin\/python" | \
 		${XARGS} ${REINPLACE_CMD} -e "s|#!.*python.*|#!/usr/bin/env python|g"
 
-	@${REINPLACE_CMD} -e 's|REQUIRED_AUTOMAKE_VERSION=1.10|REQUIRED_AUTOMAKE_VERSION=1.14|g' \
-		${WRKSRC}/autogen.sh
-
-
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
