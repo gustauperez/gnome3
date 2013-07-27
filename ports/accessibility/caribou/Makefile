@@ -24,8 +24,7 @@ LIB_DEPENDS=	clutter-glx-1.0.0:${PORTSDIR}/graphics/clutter \
 RUN_DEPENDS=	py*-atspi>=2.1.91:${PORTSDIR}/accessibility/py-atspi
 
 USE_XZ=		yes
-USES=		pathfix gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix
 MAKE_JOBS_UNSAFE=yes
 USE_PYTHON=	yes
 USE_XORG=	x11 xtst

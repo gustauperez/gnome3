@@ -16,10 +16,9 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix gettext pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	glib20 gnomehier introspection:build \
 		ltverhack referencehack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc

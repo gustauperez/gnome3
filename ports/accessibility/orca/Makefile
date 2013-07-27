@@ -25,9 +25,8 @@ CONFLICTS=	orca-3.[0-9]* py*-json-py-[0-9]*
 LATEST_LINK=	gnome-orca
 
 USE_BZIP2=	yes
-USES=		gettext pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix libgnomeui gnomespeech pygnome2 pygnomedesktop
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
