@@ -16,10 +16,9 @@ LIB_DEPENDS=	gtop-2:${PORTSDIR}/devel/libgtop \
 		gtkmm-3:${PORTSDIR}/x11-toolkits/gtkmm30
 
 USE_XZ=		yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_GNOME=	gconf2 glibmm gnomedocutils gnomeprefix gtk30 \
 		gtksourceviewmm3 intlhack vte3
-USE_GMAKE=	yes
 USE_GCC=	4.6+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -28,9 +28,8 @@ USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 USE_GL=		gl glu
 USE_XORG=	ice x11
-USE_GMAKE=	yes
 USE_SQLITE=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_GNOME=	gnomedocutils gnomeprefix gtk30 \
 		intlhack introspection:build librsvg2 pygobject3
 USE_GSTREAMER=	vorbis ogg

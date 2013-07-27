@@ -20,10 +20,9 @@ CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]* gnome-games-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
 USE_GL=		yes
 USE_GNOME=	desktopfileutils gnomedocutils gnomeprefix intlhack \
 		introspection:build librsvg2 pygnomedesktop

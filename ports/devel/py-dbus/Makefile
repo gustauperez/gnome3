@@ -13,9 +13,8 @@ COMMENT=	Python bindings for the D-BUS messaging system
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \

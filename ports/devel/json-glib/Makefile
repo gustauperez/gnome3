@@ -17,8 +17,7 @@ COMMENT=	JSON (RFC 4627) interface for Glib
 BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 
-USES=		pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomeprefix ltverhack
 USE_PKGCONFIG=	build

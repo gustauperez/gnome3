@@ -14,9 +14,8 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=3.6.0:${PORTSDIR}/devel/gsettings-deskto
 		gnome-shell:${PORTSDIR}/x11/gnome-shell
 
 USE_XZ=		yes
-USE_GMAKE=	yes
-USES=		gettext pathfix
-USE_GNOME=	gnomeprefix gconf2 pygobject3
+USES=		gettext gmake pathfix
+USE_GNOME=	gconf2 gnomeprefix pygobject3
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

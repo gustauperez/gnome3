@@ -19,10 +19,9 @@ COMMENT=	Interactive Python accessibility explorer for GNOME
 CONFLICTS=	accerciser-3.[0-9].*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	pygnomedesktop atspi intlhack
 USE_PYTHON=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

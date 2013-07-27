@@ -19,12 +19,11 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-i
 CONFLICTS=	eog-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils gconf2 gnomedesktop gnomeprefix \
 		intlhack librsvg2
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
