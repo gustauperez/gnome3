@@ -1,10 +1,6 @@
-# New ports collection makefile for:   pangomm
-# Date created:        23 July 2008
-# Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/pangomm/Makefile,v 1.24 2012/09/03 16:28:30 mezz Exp $
-#
+#   $MCom: ports/trunk/x11-toolkits/pangomm/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	pangomm
 PORTVERSION=	2.28.4
@@ -20,14 +16,12 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
-		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pango
+USES=		gmake pathfix
+USE_GNOME=	pango glibmm cairomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-documentation \

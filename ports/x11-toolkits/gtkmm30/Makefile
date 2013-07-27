@@ -1,16 +1,16 @@
 # Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gtkmm30/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/x11-toolkits/gtkmm30/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gtkmm
-PORTVERSION=	3.8.0
+PORTVERSION=	3.8.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	C++ wrapper for Gtk+3 , Pango
+COMMENT=	C++ wrapper for Gtk+3
 
 USE_XZ=		yes
 LATEST_LINK=	gtkmm30
@@ -19,8 +19,7 @@ LATEST_LINK=	gtkmm30
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_GMAKE=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 17278 2013-04-01 21:57:50Z kwm $
+#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	pango
 PORTVERSION=	1.34.1
@@ -21,12 +21,10 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		freetype:${PORTSDIR}/print/freetype2 \
 		harfbuzz:${PORTSDIR}/print/harfbuzz \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
-		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
+RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
+                ${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
 
-USES=		gettext pathfix pkgconfig
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20 introspection:build ltverhack referencehack
