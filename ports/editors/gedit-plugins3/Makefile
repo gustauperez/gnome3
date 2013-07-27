@@ -1,5 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/editors/gedit-plugins3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	3.6.1
@@ -11,17 +12,16 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plugins for GEdit 3
 
 BUILD_DEPENDS=	gedit>=${GEDITVER}:${PORTSDIR}/editors/gedit3
-LIB_DEPENDS=	peas-1.0:${PORTSDIR}/devel/libpeas
+LIB_DEPENDS=	peas-1.0.0:${PORTSDIR}/devel/libpeas
 RUN_DEPENDS=	gedit>=${GEDITVER}:${PORTSDIR}/editors/gedit3
 
 CONFLICTS=	gedit-plugins-2.[0-9]*
 
-GEDITVER=	3.4.0
+GEDITVER=	3.6.0
 LATEST_LINK=	gedit-plugins3
-USES=		gettext pathfix
 USE_LDCONFIG=	yes
 USE_XZ=		yes
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix intlhack gtk30 gtksourceview3
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -30,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.gedit.plugins.drawspaces.gschema.xml
 
 OPTIONS_DEFINE=	PYTHON
+OPTIONS_DEFAULT=PYTHON
 PYTHON_DESC=	Build plugins that depend on python
 
 .include <bsd.port.options.mk>
