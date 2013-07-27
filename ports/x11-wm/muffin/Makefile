@@ -1,6 +1,5 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	muffin
 PORTVERSION=	1.7.1
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	zenity>3.0.0:${PORTSDIR}/x11/zenity3 \
 		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
-		clutter-glx-1.0:${PORTSDIR}/graphics/clutter \
+		clutter-glx-1:${PORTSDIR}/graphics/clutter \
 		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3
 
@@ -26,10 +25,9 @@ GH_COMMIT=	4b36a9a
 
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm
 USE_PYTHON=	2.5+
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix
 USE_AUTOTOOLS=	libtool autoconf automake
-USES=		gettext pathfix
-USE_GNOME=	gconf2 gnomedocutils gnomehier gnomeprefix gtk30 intlhack introspection:build
+USE_GNOME=	gnomehier gnomeprefix intlhack gtk30 gconf2 introspection:build
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -40,11 +38,11 @@ GLIB_SCHEMAS=	org.cinnamon.muffin.gschema.xml
 MAN1=		muffin-message.1 muffin-theme-viewer.1 muffin-window-demo.1 \
 		muffin.1
 
+pre-configure:
+		@cd ${WRKSRC} && ${SH} autogen.sh
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|REQUIRED_AUTOMAKE_VERSION=1.10|REQUIRED_AUTOMAKE_VERSION=1.14|g' \
 		${WRKSRC}/autogen.sh
-
-pre-configure:
-		@cd ${WRKSRC} && ${SH} autogen.sh
 
 .include <bsd.port.mk>
