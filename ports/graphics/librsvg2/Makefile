@@ -1,6 +1,6 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/graphics/librsvg2/Makefile,v 1.147 2012/10/16 08:58:47 kwm Exp $
+#   $MCom: ports/trunk/graphics/librsvg2/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	librsvg
 PORTVERSION=	2.36.4
@@ -12,24 +12,22 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		croco-${CROCO_VERSION}.3:${PORTSDIR}/textproc/libcroco
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+		croco-0.6:${PORTSDIR}/textproc/libcroco
 RUN_DEPENDS=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
 
 USE_XZ=		yes
-USES=		gettext pathfix
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehier gnomeprefix gtk20 introspection:build \
-		libgsf ltverhack
+USE_GNOME=	gnomehier gnomeprefix libgsf ltverhack gtk20 \
+		introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-svgz \
 		--with-croco \
 		--disable-Bsymbolic \
 		--enable-gtk-theme
-CROCO_VERSION=	0.6
 MAN1=		rsvg-convert.1
 
 post-patch:

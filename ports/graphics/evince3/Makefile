@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/evince3/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#    $MCom: ports/trunk/graphics/evince3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	evince
 PORTVERSION=	3.6.1
@@ -27,9 +27,8 @@ USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-USES=		pathfix gettext pkgconfig desktop-file-utils
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 USE_GNOME=	intlhack gnomeprefix ltasneededhack introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -103,7 +102,6 @@ PLIST_SUB+=		DJVU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCOMICS}
-RUN_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 CONFIGURE_ARGS+=	--enable-comics
 PLIST_SUB+=		COMICS=""
 .else

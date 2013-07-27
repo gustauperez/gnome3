@@ -1,9 +1,9 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/graphics/clutter-gtk3/Makefile,v 1.11 2012/12/10 10:51:04 kwm Exp $
+#    $MCom: ports/trunk/graphics/clutter-gtk3/Makefile 18393 2013-04-26 21:23:07Z kwm $
 
 PORTNAME=	clutter-gtk
-PORTVERSION=	1.4.0
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -15,10 +15,9 @@ LIB_DEPENDS=	clutter-1.0:${PORTSDIR}/graphics/clutter
 
 LATEST_LINK=	clutter-gtk3
 USE_XZ=		yes
-USE_GMAKE=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix gtk30 ltverhack
+USE_GNOME=	gtk30 ltverhack gnomeprefix
 USE_XORG=	xp x11
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

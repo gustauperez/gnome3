@@ -1,10 +1,6 @@
-# New ports collection makefile for:   libchamplain
-# Date Created:			04 Aug 2009
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/graphics/libchamplain/Makefile,v 1.33 2012/08/08 16:56:40 kwm Exp $
-#
+#   $MCom: ports/trunk/graphics/libchamplain/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	libchamplain
 PORTVERSION=	0.12.4
@@ -12,18 +8,16 @@ CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A C library aimed to provide a Gtk+ widget to display rasterized maps and markers
+COMMENT=	C library aimed to provide a Gtk+ widget to display rasterized maps and markers
 
-LIB_DEPENDS=	clutter-gtk-1.0.0:${PORTSDIR}/graphics/clutter-gtk3 \
-		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
+LIB_DEPENDS=	clutter-gtk-1.0:${PORTSDIR}/graphics/clutter-gtk3 \
+		soup-gnome-2.4:${PORTSDIR}/devel/libsoup-gnome
 
 USE_XZ=		yes
-USE_PKGCONFIG=	build
-USES=		pathfix
-USE_GNOME=	gnomehier gtk30 introspection:build ltverhack
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	gtk30 ltverhack gnomehier introspection:build
 USE_AUTOTOOLS=	libtool
 USE_GL=		gl
-USE_GMAKE=	yes
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

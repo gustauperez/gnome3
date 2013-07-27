@@ -1,6 +1,6 @@
 # Created by: Ade Lovett <ade@lovett.com>
 # $FreeBSD: head/graphics/gdk-pixbuf2/Makefile 314952 2013-03-22 19:00:36Z mezz $
-#    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 18393 2013-04-26 21:23:07Z kwm $
+#    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 18634 2013-07-26 10:42:35Z kwm $
 
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	2.28.2
@@ -14,11 +14,10 @@ COMMENT=	A graphic library for GTK+
 
 LATEST_LINK=	gdk-pixbuf2
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_XORG=	xt xi x11
 USE_AUTOTOOLS=	libtool
-USES=		pathfix pkgconfig
-USE_GNOME+=	glib20 gnomehier introspection:build ltverhack
+USES=		gmake pathfix pkgconfig
+USE_GNOME+=	gnomehier glib20 ltverhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
