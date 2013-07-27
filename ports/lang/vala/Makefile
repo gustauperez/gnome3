@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD: head/lang/vala/Makefile 313635 2013-03-08 11:32:11Z bapt $
-#   $MCom: ports/trunk/lang/vala/Makefile 18393 2013-04-26 21:23:07Z kwm $
+#   $MCom: ports/trunk/lang/vala/Makefile 18634 2013-07-26 10:42:35Z kwm $
 
 PORTNAME=	vala
 PORTVERSION=	0.20.1
@@ -12,10 +12,9 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
-USES=		bison pathfix gettext pkgconfig
+USES=		bison gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomeprefix libxslt
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -29,7 +28,7 @@ PLIST_SUB=	VERSION=${VALA_VER}
 .if defined(VALA_SLAVE)
 LIB_DEPENDS+=	vala-${VALA_VER}.0:${PORTSDIR}/lang/vala
 CONFIGURE_ARGS+=--enable-vapigen
-BUILD_DEPENDS+=		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 MAN1=		vala-gen-introspect.1 vapigen.1
 .else
