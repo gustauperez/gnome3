@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 18618 2013-07-03 19:59:13Z kwm $
+#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 18629 2013-07-19 20:42:52Z kwm $
 
 PORTNAME=	webkit
 PORTVERSION=	2.0.3
@@ -27,12 +27,10 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_XZ=		yes
 USE_GSTREAMER1=	yes
-MAKE_JOBS_SAFE=	yes
 USE_XORG=	xt xdamage xcomposite
-USES=		bison gettext pkgconfig shebangfix
+USES=		bison gettext gmake pkgconfig shebangfix
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
-USE_GMAKE=	yes
 USE_GNOME=	cairo gnomehier gtk20 gtk30 introspection:build \
 		libxslt:build
 USE_SQLITE=	3
@@ -112,7 +110,7 @@ CPPFLAGS+=	-DGTEST_USE_OWN_TR1_TUPLE
 CXXFLAGS+=	-Wno-c++11-extensions -Qunused-arguments -stdlib=libc++
 LDFLAGS+=	-stdlib=libc++
 .if ${OSVERSION}<1000019
-BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33 \
+BUILD_DEPENDS+=	clang>=3.3_1:${PORTSDIR}/lang/clang33 \
 		libc++>=0:${PORTSDIR}/devel/libc++
 RUN_DEPENDS+=	libc++>=0:${PORTSDIR}/devel/libc++
 CC=		clang33

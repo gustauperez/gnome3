@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/www/gtkhtml4/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gtkhtml
 PORTVERSION=	4.6.6
@@ -14,16 +14,15 @@ COMMENT=	Lightweight HTML rendering/printing/editing engine
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		enchant.1:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
+		enchant:${PORTSDIR}/textproc/enchant
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage xproto
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gtk30 intlhack ltverhack
+USE_GNOME=	gnomeprefix intlhack gtk30 ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

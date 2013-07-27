@@ -1,9 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
+#   $MCom: ports/trunk/www/webkit-gtk2/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	webkit
 PORTVERSION=	1.8.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk2
@@ -21,12 +22,10 @@ LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant \
 
 USE_XZ=		yes
 USE_GSTREAMER=	yes
-MAKE_JOBS_SAFE=	yes
 USE_XORG=	xt
-USES=		bison gettext
-USE_GMAKE=	yes
+USES=		bison gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk20 introspection:build libxslt ltverhack
+USE_GNOME=	gtk20 libxslt ltverhack introspection:build
 USE_SQLITE=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
@@ -89,5 +88,10 @@ post-patch:
 		${WRKSRC}/Source/WebCore/css/makevalues.pl \
 		${WRKSRC}/Source/WebCore/css/makeprop.pl \
 		${WRKSRC}/Source/WebCore/make-hash-tools.pl
+
+post-install:
+# Add work around for epiphany 2.x gobject-introspection build.
+	${LN} -sf ${PREFIX}/libdata/pkgconfig/webkit-1.0.pc \
+		${PREFIX}/libdata/pkgconfig/webkitgtk-1.0.pc
 
 .include <bsd.port.post.mk>
