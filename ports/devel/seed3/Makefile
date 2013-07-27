@@ -1,5 +1,6 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/devel/seed3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 # NOTE: It may be necessary to update ${FILESDIR}/Seed.js on each release.
 # To do that, just replace imports.searchPaths with "." and ".." elements.
 
@@ -15,7 +16,6 @@ COMMENT=	GObject JavaScriptCore bridge
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-js-common.pc:${PORTSDIR}/devel/gnome-js-common
 LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi \
 		webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
-		girepository-1.0:${PORTSDIR}/devel/gobject-introspection \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		mpfr:${PORTSDIR}/math/mpfr
 
@@ -24,20 +24,19 @@ CONFLICTS=	seed-2.[0-9]*
 LATEST_LINK=	seed3
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=		gettext pathfix
-USE_GNOME=	gtk30 intltool libxml2
+USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	gtk30 intltool libxml2 introspection
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_SQLITE=	yes
-USE_GMAKE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-gtk-doc=no --with-webkit=3.0
 DATADIR=	share/seed-gtk3
 
 MAN1=		seed.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
@@ -45,13 +44,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
 		${WRKSRC}/libseed/Makefile.in
 	@${REINPLACE_CMD} -e 's|reference||g' ${WRKSRC}/doc/Makefile.in
-#	@${FIND} ${WRKSRC}/examples -name Makefile.in -type f | ${XARGS} ${REINPLACE_CMD} -e \
-#		's|$$(datadir)/doc/seed/examples|${EXAMPLESDIR}|g'
-#.if defined(NOPORTEXAMPLES)
-#	@${REINPLACE_CMD} -e 's|examples||g' \
-#		${WRKSRC}/Makefile.in
-#.endif
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's| install-seeddocDATA||g ; s|doc$$||g' \
 		${WRKSRC}/Makefile.in
 .endif
@@ -65,4 +58,4 @@ pre-build:
 post-build:
 	${CP} ${WRKSRC}/extensions/Seed.js.sav ${WRKSRC}/extensions/Seed.js
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

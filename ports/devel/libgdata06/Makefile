@@ -17,9 +17,7 @@ CONFLICTS=	libgdata-0.10.*
 LATEST_LINK=	libgdata06
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		gettext pathfix
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20 intltool introspection ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \

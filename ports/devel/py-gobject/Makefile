@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/py-gobject/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/devel/py-gobject/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
@@ -18,14 +18,13 @@ COMMENT=	Python bindings for GObject
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
 USE_XZ=		yes
-USE_GMAKE=	yes
-USES=		pathfix pkgconfig
-USE_GNOME=	glib20 introspection
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	glib20 introspection:build
 USE_PYTHON=	2.5+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

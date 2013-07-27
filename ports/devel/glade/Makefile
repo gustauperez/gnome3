@@ -14,11 +14,10 @@ CONFLICTS=	glade3-3.*
 
 INSTALLS_ICONS=	yes
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomedocutils gnomeprefix gtk30 \
 		introspection:build ltverhack
 WANT_GNOME=	yes
-USES=		gettext pathfix
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

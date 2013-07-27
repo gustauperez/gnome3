@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XZ=		yes
 USE_GNOME=	glib20 gtk20 intlhack introspection ltverhack
-USES=		gettext pathfix
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

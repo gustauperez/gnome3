@@ -12,10 +12,9 @@ COMMENT=	Extra anjuta 3 plugins
 LIB_DEPENDS=	anjuta-3:${PORTSDIR}/devel/anjuta3
 		
 USE_XZ=		yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk30 intltool libxml2 
 CPPFLAGS+=	-I${LOCALBASE}/include 
 LDFLAGS+=	-L${LOCALBASE}/lib

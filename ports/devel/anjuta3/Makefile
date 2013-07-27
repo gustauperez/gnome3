@@ -27,8 +27,7 @@ CONFLICTS=	anjuta-2.[0-9]*
 
 LATEST_LINK=	anjuta3
 USE_XZ=		yes
-USES=		bison gettext pathfix
-USE_GMAKE=	yes
+USES=		bison gettext gmake pathfix pkgconfig shared-mime-info
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes

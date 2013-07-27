@@ -20,10 +20,8 @@ CONFLICTS=	libgdata-0.6.*
 
 USE_XZ=		yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		gettext pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	glib20 gnomeprefix intltool introspection:build ltverhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

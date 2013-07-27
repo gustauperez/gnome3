@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD: head/devel/libsoup/Makefile 313633 2013-03-08 10:51:34Z kwm $
-#   $MCom: ports/trunk/devel/libsoup/Makefile 18399 2013-04-27 22:33:43Z kwm $
+#   $MCom: ports/trunk/devel/libsoup/Makefile 18634 2013-07-26 10:42:35Z kwm $
 
 PORTNAME=	libsoup
 PORTVERSION=	2.42.2
@@ -20,13 +20,11 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-USES=		pathfix gettext
-USE_GNOME=	glib20 gnomehier intltool libxml2 ltverhack referencehack
+USES=		gettext gmake pathfix
+USE_GNOME=	gnomehier glib20 libxml2 ltverhack referencehack intltool
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_PYTHON_BUILD=	-2.7
 CONFIGURE_ARGS=	--disable-more-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include

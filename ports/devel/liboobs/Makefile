@@ -21,8 +21,8 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 RUN_DEPENDS=	${LOCALBASE}/etc/dbus-1/system.d/org.freedesktop.SystemToolsBackends.conf:${PORTSDIR}/sysutils/system-tools-backends
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USES=		gmake pathfix
 USE_GNOME=	gnomeprefix gnomehack glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-hal

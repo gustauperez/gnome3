@@ -14,10 +14,9 @@ BUILD_DEPENDS=	gobject-introspection>=0.9.0:${PORTSDIR}/devel/gobject-introspect
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
-USE_GMAKE=	yes
 USE_XZ=		yes
-USES=		pathfix pkgconfig
-USE_GNOME=	glib20 gnomehier
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	glib20 gnomehier introspection:build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

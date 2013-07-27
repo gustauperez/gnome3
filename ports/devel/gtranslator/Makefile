@@ -22,8 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 USE_XZ=		yes
 USE_GNOME=	gnomeprefix gtk30 gtksourceview3 \
 		intlhack introspection:build libgda4 libxml2
-USE_GMAKE=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
