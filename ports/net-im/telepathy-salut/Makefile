@@ -1,28 +1,22 @@
-# New ports collection makefile for:	telepathy-salut
-# Date created:				Apr 16 2007
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net-im/telepathy-salut/Makefile,v 1.9 2012/08/17 19:06:46 kwm Exp $
-#
+#   $MCom: ports/trunk/net-im/telepathy-salut/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
 
-LIB_DEPENDS=	avahi-glib.1:${PORTSDIR}/net/avahi-app \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	avahi-glib:${PORTSDIR}/net/avahi-app \
+		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
+		soup-2.4:${PORTSDIR}/devel/libsoup
 
-USES=		pathfix
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 libxslt:build
-USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 USE_SQLITE=	3

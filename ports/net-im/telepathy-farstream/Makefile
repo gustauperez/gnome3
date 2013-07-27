@@ -1,10 +1,6 @@
-# New ports collection makefile for:	telepathy-farsight
-# Date created:				27 February 2009
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom
-#
 
 PORTNAME=	telepathy-farstream
 PORTVERSION=	0.6.0
@@ -19,17 +15,15 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
 		farstream-0.2:${PORTSDIR}/net-im/farstream
 
-USES=		pathfix 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
-USES=		pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 libxslt:build ltverhack
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-pthread"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(^pkgconfigdir =\).*|\1 ${PREFIX}/libdata/pkgconfig|' \
