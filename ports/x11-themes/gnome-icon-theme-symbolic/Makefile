@@ -1,5 +1,5 @@
 # $FreeBSD$
-#   $MCom: ports/x11-themes/gnome-icon-theme-symbolic/Makefile,v 1.12 2012/12/31 17:16:03 mezz Exp $
+#   $MCom: ports/trunk/x11-themes/gnome-icon-theme-symbolic/Makefile 18433 2013-05-06 21:03:32Z kwm $
 
 PORTNAME=	gnome-icon-theme-symbolic
 PORTVERSION=	3.6.2
@@ -12,12 +12,13 @@ COMMENT=	GNOME Symbolic Icons
 
 BUILD_DEPENDS=	icon-naming-utils>=0.8.7:${PORTSDIR}/x11-themes/icon-naming-utils
 
-USES=		pathfix pkgconfig
 USE_XZ=		yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_GIT="" \
+		ac_cv_path_INKSCAPE=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
