@@ -20,9 +20,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-USES=		pathfix gettext
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix intlhack gtk30 gnomedesktop3

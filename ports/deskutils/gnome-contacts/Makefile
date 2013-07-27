@@ -17,10 +17,9 @@ LIB_DEPENDS=	goa-1.0.0:${PORTSDIR}/net/gnome-online-accounts \
 		cheese.7:${PORTSDIR}/multimedia/cheese3 \
 		notify.4:${PORTSDIR}/devel/libnotify
 
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 USE_GNOME=	evolutiondataserver3 gtk30 gnomedesktop3 intlhack
-USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include

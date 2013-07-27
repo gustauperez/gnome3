@@ -16,8 +16,7 @@ CONFLICTS=	gucharmap-2.[0-9]*
 
 LATEST_LINK=	gucharmap3
 USE_XZ=		yes
-USES=		gettext pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -21,9 +21,8 @@ CONFLICTS=	baobob-3.[0-9]* gnome-dictionary-3.[0-9]* \
 		gnome-search-tool-3.[0-9]* gnome-system-log-3.[0-9]*
 
 USE_BZIP2=	yes
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 INSTALLS_OMF=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gnomepanel intlhack ltverhack

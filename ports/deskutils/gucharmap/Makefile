@@ -16,8 +16,7 @@ LIB_DEPENDS=	rarian.0:${PORTSDIR}/textproc/rarian
 CONFLICTS=	gucharmap-3.[0-9]*
 
 USE_BZIP2=	yes
-USES=		gettext pathfix
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gconf2 gnomeprefix gnomedocutils gtk20 intlhack
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes

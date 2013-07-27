@@ -15,9 +15,8 @@ BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
-USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

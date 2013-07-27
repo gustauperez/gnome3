@@ -22,9 +22,7 @@ LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 CONFLICTS=	gnome-utils-2.[0-9]*
 
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_GCC=	4.2
-USES=		pathfix gettext
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack libxml2 gtk30
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

@@ -14,9 +14,8 @@ LIB_DEPENDS=	canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-USES=		gettext pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
