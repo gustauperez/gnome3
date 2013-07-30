@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/epiphany3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#
 
 PORTNAME=	epiphany
-PORTVERSION=	3.4.3
-PORTREVISION?=	0
+PORTVERSION=	3.6.1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
 		soup-gnome-2.4:${PORTSDIR}/devel/libsoup-gnome \
+		gcr-3:${PORTSDIR}/security/gcr \
 		startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		notify:${PORTSDIR}/devel/libnotify \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
@@ -35,7 +35,7 @@ USE_XZ=		yes
 USE_PYTHON=	yes
 USE_SQLITE=	3
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomeprefix intlhack gnomedocutils libxml2
+USE_GNOME=	gnomedesktop3 gnomedocutils gnomeprefix intlhack libxml2
 USE_XORG=	ice x11 sm
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
@@ -91,5 +91,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; \
 	    	s|-ldl"$$|"|g' \
 		${WRKSRC}/configure
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.mk>
