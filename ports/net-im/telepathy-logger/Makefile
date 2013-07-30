@@ -1,26 +1,30 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
+# New ports collection makefile for:	telepathy-logger
+# Date created:				23 July 2010
+# Whom:					Koop Mast <kwm@FreeBSD.org>
+#
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-logger/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports/net-im/telepathy-logger/Makefile,v 1.14 2012/08/17 19:06:45 kwm Exp $
 
 PORTNAME=	telepathy-logger
-PORTVERSION=	0.4.0
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Logger utility library for the Telepathy framework
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake pathfix pkgconfig
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
-USE_GNOME=	glib20 intltool gnomedocutils ltverhack libxml2 libxslt:build \
-		introspection:build
+USE_GNOME=	glib20 gnomedocutils intltool introspection:build \
+		ltverhack libxml2 libxslt:build
 USE_SQLITE=	yes
 USE_PYTHON_BUILD=	yes
 GLIB_SCHEMAS=	org.freedesktop.Telepathy.Logger.gschema.xml
