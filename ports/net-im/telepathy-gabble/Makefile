@@ -1,8 +1,9 @@
+# Created by:  Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-gabble/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports/net-im/telepathy-gabble/Makefile,v 1.22 2012/08/08 16:56:40 kwm Exp $
 
 PORTNAME=	telepathy-gabble
-PORTVERSION=	0.16.6
+PORTVERSION=	0.17.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -10,18 +11,21 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Jabber Connection Manager for Telepathy Framework
 
 BUILD_DEPENDS=	telepathy-glib>=0.18.0:${PORTSDIR}/net-im/telepathy-glib \
+		libnice>0:${PORTSDIR}/net-im/libnice \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
-		nice:${PORTSDIR}/net-im/libnice \
+		nice:${PORTSDIR}/net-im/libnice-gst1 \
 		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		loudmouth-1:${PORTSDIR}/net-im/loudmouth
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+		libnice-gst1>0:${PORTSDIR}/net-im/libnice-gst1
 
 PORTSCOUT=	limitw:1,even
 
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 libxslt:build
 USE_SQLITE=	yes

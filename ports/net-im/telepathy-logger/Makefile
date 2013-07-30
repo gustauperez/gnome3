@@ -1,9 +1,6 @@
-# New ports collection makefile for:	telepathy-logger
-# Date created:				23 July 2010
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/net-im/telepathy-logger/Makefile,v 1.14 2012/08/17 19:06:45 kwm Exp $
+#
 
 PORTNAME=	telepathy-logger
 PORTVERSION=	0.8.0
@@ -19,10 +16,10 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pathfix pkgconfig
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 gnomedocutils intltool introspection:build \
 		ltverhack libxml2 libxslt:build
 USE_SQLITE=	yes
