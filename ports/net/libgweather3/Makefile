@@ -1,27 +1,37 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
+# New ports collection makefile for:	libgweather
+# Date created:				14th Jan 2008
+# Whom:					Koop Mast <kwm@FreeBSD.org>
+#
 # $FreeBSD$
-#   $MCom: ports/trunk/net/libzapojit/Makefile 18583 2013-06-23 11:12:45Z kwm $
+#   $MCom: ports/net/libgweather3/Makefile,v 1.9 2012/05/31 12:19:30 kwm Exp $
+#
 
-PORTNAME=	libzapojit
-PORTVERSION=	0.0.2
-CATEGORIES=	net devel gnome
+PORTNAME=	libgweather
+PORTVERSION=	3.6.2
+CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GLib/GObject wrapper for the Skydrive and Hotmail API
+COMMENT=	Library to accessing online weather informations
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	goa-1:${PORTSDIR}/net/gnome-online-accounts \
-		json-glib-1:${PORTSDIR}/devel/json-glib \
-		rest-0.7:${PORTSDIR}/devel/librest
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
+LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
+CONFLICTS=	libgweather-2.[0-9]*
+
+LATEST_LINK=	libgweather3
 USE_XZ=		yes
-USES=		gmake pathfix
-USE_GNOME=	gnomeprefix intlhack
-GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
+INSTALLS_ICONS=	yes
+USES=		gettext pathfix
+USE_GNOME=	gnomehier gnomeprefix intlhack gconf2 ltverhack gtk30
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GLIB_SCHEMAS=	org.gnome.GWeather.enums.xml \
+		org.gnome.GWeather.gschema.xml
 
 .include <bsd.port.mk>

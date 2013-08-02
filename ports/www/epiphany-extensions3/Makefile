@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/epiphany-extensions3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#
 
 PORTNAME=	epiphany-extensions
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.0
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
