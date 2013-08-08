@@ -39,7 +39,8 @@ USERS=		gdm
 GROUPS=		gdm
 
 LATEST_LINK=	gdm3
-#USE_GCC=	4.6+
+USE_GCC=	4.6+
+USE_DEBUG=	yes
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 USE_XORG=	dmx dmxproto
