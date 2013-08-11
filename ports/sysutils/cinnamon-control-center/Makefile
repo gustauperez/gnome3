@@ -27,7 +27,7 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		croco:${PORTSDIR}/textproc/libcroco \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		clutter-glx-1:${PORTSDIR}/graphics/clutter \
-		clutter-gst-1:${PORTSDIR}/multimedia/clutter-gst \
+		clutter-gst-2:${PORTSDIR}/multimedia/clutter-gst \
 		gjs:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
