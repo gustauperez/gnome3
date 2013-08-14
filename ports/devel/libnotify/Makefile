@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XZ=		yes
-USE_GNOME=	glib20 gtk20 intlhack introspection ltverhack
+USE_GNOME=	gdkpixbuf2 glib20 intlhack introspection ltverhack
 USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
