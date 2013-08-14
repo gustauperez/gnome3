@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD: head/x11-fonts/fontconfig/Makefile 300897 2012-07-14 14:29:18Z beat $
-#   $MCom: ports/trunk/x11-fonts/fontconfig/Makefile 18634 2013-07-26 10:42:35Z kwm $
+#   $MCom: ports/trunk/x11-fonts/fontconfig/Makefile 18637 2013-07-27 09:15:21Z kwm $
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.10.92
+PORTVERSION=	2.10.93
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
