@@ -16,13 +16,13 @@ BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3 \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libpolkit-gnome.so:${PORTSDIR}/sysutils/polkit-gnome \
+		libpolkit-gnome.so:${PORTSDIR}/sysutils/policykit-gnome \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libaccountsservice.so:${PORTSDIR}/sysutils/accountsservice \
 		libxklavier.so:${PORTSDIR}/x11/libxklavier \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		gnome-settings-daemon>=3.0.0:${PORTSDIR}/sysutils/gnome-settings-daemon3 \
@@ -51,7 +51,7 @@ INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
 USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	dconf gnomehier gnomeprefix intlhack librsvg2 gnomepanel3
+USE_GNOME=	dconf gnomehier gnomeprefix intlhack introspection librsvg2 gnomepanel3
 GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	org.gnome.login-screen.gschema.xml
 CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home \
