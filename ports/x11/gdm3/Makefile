@@ -54,20 +54,27 @@ USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	dconf gnomehier gnomeprefix intlhack introspection librsvg2 gnomepanel3
 GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	org.gnome.login-screen.gschema.xml
-CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home \
+CONFIGURE_ARGS=	--disable-static \
+		--mandir=${PREFIX}/man \
+		--with-lang-file=${PREFIX}/etc/gdm/i18n \
 		--with-at-spi-registryd-directory=${LOCALBASE}/libexec \
+		--with-custom-conf=${PREFIX}/etc/gdm/custom.conf \
+		--with-dbus-sys=${PREFIX}/etc/dbus-1/system.d \
+		--with-log-dir=/var/log/gdm \
+		--with-working-directory=${PREFIX}/etc/gdm/home \
+		--with-sysconfsubdir=gdm \
+		--with-pid-file=/var/run/gdm.pid \
+		--with-dmconfdir=${LOCALBASE}/share/xsessions \
+		--with-screenshot-dir=/var/run/gdm/greeter \
 		--enable-authentication-scheme=pam \
-		--with-console-kit \
-		--with-initial-vt=9 \
+		--with-user=gdm \
+		--with-group=gdm \
 		--with-systemd=no
+
 # this is a hack until we can get our own pam dir and dir in order.
 CONFIGURE_ARGS+=--with-default-pam-config=redhat
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAS_SA_LEN
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGLIBS=	-lm
-CONFIGURE_ENV=	LIBS="${CONFIGLIBS}" \
-		GTKDOC="false" \
-		ac_cv_header_execinfo_h=no
 
 SUB_FILES+=	gdm.pam
 
@@ -127,12 +134,15 @@ post-patch:
 #		${WRKSRC}/data/applications/orca-screen-reader.desktop
 
 post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+#.if !defined(PACKAGE_BUILDING)
+#	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+#.endif
 	${INSTALL_DATA} ${WRKSRC}/data/gdm.conf-custom \
 		${PREFIX}/etc/gdm/custom.conf.default
 	${MKDIR} ${PREFIX}/share/xsessions
+	${MKDIR} -p ${PREFIX}/etc/gdm/Sessions
+	${MKDIR} -p ${PREFIX}/etc/dm/Sessions
+
 	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm-welcome
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
