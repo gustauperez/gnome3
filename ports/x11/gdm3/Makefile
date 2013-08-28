@@ -21,7 +21,6 @@ LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libaccountsservice.so:${PORTSDIR}/sysutils/accountsservice \
-		libxklavier.so:${PORTSDIR}/x11/libxklavier \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3 \
@@ -69,6 +68,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--enable-authentication-scheme=pam \
 		--with-user=gdm \
 		--with-group=gdm \
+		--with-initial-vt=09 \
 		--with-systemd=no
 
 # this is a hack until we can get our own pam dir and dir in order.
@@ -142,6 +142,8 @@ post-install:
 	${MKDIR} ${PREFIX}/share/xsessions
 	${MKDIR} -p ${PREFIX}/etc/gdm/Sessions
 	${MKDIR} -p ${PREFIX}/etc/dm/Sessions
+
+	${CHMOD} 1777 /var/run/gdm
 
 	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm-welcome
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
