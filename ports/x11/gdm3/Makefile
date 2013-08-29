@@ -16,7 +16,7 @@ BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3 \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libpolkit-gnome.so:${PORTSDIR}/sysutils/policykit-gnome \
+		libpolkit-gtk-1.so:sysutils/polkit-gnome:${PORTSDIR}/sysutils/polkit-gnome \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
@@ -145,7 +145,10 @@ post-install:
 
 	${CHMOD} 1777 /var/run/gdm
 
-	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm-welcome
+	${INSTALL_DATA} ${WRKDIR}/gdm-autologin ${PREFIX}/etc/pam.d/gdm-autologin
+	${INSTALL_DATA} ${WRKDIR}/gdm-launch-environment ${PREFIX}/etc/pam.d/gdm-launch-environment
+	${INSTALL_DATA} ${WRKDIR}/gdm-password ${PREFIX}/etc/pam.d/gdm-password
+
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 	@dconf update
