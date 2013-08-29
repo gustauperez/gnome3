@@ -16,7 +16,7 @@ BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3 \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libpolkit-gtk-1.so:sysutils/polkit-gnome:${PORTSDIR}/sysutils/polkit-gnome \
+		libpolkit-gtk-1.so:${PORTSDIR}/sysutils/polkit-gnome \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
