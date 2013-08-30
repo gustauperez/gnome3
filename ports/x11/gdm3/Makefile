@@ -16,7 +16,6 @@ BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3 \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libpolkit-gtk-1.so:${PORTSDIR}/sysutils/polkit-gnome \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
@@ -28,6 +27,7 @@ RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		gnome-keyring-3:${PORTSDIR}/security/gnome-keyring3 \
 		gnome-session>=3.0.0:${PORTSDIR}/x11/gnome-session3 \
 		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
+		polkit-gnome>=0.105:${PORTSDIR}/sysutils/polkit-gnome \
 		${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at-spi2-core \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 # used in scripts
