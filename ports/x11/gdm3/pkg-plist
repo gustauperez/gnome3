@@ -13,7 +13,9 @@ etc/gdm/Xsession
 @unexec if cmp -s %D/etc/gdm/custom.conf %D/etc/gdm/custom.conf.default; then rm -f %D/etc/gdm/custom.conf; fi
 etc/gdm/custom.conf.default
 @exec [ -f %B/custom.conf ] || cp %B/%f %B/custom.conf
-etc/pam.d/gdm-welcome
+etc/pam.d/gdm-autologin
+etc/pam.d/gdm-launch-environment
+etc/pam.d/gdm-password
 include/gdm/gdm-client-glue.h
 include/gdm/gdm-client.h
 include/gdm/gdm-sessions.h

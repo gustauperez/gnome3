@@ -76,7 +76,9 @@ CONFIGURE_ARGS+=--with-default-pam-config=redhat
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAS_SA_LEN
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-SUB_FILES+=	gdm.pam
+SUB_FILES+=	gdm-launch-environment \
+		gdm-password \
+		gdm-autologin
 
 GDMDIR?=	${PREFIX}/etc/gdm
 PKGMESSAGE=	${WRKDIR}/pkg-message
