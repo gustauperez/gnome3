@@ -3,7 +3,7 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/trunk/Mk/bsd.gnome.mk 17271 2013-04-01 15:16:27Z kwm $
+#     $MCom: ports/trunk/Mk/bsd.gnome.mk 18610 2013-06-30 16:33:05Z marcus $
 #
 # Please view me with 4 column tabs!
 
@@ -68,9 +68,9 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #
 
 # non-version specific components
-_USE_GNOME_ALL= esound intlhack intltool introspection ltasneededhack lthack ltverhack \
-		gnomehack referencehack gnomehier gnomemimedata gnomeprefix \
-		pkgconfig
+_USE_GNOME_ALL= esound intlhack intltool introspection ltasneededhack lthack \
+		ltverhack gnomehack referencehack gnomehier gnomemimedata \
+		gnomeprefix
 
 # GNOME 1 components
 _USE_GNOME_ALL+= bonobo gconf gdkpixbuf glib12 \
@@ -563,10 +563,6 @@ gtksourceview2_USE_GNOME_IMPL=gtk20 libxml2
 gtksourceview3_LIB_DEPENDS=	gtksourceview-3.0.0:${PORTSDIR}/x11-toolkits/gtksourceview3
 gtksourceview3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksoureview-3.0.pc
 gtksourceview3_USE_GNOME_IMPL=gtk30 libxml2
-
-pkgconfig_DETECT=		${LOCALBASE}/bin/pkgconf
-pkgconfig_BUILD_DEPENDS=	pkgconf:${PORTSDIR}/devel/pkgconf
-pkgconfig_RUN_DEPENDS=		pkgconf:${PORTSDIR}/devel/pkgconf
 
 libgsf_LIB_DEPENDS=		gsf-1.114:${PORTSDIR}/devel/libgsf
 libgsf_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgsf-1.pc
