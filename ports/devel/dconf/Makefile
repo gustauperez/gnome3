@@ -1,26 +1,25 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD: devel/dconf/Makefile 313956 2013-03-12 09:45:07Z kwm $
-#   $MCom: ports/devel/dconf/Makefile,v 1.30 2012/10/03 17:57:17 kwm Exp $
+#   $MCom: ports/trunk/devel/dconf/Makefile 18669 2013-08-29 21:14:12Z kwm $
 
 PORTNAME?=	dconf
 PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DISTNAME=	dconf-${PORTVERSION}
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A configuration database system for GNOME
+COMMENT=	Configuration database system for GNOME
 
 BUILD_DEPENDS=	vala>=0.18.1:${PORTSDIR}/lang/vala \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomehack glib20 gnomehier intltool
+USE_GNOME=	glib20 gnomehier intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -33,13 +32,13 @@ DCONF_SLAVE?=	no
 USE_GNOME+=	gtk30
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	ca.desrt.dconf-editor.gschema.xml
-LIB_DEPENDS+=	dconf:${PORTSDIR}/devel/dconf
+LIB_DEPENDS+=	libdconf.so:${PORTSDIR}/devel/dconf
 .else
 CONFIGURE_ARGS+=--disable-editor
 .endif
 
 .if ${DCONF_SLAVE} == "no"
-MAN1=		dconf.1
+MAN1=		dconf-editor.1 dconf-service.1 dconf.1
 MAN7=		dconf.7
 .endif
 
@@ -56,7 +55,7 @@ post-patch:
 		${WRKSRC}/client/Makefile.in \
 		${WRKSRC}/editor/Makefile.in
 
-pre-build:
+#pre-build:
 #	${GMAKE} -C ${WRKSRC}/client dconf-client.c libdconf.so.0
 #	${GMAKE} -C ${WRKSRC}/dbus-1 dconf-dbus-1.c libdconf-dbus-1.so.0
 
