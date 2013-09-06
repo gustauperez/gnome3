@@ -1,13 +1,10 @@
-# New ports collection makefile for:	gsettings-desktop-schemas
-# Date created:				14 Aug 2010
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/gsettings-desktop-schemas/Makefile,v 1.20 2012/08/17 19:06:43 kwm Exp $
-#
+#   $MCom: ports/trunk/devel/gsettings-desktop-schemas/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gsettings-desktop-schemas
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,12 +14,12 @@ COMMENT=	Collection of globally shared GSetting schemas
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11-fonts/cantarell-fonts \
+RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11-fonts/cantarell-fonts
 
 USE_XZ=		yes
-USE_PERL5_BUILD=	yes
-USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	glib20 intltool introspection:build
+USES=		gettext gmake gnomehier pathfix perl5 pkgconfig
+USE_PERL5=	build
+USE_GNOME=	intltool glib20 gnomehier introspection:build
 GNU_CONFIGURE=	yes
 
 GLIB_SCHEMAS=	org.gnome.desktop.a11y.applications.gschema.xml \
