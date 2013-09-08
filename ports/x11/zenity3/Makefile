@@ -16,7 +16,7 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 LATEST_LINK=	zenity3
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	x11
 USE_XZ=		yes
