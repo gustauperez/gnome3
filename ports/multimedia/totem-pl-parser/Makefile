@@ -15,7 +15,7 @@ LIB_DEPENDS=	gmime-2.6:${PORTSDIR}/mail/gmime26 \
 		soup-gnome-2.4:${PORTSDIR}/devel/libsoup-gnome
 
 USE_XZ=		yes
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix glib20 libxml2 intlhack ltverhack gnomehier \
 		introspection:build
 USE_LDCONFIG=	yes
