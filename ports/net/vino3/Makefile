@@ -22,7 +22,7 @@ CONFLICTS=	vino-2.[0-9]*
 
 LATEST_LINK=	vino3
 USE_XZ=		yes
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	xdamage xfixes xtst
 GNU_CONFIGURE=	yes
