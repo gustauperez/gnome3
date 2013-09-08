@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	intlhack
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-icon-mapping
