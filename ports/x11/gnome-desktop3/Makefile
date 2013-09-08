@@ -27,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTS
 
 LATEST_LINK=	gnome-desktop3
 USE_XORG=	x11 xrandr xext
-USES=		bison gettext gmake pathfix
+USES=		bison gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack gtk30 ltverhack referencehack \
 		introspection:build
 USE_PYTHON=	yes
