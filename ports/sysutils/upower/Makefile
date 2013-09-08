@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
     		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 USE_GNOME=	intlhack ltverhack glib20 introspection
 USE_AUTOTOOLS=	libtool
