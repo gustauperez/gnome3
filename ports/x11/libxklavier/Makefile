@@ -17,7 +17,7 @@ RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
 
 USE_XORG=	x11 xkbfile
 USE_XZ=		yes
-USES=		gmake pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	libxml2 glib20 ltverhack:12 introspection:build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
