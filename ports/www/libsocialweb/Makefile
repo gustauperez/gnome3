@@ -20,7 +20,7 @@ USE_GNOME=	glib20 intlhack gconf2 introspection:build gnomehier
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 CONFIGURE_ARGS=	--enable-vala-bindings
 # review if we want all the services enabled, because of not completely
 # safe public API security wise?
