@@ -12,7 +12,7 @@ COMMENT=	a convenience library for the Yahoo! Place Finder APIs
 LIB_DEPENDS=	json-glib-1.0:${PORTSDIR}/devel/json-glib \
 		soup-2.4:${PORTSDIR}/devel/libsoup
 
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
