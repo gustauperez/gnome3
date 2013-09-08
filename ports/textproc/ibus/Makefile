@@ -24,7 +24,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 USE_PYTHON=	yes
 
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.freedesktop.ibus.gschema.xml
