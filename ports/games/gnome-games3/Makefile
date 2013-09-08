@@ -29,7 +29,7 @@ INSTALLS_ICONS=	yes
 USE_GL=		gl glu
 USE_XORG=	ice x11
 USE_SQLITE=	yes
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomedocutils gnomeprefix gtk30 \
 		intlhack introspection:build librsvg2 pygobject3
 USE_GSTREAMER=	vorbis ogg
