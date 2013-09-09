@@ -25,10 +25,10 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gconf2 gnomeprefix gnomehack gtk20 gtk30 \
+USE_GNOME=	gconf2 gnomeprefix gtk20 gtk30 \
 			intlhack libxml2
 USE_GSTREAMER=	gconf good
-USES=		gettext gmake
+USES=		gettext gmake pathfix pkgconfig
 CONFIGURE_ARGS=	--disable-gstmix \
 		--enable-gstprops
 CPPFLAGS+=	-I${LOCALBASE}/include
