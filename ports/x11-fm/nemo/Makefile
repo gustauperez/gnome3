@@ -25,7 +25,7 @@ GH_TAGNAME=	1.7.1
 GH_COMMIT=	63f7b44
 
 INSTALLS_ICONS=	yes
-USES=		desktop-file-utils gettext gmake pathfix
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 introspection:build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool autoconf automake
