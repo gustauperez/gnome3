@@ -37,11 +37,10 @@ GH_COMMIT=	941456a
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-Cinnamon-${GH_COMMIT}
 
 USE_XORG=	x11 xfixes sm
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool autoconf automake
 USE_GNOME=	gnomeprefix intlhack gtk30 gconf2 gnomemenus3 \
 		gnomedesktop3 evolutiondataserver3
-#		gnomedesktop3 evolutiondataserver3 pygnome2
 USE_GSTREAMER=	theora vp8 ogg
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
