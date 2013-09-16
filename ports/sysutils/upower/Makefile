@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/upower/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/sysutils/upower/Makefile 18681 2013-09-15 22:52:32Z marcus $
 
 PORTNAME=	upower
 PORTVERSION=	0.9.18
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://upower.freedesktop.org/releases/
 
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
     		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix
 USE_XZ=		yes
 USE_GNOME=	intlhack ltverhack glib20 introspection
 USE_AUTOTOOLS=	libtool
