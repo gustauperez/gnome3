@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	muffin
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.2
 CATEGORIES=	x11-wm gnome
 DIST_SUBDIR=	gnome3
+WRKSRC=		${WRKDIR}/linuxmint-muffin-60cab8b
 
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Compositing window manager forked from Mutter for use with Cinnamon
@@ -20,8 +21,8 @@ RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-GH_TAGNAME=	1.7.1
-GH_COMMIT=	4b36a9a
+GH_TAGNAME=	1.8.2
+GH_COMMIT=	aa1ef1d
 
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm
 USE_PYTHON=	2.5+
