@@ -5,7 +5,6 @@ PORTNAME=	muffin
 PORTVERSION=	1.8.2
 CATEGORIES=	x11-wm gnome
 DIST_SUBDIR=	gnome3
-WRKSRC=		${WRKDIR}/linuxmint-muffin-60cab8b
 
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Compositing window manager forked from Mutter for use with Cinnamon
@@ -18,6 +17,8 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		clutter-glx-1:${PORTSDIR}/graphics/clutter \
 		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity3
+
+WRKSRC=		${WRKDIR}/linuxmint-muffin-60cab8b
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
