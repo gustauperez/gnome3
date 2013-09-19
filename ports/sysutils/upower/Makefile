@@ -14,8 +14,8 @@ COMMENT=	D-Bus daemon for simplifying power management tasks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
-    		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
