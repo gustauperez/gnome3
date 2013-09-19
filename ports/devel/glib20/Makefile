@@ -1,6 +1,6 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD: head/devel/glib20/Makefile 326307 2013-09-04 18:06:07Z madpilot $
-#   $MCom: ports/trunk/devel/glib20/Makefile 18672 2013-09-06 09:42:20Z kwm $
+#   $MCom: ports/trunk/devel/glib20/Makefile 18683 2013-09-19 08:16:29Z kwm $
 
 PORTNAME=	glib
 PORTVERSION=	2.36.3
@@ -14,21 +14,19 @@ COMMENT=	Some useful routines of C programming (current stable version)
 
 LICENSE=	LGPL20
 
-LATEST_LINK=	glib20
 USE_XZ=		yes
 PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
-		ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libffi.so:${PORTSDIR}/devel/libffi
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		gettext gmake iconv pathfix pkgconfig shebangfix
+USES=		gettext gmake iconv pathfix perl5 pkgconfig shebangfix
 USE_GNOME=	ltverhack
 USE_PYTHON=	2.5+
-USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
@@ -54,7 +52,7 @@ CONFIGURE_ARGS+=--disable-dtrace
 #CONFIGURE_ARGS+=--enable-dtrace
 #.endif
 
-.if exists(/usr/include/iconv.h) && ${OSVERSION} >= 1000043 
+.if empty(ICONV_LIB)
 CONFIGURE_ARGS+=	--with-libiconv=native
 .else
 CONFIGURE_ARGS+=	--with-libiconv=gnu
