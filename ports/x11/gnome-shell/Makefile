@@ -12,9 +12,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Next generation GNOME desktop shell
 
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
-		caribou:${PORTSDIR}/accessibility/caribou \
-		mutter:${PORTSDIR}/x11-wm/mutter \
+LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
+		libcaribou.so:${PORTSDIR}/accessibility/caribou \
+		libmutter.so:${PORTSDIR}/x11-wm/mutter \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
 		gcr-3:${PORTSDIR}/security/gcr \
 		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
@@ -32,7 +32,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 
 USE_XZ=		yes
 USE_XORG=	x11 xfixes sm
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomemenus3 gnomeprefix \
 		gtk30 intlhack ltverhack
