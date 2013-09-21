@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cinnamon
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.8.1
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome3
 
@@ -29,18 +29,18 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 		${PYTHONPREFIX_INCLUDEDIR}/Imaging.h:${PORTSDIR}/graphics/py-imaging \
 		${LOCALBASE}/share/doc/py-lxml/CREDITS.txt:${PORTSDIR}/devel/py-lxml
 
+WRKSRC=		${WRKDIR}/linuxmint-Cinnamon-aa9fb31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-GH_TAGNAME=	1.7.1
-GH_COMMIT=	941456a
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-Cinnamon-${GH_COMMIT}
+GH_TAGNAME=	1.8.8.1
+GH_COMMIT=	6d44281
 
 USE_XORG=	x11 xfixes sm
 USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool autoconf automake
-USE_GNOME=	gnomeprefix intlhack gtk30 gconf2 gnomemenus3 \
-		gnomedesktop3 evolutiondataserver3
+USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 gnomemenus3 \
+		gnomeprefix gtk30 intlhack introspection:build
 USE_GSTREAMER=	theora vp8 ogg
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
