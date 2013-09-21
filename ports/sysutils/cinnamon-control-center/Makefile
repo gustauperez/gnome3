@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	cinnamon-control-center
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.2
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -33,10 +33,12 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		${LOCALBASE}/share/doc/py-lxml/CREDITS.txt:${PORTSDIR}/devel/py-lxml
 
+WRKSRC=		${WRKDIR}/linuxmint-cinnamon-control-center-2249c94
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-GH_TAGNAME=	1.7.1
-GH_COMMIT=	a3883df
+GH_TAGNAME=	1.8.2
+GH_COMMIT=	3b93fd2
 
 USE_XORG=	x11 xfixes sm
 USES=		gettext gmake pathfix pkgconfig
@@ -68,22 +70,23 @@ PLIST_SUB+=	CUPS="@comment "
 .endif
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/files${PREFIX}
+	#@${MKDIR} ${WRKSRC}/files${PREFIX}
 
-	@${MV} ${WRKSRC}/files/usr/share ${WRKSRC}/files${PREFIX}
+	#@${MV} ${WRKSRC}/files/usr/local ${WRKSRC}/files${PREFIX}
 
 	@${REINPLACE_CMD} -e 's|find|find ${WRKSRC}/files|g' \
 		${WRKSRC}/files/Makefile.in
 
-	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|g ;\
-		s|"usr/lib|"${PREFIX}/share/|g ;\
-		s|.utf8|.UTF-8|g' \
-			${WRKSRC}/files${PREFIX}/share/cinnamon-control-center/language-options
+	#@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|g ;\
+	#	s|"usr/lib|"${PREFIX}/share/|g ;\
+	#	s|.utf8|.UTF-8|g' \
+	#		${WRKSRC}/files${PREFIX}/share/cinnamon-control-center/language-options
 
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|g' \
 		${WRKSRC}/panels/common/cc-common-language.c
 
 pre-configure:
-	cd ${WRKSRC} && ${PREFIX}/bin/autoreconf && :> panels/info/hostnames-test.txt
+	cd ${WRKSRC} && ${PREFIX}/bin/autoreconf
+#	cd ${WRKSRC} && ${PREFIX}/bin/autoreconf && :> panels/info/hostnames-test.txt
 
 .include <bsd.port.mk>
