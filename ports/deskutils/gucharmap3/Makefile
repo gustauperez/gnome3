@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/deskutils/gucharmap3/Makefile 18553 2013-06-17 14:39:34Z kwm $
 
 PORTNAME=	gucharmap
 PORTVERSION=	3.6.1
@@ -8,12 +9,13 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A Unicode/ISO10646 character map and font viewer
+COMMENT=	Unicode/ISO10646 character map and font viewer
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gucharmap-2.[0-9]*
 
+NO_STAGE=	yes
 LATEST_LINK=	gucharmap3
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig

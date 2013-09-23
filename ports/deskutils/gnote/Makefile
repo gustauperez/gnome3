@@ -1,5 +1,5 @@
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnote/Makefile,v 1.18 2012/12/31 17:16:03 mezz Exp $
+#   $MCom: ports/trunk/deskutils/gnote/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnote
 PORTVERSION=	0.8.3
@@ -7,18 +7,19 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A port of Tomboy to C++, note taking application
+COMMENT=	C++ version of Tomboy, note taking application
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		boost_filesystem:${PORTSDIR}/devel/boost-libs \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
+NO_STAGE=	yes
 USE_XZ=		yes
-USE_GNOME=	desktopfileutils gnomedocutils gnomeprefix gtk30 gtkmm30 intltool \
-		libxml2 libxslt ltverhack \
+USE_GNOME=	gnomeprefix gtk30 intltool libxml2 libxslt \
+		ltverhack gnomedocutils gtkmm30
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
 USE_AUTOTOOLS=	libtool
@@ -52,7 +53,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	@-update-desktop-database
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}

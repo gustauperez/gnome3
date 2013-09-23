@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnome-system-log/Makefile,v 1.2 2012/06/01 06:47:47 kwm Exp $
+#   $MCom: ports/trunk/deskutils/gnome-system-log/Makefile 18571 2013-06-18 09:29:00Z kwm $
 
 PORTNAME=	gnome-system-log
 PORTVERSION=	3.6.1
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
+NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes

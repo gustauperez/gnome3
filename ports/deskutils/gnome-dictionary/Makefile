@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/deskutils/gnome-dictionary/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-dictionary
 PORTVERSION=	3.6.0
@@ -15,12 +16,12 @@ BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-USES=		gettext gmake pathfix pkgconfig
+NO_STAGE=	yes
 USE_XZ=		yes
-INSTALLS_OMF=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomedocutils gnomeprefix gtk30 intlhack
+USE_GNOME=	gnomeprefix intlhack gtk30
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

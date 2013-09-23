@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/deskutils/gucharmap/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gucharmap
 PORTVERSION=	2.32.1
@@ -11,13 +12,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Unicode/ISO10646 character map and font viewer
 
-LIB_DEPENDS=	rarian.0:${PORTSDIR}/textproc/rarian
+LIB_DEPENDS=	librarian.so:${PORTSDIR}/textproc/rarian
 
 CONFLICTS=	gucharmap-3.[0-9]*
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gconf2 gnomeprefix gnomedocutils gtk20 intlhack
+USE_GNOME=	gnomeprefix intlhack gtk20 gnomedocutils gconf2
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
