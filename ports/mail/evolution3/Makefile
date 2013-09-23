@@ -12,19 +12,19 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss \
-		gcr-3:${PORTSDIR}/security/gcr \
-		webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
-		goa-1.0:${PORTSDIR}/net/gnome-online-accounts \
-		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3 \
-		notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
+		libgcr-3.so:${PORTSDIR}/security/gcr \
+		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
+		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
+		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
+		libnotify.so:${PORTSDIR}/devel/libnotify
 
 CONFLICTS=	evolution-2.[0-9]*
 
+NO_STAGE=	yes
 LATEST_LINK=	evolution3
 USE_XZ=		yes
-USES=		bison desktop-file-utils gettext gmake \
-		pathfix pkgconfig
+USES=		desktop-file-utils bison gettext gmake pathfix
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 gtkhtml4 \
 		gnomedocutils ltasneededhack gnomedesktop3
 USE_AUTOTOOLS=	libtool
