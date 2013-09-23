@@ -13,9 +13,9 @@ BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome
 		gtkdocize:${PORTSDIR}/textproc/gtk-doc \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
-		notify:${PORTSDIR}/devel/libnotify \
-		exempi:${PORTSDIR}/textproc/exempi
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libexempi.so:${PORTSDIR}/textproc/exempi
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
@@ -26,6 +26,7 @@ GH_ACCOUNT=	linuxmint
 GH_TAGNAME=	1.8.5
 GH_COMMIT=	40f84d6
 
+NO_STAGE=	yes
 INSTALLS_ICONS=	yes
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig shared-mime-info
 USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 introspection:build

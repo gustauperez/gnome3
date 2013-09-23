@@ -14,18 +14,18 @@ COMMENT=	File manager for the GNOME desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
-		notify:${PORTSDIR}/devel/libnotify \
-		exempi:${PORTSDIR}/textproc/exempi
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libexempi.so:${PORTSDIR}/textproc/exempi
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 CONFLICTS=	nautilus-2.[0-9]*
 
+NO_STAGE=	yes
 LATEST_LINK=	nautilus3
 USE_XZ=		yes
-USES=		desktop-file-utils gettext gmake pathfix \
-		pkgconfig shared-mime-info
+USES=		desktop-file-utils gettext gmake pathfix shared-mime-info
 USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 \
 		ltverhack gvfs ltasneededhack introspection:build
 USE_LDCONFIG=	yes
