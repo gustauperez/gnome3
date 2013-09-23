@@ -1,28 +1,24 @@
-# New ports collection makefile for:	PackageKit-qt
-# Date created:		5 jan 2009
-# Whom:			Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/ports-mgmt/packagekit-qt4/Makefile,v 1.3 2011/12/13 18:56:17 kwm Exp $
-#
+#   $MCom: ports/trunk/ports-mgmt/packagekit-qt4/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
-PORTREVISION=	0
-PKGNAMESUFFIX=	-qt4
+PORTNAME=	packagekit-qt4
+PORTVERSION=	0.8.8
+CATEGORIES=	ports-mgmt sysutils
+MASTER_SITES=	http://www.packagekit.org/releases/
+DISTNAME=	PackageKit-Qt-${PORTVERSION}
 
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Qt4 bindings to packagekit
 
-MASTERDIR=	${.CURDIR}/../../ports-mgmt/packagekit
-#BUILD_WRKSRC=	${WRKSRC}/lib/packagekit-qt
-#INSTALL_WRKSRC=	${WRKSRC}/lib/packagekit-qt
-SLAVEPORT=	qt4
-PLIST=		${.CURDIR}/pkg-plist
+BUILD_DEPENDS=	packagekit>=0.8.8:${PORTSDIR}/ports-mgmt/packagekit
+RUN_DEPENDS=	packagekit>=0.8.8:${PORTSDIR}/ports-mgmt/packagekit
 
-do-build:
-		cd ${WRKSRC}/lib/packagekit-qt && ${MAKE_ENV} ${_MAKE_JOBS} ${MAKE_ARGS} ${GMAKE}
-		cd ${WRKSRC}/lib/packagekit-qt2 && ${MAKE_ENV} ${_MAKE_JOBS} ${MAKE_ARGS} ${GMAKE}
+NO_STAGE=	yes
+USE_XZ=		yes
+USE_LDCONFIG=	yes
+USES=		cmake:outsource pkgconfig
+USE_GNOME=	glib20
+USE_QT4=	dbus xml sql qmake_build moc_build uic_build rcc_build
 
-do-install:
-		cd ${WRKSRC}/lib/packagekit-qt && ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install
-		cd ${WRKSRC}/lib/packagekit-qt2 && ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install
-
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>
