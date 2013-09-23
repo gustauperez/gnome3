@@ -1,5 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/devel/gtranslator/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gtranslator
 PORTVERSION=	2.91.5
@@ -13,15 +14,16 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	peas-1.0:${PORTSDIR}/devel/libpeas \
-		gdl-3:${PORTSDIR}/x11-toolkits/gdl3 \
-		json-glib-1.0:${PORTSDIR}/devel/json-glib
+LIB_DEPENDS=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
+		libgdl-3.so:${PORTSDIR}/x11-toolkits/gdl3 \
+		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
+NO_STAGE=	yes
 USE_XZ=		yes
-USE_GNOME=	gnomeprefix gtk30 gtksourceview3 \
-		intlhack introspection:build libgda4 libxml2
+USE_GNOME=	intlhack gnomeprefix gtk30 libgda4 gtksourceview3 libxml2 \
+		introspection:build
 USES=		gettext gmake pathfix pkgconfig
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
@@ -48,7 +50,8 @@ DICT_DESC=	Build dictionary plugin
 
 .if ${PORT_OPTIONS:MDICT}
 BUILD_DEPENDS+=	gnome-dictionary>=3.4.0:${PORTSDIR}/deskutils/gnome-dictionary
-LIB_DEPENDS+=	gdict-1.0:${PORTSDIR}/deskutils/gnome-dictionary
+LIB_DEPENDS+=	libgdict-1.0.so:${PORTSDIR}/deskutils/gnome-dictionary
+RUN_DEPENDS+=	gnome-dictionary>=3.4.0:${PORTSDIR}/deskutils/gnome-dictionary
 GLIB_SCHEMAS+=	org.gnome.gtranslator.plugins.dictionary.gschema.xml
 CONFIGURE_ARGS+=--with-dictionary
 PLIST_SUB+=	DICT=""

@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD: devel/dconf/Makefile 313956 2013-03-12 09:45:07Z kwm $
-#   $MCom: ports/trunk/devel/dconf/Makefile 18675 2013-09-06 22:43:26Z kwm $
+#   $MCom: ports/trunk/devel/dconf/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME?=	dconf
 PORTVERSION=	0.16.1
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	vala>=0.18.1:${PORTSDIR}/lang/vala \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
+NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	glib20 gnomehier intltool

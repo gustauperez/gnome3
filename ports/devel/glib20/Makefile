@@ -1,6 +1,6 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD: head/devel/glib20/Makefile 326307 2013-09-04 18:06:07Z madpilot $
-#   $MCom: ports/trunk/devel/glib20/Makefile 18683 2013-09-19 08:16:29Z kwm $
+#   $MCom: ports/trunk/devel/glib20/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME=	glib
 PORTVERSION=	2.36.3
@@ -16,6 +16,7 @@ LICENSE=	LGPL20
 
 USE_XZ=		yes
 PORTSCOUT=	limitw:1,even
+NO_STAGE=	yes
 
 .if !defined(REFERENCE_PORT)
 
@@ -73,7 +74,7 @@ GLIB_ARCH=	${ARCH}
 CONFIGURE_TARGET=${GLIB_ARCH}-portbld-freebsd${OSREL}
 
 .if ${PORT_OPTIONS:MCOLLATION_FIX}
-LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicui18n.so:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 		${FILESDIR}/extra-patch-glib_gunicollate.c
 # Disable it until someone can figure why it causes net-im/pidgin crashed.

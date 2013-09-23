@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD: head/devel/glibmm/Makefile 313633 2013-03-08 10:51:34Z kwm $
-#   $MCom: ports/trunk/devel/glibmm/Makefile 18682 2013-09-19 07:55:12Z kwm $
+#   $MCom: ports/trunk/devel/glibmm/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME=	glibmm
 PORTVERSION=	2.36.2
@@ -14,6 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for glib2
 
 USE_XZ=		yes
+NO_STAGE=	yes
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 

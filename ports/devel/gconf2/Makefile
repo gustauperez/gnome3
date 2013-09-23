@@ -1,5 +1,6 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/devel/gconf2/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gconf2
 PORTVERSION=	3.2.6
@@ -11,21 +12,22 @@ DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A configuration database system for GNOME
+COMMENT=	Configuration database system for GNOME
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NO_STAGE=	yes
 USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
 USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	dconf gnomehier gtk20 intlhack libxml2 ltverhack \
-		orbit2 referencehack
+USE_GNOME=	gnomehier orbit2 gtk20 libxml2 ltverhack \
+		referencehack intlhack dconf introspection:build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
@@ -37,8 +39,6 @@ MAN1=		gconftool-2.1 gsettings-data-convert.1 \
 		gsettings-schema-convert.1
 
 OPTIONS_DEFINE=	LDAP
-
-#OPTIONS=	LDAP "Enable LDAP support" off
 
 .include <bsd.port.options.mk>
 

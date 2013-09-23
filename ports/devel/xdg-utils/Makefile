@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD: head/devel/xdg-utils/Makefile 309605 2012-12-29 05:24:51Z mezz $
-#    $MCom: ports/trunk/devel/xdg-utils/Makefile 18656 2013-08-22 09:09:28Z kwm $
+#    $MCom: ports/trunk/devel/xdg-utils/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME=	xdg-utils
 PORTVERSION=	1.0.2.${SNAPDATE}
@@ -16,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 		xprop:${PORTSDIR}/x11/xprop \
 		xset:${PORTSDIR}/x11/xset
 
+NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SNAPDATE=	20130811
 USE_XZ=		yes
