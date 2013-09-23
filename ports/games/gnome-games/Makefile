@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/games/gnome-games/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-games
 PORTVERSION=	2.32.1
@@ -11,21 +12,22 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The game applications package for the GNOME 2 Desktop Environment
 
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \
-		clutter-gtk-0.10.0:${PORTSDIR}/graphics/clutter-gtk \
-		clutter-glx-1.0.0:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \
+		libclutter-gtk-0.10.so:${PORTSDIR}/graphics/clutter-gtk \
+		libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
 RUN_DEPENDS=	seed:${PORTSDIR}/devel/seed
 
 CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]* gnome-games-3.[0-9]*
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USES=		gettext gmake pathfix
+USES=		desktop-file-utils gettext gmake pathfix
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GL=		yes
-USE_GNOME=	desktopfileutils gnomedocutils gnomeprefix intlhack \
-		introspection:build librsvg2 pygnomedesktop
+USE_GL=		gl
+USE_GNOME=	gnomedocutils gnomeprefix intlhack introspection:build \
+		librsvg2 pygnomedesktop \
 USE_GSTREAMER=	vorbis ogg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sound=gstreamer \
@@ -49,7 +51,7 @@ MAN6=		glchess.6 glines.6 gnect.6 gnibbles.6 gnobots2.6 \
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 .endif
 
 post-patch:
@@ -67,6 +69,5 @@ post-install:
 #.for dsc in ${DSC_FILES}
 #	${INSTALL_DATA} ${WRKSRC}/${dsc} ${PREFIX}/share/ggz/gnome-games/${dsc:T}
 #.endfor
-	@-update-desktop-database
 
 .include <bsd.port.post.mk>
