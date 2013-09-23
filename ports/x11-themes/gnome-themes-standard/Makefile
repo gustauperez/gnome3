@@ -13,8 +13,9 @@ COMMENT=	Standard themes for GNOME
 
 CONFLICTS=	gnome-themes-2.[0-9]*
 
+NO_STAGE=	yes
 USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack librsvg2
 GNU_CONFIGURE=	yes

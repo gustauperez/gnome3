@@ -333,6 +333,7 @@ share/icons/gnome/scalable/status/weather-showers-scattered-symbolic.svg
 share/icons/gnome/scalable/status/weather-showers-symbolic.svg
 share/icons/gnome/scalable/status/weather-snow-symbolic.svg
 share/icons/gnome/scalable/status/weather-storm-symbolic.svg
+@dirrmtry share/icons/gnome/scalable/status
 @dirrmtry share/icons/gnome/scalable/places
 @dirrmtry share/icons/gnome/scalable/mimetypes
 @dirrmtry share/icons/gnome/scalable/emotes
