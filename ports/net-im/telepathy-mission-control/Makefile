@@ -10,16 +10,15 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-contro
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Telepathy component to apps to abstract details of connection managers
 
-LIB_DEPENDS=	telepathy.2:${PORTSDIR}/net-im/libtelepathy \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libtelepathy.so:${PORTSDIR}/net-im/libtelepathy \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USE_PKGCONFIG=	build
+NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
-USE_GNOME=	gconf2 libxslt gnomehack ltverhack
+USE_GNOME=	gconf2 gnomehack libxslt ltverhack
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	im.telepathy.MissionControl.FromEmpathy.gschema.xml
 
