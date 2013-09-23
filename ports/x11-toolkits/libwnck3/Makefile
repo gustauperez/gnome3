@@ -13,6 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library used for writing pagers and taskslists
 
 USE_XZ=		yes
+NO_STAGE=	yes
 
 .if !defined(REFERENCE_PORT)
 
@@ -21,7 +22,7 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 LATEST_LINK=	libwnck3
 USE_XORG=	xres x11
 USE_GNOME=	gtk30 intlhack introspection ltverhack referencehack
-USES=		bison gettext gmake pathfix pkgconfig
+USES=		bison gettext gmake pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-tools

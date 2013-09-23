@@ -13,12 +13,13 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Terminal widget with improved accessibility and I18N support
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 
 .if !defined(REFERENCE_PORT)
 
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gnome-pty-helper
 
-USES=		bison gettext gmake pathfix pkgconfig
+USES=		bison gettext gmake pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME?=	gnomeprefix gtk20 ltverhack referencehack

@@ -15,6 +15,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Terminal widget with improved accessibility and I18N support
 
 USE_XZ=		yes
+NO_STAGE=	yes
 
 .if !defined(REFERENCE_PORT)
 VTE3_SLAVE?=	no
@@ -24,7 +25,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gno
 .endif
 
 LATEST_LINK?=	vte3
-USES=		bison gettext gmake pathfix pkgconfig
+USES=		bison gettext gmake pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME?=	gnomeprefix gtk30 ltverhack referencehack introspection:build
