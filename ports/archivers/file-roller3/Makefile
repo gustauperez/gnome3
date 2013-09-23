@@ -16,13 +16,13 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
 
 CONFLICTS=	file-roller-2.[0-9]*
 
+NO_STAGE=	yes
 LATEST_LINK=	file-roller3
 USE_LDCONFIG=	yes
 USE_XZ=		yes
-INSTALLS_ICONS=	yes
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomeprefix intlhack desktopfileutils gnomedocutils \
-		gtk30 gconf2
+INSTALLS_ICONS=	yes
+USE_GNOME=	gnomeprefix intlhack gtk30 gconf2
 USE_XORG=	sm
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -32,10 +32,9 @@ CONFIGURE_ARGS=	--disable-packagekit
 PORTDOCS=	AUTHORS NEWS README TODO ChangeLog
 GLIB_SCHEMAS=	org.gnome.FileRoller.gschema.xml
 
-OPTIONS_DEFINE=	DOCS NAUTILUS
-NAUTILUS_DESC=	Enable Nautilus extension
-
+OPTIONS_DEFINE=	NAUTILUS
 OPTIONS_DEFAULT=NAUTILUS
+NAUTILUS_DESC=	Enable Nautilus extension
 
 .include <bsd.port.options.mk>
 
@@ -53,7 +52,6 @@ post-patch:
 		${WRKSRC}/src/fr-command-zip.c
 
 post-install:
-	@-update-desktop-database
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}

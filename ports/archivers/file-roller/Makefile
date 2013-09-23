@@ -1,6 +1,6 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD: head/archivers/file-roller/Makefile 309632 2012-12-29 20:57:20Z mezz $
-#   $MCom: ports/archivers/file-roller/Makefile,v 1.191 2012/12/30 18:15:15 mezz Exp $
+#   $MCom: ports/trunk/archivers/file-roller/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME=	file-roller
 PORTVERSION=	2.32.1
@@ -18,13 +18,13 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
 
 CONFLICTS=	file-roller-3.[0-9]*
 
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack desktopfileutils gnomedocutils \
-		gtk20 gconf2
+USE_GNOME=	gnomeprefix intlhack gnomedocutils gtk20 gconf2
 USE_XORG=	sm
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -55,7 +55,6 @@ post-patch:
 		${WRKSRC}/src/fr-command-zip.c
 
 post-install:
-	@-update-desktop-database
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
