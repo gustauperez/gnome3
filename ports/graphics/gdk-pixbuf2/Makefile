@@ -1,6 +1,6 @@
 # Created by: Ade Lovett <ade@lovett.com>
 # $FreeBSD: head/graphics/gdk-pixbuf2/Makefile 314952 2013-03-22 19:00:36Z mezz $
-#    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 18634 2013-07-26 10:42:35Z kwm $
+#    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	2.28.2
@@ -12,6 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A graphic library for GTK+
 
+NO_STAGE=	yes
 LATEST_LINK=	gdk-pixbuf2
 USE_XZ=		yes
 USE_XORG=	xt xi x11
