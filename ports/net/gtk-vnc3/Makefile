@@ -10,19 +10,20 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC viewer widget for GTK+
 
-LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 CONFLICTS=	gtk-vnc-0.3.[0-9]*
 
+NO_STAGE=	yes
 LATEST_LINK=	gtk-vnc3
 USE_XZ=		yes
 USE_GNOME=	gtk30
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
