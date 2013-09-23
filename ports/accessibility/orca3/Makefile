@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/accessibility/orca3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	orca
 PORTVERSION=	3.6.2
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus 
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
 		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	atspi:${PORTSDIR}/accessibility/at-spi2-core
+LIB_DEPENDS=	libatspi.so:${PORTSDIR}/accessibility/at-spi2-core
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
@@ -26,6 +27,7 @@ CONFLICTS=	orca-2.[0-9]* py*-json-py-[0-9]*
 
 LATEST_LINK=	gnome-orca3
 
+NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
 USE_PYTHON=	yes

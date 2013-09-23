@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/accerciser3/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/accessibility/accerciser3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	accerciser
 PORTVERSION=	3.6.2
@@ -19,6 +19,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-deskto
 
 CONFLICTS=	accerciser-1.*
 
+NO_STAGE=	yes
 USE_XZ=		yes
 USE_GNOME=	gtk30 pygobject3 intlhack
 USE_PYTHON=	yes

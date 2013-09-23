@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/mousetweaks3/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/accessibility/mousetweaks3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	mousetweaks
 PORTVERSION=	3.6.0
@@ -16,6 +16,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0.1.0:${PORTSDIR}/devel/gsettings-deskto
 
 CONFLICTS=	mousetweaks-2.[0-9]*
 
+NO_STAGE=	yes
 LATEST_LINK=	mousetweaks3
 USE_XZ=		yes
 USE_XORG=	x11 xfixes xcursor xtst
