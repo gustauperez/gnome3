@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.218 2013/03/09 09:12:37 kwm Exp $
+#   $MCom: ports/trunk/databases/evolution-data-server/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	2.32.1
@@ -10,22 +10,22 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	The data backends for the Evolution integrated mail/PIM suite
+COMMENT=	Data backends for the Evolution integrated mail/PIM suite
 
-LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
-		gdata.7:${PORTSDIR}/devel/libgdata06 \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		ical:${PORTSDIR}/devel/libical \
-		nss3:${PORTSDIR}/security/nss \
-		tasn1:${PORTSDIR}/security/libtasn1 \
-		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libgdata.so.7:${PORTSDIR}/devel/libgdata06 \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libical.so:${PORTSDIR}/devel/libical \
+		libnss3.so:${PORTSDIR}/security/nss \
+		libtasn1.so:${PORTSDIR}/security/libtasn1 \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		bison gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomeprefix intlhack ltverhack ltasneededhack gconf2 \
-		libxml2
+USE_GNOME=	gnomeprefix intlhack ltverhack ltasneededhack gconf2 libxml2
 USE_OPENLDAP=	yes
-USE_SQLITE=	yes
+USE_SQLITE=	3
 USE_AUTOTOOLS=	libtool
 USE_BDB=	41+
 USE_LDCONFIG=	yes
@@ -50,7 +50,7 @@ KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .endif
 
 .if ${PORT_OPTIONS:MWEATHER}
-LIB_DEPENDS+=		gweather:${PORTSDIR}/net/libgweather
+LIB_DEPENDS+=		libgweather.so:${PORTSDIR}/net/libgweather
 CONFIGURE_ARGS+=	--with-weather
 PLIST_SUB+=		WEATHER=""
 .else

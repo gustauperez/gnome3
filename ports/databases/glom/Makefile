@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/glom/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/databases/glom/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	glom
 PORTVERSION=	1.24.0
@@ -15,19 +15,20 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 		libepc>=0.4.0:${PORTSDIR}/www/libepc \
 		${LOCALBASE}/libdata/pkgconfig/libgda-mysql-5.0.pc:${PORTSDIR}/databases/libgda5-mysql \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-5.0.pc:${PORTSDIR}/databases/libgda5-postgresql
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		epc-1.0:${PORTSDIR}/www/libepc \
-		goocanvasmm-2.0:${PORTSDIR}/graphics/goocanvasmm2 \
-		evview3:${PORTSDIR}/graphics/evince3
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
+		libepc-1.0.so:${PORTSDIR}/www/libepc \
+		libgoocanvasmm-2.0.so:${PORTSDIR}/graphics/goocanvasmm2 \
+		libevview3.so:${PORTSDIR}/graphics/evince3
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-mysql-5.0.pc:${PORTSDIR}/databases/libgda5-mysql \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-5.0.pc:${PORTSDIR}/databases/libgda5-postgresql
 
+NO_STAGE=	yes
 USE_XZ=		yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info
+USES=		gettext gmake pathfix pkgconfig shared-mime-info \
+		desktop-file-utils
 USE_GNOME=	gnomedocutils gnomeprefix intltool pygobject3 libxml2 \
 		gtksourceviewmm3 libgdamm5
 USE_LDCONFIG=	yes
