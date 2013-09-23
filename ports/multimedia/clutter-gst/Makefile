@@ -10,12 +10,13 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter GStreamer integration
 
-LIB_DEPENDS=	clutter-1.0:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libclutter-1.0.so:${PORTSDIR}/graphics/clutter
 
+NO_STAGE=	yes
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_GL=		gl
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix
 USE_GNOME=	ltverhack gnomeprefix gnomehier introspection:build
 USE_GSTREAMER1=	yes
 USE_XORG=	xp x11
