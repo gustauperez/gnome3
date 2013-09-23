@@ -16,10 +16,10 @@ CONFLICTS=	gcalctool-5.[0-9]*
 BUILD_DEPENDS=	yelp-build:${PORTSDIR}/textproc/yelp-tools \
 		itstool:${PORTSDIR}/textproc/itstool
 
+NO_STAGE=	yes
 LATEST_LINK=	gcalctool3
 USE_XZ=		yes
 USES=		bison gettext gmake pathfix pkgconfig
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
