@@ -149,7 +149,6 @@ share/locale/zh_TW/LC_MESSAGES/gvfs.mo
 @dirrm %%DATADIR%%
 @dirrm include/gvfs-client/gvfs
 @dirrm include/gvfs-client
-@dirrmtry etc/profile.d
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
