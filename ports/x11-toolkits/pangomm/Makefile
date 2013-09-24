@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	pango glibmm cairomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
