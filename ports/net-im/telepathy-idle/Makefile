@@ -12,7 +12,7 @@ COMMENT=	IRC Connection Manager for Telepathy Framework
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 #LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
 #		dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
 #		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib
