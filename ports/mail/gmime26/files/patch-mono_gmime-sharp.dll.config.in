@@ -1,7 +1,0 @@
---- mono/gmime-sharp.dll.config.in.orig	2012-03-10 20:42:27.000000000 +0000
-+++ mono/gmime-sharp.dll.config.in	2013-04-11 08:56:17.819038584 +0000
-@@ -1,3 +1,3 @@
- <configuration>
--  <dllmap dll="gmime" target="libgmime-@GMIME_API_VERSION@.so.@LT_CURRENT_MINUS_AGE@"/>
-+  <dllmap dll="gmime" target="libgmime-@GMIME_API_VERSION@.so"/>
- </configuration>
