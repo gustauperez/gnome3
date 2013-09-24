@@ -25,7 +25,7 @@ USE_PYTHON=	yes
 
 NO_STAGE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.freedesktop.ibus.gschema.xml
