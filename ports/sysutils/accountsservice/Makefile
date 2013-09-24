@@ -18,9 +18,9 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 NO_STAGE=	yes
 USE_XZ=		yes
-USE_GNOME=	gnomehack glib20 intlhack
+USE_GNOME=	glib20 intlhack
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
