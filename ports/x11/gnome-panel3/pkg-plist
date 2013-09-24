@@ -69,6 +69,21 @@ share/doc/panel-applet-4.0/style.css.bak
 share/doc/panel-applet-4.0/up.png
 share/doc/panel-applet-4.0/up.png.bak
 share/gir-1.0/PanelApplet-4.0.gir
+%%DATADIR%%/4.0/applets/org.gnome.panel.ClockApplet.panel-applet
+%%DATADIR%%/4.0/applets/org.gnome.panel.FishApplet.panel-applet
+%%DATADIR%%/4.0/applets/org.gnome.panel.NotificationAreaApplet.panel-applet
+%%DATADIR%%/4.0/applets/org.gnome.panel.Wncklet.panel-applet
+%%DATADIR%%/fish/fishanim.fish
+%%DATADIR%%/fish/fishanim.png
+%%DATADIR%%/fish/footguy.fish
+%%DATADIR%%/fish/footguy.png
+%%DATADIR%%/fish/monkey.fish
+%%DATADIR%%/fish/monkey.png
+%%DATADIR%%/fish/oldwanda.fish
+%%DATADIR%%/fish/oldwanda.png
+%%DATADIR%%/fish/wanda.fish
+%%DATADIR%%/fish/wanda.png
+%%DATADIR%%/panel-default-layout.layout
 share/help/C/clock/index.docbook
 share/help/C/clock/legal.xml
 share/help/C/fish/index.docbook
@@ -81,8 +96,8 @@ share/help/ca/fish/index.docbook
 share/help/ca/fish/legal.xml
 share/help/cs/clock/index.docbook
 share/help/cs/clock/legal.xml
-share/help/cs/fish/legal.xml
 share/help/cs/fish/index.docbook
+share/help/cs/fish/legal.xml
 share/help/da/clock/index.docbook
 share/help/da/clock/legal.xml
 share/help/da/fish/index.docbook
@@ -173,21 +188,6 @@ share/help/zh_HK/clock/index.docbook
 share/help/zh_HK/clock/legal.xml
 share/help/zh_TW/clock/index.docbook
 share/help/zh_TW/clock/legal.xml
-%%DATADIR%%/4.0/applets/org.gnome.panel.ClockApplet.panel-applet
-%%DATADIR%%/4.0/applets/org.gnome.panel.FishApplet.panel-applet
-%%DATADIR%%/4.0/applets/org.gnome.panel.NotificationAreaApplet.panel-applet
-%%DATADIR%%/4.0/applets/org.gnome.panel.Wncklet.panel-applet
-%%DATADIR%%/fish/fishanim.fish
-%%DATADIR%%/fish/fishanim.png
-%%DATADIR%%/fish/footguy.fish
-%%DATADIR%%/fish/footguy.png
-%%DATADIR%%/fish/monkey.fish
-%%DATADIR%%/fish/monkey.png
-%%DATADIR%%/fish/oldwanda.fish
-%%DATADIR%%/fish/oldwanda.png
-%%DATADIR%%/fish/wanda.fish
-%%DATADIR%%/fish/wanda.png
-%%DATADIR%%/panel-default-layout.layout
 share/icons/hicolor/16x16/apps/gnome-panel-clock.png
 share/icons/hicolor/16x16/apps/gnome-panel-fish.png
 share/icons/hicolor/16x16/apps/gnome-panel-force-quit.png
@@ -432,83 +432,94 @@ share/locale/zu/LC_MESSAGES/gnome-panel-3.0.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/help/zh_TW/clock
+@dirrm share/help/zh_TW/clock
 @dirrmtry share/help/zh_TW
-@dirrmtry share/help/zh_HK/clock
+@dirrm share/help/zh_HK/clock
 @dirrmtry share/help/zh_HK
-@dirrmtry share/help/zh_CN/fish
-@dirrmtry share/help/zh_CN/clock
-@dirrmtry share/help/uk/fish
-@dirrmtry share/help/uk/clock
-@dirrmtry share/help/th/fish
-@dirrmtry share/help/th/clock
+@dirrm share/help/zh_CN/fish
+@dirrm share/help/zh_CN/clock
+@dirrmtry share/help/zh_CN
+@dirrm share/help/uk/fish
+@dirrm share/help/uk/clock
+@dirrmtry share/help/uk
+@dirrm share/help/th/fish
+@dirrm share/help/th/clock
 @dirrmtry share/help/th
-@dirrmtry share/help/te/clock
+@dirrm share/help/te/clock
 @dirrmtry share/help/te
-@dirrmtry share/help/sv/fish
-@dirrmtry share/help/te
-@dirrmtry share/help/sv/fish
-@dirrmtry share/help/sv/clock
-@dirrmtry share/help/sr/clock
-@dirrmtry share/help/sl/fish
-@dirrmtry share/help/sl/clock
-@dirrmtry share/help/ru/fish
-@dirrmtry share/help/ru/clock
+@dirrm share/help/sv/fish
+@dirrm share/help/sv/clock
+@dirrmtry share/help/sv
+@dirrm share/help/sr/clock
+@dirrmtry share/help/sr
+@dirrm share/help/sl/fish
+@dirrm share/help/sl/clock
+@dirrmtry share/help/sl
+@dirrm share/help/ru/fish
+@dirrm share/help/ru/clock
 @dirrmtry share/help/ru
-@dirrmtry share/help/pt_BR/clock
-@dirrmtry share/help/pt/clock
+@dirrm share/help/pt_BR/clock
+@dirrmtry share/help/pt_BR
+@dirrm share/help/pt/clock
 @dirrmtry share/help/pt
-@dirrmtry share/help/pa/clock
-@dirrmtry share/help/oc/fish
-@dirrmtry share/help/pa/clock
-@dirrmtry share/help/oc/fish
-@dirrmtry share/help/oc/clock
-@dirrmtry share/help/nl/clock
+@dirrm share/help/pa/clock
+@dirrmtry share/help/pa
+@dirrm share/help/oc/fish
+@dirrm share/help/oc/clock
+@dirrmtry share/help/oc
+@dirrm share/help/nl/clock
 @dirrmtry share/help/nl
-@dirrmtry share/help/ko/fish
-@dirrmtry share/help/ko/clock
-@dirrmtry share/help/ja/fish
-@dirrmtry share/help/ja/clock
+@dirrm share/help/ko/fish
+@dirrm share/help/ko/clock
+@dirrmtry share/help/ko
+@dirrm share/help/ja/fish
+@dirrm share/help/ja/clock
 @dirrmtry share/help/ja
-@dirrmtry share/help/it/fish
-@dirrmtry share/help/it/clock
+@dirrm share/help/it/fish
+@dirrm share/help/it/clock
 @dirrmtry share/help/it
-@dirrmtry share/help/id/clock
-@dirrmtry share/help/it
-@dirrmtry share/help/id/clock
+@dirrm share/help/id/clock
 @dirrmtry share/help/id
-@dirrmtry share/help/fr/fish
-@dirrmtry share/help/fr/clock
-@dirrmtry share/help/fi/fish
-@dirrmtry share/help/fi/clock
-@dirrmtry share/help/eu/fish
-@dirrmtry share/help/eu/clock
-@dirrmtry share/help/es/fish
-@dirrmtry share/help/es/clock
-@dirrmtry share/help/en_GB/fish
-@dirrmtry share/help/en_GB/clock
+@dirrm share/help/fr/fish
+@dirrm share/help/fr/clock
+@dirrmtry share/help/fr
+@dirrm share/help/fi/fish
+@dirrm share/help/fi/clock
+@dirrmtry share/help/fi
+@dirrm share/help/eu/fish
+@dirrm share/help/eu/clock
+@dirrmtry share/help/eu
+@dirrm share/help/es/fish
+@dirrm share/help/es/clock
+@dirrmtry share/help/es
+@dirrm share/help/en_GB/fish
+@dirrm share/help/en_GB/clock
 @dirrmtry share/help/en_GB
-@dirrmtry share/help/en_GB/clock
-@dirrmtry share/help/en_GB
-@dirrmtry share/help/el/fish
-@dirrmtry share/help/el/clock
-@dirrmtry share/help/de/fish
-@dirrmtry share/help/de/clock
-@dirrmtry share/help/da/fish
-@dirrmtry share/help/da/clock
+@dirrm share/help/el/fish
+@dirrm share/help/el/clock
+@dirrmtry share/help/el
+@dirrm share/help/de/fish
+@dirrm share/help/de/clock
+@dirrmtry share/help/de
+@dirrm share/help/da/fish
+@dirrm share/help/da/clock
 @dirrmtry share/help/da
-@dirrmtry share/help/cs/fish
-@dirrmtry share/help/cs/clock
-@dirrmtry share/help/ca/fish
-@dirrmtry share/help/ca/clock
-@dirrmtry share/help/ar/clock
-@dirrmtry share/help/C/fish
-@dirrmtry share/help/C/clock
+@dirrm share/help/cs/fish
+@dirrm share/help/cs/clock
+@dirrmtry share/help/cs
+@dirrm share/help/ca/fish
+@dirrm share/help/ca/clock
+@dirrmtry share/help/ca
+@dirrm share/help/ar/clock
+@dirrmtry share/help/ar
+@dirrm share/help/C/fish
+@dirrm share/help/C/clock
+@dirrmtry share/help/C
 @dirrm %%DATADIR%%/fish
-@dirrmtry %%DATADIR%%/4.0/applets
-@dirrmtry %%DATADIR%%/4.0
-@dirrmtry %%DATADIR%%
-@dirrmtry share/doc/panel-applet-4.0
+@dirrm %%DATADIR%%/4.0/applets
+@dirrm %%DATADIR%%/4.0
+@dirrm %%DATADIR%%
+@dirrm share/doc/panel-applet-4.0
 @dirrmtry share/applications
-@dirrmtry include/gnome-panel-4.0/libpanel-applet
-@dirrmtry include/gnome-panel-4.0
+@dirrm include/gnome-panel-4.0/libpanel-applet
+@dirrm include/gnome-panel-4.0
