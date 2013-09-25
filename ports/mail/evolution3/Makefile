@@ -24,7 +24,8 @@ CONFLICTS=	evolution-2.[0-9]*
 NO_STAGE=	yes
 LATEST_LINK=	evolution3
 USE_XZ=		yes
-USES=		desktop-file-utils bison gettext gmake pathfix
+USES=		desktop-file-utils bison gettext gmake pathfix \
+		pkgconfig
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 gtkhtml4 \
 		gnomedocutils ltasneededhack gnomedesktop3
 USE_AUTOTOOLS=	libtool
