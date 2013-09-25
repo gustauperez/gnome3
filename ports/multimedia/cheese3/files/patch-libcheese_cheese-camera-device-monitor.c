@@ -1,5 +1,5 @@
---- libcheese/cheese-camera-device-monitor.c.orig	2012-08-22 19:04:40.000000000 +0000
-+++ libcheese/cheese-camera-device-monitor.c	2013-09-22 21:56:55.492718562 +0000
+--- libcheese/cheese-camera-device-monitor.c.orig	2012-08-22 21:04:40.000000000 +0200
++++ libcheese/cheese-camera-device-monitor.c	2013-09-22 23:12:35.072353163 +0200
 @@ -33,6 +33,14 @@
    #include <fcntl.h>
    #include <unistd.h>
@@ -15,7 +15,7 @@
    #if USE_SYS_VIDEOIO_H > 0
      #include <sys/types.h>
      #include <sys/videoio.h>
-@@ -302,6 +310,221 @@
+@@ -302,6 +310,220 @@
    g_list_free (devices);
  }
  
@@ -41,7 +41,7 @@
 +  else{
 +     if (ioctl (fd, VIDIOC_QUERYCAP, &v2cap) == 0)
 +     {
-+       is_camera = ((v2cap.capabilities & 0x00000001) == 1);
++       is_camera = ((v2cap.capabilities & 0x00000001)==1);
 +     }
 +     else{
 +       GST_WARNING("Failed to get product name for %s: %s", devname,
@@ -102,7 +102,7 @@
 +              GMatchInfo *info;
 +
 +              rex = g_regex_new ("subsystem=CDEV type=(CREATE|DESTROY) cdev=(video[0-9]+)", 0, 0, NULL);
-+              if (g_regex_match (rex, event, 0, &info) && cheese_camera_device_monitor_is_camera (devname))
++              if (g_regex_match (rex, event, 0, &info))
 +              {
 +                char *devname, *type, *vdev, *product = NULL;
 +                CheeseCameraDevice *device;
@@ -120,21 +120,24 @@
 +                }
 +                else
 +                {
-+                  product = cheese_camera_device_monitor_get_product (devname);
-+                  if (product == NULL)
-+                    product = g_strdup ("WebCamd Device");
-+                  device = cheese_camera_device_new (devname, devname,
-+                                                     product,
-+                                                     2,
-+                                                     &error);
-+                  if (device == NULL)
-+                    GST_WARNING ("Device initialization for %s failed: %s",
-+                                 devname,
-+                                 (error != NULL) ? error->message : "Unknown reason");
-+                  g_signal_emit (monitor, monitor_signals[ADDED], 0, device);
-+                }
++                  if(cheese_camera_device_monitor_is_camera (devname))
++                  {
++                    product = cheese_camera_device_monitor_get_product (devname);
++                    if (product == NULL)
++                      product = g_strdup ("WebCamd Device");
++                    device = cheese_camera_device_new (devname, devname,
++                                                       product,
++                                                       2,
++                                                       &error);
++                    if (device == NULL)
++                      GST_WARNING ("Device initialization for %s failed: %s",
++                                   devname,
++                                   (error != NULL) ? error->message : "Unknown reason");
++                    g_signal_emit (monitor, monitor_signals[ADDED], 0, device);
++                  }
 +
-+                g_free (product);
++                  g_free (product);
++                }
 +                g_free (devname);
 +                g_free (vdev);
 +                g_free (type);
@@ -204,8 +207,6 @@
 +  {
 +    if ( strncmp (fname, "video", strlen ("video")) == 0)
 +    {
-+      GRegex *rex;
-+      GMatchInfo *info;
 +      char *devname, *product;
 +
 +      devname = g_strdup_printf ("/dev/%s", fname);
@@ -228,8 +229,6 @@
 +        g_free (product);
 +      }
 +      g_free (devname);
-+      g_match_info_free (info);
-+      g_regex_unref (rex);
 +    }
 +  }
 +  g_dir_close (dir);
@@ -237,7 +236,7 @@
  #else /* HAVE_UDEV */
  void
  cheese_camera_device_monitor_coldplug (CheeseCameraDeviceMonitor *monitor)
-@@ -430,6 +653,42 @@
+@@ -430,6 +652,42 @@
    g_type_class_add_private (klass, sizeof (CheeseCameraDeviceMonitorPrivate));
  }
  
@@ -280,7 +279,7 @@
  static void
  cheese_camera_device_monitor_init (CheeseCameraDeviceMonitor *monitor)
  {
-@@ -440,6 +699,8 @@
+@@ -440,6 +698,8 @@
    priv->client = g_udev_client_new (subsystems);
    g_signal_connect (G_OBJECT (priv->client), "uevent",
                      G_CALLBACK (cheese_camera_device_monitor_uevent_cb), monitor);
