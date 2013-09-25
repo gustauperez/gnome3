@@ -22,7 +22,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libfolks.so:${PORTSDIR}/net-im/folks \
 		libibus.so:${PORTSDIR}/textproc/ibus \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libcroco-0.so:${PORTSDIR}/textproc/libcroco \
+		libcroco-0.6.so:${PORTSDIR}/textproc/libcroco \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libclutter-1.0.so:${PORTSDIR}/graphics/clutter \
 		libgjs.so:${PORTSDIR}/lang/gjs
@@ -33,7 +33,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 NO_STAGE=	yes
 USE_XZ=		yes
 USE_XORG=	x11 xfixes sm
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomemenus3 gnomeprefix \
 		gtk30 intlhack introspection ltverhack
