@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libxklavier.so:${PORTSDIR}/x11/libxklavier \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libcolord.so:${PORTSDIR}/graphics/colord \
-		libibus.so:${PORTSDIR}/textproc/ibus \
+		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
 		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
 		libsocialweb.so:${PORTSDIR}/www/libsocialweb \
 		libpwquality.so:${PORTSDIR}/security/libpwquality \
