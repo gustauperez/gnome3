@@ -18,9 +18,9 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libtelepathy-logger.so:${PORTSDIR}/net-im/telepathy-logger \
 		libfolks.so:${PORTSDIR}/net-im/folks \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libcroco.so:${PORTSDIR}/textproc/libcroco \
+		libcroco-0.6.so:${PORTSDIR}/textproc/libcroco \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libclutter-glx-1.so:${PORTSDIR}/graphics/clutter \
+		libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter \
 		libgjs.so:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
