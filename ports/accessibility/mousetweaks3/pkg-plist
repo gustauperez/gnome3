@@ -1,4 +1,5 @@
 bin/mousetweaks
+man/man1/mousetweaks.1.gz
 share/GConf/gsettings/mousetweaks.convert
 share/locale/an/LC_MESSAGES/mousetweaks.mo
 share/locale/ar/LC_MESSAGES/mousetweaks.mo
