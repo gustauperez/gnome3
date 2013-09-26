@@ -27,7 +27,6 @@ CONFLICTS=	orca-2.[0-9]* py*-json-py-[0-9]*
 
 LATEST_LINK=	gnome-orca3
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
 USE_PYTHON=	yes
@@ -36,8 +35,6 @@ INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		orca.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
