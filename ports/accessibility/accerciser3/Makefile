@@ -19,7 +19,6 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-deskto
 
 CONFLICTS=	accerciser-1.*
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USE_GNOME=	gtk30 pygobject3 intlhack
 USE_PYTHON=	yes
@@ -30,6 +29,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.a11y.Accerciser.gschema.xml
-MAN1=		accerciser.1
 
 .include <bsd.port.mk>

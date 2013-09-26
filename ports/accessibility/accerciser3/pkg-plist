@@ -53,6 +53,7 @@ bin/accerciser
 %%PYTHON_SITELIBDIR%%/accerciser/ui_manager.py
 %%PYTHON_SITELIBDIR%%/accerciser/ui_manager.pyc
 %%PYTHON_SITELIBDIR%%/accerciser/ui_manager.pyo
+man/man1/accerciser.1.gz
 %%DATADIR%%/pixmaps/hicolor/22x22/acceleratorlabel.png
 %%DATADIR%%/pixmaps/hicolor/22x22/alert.png
 %%DATADIR%%/pixmaps/hicolor/22x22/animation.png
@@ -738,38 +739,55 @@ share/locale/zh_TW/LC_MESSAGES/accerciser.mo
 @dirrmtry share/locale/as
 @dirrmtry share/help/zh_CN/accerciser/figures
 @dirrmtry share/help/zh_CN/accerciser
+@dirrmtry share/help/zh_CN
 @dirrmtry share/help/uk/accerciser/figures
 @dirrmtry share/help/uk/accerciser
+@dirrmtry share/help/uk
 @dirrmtry share/help/sv/accerciser/figures
 @dirrmtry share/help/sv/accerciser
+@dirrmtry share/help/sv
 @dirrmtry share/help/sl/accerciser/figures
 @dirrmtry share/help/sl/accerciser
+@dirrmtry share/help/sl
 @dirrmtry share/help/pt_BR/accerciser/figures
-@dirrmtry share/help/pt_BR/accerciser
+@dirrmtry share/help/pt_BR/accerciser 
+@dirrmtry share/help/pt_BR
 @dirrmtry share/help/pl/accerciser/figures
 @dirrmtry share/help/pl/accerciser
+@dirrmtry share/help/pl
 @dirrmtry share/help/oc/accerciser/figures
 @dirrmtry share/help/oc/accerciser
+@dirrmtry share/help/oc
 @dirrmtry share/help/ja/accerciser/figures
 @dirrmtry share/help/ja/accerciser
+@dirrmtry share/help/ja
 @dirrmtry share/help/it/accerciser/figures
 @dirrmtry share/help/it/accerciser
+@dirrmtry share/help/it
 @dirrmtry share/help/gl/accerciser/figures
 @dirrmtry share/help/gl/accerciser
+@dirrmtry share/help/gl
 @dirrmtry share/help/fr/accerciser/figures
 @dirrmtry share/help/fr/accerciser
+@dirrmtry share/help/fr
 @dirrmtry share/help/es/accerciser/figures
 @dirrmtry share/help/es/accerciser
+@dirrmtry share/help/es
 @dirrmtry share/help/en_GB/accerciser/figures
 @dirrmtry share/help/en_GB/accerciser
+@dirrmtry share/help/en_GB
 @dirrmtry share/help/el/accerciser/figures
 @dirrmtry share/help/el/accerciser
+@dirrmtry share/help/el
 @dirrmtry share/help/de/accerciser/figures
 @dirrmtry share/help/de/accerciser
+@dirrmtry share/help/de
 @dirrmtry share/help/cs/accerciser/figures
 @dirrmtry share/help/cs/accerciser
+@dirrmtry share/help/cs
 @dirrmtry share/help/ca/accerciser/figures
 @dirrmtry share/help/ca/accerciser
+@dirrmtry share/help/ca
 @dirrmtry share/help/C/accerciser/figures
 @dirrmtry share/help/C/accerciser
 @dirrmtry share/help/C
