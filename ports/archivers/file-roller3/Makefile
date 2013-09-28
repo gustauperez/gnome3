@@ -16,13 +16,13 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
 
 CONFLICTS=	file-roller-2.[0-9]*
 
-NO_STAGE=	yes
 LATEST_LINK=	file-roller3
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack gtk30 gconf2
+USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack \
+		introspection:build
 USE_XORG=	sm
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -53,9 +53,9 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
 .endif
 
